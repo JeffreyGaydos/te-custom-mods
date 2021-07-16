@@ -29,8 +29,9 @@ function toggleIndex() {
 	document.getElementById("indexBox").getElementsByTagName("ol")[0].style.animationDuration = "0.5s";
 	document.getElementById("indexBox").getElementsByTagName("ol")[0].style.animationDirection = "reverse";
 
-    //mainly for ensuring that the arrow is the correct color
-    tec_index_dm()
+    //"refreshes" dark mode so it applys to the index (works in both light and dark mode)
+    darkMode();
+    darkMode();
     
     //allows the index to stay mobile friendly when clicked
     mobileCompatible();
