@@ -42,7 +42,7 @@ if(get_option('tec_dark_mode') == 'on') {
 
 if( !function_exists("tec_header_follow_init") ) {
     function tec_header_follow_init() {
-        wp_enqueue_script( 'tec-header-follow-init', plugins_url('/js/tec_header_follow.js', __FILE__));
+        wp_enqueue_script( 'tec-header-follow-init', plugins_url('/js/tec_header_follow.js', __FILE__), '', '1.0');
     }
 }
 
