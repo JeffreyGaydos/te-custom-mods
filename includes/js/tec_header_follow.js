@@ -65,7 +65,6 @@ function headerOnScrollEvent() {
 function buttonMapDS() {
     window.scrollTo(0, 0); //somehow this works...
     //document.getElementsByClassName('toggle search-toggle desktop-search-toggle')[0].click();
-    document.getElementsByClassName('cover-modal')[0].style.zIndex = 1001;
 }
 
 //Maps the Desktop menu button on the clone header to the menu button on the stationary header. Called by the clone header's buttons.

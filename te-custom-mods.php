@@ -2,7 +2,7 @@
 /*
 Plugin Name: Tank Encyclopedia Custom Mods
 Author: Jeffrey Gaydos | Discord: Jeff_G#3210 | Email: jeff13gaydos@gmail.com
-Version: 1.0
+Version: 2.1.0
 
 Description: A plugin created to organize the various functions of the old child theme, thereby removing the need for the child theme. Includes toggles in case any functions fail during udpates.
 */
@@ -67,6 +67,8 @@ if( !function_exists("tec_acp_page") ) {
             <input type="checkbox" name="tec_mobile" <?php tec_get_checked('tec_mobile') ?> >Mobile Compatability Modifications</input>
             <br><br>
             <input type="checkbox" name="tec_to_top" <?php tec_get_checked('tec_to_top') ?> >To Top Button</input>
+            <br><br>
+            <input type="checkbox" name="tec_related" <?php tec_get_checked('tec_related') ?> >Related Articles Section</input>
             <?php
                 submit_button();
             ?>
@@ -99,5 +101,6 @@ if( !function_exists("update_tec_info") ) {
         register_setting( 'tec-settings', 'tec_gallery' );
         register_setting( 'tec-settings', 'tec_mobile' );
         register_setting( 'tec-settings', 'tec_to_top' );
+        register_setting( 'tec-settings', 'tec_related' );
     }
 }
