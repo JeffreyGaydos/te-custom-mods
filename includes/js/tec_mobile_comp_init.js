@@ -2,7 +2,7 @@
  *	Tweaks some styling to ensure that the website looks good on mobile devices
  *  Uses media queries and inline CSS.
  */
- function mobileCompatible() {
+function mobileCompatible() {
 	//standard mobile compatibility settings
 	if(window.matchMedia("(max-width: 985px)").matches) {
 		//middle ground mobile compatibility
