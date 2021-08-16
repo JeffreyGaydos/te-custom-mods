@@ -1,6 +1,8 @@
 createDarkModeButtons();
 initDarkMode();
 
+var tec_dark;
+
 //Inserts the HTML for the darm mode button in the appropriate spot
 function createDarkModeButtons() {
     document.getElementsByClassName("header-titles-wrapper")[0].innerHTML = 
@@ -14,6 +16,9 @@ function createDarkModeButtons() {
 
 //examines cookies to see if we have turned on dark mode in the past
 function initDarkMode() {
+    if(tec_dark == undefined) {
+        tec_dark = 'false';
+    }
     //document.cookie = 'DarkMode = true; Path=/;';
     var cookieArray = document.cookie.split(';');
     for(var i = 0; i < cookieArray.length; i++) {
@@ -22,13 +27,8 @@ function initDarkMode() {
         //console.log("--==Called darkModeUnstable Loop==--\nname: " + name + " value: " + value + " dark is: " + this.dark);
         if(name == ' DarkMode') {
             if(value != tec_dark) {
-                //console.log("--==Toggled DarkMode==-- dark: " + this.dark + " value: " + value);
-                var boolean = value === tec_dark;
-                //console.log("--==Boolean==-- " + boolean);
                 document.cookie = name + ' = ' + value + '; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
                 darkMode();
-                //console.log("DarkMode is now: " + value);
-                //console.log("Dark is now: " + this.dark);
             }
         }
     }
@@ -252,8 +252,6 @@ function changeSubSubtagCSSbgAll(class_, subtag1, subtag2, value) {
 	}
 }
 
-var tec_dark = 'false';
-				
 //decides which dark mode to initiate depending on which version of dark mode fails to complete.
 //TODO - Switch to CSS-based dark mode mechanics (or a mixture of the 2)
 function darkMode() {
