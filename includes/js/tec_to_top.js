@@ -13,7 +13,7 @@ function scrollTest() {
 };
 
 function tec_to_top_init() {
-    document.body.innerHTML += '<img onMouseLeave="this.style.backgroundColor=\'rgba(0, 0, 0, 0)\';" onClick="tec_to_top_click();" style="border-radius: 100%; width: 60px; height: 60px; position: fixed; bottom: -100px; right: 35px; transition: all 0.2s ease; cursor: pointer;" id="tec-to-top" alt="To Top" src="https://tanks-encyclopedia.com/wp-content/uploads/2021/05/ToTopBlack.png" />';
+    document.body.innerHTML += '<img onMouseEnter="this.style.backgroundColor=\'#f6dd95\';" onMouseLeave="this.style.backgroundColor=\'rgba(0, 0, 0, 0)\';" onClick="tec_to_top_click();" style="border-radius: 100%; width: 60px; height: 60px; position: fixed; bottom: -100px; right: 35px; transition: all 0.2s ease; cursor: pointer;" id="tec-to-top" alt="To Top" src="https://tanks-encyclopedia.com/wp-content/uploads/2021/05/ToTopBlack.png" />';
 }
 
 function tec_to_top_click() {

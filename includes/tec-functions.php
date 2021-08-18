@@ -7,12 +7,19 @@
  * Routing Dark Mode Scripts
 ********************************************************************/
 if(get_option('tec_dark_mode') == 'on') {
-    add_action("wp_head", "tec_dark_mode_init", 11);
+    add_action("wp_head", "tec_dark_mode_create", 11);
+    add_action("wp_footer", "tec_dark_mode_init", 15);
 }
 
 if( !function_exists("tec_dark_mode_init") ) {
     function tec_dark_mode_init() {
-        wp_enqueue_script( 'tec-dark-mode-init', plugins_url('/js/tec_dark_mode_init.js', __FILE__), '', '1.4');
+        wp_enqueue_script( 'tec-dark-mode-init', plugins_url('/js/tec_dark_mode_init.js', __FILE__), '', '1.5');
+    }
+}
+
+if( !function_exists("tec_dark_mode_create") ) {
+    function tec_dark_mode_create() {
+        wp_enqueue_script("tec-dar-mode-create", plugins_url('/js/tec_dark_mode_create.js', __FILE__), '', '1.1');
     }
 }
 
@@ -127,6 +134,6 @@ if(get_option('tec_to_top') == 'on') {
 
 if( !function_exists("tec_to_top") ) {
     function tec_to_top() {
-        wp_enqueue_script( 'tec-to-top', plugins_url('/js/tec_to_top.js', __FILE__), '', '1.1');
+        wp_enqueue_script( 'tec-to-top', plugins_url('/js/tec_to_top.js', __FILE__), '', '1.2');
     }
 }
