@@ -7,7 +7,7 @@
  * Routing Dark Mode Scripts
 ********************************************************************/
 if(get_option('tec_dark_mode') == 'on') {
-    add_action("wp_head", "tec_dark_mode_init", 11);
+    add_action("wp_footer", "tec_dark_mode_init", 15);
 }
 
 if( !function_exists("tec_dark_mode_init") ) {
@@ -127,6 +127,6 @@ if(get_option('tec_to_top') == 'on') {
 
 if( !function_exists("tec_to_top") ) {
     function tec_to_top() {
-        wp_enqueue_script( 'tec-to-top', plugins_url('/js/tec_to_top.js', __FILE__), '', '1.0');
+        wp_enqueue_script( 'tec-to-top', plugins_url('/js/tec_to_top.js', __FILE__), '', '1.2');
     }
 }
