@@ -4,7 +4,7 @@ var tec_dark;
 
 //examines cookies to see if we have turned on dark mode in the past
 function initDarkMode() {
-    if(document.cookie.indexOf("cookielawinfo-checkbox-functional=yes") != -1) {
+    if(document.cookie.indexOf("cookielawinfo-checkbox-non-necessary=yes") != -1) {
         if(tec_dark == undefined) {
             tec_dark = 'false';
         }
@@ -432,7 +432,7 @@ function darkMode() {
             }
             
             tec_dark = 'true';
-            if(document.cookie.indexOf("cookielawinfo-checkbox-functional=yes") != -1)
+            if(document.cookie.indexOf("cookielawinfo-checkbox-non-necessary=yes") != -1)
                 document.cookie = 'DarkMode = true; Path=/;';
             //console.log("Cookie should be true");
         }
@@ -639,7 +639,7 @@ function darkMode() {
             }
             
             tec_dark = 'false';
-            if(document.cookie.indexOf("cookielawinfo-checkbox-functional=yes") != -1)
+            if(document.cookie.indexOf("cookielawinfo-checkbox-non-necessary=yes") != -1)
                 document.cookie = 'DarkMode = false; Path=/;';
             //console.log("Cookie should be false");
         }
