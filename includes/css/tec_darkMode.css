@@ -31,7 +31,7 @@ header.entry-header {
 }
 
 a {
-    color: var(--te-yellow);
+    color: var(--te-yellow) !important;
 }
 
 body {
@@ -173,6 +173,14 @@ article {
 
 nav.pagination-single.section-inner {
     background-color: var(--te-dgreen) !important;
+}
+
+span.title-inner {
+    color: var(--te-yellow);
+}
+
+table, tbody, tr, th, td {
+    color: white;
 }
 
 /*Comments Section*/
