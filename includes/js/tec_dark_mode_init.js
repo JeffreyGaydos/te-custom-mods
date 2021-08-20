@@ -4,19 +4,21 @@ var tec_dark;
 
 //examines cookies to see if we have turned on dark mode in the past
 function initDarkMode() {
-    if(tec_dark == undefined) {
-        tec_dark = 'false';
-    }
-    //document.cookie = 'DarkMode = true; Path=/;';
-    var cookieArray = document.cookie.split(';');
-    for(var i = 0; i < cookieArray.length; i++) {
-        var name = cookieArray[i].split('=')[0];
-        var value = cookieArray[i].split('=')[1];
-        //console.log("--==Called darkModeUnstable Loop==--\nname: " + name + " value: " + value + " dark is: " + this.dark);
-        if(name == ' DarkMode') {
-            if(value != tec_dark) {
-                document.cookie = name + ' = ' + value + '; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-                darkMode();
+    if(document.cookie.indexOf("cookielawinfo-checkbox-functional=yes") != -1) {
+        if(tec_dark == undefined) {
+            tec_dark = 'false';
+        }
+        //document.cookie = 'DarkMode = true; Path=/;';
+        var cookieArray = document.cookie.split(';');
+        for(var i = 0; i < cookieArray.length; i++) {
+            var name = cookieArray[i].split('=')[0];
+            var value = cookieArray[i].split('=')[1];
+            //console.log("--==Called darkModeUnstable Loop==--\nname: " + name + " value: " + value + " dark is: " + this.dark);
+            if(name == ' DarkMode') {
+                if(value != tec_dark) {
+                    document.cookie = name + ' = ' + value + '; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+                    darkMode();
+                }
             }
         }
     }
@@ -430,7 +432,8 @@ function darkMode() {
             }
             
             tec_dark = 'true';
-            document.cookie = 'DarkMode = true; Path=/;';
+            if(document.cookie.indexOf("cookielawinfo-checkbox-functional=yes") != -1)
+                document.cookie = 'DarkMode = true; Path=/;';
             //console.log("Cookie should be true");
         }
         catch(error) {
@@ -636,7 +639,8 @@ function darkMode() {
             }
             
             tec_dark = 'false';
-            document.cookie = 'DarkMode = false; Path=/;';
+            if(document.cookie.indexOf("cookielawinfo-checkbox-functional=yes") != -1)
+                document.cookie = 'DarkMode = false; Path=/;';
             //console.log("Cookie should be false");
         }
         catch(error) {
