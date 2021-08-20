@@ -19,7 +19,7 @@ if( !function_exists("tec_dark_mode_create") ) {
 
 if( !function_exists("tec_dark_mode_init") ) {
     function tec_dark_mode_init() {
-        wp_enqueue_script('tec-dark-mode-init', plugins_url('/js/tec_dm_init.js', __FILE__), '', '2.4');
+        wp_enqueue_script('tec-dark-mode-init', plugins_url('/js/tec_dm_init.js', __FILE__), '', '2.6');
     }
 }
 

@@ -183,6 +183,10 @@ table, tbody, tr, th, td {
     color: white;
 }
 
+.page-numbers.current {
+    color: var(--te-yellow);
+}
+
 /*Comments Section*/
 .comments-wrapper.section-inner {
     background-color: var(--te-dgreen) !important;

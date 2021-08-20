@@ -1,5 +1,5 @@
 var tec_darkMode_state = 'false';
-var tec_darkMode_element;
+var tec_darkMode_elements = [];
 
 function initDarkMode() {
     if(document.cookie.indexOf("cookielawinfo-checkbox-functional=yes") != -1) { //then user has allowed functional cookies
@@ -27,10 +27,18 @@ function tec_darkMode() {
     if(tec_darkMode_state == 'false') {
         var style = document.createElement("link");
         style.rel = "stylesheet";
-        style.href = "http://localhost/wordpress/wp-content/plugins/te-custom-mods/includes/css/tec_darkMode.css"
-        style.id = "tec_darKMode";
+        style.href = "http://localhost/wordpress/wp-content/plugins/te-custom-mods/includes/css/tec_darkMode.css";
+        style.id = "tec_darkMode";
         document.head.appendChild(style);
-        tec_darkMode_element = style;
+        tec_darkMode_elements[0] = style;
+        if(document.getElementsByClassName("archive-header").length > 0) {
+            var style2 = document.createElement("link");
+            style2.rel = "stylesheet";
+            style2.href = "http://localhost/wordpress/wp-content/plugins/te-custom-mods/includes/css/tec_darkMode_search.css";
+            style2.id = "tec_darkMode_search";
+            document.head.appendChild(style2);
+            tec_darkMode_elements[1] = style2;
+        }
         tec_darkMode_state = 'true';
         if(document.cookie.indexOf("cookielawinfo-checkbox-functional=yes") != -1)
             document.cookie = 'DarkMode = true; Path=/;';
@@ -38,8 +46,10 @@ function tec_darkMode() {
         document.getElementsByClassName("tec_dm_p")[0].innerHTML = "Light Mode";
         document.getElementsByClassName("tec_dm_p")[1].innerHTML = "Light Mode";
     } else {
-        if(tec_darkMode_element != undefined) {
-            tec_darkMode_element.remove();
+        for(var i = 0; i < tec_darkMode_elements.length; i++) {
+            if(tec_darkMode_elements[i] != undefined) {
+                tec_darkMode_elements[i].remove();
+            }
         }
         tec_darkMode_state = 'false';
         if(document.cookie.indexOf("cookielawinfo-checkbox-functional=yes") != -1)
