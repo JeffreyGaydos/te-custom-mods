@@ -39,6 +39,7 @@ function toggleIndex() {
 
 var indexVisible = false;
 
+//Adds should not be inside the index feature. Remove any that slip in
 function removeAds(item, index) {
 	try {
 		if(item.childElementCount > 2) {
@@ -48,6 +49,47 @@ function removeAds(item, index) {
 	} catch(e) {
 		//no adds found
 	}
+}
+
+function shouldIgnoreH2(h2element) {
+    return isH2ImgOnly(h2element) || isTitle(h2element);
+}
+
+function shouldIgnoreH3(h3element) {
+    return isH3ImgOnly(h3element) || isPromoH3(h3element);
+}
+
+function isH2ImgOnly(h2element) {
+    var allImgH2s = document.querySelectorAll("h2 img");
+    var res = false;
+    allImgH2s.forEach((el) => {
+        if(h2element == el.parentElement && h2element.innerText == "") {
+            res = true;
+        }
+    });
+    return res;
+}
+
+function isH3ImgOnly(h3element) {
+    var allImgH2s = document.querySelectorAll("h2 img");
+    var res = false;
+    allImgH2s.forEach((el) => {
+        if(h3element == el.parentElement && h3element.innerText == "") {
+            res = true;
+        }
+    });
+    return res;
+}
+
+function isTitle(h2element) {
+    return document.querySelector(".entry-content h2") == h2element && h2element.querySelectorAll("img").length > 0 && h2element.innerText.length > 0;
+}
+
+function isPromoH3(h3element) {
+    //title of book is not picked up by generator, so remove author, leave buy on amazon link
+    return h3element && h3element.innerText.indexOf('By Craig Moore') != -1;
+    //we want to promote our shirts as much as possible
+    return h3element && (h3element.innerHTML.indexOf('Tank-It') != -1 || h3element.innerHTML.indexOf('Support Shirt') != -1);
 }
 
 //inserts the table of contents dynamically into all articles
@@ -65,52 +107,71 @@ function generateIndex() {
 	}
     
     var h2TagsList = new Array();
-    //starts at 1 to skip the title h2 tag and the index box h2 tag
-    for(var i = 1; i < h2c.length; i++) {
-        h2TagsList.push(new tagSpot(h2c[i], h2c[i].getBoundingClientRect().top, 2));
+    
+    for(var i = 0; i < h2c.length; i++) {
+        if(!shouldIgnoreH2(h2c[i])) {
+            h2TagsList.push(new tagSpot(h2c[i], h2c[i].getBoundingClientRect().top, 2));
+        }
     }
 
     var h3TagsList = new Array();
     for(var j = 0; j < h3c.length; j++) {
-        h3TagsList.push(new tagSpot(h3c[j], h3c[j].getBoundingClientRect().top, 3));
+        if(!shouldIgnoreH3(h3c[i])) {
+            h3TagsList.push(new tagSpot(h3c[j], h3c[j].getBoundingClientRect().top, 3));
+        }
     }
 
     var fullIndex = h3TagsList.concat(h2TagsList);
     //sorts tha array of objects according to their "p" orioerty (position on the page in y)
     fullIndex.sort(function(a, b){return a.y - b.y});
     
-    //for old articles where the title is an H3 element. Removes that first H3 element from consideration, replacing it with the 1st h2 element (which is no longer the title)
-    //Assumes that the first H2 element is the highest up element in the article
-    if(h3c.length > 0 && h3c[0].innerHTML == fullIndex[0].t.innerHTML) {
-        fullIndex[0] = new tagSpot(h2c[0], h2c[0].getBoundingClientRect().top, 2);
-    }
     //render the box for the index
     var articleContent = document.getElementsByClassName("entry-content")[0].innerHTML;
-    var indexBox =  '<h2 id="indexBox"><div style="width: 100%; border: 0px solid #424732; text-align: left;" class="entry-content"><div style="width: 50%; border: 2px solid #424732; padding: 3px 3px 3px 3px; text-align: left; margin-left: 0px; min-width: calc(25% + 300px); font-size: 15pt;" class="entry-content" id="innerIndexBox"><a onclick="toggleIndex()" style="cursor: pointer; text-decoration: none;"><h2 style="margin-left: 5px; margin-bottom: 0px; margin-top: 0px; width: 98%;" id="indexContent">Contents:<span style="float: right; transform: rotate(-90deg);" id="indexDropdown"><img src="https://tanks-encyclopedia.com/wp-content/uploads/2020/06/DropdownBlack.png" id="indexIcon"></span></h2></a><ol style="margin-right: 0px; margin-left: 5%;">';
+    var indexBox =  '<h2 id="indexBox">'
+        + '<div style="width: 100%; border: 0px solid #424732; text-align: left;" class="entry-content">'
+            + '<div style="width: 50%; border: 2px solid #424732; padding: 3px 3px 3px 3px; text-align: left; margin-left: 0px; min-width: calc(25% + 300px); font-size: 15pt;" class="entry-content" id="innerIndexBox">'
+                + '<a onclick="toggleIndex()" style="cursor: pointer; text-decoration: none;">'
+                    + '<h2 style="margin-left: 5px; margin-bottom: 0px; margin-top: 0px; width: 98%;" id="indexContent">'
+                        + 'Contents:'
+                        + '<span style="float: right; transform: rotate(-90deg);" id="indexDropdown">'
+                            + '<img src="https://tanks-encyclopedia.com/wp-content/uploads/2020/06/DropdownBlack.png" id="indexIcon">'
+                        + '</span>'
+                    + '</h2>'
+                + '</a>'
+                + '<ol style="margin-right: 0px; margin-left: 5%;">';
     document.getElementsByClassName("entry-content")[0].innerHTML = articleContent;    
     if(indexVisible) {
         //document.getElementById("indexBox").getElementById("indexDropdown").style.transform = "rotate(90deg)";
         for(var k = 0; k < fullIndex.length; k++) {
             if(fullIndex[k].hVal() == 2) {
-                indexBox += indexH2(fullIndex[k].t.innerHTML, "index" + k);
-                //finding the in-page element so we can change its id to link to the index
-                var l = 0;
-                while(l < h2c.length && fullIndex[k].t.innerHTML != h2c[l].innerHTML) {
-                    //console.log("Linker finding tags...");
-                    l++;
+                if(!shouldIgnoreH2(fullIndex[k].t)) {
+                    indexBox += indexH2(fullIndex[k].t.innerText, "index" + k);
+                    //finding the in-page element so we can change its id to link to the index
+                    var l = 0;
+                    while(l < h2c.length && fullIndex[k].t.innerText != h2c[l].innerText) {
+                        //console.log("Linker finding tags...");
+                        l++;
+                    }
+                    //console.log("Linker Found: " + h2c[l].innerHTML);
+                    if(l < h2c.length) {
+                        h2c[l].id = "index" + k;
+                    }
                 }
-                //console.log("Linker Found: " + h2c[l].innerHTML);
-                h2c[l].id = "index" + k;
             } else {
-                indexBox += indexH3(fullIndex[k].t.innerHTML, "index" + k);
-                //finding the in-page element so we can change its id to link to the index
-                var l = 0;
-                while(l < h3c.length && fullIndex[k].t.innerHTML != h3c[l].innerHTML) {
-                    //console.log("Linker finding tags...");
-                    l++;
+                if(!shouldIgnoreH3(fullIndex[k].t)) {
+                    //check is so that first element looks good
+                    indexBox += k == 0 ? indexH2(fullIndex[k].t.innerText, "index" + k) : indexH3(fullIndex[k].t.innerText, "index" + k);
+                    //finding the in-page element so we can change its id to link to the index
+                    var l = 0;
+                    while(l < h3c.length && fullIndex[k].t.innerText != h3c[l].innerText) {
+                        //console.log("Linker finding tags...");
+                        l++;
+                    }
+                    //console.log("Linker Found: " + h3c[l].innerHTML);
+                    if(l < h3c.length) {
+                        h3c[l].id = "index" + k;
+                    }
                 }
-                //console.log("Linker Found: " + h3c[l].innerHTML);
-                h3c[l].id = "index" + k;
             }
         }
     }
