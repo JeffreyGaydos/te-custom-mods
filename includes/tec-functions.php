@@ -13,7 +13,7 @@ if(get_option('tec_dark_mode') == 'on') {
 
 if( !function_exists("tec_dark_mode_init") ) {
     function tec_dark_mode_init() {
-        wp_enqueue_script( 'tec-dark-mode-init', plugins_url('/js/tec_dark_mode_init.js', __FILE__), '', '1.6');
+        wp_enqueue_script( 'tec-dark-mode-init', plugins_url('/js/tec_dark_mode_init.js', __FILE__), '', '1.7');
     }
 }
 
@@ -94,7 +94,7 @@ if(get_option('tec_index') == 'on') {
 
 if(!function_exists("tec_index_generate")) {
     function tec_index_generate() {
-        wp_enqueue_script('tec-index-gen', plugins_url('/js/tec_index.js', __FILE__), '', '1.1');
+        wp_enqueue_script('tec-index-gen', plugins_url('/js/tec_index.js', __FILE__), '', '1.3');
     }
 }
 /********************************************************************
