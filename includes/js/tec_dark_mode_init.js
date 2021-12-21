@@ -4,10 +4,11 @@ var tec_dark;
 
 //examines cookies to see if we have turned on dark mode in the past
 function initDarkMode() {
+    if(tec_dark == undefined) { //must be outside of the cookie check
+        tec_dark = 'false';
+    }
+
     if(document.cookie.indexOf("cookielawinfo-checkbox-non-necessary=yes") != -1) {
-        if(tec_dark == undefined) {
-            tec_dark = 'false';
-        }
         //document.cookie = 'DarkMode = true; Path=/;';
         var cookieArray = document.cookie.split(';');
         for(var i = 0; i < cookieArray.length; i++) {
