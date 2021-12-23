@@ -6,6 +6,7 @@ Plugin Name: Tank Encyclopedia Custom Mods
 
 Author: Jeffrey Gaydos
 
+
 Version: 2.0.0
 
 
