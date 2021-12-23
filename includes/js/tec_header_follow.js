@@ -31,6 +31,7 @@ function headerFollow() {
     //fixes issue with the header not displaying over top of the slideshow arrows
     document.getElementsByTagName('header')[0].style.zIndex = '1000';
     document.getElementsByTagName('header')[1].style.zIndex = '1000';
+    document.querySelector('.menu-modal.cover-modal.header-footer-group').style.zIndex = '1001';
 }
 
 var scrollPx = 0;
