@@ -1,0 +1,7 @@
+article, main, .entry-header {
+    background-color: var(--te-black) !important;
+}
+
+body {
+    background-color: var(--te-black) !important;
+}

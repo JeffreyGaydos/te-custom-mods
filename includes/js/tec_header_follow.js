@@ -31,6 +31,7 @@ function headerFollow() {
     //fixes issue with the header not displaying over top of the slideshow arrows
     document.getElementsByTagName('header')[0].style.zIndex = '1000';
     document.getElementsByTagName('header')[1].style.zIndex = '1000';
+    document.querySelector('.menu-modal.cover-modal.header-footer-group').style.zIndex = '1001';
 }
 
 var scrollPx = 0;
@@ -82,7 +83,5 @@ function buttonMapMS() {
 
 //Maps the mobile menu button on the clone header to the menu button on the stationary header. Called by the clone header's buttons.
 function buttonMapMM() {
-    document.getElementsByClassName('toggle nav-toggle desktop-nav-toggle')[0].click();
-    var height = document.getElementsByClassName('header-inner section-inner')[0].clientHeight;
-    document.getElementsByClassName('menu-top')[0].style.paddingTop = height + 'px';
+    document.querySelector(".menu-modal.cover-modal.header-footer-group .menu-modal-inner.modal-inner").style.paddingLeft = '100px';
 }
