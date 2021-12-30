@@ -2,7 +2,7 @@ var tec_darkMode_state = 'false';
 var tec_darkMode_elements = [];
 
 function initDarkMode() {
-    if(document.cookie.indexOf("cookielawinfo-checkbox-functional=yes") != -1) { //then user has allowed functional cookies
+    if(document.cookie.indexOf(' cookielawinfo-checkbox-necessary=yes') != -1) { //then user has allowed functional cookies
         if(tec_darkMode_state == undefined) {
             tec_darkMode_state = 'false';
         }
@@ -40,7 +40,7 @@ function tec_darkMode() {
             tec_darkMode_elements[1] = style2;
         }
         tec_darkMode_state = 'true';
-        if(document.cookie.indexOf("cookielawinfo-checkbox-functional=yes") != -1)
+        if(document.cookie.indexOf(' cookielawinfo-checkbox-necessary=yes') != -1)
             document.cookie = 'DarkMode = true; Path=/;';
 
         document.getElementsByClassName("tec_dm_p")[0].innerHTML = "Light Mode";
@@ -52,7 +52,7 @@ function tec_darkMode() {
             }
         }
         tec_darkMode_state = 'false';
-        if(document.cookie.indexOf("cookielawinfo-checkbox-functional=yes") != -1)
+        if(document.cookie.indexOf(' cookielawinfo-checkbox-necessary=yes') != -1)
             document.cookie = 'DarkMode = false; Path=/;';
 
         document.getElementsByClassName("tec_dm_p")[0].innerHTML = "Dark Mode";
