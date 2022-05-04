@@ -60,7 +60,11 @@ function createGallery(g_num) {
 	galleryBody += "</div>";
 	//caption
 	galleryBody += '<p style="width: calc(90% - 4rem - 22px); text-align: center; border: 0px solid black; padding: 0px 0px; margin: 0px; margin-right: 0px; font-style: italic;" class="entry-content tec_g_caption" name="g_caption">';
-	galleryBody += CaptionArray[0];
+	if(CaptionArray[0] == undefined) {
+		galleryBody += 'No caption available.';
+	} else {
+		galleryBody += CaptionArray[0];
+	}
     galleryBody += '</p>';
 	//arrow right
 	galleryBody += '<div class="tec_g_arrow" style="flex-grow: 1; display: flex; justify-content: center; border: 2px solid black; padding: 4px; height: 30px; cursor: pointer;" onMouseOver="this.style.backgroundColor=\'#f6dd95\'" onMouseOut="this.style.backgroundColor=\'white\'" style="height: 22px; width: 62px; padding-right: 20px; padding-left: 20px; margin-top: 141px; margin-bottom: 141px; transform: rotate(-90deg); border: 2px solid black; cursor: pointer" onclick="next(';
@@ -90,7 +94,11 @@ function previous(g_num, fade) {
 			currentIndexes[g_num] = AllImagesArray[g_num].length - 1;
 		}
 		document.getElementsByName("tec_g_featured")[g_num].setAttribute("src", AllImagesArray[g_num][currentIndexes[g_num]]);
-		document.getElementsByName("g_caption")[g_num].innerHTML = AllCaptionsArray[g_num][currentIndexes[g_num]];
+		if(AllCaptionsArray[g_num][currentIndexes[g_num]]) {
+			document.getElementsByName("g_caption")[g_num].innerHTML = AllCaptionsArray[g_num][currentIndexes[g_num]];
+		} else {
+			document.getElementsByName("g_caption")[g_num].innerHTML = "No caption available.";
+		}
 		document.getElementsByName("tec_g_featured")[g_num].style.padding = "50px 0px";
 	}).fadeTo(500 * fade, 1);
 }
@@ -109,7 +117,11 @@ function next(g_num, fade) {
 	    currentIndexes[g_num] = 0;
     	}
 		document.getElementsByName("tec_g_featured")[g_num].setAttribute("src", AllImagesArray[g_num][currentIndexes[g_num]]);
-		document.getElementsByName("g_caption")[g_num].innerHTML = AllCaptionsArray[g_num][currentIndexes[g_num]];
+		if(AllCaptionsArray[g_num][currentIndexes[g_num]]) {
+			document.getElementsByName("g_caption")[g_num].innerHTML = AllCaptionsArray[g_num][currentIndexes[g_num]];
+		} else {
+			document.getElementsByName("g_caption")[g_num].innerHTML = "No caption available.";
+		}
 		document.getElementsByName("tec_g_featured")[g_num].style.padding = "50px 0px";
 	}).fadeTo(500 * fade, 1);
 }
