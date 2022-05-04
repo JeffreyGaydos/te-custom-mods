@@ -28,7 +28,7 @@ createGalleries();
 	Creates 1 gallery by storing the image sources and captions into global arrays and
 	adding the structure of the gallery.
 */
-function createGallery(g_num) {
+function createGallery(g_num, fig = false) {
 	var i = 0;
 	while(document.getElementsByClassName("tec-gallery")[g_num].getElementsByTagName("img").length > 0) {
 		//console.log("Found Image: " + document.getElementsByClassName("tec-gallery")[g_num].getElementsByTagName("img")[0].src);
@@ -37,20 +37,32 @@ function createGallery(g_num) {
 		document.getElementsByClassName("tec-gallery")[g_num].getElementsByTagName("img")[0].remove();
 	}
 	AllImagesArray.push(ImageArray);
-	while(document.getElementsByClassName("tec-gallery")[g_num].getElementsByTagName("em").length > 0) {
-		//console.log("Found Caption: " + document.getElementsByClassName("tec-gallery")[g_num].getElementsByTagName("em")[0].innerHTML);
-		CaptionArray.push(document.getElementsByClassName("tec-gallery")[g_num].getElementsByTagName("em")[0].innerHTML);
-		document.getElementsByClassName("tec-gallery")[g_num].getElementsByTagName("em")[0].remove();
+	if(document.getElementsByClassName("tec-gallery")[g_num].getAttribute("figure") == '') {
+		while(document.getElementsByClassName("tec-gallery")[g_num].getElementsByTagName("figcaption").length > 0) {
+			//console.log("Found Caption: " + document.getElementsByClassName("tec-gallery")[g_num].getElementsByTagName("em")[0].innerHTML);
+			CaptionArray.push(document.getElementsByClassName("tec-gallery")[g_num].getElementsByTagName("figcaption")[0].innerHTML);
+			document.getElementsByClassName("tec-gallery")[g_num].getElementsByTagName("figcaption")[0].remove();
+		}
+	} else {
+		while(document.getElementsByClassName("tec-gallery")[g_num].getElementsByTagName("em").length > 0) {
+			//console.log("Found Caption: " + document.getElementsByClassName("tec-gallery")[g_num].getElementsByTagName("em")[0].innerHTML);
+			CaptionArray.push(document.getElementsByClassName("tec-gallery")[g_num].getElementsByTagName("em")[0].innerHTML);
+			document.getElementsByClassName("tec-gallery")[g_num].getElementsByTagName("em")[0].remove();
+		}
 	}
 	AllCaptionsArray.push(CaptionArray);
 	var galleryBody = "";
 	
 	//border and featured image
-	galleryBody += '<div style="width: calc(90% - 4rem); border: 1px solid black; display: inline-block;" class="tec_g_border" name="g_border"><div style="display: flex; justify-content: center;"><img src="';
+	galleryBody += '<div style="width: 100%; border: 1px solid black; display: inline-block;" class="tec_g_border" name="g_border"><div style="display: flex; justify-content: center;"><img src="';
 	galleryBody += ImageArray[0];
-	galleryBody += '" style="height: 300px; padding: 50px 0px; display: inline-block;" name="tec_g_featured"></div></div>';
+	if(document.getElementsByClassName("tec-gallery")[g_num].getAttribute("tec-g-height") != null) {
+		galleryBody += '" style="height: ' + document.getElementsByClassName("tec-gallery")[g_num].getAttribute("tec-g-height") + 'px; padding: 50px 0px; display: inline-block;" name="tec_g_featured"></div></div>';
+	} else {
+		galleryBody += '" style="height: 300px; padding: 50px 0px; display: inline-block;" name="tec_g_featured"></div></div>';
+	}
 	
-	galleryBody += '<div style="display: flex; justify-content: center; width: calc(90% - 4rem);">';
+	galleryBody += '<div style="display: flex; justify-content: center; width: 100%;">';
 
 	//arrow left
 	galleryBody += '<div class="tec_g_arrow" style="flex-grow: 1; display: flex; justify-content: center; border: 2px solid black; padding: 4px; height: 30px; cursor: pointer;" onMouseOver="this.style.backgroundColor=\'#f6dd95\'" onMouseOut="this.style.backgroundColor=\'white\'" onclick="previous(';
