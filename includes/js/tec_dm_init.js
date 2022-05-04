@@ -91,12 +91,12 @@ function tec_to_top_dm() {
 
 function tec_gallery_dm() {
     if(tec_darkMode_state == 'false') {
-        arrow_list = document.getElementsByClassName("tec_g_arrow")
+        arrow_list = document.getElementsByClassName("tec_g_arrow_img")
         for(var i = 0; i < arrow_list.length; i++) {
             arrow_list[i].src = "https://tanks-encyclopedia.com/wp-content/uploads/2020/06/DropdownBlack.png";
         }
     } else {
-        arrow_list = document.getElementsByClassName("tec_g_arrow")
+        arrow_list = document.getElementsByClassName("tec_g_arrow_img")
         for(var i = 0; i < arrow_list.length; i++) {
             arrow_list[i].src = "https://tanks-encyclopedia.com/wp-content/uploads/2020/06/DropdownYellow.png";
         }

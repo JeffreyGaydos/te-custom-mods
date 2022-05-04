@@ -6,10 +6,22 @@
 	//standard mobile compatibility settings
 	if(window.matchMedia("(max-width: 985px)").matches) {
 		//middle ground mobile compatibility
-		document.getElementsByClassName('header-titles-wrapper')[0].style.width = "100%";
-		document.getElementsByClassName('header-titles')[0].style.paddingRight = "5%";
+		try {
+			document.getElementsByClassName('header-titles-wrapper')[0].style.width = "100%";
+			document.getElementsByClassName('header-titles')[0].style.paddingRight = "5%";
+		} catch(e) {
+			//ignore errors to ensure we continue to fix more elements
+		}
 		//document.getElementsByClassName('JeffsDarkModeButtonMobile')[0].style.minWidth = "90px";
 		//console.log('985px formatting active');
+		try {
+			var featured_imgs = document.getElementsByName("tec_g_featured");
+			for(var i = 0; i < featured_imgs.length; i++) {
+				featured_imgs[i].style.height = "200px";
+			}
+		} catch(e) {
+			//ignore errors
+		}
 	}
 	if(window.matchMedia("(max-width: 500px)").matches) {
 		
