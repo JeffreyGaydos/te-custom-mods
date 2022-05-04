@@ -309,16 +309,16 @@ h1 {
 
 /*gallery dark mode*/
 div.tec_g_arrow {
-    background-color: var(--te-black);
-    border-color: var(--te-yellow);
+    background-color: var(--te-black) !important;
+    border: 2px solid var(--te-yellow) !important;
 }
 
 div.tec_g_arrow:hover {
-    background-color: var(--te-beige2);
+    background-color: var(--te-beige2) !important;
 }
 
 div.tec_g_border {
-    border-color: var(--te-yellow);
+    border: 1px solid var(--te-yellow) !important;
 }
 
 p.tec_g_caption {
