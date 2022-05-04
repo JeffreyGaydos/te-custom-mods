@@ -8,12 +8,12 @@ var currentIndexes = new Array();
 
 /*
 	The main function for creating galleries. Call this and all images surrounded by div tags
-	with the class "gallery" will be turned into a simple gallery. Multiple galleriees per page
+	with the class "tec-gallery" will be turned into a simple gallery. Multiple galleriees per page
 	are supported. Uses javascript and JQuery.
 */
 function createGalleries() {
 	var g = 0;
-	while(g < document.getElementsByClassName("gallery").length) {
+	while(g < document.getElementsByClassName("tec-gallery").length) {
 		//must be first so that "maintainWidth" can find the proper index
 		currentIndexes.push(0);
 		paddingArray.push(new Array());
@@ -30,31 +30,32 @@ createGalleries();
 */
 function createGallery(g_num) {
 	var i = 0;
-	while(document.getElementsByClassName("gallery")[g_num].getElementsByTagName("img").length > 0) {
-		//console.log("Found Image: " + document.getElementsByClassName("gallery")[g_num].getElementsByTagName("img")[0].src);
-		ImageArray.push(document.getElementsByClassName("gallery")[g_num].getElementsByTagName("img")[0].src);
-		document.getElementsByClassName("gallery")[g_num].getElementsByTagName("img")[0].remove();
+	while(document.getElementsByClassName("tec-gallery")[g_num].getElementsByTagName("img").length > 0) {
+		//console.log("Found Image: " + document.getElementsByClassName("tec-gallery")[g_num].getElementsByTagName("img")[0].src);
+		var img = document.getElementsByClassName("tec-gallery")[g_num].getElementsByTagName("img")[0];
+		ImageArray.push(img.src);
+		document.getElementsByClassName("tec-gallery")[g_num].getElementsByTagName("img")[0].remove();
 	}
 	AllImagesArray.push(ImageArray);
-	while(document.getElementsByClassName("gallery")[g_num].getElementsByTagName("em").length > 0) {
-		//console.log("Found Caption: " + document.getElementsByClassName("gallery")[g_num].getElementsByTagName("em")[0].innerHTML);
-		CaptionArray.push(document.getElementsByClassName("gallery")[g_num].getElementsByTagName("em")[0].innerHTML);
-		document.getElementsByClassName("gallery")[g_num].getElementsByTagName("em")[0].remove();
+	while(document.getElementsByClassName("tec-gallery")[g_num].getElementsByTagName("em").length > 0) {
+		//console.log("Found Caption: " + document.getElementsByClassName("tec-gallery")[g_num].getElementsByTagName("em")[0].innerHTML);
+		CaptionArray.push(document.getElementsByClassName("tec-gallery")[g_num].getElementsByTagName("em")[0].innerHTML);
+		document.getElementsByClassName("tec-gallery")[g_num].getElementsByTagName("em")[0].remove();
 	}
 	AllCaptionsArray.push(CaptionArray);
     var galleryBody = '<img src="https://tanks-encyclopedia.com/wp-content/uploads/2020/06/DropdownBlack.png" onMouseOver="this.style.backgroundColor=\'#6e7653\'" onMouseOut="this.style.backgroundColor=\'white\'" style="height: 22px; width: 62px; padding-right: 20px; padding-left: 20px; margin-top: 141px; margin-bottom: 141px; transform: rotate(90deg); border: 2px solid black; cursor: pointer" onclick="previous('
 	galleryBody += g_num + ", 1";
-	galleryBody += ')" name="g_previous"><div style="border: 1px solid #6e7653; display: inline-block;" name="g_border"><img src="';
+	galleryBody += ')" class="tec_g_arrow" name="g_previous"><div style="width: calc(90% - 4rem); border: 1px solid #6e7653; display: inline-block;" class="tec_g_border" name="g_border"><div style="display: flex; justify-content: center;"><img src="';
 	galleryBody += ImageArray[0];
-	galleryBody += '" style="height: 300px; padding: 50px 0px; display: inline-block;" name="g_featured"></div><img src="https://tanks-encyclopedia.com/wp-content/uploads/2020/06/DropdownBlack.png" onMouseOver="this.style.backgroundColor=\'#6e7653\'" onMouseOut="this.style.backgroundColor=\'white\'" style="height: 22px; width: 62px; padding-right: 20px; padding-left: 20px; margin-top: 141px; margin-bottom: 141px; transform: rotate(-90deg); border: 2px solid black; cursor: pointer" onclick="next('
+	galleryBody += '" style="height: 300px; padding: 50px 0px; display: inline-block;" name="g_featured"></div></div><img src="https://tanks-encyclopedia.com/wp-content/uploads/2020/06/DropdownBlack.png" onMouseOver="this.style.backgroundColor=\'#6e7653\'" onMouseOut="this.style.backgroundColor=\'white\'" style="height: 22px; width: 62px; padding-right: 20px; padding-left: 20px; margin-top: 141px; margin-bottom: 141px; transform: rotate(-90deg); border: 2px solid black; cursor: pointer" onclick="next('
 	galleryBody += g_num + ", 1";
-	galleryBody += ')" name="g_next"></span><p style="text-align: center; border: 0px solid black; padding: 0px 0px; margin-left: 15%; margin-right: 15%; font-style: italic;" name="g_caption">';
+	galleryBody += ')" class="tec_g_arrow" name="g_next"></span><p style="text-align: center; border: 0px solid black; padding: 0px 0px; margin-left: 15%; margin-right: 15%; font-style: italic;" class="entry-content tec_g_caption" name="g_caption">';
 	galleryBody += CaptionArray[0];
     galleryBody += '</p>';
-	document.getElementsByClassName("gallery")[g_num].innerHTML = galleryBody;
+	document.getElementsByClassName("tec-gallery")[g_num].innerHTML = galleryBody;
 	ImageArray = new Array();
 	CaptionArray = new Array();
-	maintainWidth(g_num);
+	//maintainWidth(g_num, 0);
 	//fixes intermittent issue where the necessary padding is "forgetten" and it uses the previous image's padding (see function maintainWidth)
 	while(i < AllImagesArray[g_num].length) {
 	 	next(g_num, 0);
@@ -79,7 +80,6 @@ function previous(g_num, fade) {
 		document.getElementsByName("g_featured")[g_num].setAttribute("src", AllImagesArray[g_num][currentIndexes[g_num]]);
 		document.getElementsByName("g_caption")[g_num].innerHTML = AllCaptionsArray[g_num][currentIndexes[g_num]];
 		document.getElementsByName("g_featured")[g_num].style.padding = "50px 0px";
-		maintainWidth(g_num);
 	}).fadeTo(500 * fade, 1);
 }
 
@@ -99,43 +99,5 @@ function next(g_num, fade) {
 		document.getElementsByName("g_featured")[g_num].setAttribute("src", AllImagesArray[g_num][currentIndexes[g_num]]);
 		document.getElementsByName("g_caption")[g_num].innerHTML = AllCaptionsArray[g_num][currentIndexes[g_num]];
 		document.getElementsByName("g_featured")[g_num].style.padding = "50px 0px";
-		maintainWidth(g_num);
 	}).fadeTo(500 * fade, 1);
-}
-
-/*
-	Should be called every time an image changes. Ensures that the images are
-	scaled and centered without changing the size of the gallery structure itself
-*/
-function maintainWidth(g_num) {
-	var img = document.getElementsByName("g_featured")[g_num];
-	img.onload = waitForImageLoad(g_num);
-}
-				
-//A function called after an image has loaded fully, to get accurate padding
-function waitForImageLoad(g_num) {
-	var galleryWidth = document.getElementsByClassName("gallery")[g_num].clientWidth;
-	var imgWidth = document.getElementsByName("g_featured")[g_num].clientWidth;
-	//console.log("Image Width: " + imgWidth + " gallery Width: " + galleryWidth);
-	if(imgWidth < galleryWidth) {
-		//62 px for each side of the arrow. Minus border widths (2px each side), minus an extra 14px just in case images are sized slightly wrong
-		var newLRPadding = (galleryWidth - imgWidth - 124 - 16) / 2;
-		if(newLRPadding > 500) {
-			newLRPadding = 150;
-		}
-		if(newLRPadding + newLRPadding + imgWidth > galleryWidth) {
-			console.log("IMAGE AND PADDING WERE FOUND LARGE: " + (newLRPadding + newLRPadding + imgWidth));
-		}
-		//fixes intermitten issue where the necessary padding is "forgetten" and it uses the previous image's padding (see function load())
-		if(paddingArray[g_num].length < AllImagesArray[g_num].length) {
-			//only adds to this array once at the beginning
-			paddingArray[g_num].push(newLRPadding);
-			//console.log("Paddgin Array for gallery " + g_num + ": +" + newLRPadding);
-		}
-		document.getElementsByName("g_featured")[g_num].style.padding = "50px " + paddingArray[g_num][currentIndexes[g_num]] + "px";
-		//document.getElementsByName("g_border")[g_num].style.width = paddingArray[currentIndexes[g_num]] + paddingArray[currentIndexes[g_num]] + imgWidth;
-		document.getElementsByName("g_border")[g_num].style.width = document.getElementsByName("g_featured")[g_num].style.width;
-		//console.log("Tried to maintain width. UsedWidth: " + imgWidth + " vs " + document.getElementsByName("g_featured")[g_num].clientWidth);
-		//console.log("Padding Used: " + paddingArray[g_num][currentIndexes[g_num]]);
-	}
 }

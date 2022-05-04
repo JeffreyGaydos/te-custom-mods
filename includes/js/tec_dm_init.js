@@ -62,7 +62,12 @@ function tec_darkMode() {
         tec_index_dm();
     } catch(e) {
         //ignore errors, no contents index was generated
-    }    
+    }
+    try {
+        tec_gallery_dm();
+    } catch(e) {
+        //ignore errors, no galleries were found on this page
+    }
     tec_to_top_dm();
 }
 
@@ -81,5 +86,19 @@ function tec_to_top_dm() {
     } else {
         document.getElementById("tec-to-top").src = "https://tanks-encyclopedia.com/wp-content/uploads/2021/05/ToTopYellow.png";
         document.getElementById("tec-to-top").setAttribute("onmouseover", "this.style.backgroundColor='rgb(110, 118, 83)'");
+    }
+}
+
+function tec_gallery_dm() {
+    if(tec_darkMode_state == 'false') {
+        arrow_list = document.getElementsByClassName("tec_g_arrow")
+        for(var i = 0; i < arrow_list.length; i++) {
+            arrow_list[i].src = "https://tanks-encyclopedia.com/wp-content/uploads/2020/06/DropdownBlack.png";
+        }
+    } else {
+        arrow_list = document.getElementsByClassName("tec_g_arrow")
+        for(var i = 0; i < arrow_list.length; i++) {
+            arrow_list[i].src = "https://tanks-encyclopedia.com/wp-content/uploads/2020/06/DropdownYellow.png";
+        }
     }
 }
