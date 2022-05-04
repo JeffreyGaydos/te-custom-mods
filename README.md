@@ -6,7 +6,7 @@ Plugin Name: Tank Encyclopedia Custom Mods
 
 Author: Jeffrey Gaydos
 
-Version: 2.0.1
+Version: 2.0.2
 
 ## Description:
 A plugin created to organize the various functions of the old child theme, thereby removing the need for the child theme. Includes toggles in case any functions fail during udpates.
