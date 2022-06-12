@@ -27,7 +27,7 @@ function tec_darkMode() {
     if(tec_darkMode_state == 'false') {
         var style = document.createElement("link");
         style.rel = "stylesheet";
-        style.href = "/wp-content/plugins/te-custom-mods/includes/css/tec_darkMode.css?v4";
+        style.href = "/wp-content/plugins/te-custom-mods/includes/css/tec_darkMode.css?v5";
         style.id = "tec_darkMode";
         document.head.appendChild(style);
         tec_darkMode_elements[0] = style;

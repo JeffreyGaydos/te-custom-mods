@@ -331,6 +331,7 @@ p.tec_g_caption {
 
 .tec_g_pos_ind {
     border: 2px solid var(--te-yellow) !important;
+    background-color: var(--te-black) !important;
 }
 
 .tec_g_pos_ind_mobile > h4 {

@@ -65,9 +65,9 @@ function createGallery(g_num, fig = false) {
 	//position indicators
 	if(ImageArray[g_num].length * 35.5 < screen.width) {
 		galleryBody += '<div class="tec_g_pos_ind_desktop" style="display: flex; width: 100%; justify-content: center; padding-bottom: 5px;">';
-		galleryBody += '<div onclick="tec_g_jump(' + g_num + ', 1, ' + i + ');" class="tec_g_pos_ind current" onclick="" onmouseenter="this.classList.add(\'hovered\')" onmouseleave="this.classList.remove(\'hovered\')" style="cursor: pointer; flex-grow: 1; height: 15px; border: 1px solid black; margin: 5px; max-width: 50px; background-color: rgb(255, 255, 255);"></div>';
+		galleryBody += '<div onclick="tec_g_jump(' + g_num + ', 1, ' + i + ');" class="tec_g_pos_ind current" onclick="" onmouseenter="this.classList.add(\'hovered\')" onmouseleave="this.classList.remove(\'hovered\')" style="cursor: pointer; flex-grow: 1; height: 15px; border: 2px solid black; margin: 5px; max-width: 50px; background-color: rgb(255, 255, 255);"></div>';
 		for(var i = 1; i < ImageArray.length; i++) {
-			galleryBody += '<div onclick="tec_g_jump(' + g_num + ', 1, ' + i + ');" class="tec_g_pos_ind" onclick="" onmouseenter="this.classList.add(\'hovered\')" onmouseleave="this.classList.remove(\'hovered\')" style="cursor: pointer; flex-grow: 1; height: 15px; border: 1px solid black; margin: 5px; max-width: 50px; background-color: rgb(255, 255, 255);"></div>';
+			galleryBody += '<div onclick="tec_g_jump(' + g_num + ', 1, ' + i + ');" class="tec_g_pos_ind" onclick="" onmouseenter="this.classList.add(\'hovered\')" onmouseleave="this.classList.remove(\'hovered\')" style="cursor: pointer; flex-grow: 1; height: 15px; border: 2px solid black; margin: 5px; max-width: 50px; background-color: rgb(255, 255, 255);"></div>';
 		}
 		galleryBody += '</div>';
 	} else {
@@ -193,6 +193,6 @@ function tec_g_udpate_pos_ind(g_num, index) {
 		}
 		gallery.getElementsByClassName("tec_g_pos_ind")[index].classList.add("current");
 	} else {
-		document.getElementsByClassName("tec_g_pos_ind_mobile")[g_num].getElementsByTagName("h4")[0].innerHTML = (index + 1) + '/' + AllImagesArray[g_num].length;
+		gallery.getElementsByClassName("tec_g_pos_ind_mobile")[0].getElementsByTagName("h4")[0].innerHTML = (index + 1) + '/' + AllImagesArray[g_num].length;
 	}
 }
