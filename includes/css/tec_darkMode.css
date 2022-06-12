@@ -324,3 +324,15 @@ div.tec_g_border {
 p.tec_g_caption {
     color: white;
 }
+
+.tec_g_pos_ind.current .tec_g_pos_ind.hovered {
+    background-color: var(--te-beige) !important;
+}
+
+.tec_g_pos_ind {
+    border: 2px solid var(--te-yellow) !important;
+}
+
+.tec_g_pos_ind_mobile > h4 {
+    color: white;
+}
