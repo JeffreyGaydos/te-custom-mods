@@ -289,7 +289,7 @@ a.cli_settings_button {
     color: var(--te-yellow) !important;
 }
 
-div.cli-bar-message {
+div#cookie-law-info-bar > span {
     color: white !important;
 }
 
