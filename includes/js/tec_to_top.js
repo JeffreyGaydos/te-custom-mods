@@ -22,11 +22,15 @@ function tec_to_top_click() {
 
 function tec_to_top_activate() {
     document.getElementById("tec-to-top").style.bottom = "35px";
+	document.getElementsByClassName("tec-rand-link")[0].style.bottom = "50px";
+	document.getElementsByClassName("tec-rand-text")[0].style.bottom = "15px";
     tec_to_top_active = true;
 }
 
 function tec_to_top_deactivate() {
     document.getElementById("tec-to-top").style.bottom = "-100px";
+	document.getElementsByClassName("tec-rand-link")[0].style.bottom = "-100px";
+	document.getElementsByClassName("tec-rand-text")[0].style.bottom = "-100px";
     tec_to_top_active = false;
 }
 
