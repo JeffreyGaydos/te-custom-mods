@@ -1,0 +1,14 @@
+/*
+    This CSS should be "preminant" meaning that dark mode should not add
+    or remove this sheet.
+    
+    This sheet is specifically responsible for making the hover CSS of
+    the galleries.
+
+    Created version: 2.0.4
+    Injected By: tec_css_init.js
+*/
+
+.tec_g_pos_ind.current, .tec_g_pos_ind.hovered {
+	background-color: #f6dd95 !important;
+}

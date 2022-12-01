@@ -1,0 +1,99 @@
+/*
+    This CSS should be "preminant" meaning that dark mode should not add
+    or remove this sheet.
+    
+    This sheet is specifically responsible for making the header look
+    good when the screen width is very low:
+    - Breaks the slogan when necessary
+    - Shrinks donation buttons more and only removes them when necessary
+
+    Created version: 2.0.4
+    Injected By: tec_css_init.js
+*/
+.site-logo.faux-heading {
+	display: inline-block;
+}
+
+.site-description {
+	display: inline-block;
+	word-break: break-word;
+	min-width: 100px;
+}
+
+.header-titles .tec-donation {
+		position: relative;
+		top: 8px;
+}
+
+@media(max-width: 1550px) {
+	.site-description {
+		width: 10vh;
+	}
+	.header-navigation-wrapper {
+		width: 50%;	
+	}
+}
+
+@media(max-width: 1100px) {
+	.header-navigation-wrapper {
+		width: 45%;	
+	}
+}
+
+@media(max-width: 1000px) {
+	.site-description {
+		position: relative;
+		top: -15px;
+	}
+	
+	.header-titles .tec-donation {
+		position: relative;
+		top: -20px;
+	}
+}
+
+@media(max-width: 700px) {
+	.site-description {
+		display: none;
+	}
+	
+	.header-titles .tec-donation {
+		position: relative;
+		top: -5px;
+	}
+}
+
+@media(max-width: 440px) {
+	.header-titles .tec-donation img {
+		height: 30px !important;
+		width: auto !important;
+		position: relative !important;
+		top: -8px !important;
+		padding: 0px 2px 2px 10px !important;
+	}
+	
+	/* .header-titles .tec-donation {
+		
+	} */
+	
+	.tec_dm_div {
+		padding-left: 15px !important;
+		width: 6rem !important;
+	}
+	
+	.tec_dm_button {
+		width: 6rem !important;
+		padding-left: 0px !important;
+		padding-right: 0px !important;
+	}
+	
+	.tec_dm_button p {
+		font-size: 15px !important;
+	}
+}
+
+@media(max-width: 355px) {
+	.header-titles .tec-donation {
+		display: none;
+	}
+}

@@ -1,0 +1,13 @@
+/*
+    This CSS should be "preminant" meaning that dark mode should not add
+    or remove this sheet.
+    
+    This sheet is specifically responsible for:
+    - Ensuring that the cookie bar stays on-top of ads
+
+    Created version: 2.0.4
+    Injected By: tec_css_init.js
+*/
+#cookie-law-info-bar {
+	z-index: 2147483641 !important;
+}
