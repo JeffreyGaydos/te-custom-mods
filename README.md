@@ -4,7 +4,7 @@ A wordpress plugin that performs various customizations for the website https://
 
 Plugin Name: Tank Encyclopedia Custom Mods
 
-Author: Jeffrey Gaydos
+Author: Jeffrey Gaydos & Roshindow
 
 ## Description:
 A plugin created to organize the various functions of the old child theme, thereby removing the need for the child theme. Includes toggles in case any functions fail during udpates.
