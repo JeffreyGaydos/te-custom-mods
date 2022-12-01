@@ -68,7 +68,7 @@ if(get_option('tec_random_article') == 'on') {
 
 if( !function_exists("tec_random_article_init") ) {
     function tec_random_article_init() {
-        wp_enqueue_script( 'tec-random-article-init', plugins_url('/js/tec_random_article.js', __FILE__), '', '2.3');
+        wp_enqueue_script( 'tec-random-article-init', plugins_url('/js/tec_random_article.js', __FILE__), '', '2.4');
     }
 }
 
