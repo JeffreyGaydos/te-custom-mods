@@ -1,0 +1,84 @@
+/*Random Article Button Styling*/
+a.tec-rand-link {
+    cursor: pointer;
+    width: 40px !important;
+    height: 40px !important;
+    position: fixed;
+    bottom: 50px;
+    left: 20px;
+    background-color: rgba(55, 60, 42, 1);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+a.tec-rand-link > img {
+    padding: "0px 0px 0px 0px";
+}
+
+div.tec-rand-text {
+    text-align: center;
+    font-size: 12px;
+    position: fixed;
+    left: 12.5px;
+    bottom: 15px;
+    width: 55px;
+}
+
+div.tec-rand-text > p.wp-caption-text {
+    font-size: inherit;
+    margin: 0px;
+}
+
+/*To Top Button Styling*/
+img#tec-to-top {
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    bottom: -100px;
+    right: 35px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+/*Dark Mode Defaults*/
+.tec_dm_div {
+    width: 10rem;
+    padding-left: 5px;
+}
+
+.tec_dm_button {
+    background-color: #000;
+    border-radius: 5px;
+    height: 50px;
+    width: 9rem;
+    padding-top: 0.5rem;
+}
+
+.tec_dm_p {
+    color: #f6dd95;
+    display: block;
+    line-height: 1.2;
+    word-break: normal;
+    text-align: inherit;
+    font-size: 19px;
+    font-weight: 500;
+    letter-spacing: -0.0277em;
+    font-family: 'Allerta Stencil', sans-serif !important;
+    padding-top: 0px;
+    padding-right: 0rem;
+    text-transform: none;
+}
+
+/*Donation Styling*/
+.tec_donation_patreon > img {
+    width: 63px;
+    height: 45px;
+    padding: 0px 2px 2px 0px;
+}
+
+.tec_donation_paypal > img {
+    width: 49px;
+    height: 45px;
+    padding: 0px 2px 2px 0px;
+}
