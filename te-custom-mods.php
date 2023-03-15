@@ -66,6 +66,8 @@ if( !function_exists("tec_acp_page") ) {
             <input type="checkbox" name="tec_mobile" <?php tec_get_checked('tec_mobile') ?> >Mobile Compatability Modifications</input>
             <br><br>
             <input type="checkbox" name="tec_to_top" <?php tec_get_checked('tec_to_top') ?> >To Top Button</input>
+            <br><br>
+            <input type="checkbox" name="tec_video_embed" <?php tec_get_checked('tec_video_embed') ?> >Recent TE Videos Embedder</input>
             <?php
                 submit_button();
             ?>
