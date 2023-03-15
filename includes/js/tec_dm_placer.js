@@ -8,6 +8,7 @@ function createDarkModeButton() {
 
     let dmP = document.createElement("P");
     dmP.classList.add("tec_dm_p");
+    dmP.innerText = "Dark Mode";
     dmButton.appendChild(dmP);
     dmDiv.appendChild(dmButton);
 
