@@ -122,7 +122,7 @@ if(get_option('tec_mobile') == 'on') {
 
 if( !function_exists("tec_mobile_init") ) {
     function tec_mobile_init() {
-        wp_enqueue_script( 'tec-mobile-init', plugins_url('/js/tec_mobile_comp_init.js', __FILE__), '', '2.2');
+        wp_enqueue_script( 'tec-mobile-init', plugins_url('/js/tec_mobile_comp_init.js', __FILE__), '', '2.3');
     }
 }
 
