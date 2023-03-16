@@ -10,7 +10,7 @@ add_action("wp_head", "tec_init", 1);
 
 if( !function_exists("tec_init") ) {
     function tec_init() {
-        wp_enqueue_script( 'tec-init', plugins_url('/js/tec_init.js', __FILE__), '', '1.4');
+        wp_enqueue_script( 'tec-init', plugins_url('/js/tec_init.js', __FILE__), '', '1.9');
     }
 }
 
@@ -135,6 +135,19 @@ if(get_option('tec_to_top') == 'on') {
 
 if( !function_exists("tec_to_top") ) {
     function tec_to_top() {
-        wp_enqueue_script( 'tec-to-top', plugins_url('/js/tec_to_top.js', __FILE__), '', '2.10');
+        wp_enqueue_script( 'tec-to-top', plugins_url('/js/tec_to_top.js', __FILE__), '', '2.11');
+    }
+}
+
+/********************************************************************
+ * Routing Recent Video Embed
+ ********************************************************************/
+if(get_option('tec_video_embed') == 'on') {
+    add_action("wp_head", "tec_video_embed", 10); // we probably want this to go last...
+}
+
+if( !function_exists("tec_video_embed") ) {
+    function tec_video_embed() {
+        wp_enqueue_script( 'tec-video-embed', plugins_url('/js/tec_video_embed.js', __FILE__), '', '2.13');
     }
 }

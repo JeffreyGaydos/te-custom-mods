@@ -86,3 +86,50 @@ button:not(.toggle).tec_dm_button {
     height: 45px;
     padding: 0px 2px 2px 0px;
 }
+
+/*Video Embed Styling*/
+div.tec-video-embed {
+    position: fixed;
+    left: -5000px;
+}
+
+#ed4b9e7b-2701-4f2d-ba75-695d07041d7c div.tec-video-embed-header {
+    position: fixed;
+    z-index: 2147483647;
+    bottom: 290px;
+    right: 15px;
+    width: 350px;
+    padding: 5px 5px 10px 5px;
+    font-size: 13px;
+    font-family: 'Trebuchet MS';
+    letter-spacing: 0.2px;
+    background-color: #373c2a;
+    color: #f6dd95;
+}
+
+#ed4b9e7b-2701-4f2d-ba75-695d07041d7c div.tec-video-embed-header::after {
+    content: "Loading...";
+    position: fixed;
+    z-index: 2147483647;
+    bottom: 100px;
+    right: 15px;
+    width: 350px;
+    height: 190px;
+    background-color: #373c2a;
+    color: #f6dd95;
+    padding-left: 140px;
+    padding-top: 80px;
+}
+
+#ed4b9e7b-2701-4f2d-ba75-695d07041d7c a.tec-video-yt-link {
+    color: #f6dd95;
+}
+
+/*
+The video box uses this to position itself...
+position: fixed;
+z-index: 2147483647;
+bottom: 100px;
+right: 15px;
+width: 350px;
+*/
