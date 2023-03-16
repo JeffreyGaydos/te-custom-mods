@@ -27,14 +27,14 @@ function tec_darkMode() {
     if(tec_darkMode_state == 'false') {
         var style = document.createElement("link");
         style.rel = "stylesheet";
-        style.href = "/wp-content/plugins/te-custom-mods/includes/css/tec_darkMode.css?v6";
+        style.href = "http://localhost:8080/wp-content/plugins/te-custom-mods/includes/css/tec_darkMode.css?v6";
         style.id = "tec_darkMode";
         document.head.appendChild(style);
         tec_darkMode_elements[0] = style;
         if(document.getElementsByClassName("archive-header").length > 0) {
             var style2 = document.createElement("link");
             style2.rel = "stylesheet";
-            style2.href = "/wp-content/plugins/te-custom-mods/includes/css/tec_darkMode_search.css";
+            style2.href = "http://localhost:8080/wp-content/plugins/te-custom-mods/includes/css/tec_darkMode_search.css";
             style2.id = "tec_darkMode_search";
             document.head.appendChild(style2);
             tec_darkMode_elements[1] = style2;
