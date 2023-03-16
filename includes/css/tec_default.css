@@ -4,7 +4,7 @@ a.tec-rand-link {
     width: 40px !important;
     height: 40px !important;
     position: fixed;
-    bottom: 50px;
+    bottom: -100px;
     left: 20px;
     background-color: rgba(55, 60, 42, 1);
     padding: 5px;

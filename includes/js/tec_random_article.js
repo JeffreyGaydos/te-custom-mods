@@ -15,8 +15,10 @@ function randomArticleButton() {
     textDiv.classList.add("tec-rand-text");
     let textRandom = document.createElement("P");
     textRandom.classList.add("wp-caption-text");
+    textRandom.innerText = "RANDOM";
     let textArticle = document.createElement("P");
     textArticle.classList.add("wp-caption-text");
+    textArticle.innerText = "ARTICLE";
 
     button.appendChild(buttonImage);
     document.getElementsByClassName("header-titles-wrapper")[0].appendChild(button);
@@ -25,14 +27,20 @@ function randomArticleButton() {
     document.getElementsByClassName("header-titles-wrapper")[0].appendChild(textDiv);
   } catch (e) {
       //ignore errors as much as possible
+      console.error("Could not initialize andom Article Button");
   }
 }
 
+var tec_random_article_button_active = false;
+var tec_random_article_button_debounce = true;
+
 function tec_rand_scroll_test() {
-  if(window.pageYOffset > 500 && !tec_is_in_viewport(document.getElementsByClassName("footer-nav-widgets-wrapper header-footer-group")[0])) {
-      tec_rand_activate();
-  } else {
-      tec_rand_deactivate();
+  if(window.pageYOffset > 500 && !tec_is_in_viewport(document.getElementsByClassName("footer-nav-widgets-wrapper header-footer-group")[0]) && !tec_random_article_button_active) {
+    tec_rand_activate();
+    tec_random_article_button_active = true;
+  } else if((window.pageYOffset <= 500 || tec_is_in_viewport(document.getElementsByClassName("footer-nav-widgets-wrapper header-footer-group")[0])) && tec_random_article_button_active) {
+    tec_rand_deactivate();
+    tec_random_article_button_active = false;
   }
 }
 
