@@ -96,6 +96,8 @@ function generateIndex() {
     //these collections contain the position information for each HTML tag object
     var h2c = document.getElementsByClassName("entry-content")[0].getElementsByTagName("h2");
     var h3c = document.getElementsByClassName("entry-content")[0].getElementsByTagName("h3");
+
+    if(h2c.length + h3c.length == 0) return; //nothing to display...
 	
 	for(var k = 0; k < h2c.length; k++) {
 		removeAds(h2c[k], k);
