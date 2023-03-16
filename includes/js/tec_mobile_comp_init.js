@@ -42,7 +42,9 @@
 		var pTags = document.getElementsByTagName('p');
 		var k = 0;
 		while(pTags[k] != null) {
-			pTags[k].style.fontSize = "15px";
+			if(!pTags[k].parentElement?.classList.contains("tec-rand-text")) { //don't mess with Texas
+				pTags[k].style.fontSize = "15px";
+			}
 			k++;
 		}
 		
