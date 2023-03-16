@@ -20,7 +20,6 @@ function tec_to_top_init() {
     toTopImage.id = "tec-to-top";
     toTopImage.title = "To Top";
     toTopImage.src = "https://tanks-encyclopedia.com/wp-content/uploads/2021/05/ToTopBlack.png";
-    console.log("Hello got here");
     document.body.appendChild(toTopImage);
 }
 
