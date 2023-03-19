@@ -16,9 +16,13 @@ function tec_init_recent_videos_embed() {
   tec_header_yt_link.setAttribute("href", "https://www.youtube.com/@TanksEncyclopediaYT");
   tec_header_yt_link.innerText = "YouTube channel";
   tec_header_yt_link.classList.add("tec-video-yt-link");
+  var tec_loading_image = document.createElement("IMG");
+  tec_loading_image.src = "http://localhost:8080/wp-content/plugins/te-custom-mods/images/bullet_loading.gif";
   tec_header.innerText = "Check out the latest from our ";
   tec_header.appendChild(tec_header_yt_link);
+  tec_header.append("!");
   tec_div.appendChild(tec_header);
+  tec_header.appendChild(tec_loading_image);
   document.body.insertBefore(tec_div, document.body.children[0]); //TODO: This might need to go elsewhere, like at the beginning of the page content. Not sure on the styling of this embed
   tec_insert_recent_videos_embed(); 
   console.log(document.querySelector('#ed4b9e7b-2701-4f2d-ba75-695d07041d7c div.pbs__player.shown'));

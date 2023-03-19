@@ -20,7 +20,7 @@ div.tec-rand-text {
     font-size: 12px;
     position: fixed;
     left: 12.5px;
-    bottom: 15px;
+    bottom: -100px;
     width: 55px;
 }
 
@@ -93,9 +93,12 @@ div.tec-video-embed {
     left: -5000px;
 }
 
+#ed4b9e7b-2701-4f2d-ba75-695d07041d7c {
+    z-index: 100; /*required to get z-index to work on children*/
+}
+
 #ed4b9e7b-2701-4f2d-ba75-695d07041d7c div.tec-video-embed-header {
     position: fixed;
-    z-index: 2147483647;
     bottom: 290px;
     right: 15px;
     width: 350px;
@@ -107,7 +110,7 @@ div.tec-video-embed {
     color: #f6dd95;
 }
 
-#ed4b9e7b-2701-4f2d-ba75-695d07041d7c div.tec-video-embed-header::after {
+/*#ed4b9e7b-2701-4f2d-ba75-695d07041d7c div.tec-video-embed-header::after {
     content: "Loading...";
     position: fixed;
     z-index: 2147483647;
@@ -119,6 +122,16 @@ div.tec-video-embed {
     color: #f6dd95;
     padding-left: 140px;
     padding-top: 80px;
+}*/
+
+div.tec-video-embed-header img {
+    padding: 48.5px 125px;
+    position: fixed;
+    background-color: #373c2a;
+    right: 15px;
+    bottom: 100px;
+    width: 350px;
+    height: 197px;
 }
 
 #ed4b9e7b-2701-4f2d-ba75-695d07041d7c a.tec-video-yt-link {
