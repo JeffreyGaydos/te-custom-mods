@@ -97,6 +97,14 @@ div.tec-video-embed {
     z-index: 100; /*required to get z-index to work on children*/
 }
 
+.tec-video-embed-transition {
+    transition: all ease 0.5s;
+}
+
+.tec-video-embed-transition.out {
+    right: -350px !important;
+}
+
 #ed4b9e7b-2701-4f2d-ba75-695d07041d7c div.tec-video-embed-header {
     position: fixed;
     bottom: 290px;
@@ -110,19 +118,17 @@ div.tec-video-embed {
     color: #f6dd95;
 }
 
-/*#ed4b9e7b-2701-4f2d-ba75-695d07041d7c div.tec-video-embed-header::after {
-    content: "Loading...";
+#tec-video-embed-X {
     position: fixed;
-    z-index: 2147483647;
-    bottom: 100px;
-    right: 15px;
-    width: 350px;
-    height: 190px;
+    right: 17px;
+    z-index: 10000;
+    bottom: 300px;
     background-color: #373c2a;
     color: #f6dd95;
-    padding-left: 140px;
-    padding-top: 80px;
-}*/
+    font-size: 15px;
+    padding: 0px 3px;
+    cursor: pointer;
+}
 
 div.tec-video-embed-header img {
     padding: 48.5px 125px;
@@ -139,7 +145,7 @@ div.tec-video-embed-header img {
 }
 
 /*
-The video box uses this to position itself...
+The video box uses this to position itself automatically...
 position: fixed;
 z-index: 2147483647;
 bottom: 100px;
