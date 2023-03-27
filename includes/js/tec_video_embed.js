@@ -30,6 +30,14 @@ function tec_init_recent_videos_embed() {
   tec_X.innerText = "🗙";
   tec_X.addEventListener("click", () => tec_close_cancel_video_embed());
   document.body.appendChild(tec_X);
+  var tec_fullScreen = document.createElement("IMG");
+  tec_fullScreen.src = "http://localhost:8080/wp-content/plugins/te-custom-mods/images/FullscreenIcon.png";
+  tec_fullScreen.classList.add("tec-video-embed-transition");
+  tec_fullScreen.classList.add("out");
+  tec_fullScreen.classList.add("hidden");
+  tec_fullScreen.id = "tec-video-embed-fs";
+  document.body.appendChild(tec_fullScreen);
+  tec_fullscreen_mimic_embed(tec_fullScreen);
   tec_header.innerText = "Check out the latest from our ";
   tec_header.appendChild(tec_header_yt_link);
   tec_header.append("!");
@@ -44,6 +52,7 @@ function tec_init_recent_videos_embed() {
     tec_safe_remove_class(tec_header, "out");
     tec_safe_remove_class(tec_loading_image, "out");
     tec_safe_remove_class(tec_X, "out");
+    tec_safe_remove_class(tec_fullScreen, "out");
     tec_insert_recent_videos_embed(); // only load when player is visible
   }, tec_video_embed_delay_ms);
 }
@@ -61,6 +70,23 @@ function tec_close_cancel_video_embed() {
   if(main_embed) main_embed.remove();
   const main_x = document.querySelector("#tec-video-embed-X");
   if(main_x) main_x.remove();
+}
+
+function tec_fullscreen_mimic_embed(tec_el) {
+  document.body.addEventListener("mousemove", (e) => { //TODO: Use this childElement count to make a timeout that automatically cancels the video if your tracking prevented it or whatever
+    if(document.querySelector("#ed4b9e7b-2701-4f2d-ba75-695d07041d7c").childElementCount < 4) return; //at 4 children, the video has actually been inserted
+    const x_left = window.innerWidth - 367;
+    const x_right = window.innerWidth - 17;
+    const y_bottom = window.innerHeight - 100;
+    const y_top = window.innerHeight - 296.6;
+    if(e.clientX > x_left && e.pageX < x_right && e.clientY < y_bottom && e.clientY > y_top) {
+      tec_safe_remove_class(tec_el, "hidden");
+    } else if(!tec_el.classList.contains("hidden")) {
+      setTimeout(() => {
+        tec_el.classList.add("hidden");
+      }, 200);      
+    }
+  });
 }
 
 const tec_video_embed_delay_ms = 10000; //10 seconds

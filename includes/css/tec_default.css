@@ -130,6 +130,25 @@ div.tec-video-embed {
     cursor: pointer;
 }
 
+#tec-video-embed-fs {
+    position: fixed;
+    right: 17px;
+    z-index: 10000;
+    bottom: 106px;
+    font-size: 15px;
+    padding: 0px 3px;
+    cursor: pointer;
+    transition: all 0.15s linear !important;
+}
+
+#tec-video-embed-fs:hover {
+    scale: 110%;
+}
+
+#tec-video-embed-fs.hidden {
+    opacity: 0;
+}
+
 div.tec-video-embed-header img {
     padding: 48.5px 125px;
     position: fixed;
