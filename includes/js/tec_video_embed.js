@@ -12,49 +12,60 @@ function tec_init_recent_videos_embed() {
   tec_div.id = "ed4b9e7b-2701-4f2d-ba75-695d07041d7c";
   var tec_header = document.createElement("DIV");
   tec_header.classList.add("tec-video-embed-header");
-  tec_header.classList.add("tec-video-embed-transition");
-  tec_header.classList.add("out");
+  tec_header.classList.add("tec-video-embed-out");
   var tec_header_yt_link = document.createElement("A");
   tec_header_yt_link.setAttribute("href", "https://www.youtube.com/@TanksEncyclopediaYT");
   tec_header_yt_link.innerText = "YouTube channel";
   tec_header_yt_link.classList.add("tec-video-yt-link");
   tec_header_yt_link.setAttribute("target", "_blank");
-  var tec_loading_image = document.createElement("IMG");
-  tec_loading_image.src = "http://localhost:8080/wp-content/plugins/te-custom-mods/images/bullet_loading.gif";
-  tec_loading_image.classList.add("tec-video-embed-transition");
-  tec_loading_image.classList.add("out");
   var tec_X = document.createElement("DIV");
   tec_X.id = "tec-video-embed-X";
-  tec_X.classList.add("tec-video-embed-transition");
-  tec_X.classList.add("out");
+  tec_X.classList.add("tec-video-embed-out");
   tec_X.innerText = "🗙";
   tec_X.addEventListener("click", () => tec_close_cancel_video_embed());
   document.body.appendChild(tec_X);
   var tec_fullScreen = document.createElement("IMG");
   tec_fullScreen.src = "http://localhost:8080/wp-content/plugins/te-custom-mods/images/FullscreenIcon.png";
-  tec_fullScreen.classList.add("tec-video-embed-transition");
-  tec_fullScreen.classList.add("out");
+  tec_fullScreen.classList.add("tec-video-embed-out");
   tec_fullScreen.classList.add("hidden");
   tec_fullScreen.id = "tec-video-embed-fs";
   document.body.appendChild(tec_fullScreen);
-  tec_fullscreen_mimic_embed(tec_fullScreen);
   tec_header.innerText = "Check out the latest from our ";
   tec_header.appendChild(tec_header_yt_link);
   tec_header.append("!");
   tec_div.appendChild(tec_header);
-  tec_header.appendChild(tec_loading_image);
+  var tec_observer = new MutationObserver(() => {
+    if(document.querySelector("#ed4b9e7b-2701-4f2d-ba75-695d07041d7c").childElementCount >= 4) {
+      tec_video_embed_on_load(tec_header, tec_X, tec_fullScreen);
+    }
+  });
 
-  //This one is compeltely hidden so we automagically get the following player from the embed
-  //visible elements are styled as fixed
   document.body.insertBefore(tec_div, document.body.children[0]);
+  tec_observer.observe(tec_div, {childList: true});
+  
+  tec_insert_recent_videos_embed();
+}
+
+function tec_video_embed_on_load(tec_header, tec_X, tec_fullScreen) {
+  const video_player = document.querySelector("#ed4b9e7b-2701-4f2d-ba75-695d07041d7c").children[2];
+  video_player.addEventListener("mouseenter", () => tec_safe_remove_class(tec_fullScreen, "hidden"));
+  video_player.addEventListener("mouseleave", () => {
+    setTimeout(() => {
+      tec_fullScreen.classList.add("hidden");
+    }, 200);
+  });
+  
+  //slide in the video player
+  tec_safe_remove_class(tec_header, "tec-video-embed-out");
+  tec_safe_remove_class(tec_X, "tec-video-embed-out");
+  tec_safe_remove_class(tec_fullScreen, "tec-video-embed-out");
 
   setTimeout(() => {
-    tec_safe_remove_class(tec_header, "out");
-    tec_safe_remove_class(tec_loading_image, "out");
-    tec_safe_remove_class(tec_X, "out");
-    tec_safe_remove_class(tec_fullScreen, "out");
-    tec_insert_recent_videos_embed(); // only load when player is visible
-  }, tec_video_embed_delay_ms);
+    tec_header.classList.add("tec-video-embed-transition");
+    tec_X.classList.add("tec-video-embed-transition");
+    tec_header.classList.add("tec-video-embed-show");
+    tec_X.classList.add("tec-video-embed-show");
+  }, 1000);
 }
 
 function tec_safe_remove_class(node, _class) {
@@ -72,23 +83,23 @@ function tec_close_cancel_video_embed() {
   if(main_x) main_x.remove();
 }
 
-function tec_fullscreen_mimic_embed(tec_el) {
-  document.body.addEventListener("mousemove", (e) => { //TODO: Use this childElement count to make a timeout that automatically cancels the video if your tracking prevented it or whatever
-    if(document.querySelector("#ed4b9e7b-2701-4f2d-ba75-695d07041d7c").childElementCount < 4) return; //at 4 children, the video has actually been inserted
-    const x_left = window.innerWidth - 367;
-    const x_right = window.innerWidth - 17;
-    const y_bottom = window.innerHeight - 100;
-    const y_top = window.innerHeight - 296.6;
-    if(e.clientX > x_left && e.pageX < x_right && e.clientY < y_bottom && e.clientY > y_top) {
-      tec_safe_remove_class(tec_el, "hidden");
-    } else if(!tec_el.classList.contains("hidden")) {
-      setTimeout(() => {
-        tec_el.classList.add("hidden");
-      }, 200);      
-    }
-  });
-}
+// function tec_fullscreen_mimic_embed(tec_el) {
+//   document.body.addEventListener("mousemove", (e) => {
+//     if(document.querySelector("#ed4b9e7b-2701-4f2d-ba75-695d07041d7c").childElementCount < 4) return; //at 4 children, the video has actually been inserted
+//     const x_left = window.innerWidth - 367;
+//     const x_right = window.innerWidth - 17;
+//     const y_bottom = window.innerHeight - 100;
+//     const y_top = window.innerHeight - 296.6;
+//     if(e.clientX > x_left && e.pageX < x_right && e.clientY < y_bottom && e.clientY > y_top) {
+//       tec_safe_remove_class(tec_el, "hidden");
+//     } else if(!tec_el.classList.contains("hidden")) {
+//       setTimeout(() => {
+//         tec_el.classList.add("hidden");
+//       }, 200);
+//     }
+//   });
+// }
 
-const tec_video_embed_delay_ms = 10000; //10 seconds
+//const tec_video_embed_delay_ms = 10000; //10 seconds
 
 tec_init_recent_videos_embed(); //TODO: Only insert the video if the article does not already have a video (and yes, it needs to be only articles)

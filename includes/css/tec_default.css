@@ -101,13 +101,17 @@ div.tec-video-embed {
     transition: all ease 0.5s;
 }
 
-.tec-video-embed-transition.out {
+.tec-video-embed-out {
     right: -350px !important;
+}
+
+.tec-video-embed-show {
+    bottom: 290px !important;
 }
 
 #ed4b9e7b-2701-4f2d-ba75-695d07041d7c div.tec-video-embed-header {
     position: fixed;
-    bottom: 290px;
+    bottom: 267px;
     right: 15px;
     width: 350px;
     padding: 5px 5px 10px 5px;
@@ -121,13 +125,19 @@ div.tec-video-embed {
 #tec-video-embed-X {
     position: fixed;
     right: 17px;
-    z-index: 10000;
-    bottom: 300px;
-    background-color: #373c2a;
-    color: #f6dd95;
+    bottom: 276px;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgba(0, 0, 0, 0);
     font-size: 15px;
     padding: 0px 3px;
     cursor: pointer;
+}
+
+#tec-video-embed-X.tec-video-embed-show {
+    bottom: 300px !important;
+    color: #f6dd95;
+    background-color: #373c2a;
+    z-index: 10000;
 }
 
 #tec-video-embed-fs {
