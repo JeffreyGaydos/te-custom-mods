@@ -29,6 +29,20 @@ function tec_init_recent_videos_embed() {
   tec_fullScreen.classList.add("tec-video-embed-out");
   tec_fullScreen.classList.add("hidden");
   tec_fullScreen.id = "tec-video-embed-fs";
+  tec_fullScreen.addEventListener("mouseover", (event) => {
+    setTimeout(() => {
+      console.log("attempting to do hover event activation...");
+      document.querySelector("#ed4b9e7b-2701-4f2d-ba75-695d07041d7c .pbs__player.shown .exp-ui__wrapper").classList.add("exp-ui__state__hovered");
+      document.querySelector("#ed4b9e7b-2701-4f2d-ba75-695d07041d7c .pbs__player.shown .exp-ui__sound-button").classList.add("exp-ui__state__shown");
+      document.querySelector("#ed4b9e7b-2701-4f2d-ba75-695d07041d7c .pbs__player.shown .exp-ui__prev-button").classList.add("exp-ui__state__shown");
+      document.querySelector("#ed4b9e7b-2701-4f2d-ba75-695d07041d7c .pbs__player.shown .exp-ui__pause-button").classList.add("exp-ui__state__shown");
+      document.querySelector("#ed4b9e7b-2701-4f2d-ba75-695d07041d7c .pbs__player.shown .exp-ui__next-button").classList.add("exp-ui__state__shown");
+      tec_safe_remove_class(event.target, "hidden");
+    }, 200);
+  });
+  tec_fullScreen.addEventListener("onmouseexit", (event) => {
+    event.target.classList.add("hidden");
+  })
   document.body.appendChild(tec_fullScreen);
   tec_header.innerText = "Check out the latest from our ";
   tec_header.appendChild(tec_header_yt_link);
