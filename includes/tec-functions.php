@@ -148,6 +148,6 @@ if(get_option('tec_video_embed') == 'on') {
 
 if( !function_exists("tec_video_embed") ) {
     function tec_video_embed() {
-        wp_enqueue_script( 'tec-video-embed', plugins_url('/js/tec_video_embed.js', __FILE__), '', '2.75');
+        wp_enqueue_script( 'tec-video-embed', plugins_url('/js/tec_video_embed.js', __FILE__), '', '2.80');
     }
 }

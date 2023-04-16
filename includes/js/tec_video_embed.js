@@ -26,6 +26,7 @@ function tec_init_recent_videos_embed() {
   tec_X.innerText = "🗙";
   tec_X.addEventListener("click", () => tec_close_cancel_video_embed());
   document.body.appendChild(tec_X);
+  
   var tec_fullScreen = document.createElement("IMG");
   tec_fullScreen.src = "http://localhost:8080/wp-content/plugins/te-custom-mods/images/FullscreenIcon.png";
   tec_fullScreen.classList.add("tec-video-embed-out");
@@ -45,7 +46,6 @@ function tec_init_recent_videos_embed() {
     event.target.classList.add("hidden");
   })
   tec_fullScreen.addEventListener("click", () => {
-    console.log("fullscreen activated...");
     if(tec_video_embed_fs_active) {
       tec_deactivate_fullscreen();
     } else {
@@ -53,6 +53,7 @@ function tec_init_recent_videos_embed() {
     }
     tec_video_embed_fs_active = !tec_video_embed_fs_active;
   });
+
   document.body.appendChild(tec_fullScreen);
   tec_header.innerText = "Check out the latest from our ";
   tec_header.appendChild(tec_header_yt_link);
@@ -61,10 +62,27 @@ function tec_init_recent_videos_embed() {
   var tec_observer = new MutationObserver(() => {
     if(document.querySelector("#ed4b9e7b-2701-4f2d-ba75-695d07041d7c").childElementCount >= 4) {
       tec_video_embed_on_load(tec_header, tec_X, tec_fullScreen);
+
+      var tec_fullscreen_observer = new MutationObserver(() => {
+        if(!document.querySelector(".exp-ui__wrapper").classList.contains("exp-ui__state__hovered") && !tec_fullScreen.classList.contains("hidden")) {
+          tec_fullScreen.classList.add("hidden");
+        }
+        if(document.querySelector(".exp-ui__wrapper").classList.contains("exp-ui__state__hovered") && tec_fullScreen.classList.contains("hidden")) {
+          tec_safe_remove_class(tec_fullScreen, "hidden");
+        }
+      });
+
+      tec_fullscreen_observer.observe(document.querySelector(".exp-ui__wrapper"), { attributes: true } );
     }
   });
 
   document.body.appendChild(tec_div);
+  document.body.addEventListener("keypress", (event) => {
+    if(event.code == 'Escape') {
+      tec_deactivate_fullscreen();
+    }
+  });
+
   tec_observer.observe(tec_div, {childList: true});
   
   tec_insert_recent_videos_embed();
@@ -93,7 +111,7 @@ function tec_video_embed_on_load(tec_header, tec_X, tec_fullScreen) {
 }
 
 function tec_safe_remove_class(node, _class) {
-  if(node.classList.contains(_class)) node.classList.remove(_class);
+  if(node && node.classList.contains(_class)) node.classList.remove(_class);
 }
 
 function tec_activate_fullscreen() {
@@ -129,6 +147,8 @@ function tec_close_cancel_video_embed() {
   if(main_embed) main_embed.remove();
   const main_x = document.querySelector("#tec-video-embed-X");
   if(main_x) main_x.remove();
+
+  tec_deactivate_fullscreen(); //safe if not in fullscreen
 }
 
 // function tec_fullscreen_mimic_embed(tec_el) {
