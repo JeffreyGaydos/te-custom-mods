@@ -94,8 +94,12 @@ function isPromoH3(h3element) {
 //inserts the table of contents dynamically into all articles
 function generateIndex() {
     //these collections contain the position information for each HTML tag object
-    var h2c = document.getElementsByClassName("entry-content")[0].getElementsByTagName("h2");
-    var h3c = document.getElementsByClassName("entry-content")[0].getElementsByTagName("h3");
+    var h2c = [];
+    var h3c = [];
+    if(document.getElementsByClassName("entry-content")[0]) {
+        h2c = document.getElementsByClassName("entry-content")[0].getElementsByTagName("h2");
+        h3c = document.getElementsByClassName("entry-content")[0].getElementsByTagName("h3");
+    }
 
     if(h2c.length + h3c.length == 0) return; //nothing to display...
 	
