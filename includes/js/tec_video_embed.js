@@ -1,5 +1,8 @@
 var tec_video_embed_fs_active = false;
 
+var tec_video_embed_loaded = false;
+const tec_video_embed_timeout = 30000; //30 seconds
+
 function tec_insert_recent_videos_embed() {
   var tec_fjs = document.getElementsByTagName('script')[0];
   var tec_js = document.createElement('script');
@@ -9,6 +12,13 @@ function tec_insert_recent_videos_embed() {
 }
 
 function tec_init_recent_videos_embed() {
+  setTimeout(() => {
+    if(!tec_video_embed_loaded) {
+      console.log("timed out.");
+      tec_close_cancel_video_embed();
+    }
+  }, tec_video_embed_timeout);
+
   var tec_div = document.createElement("DIV");
   tec_div.classList.add("tec-video-embed");
   tec_div.id = "ed4b9e7b-2701-4f2d-ba75-695d07041d7c";
@@ -39,12 +49,8 @@ function tec_init_recent_videos_embed() {
       document.querySelector("#ed4b9e7b-2701-4f2d-ba75-695d07041d7c .pbs__player.shown .exp-ui__prev-button").classList.add("exp-ui__state__shown");
       document.querySelector("#ed4b9e7b-2701-4f2d-ba75-695d07041d7c .pbs__player.shown .exp-ui__pause-button").classList.add("exp-ui__state__shown");
       document.querySelector("#ed4b9e7b-2701-4f2d-ba75-695d07041d7c .pbs__player.shown .exp-ui__next-button").classList.add("exp-ui__state__shown");
-      tec_safe_remove_class(event.target, "hidden");
     }, 200);
   });
-  tec_fullScreen.addEventListener("onmouseexit", (event) => {
-    event.target.classList.add("hidden");
-  })
   tec_fullScreen.addEventListener("click", () => {
     if(tec_video_embed_fs_active) {
       tec_deactivate_fullscreen();
@@ -61,6 +67,7 @@ function tec_init_recent_videos_embed() {
   tec_div.appendChild(tec_header);
   var tec_observer = new MutationObserver(() => {
     if(document.querySelector("#ed4b9e7b-2701-4f2d-ba75-695d07041d7c").childElementCount >= 4) {
+      tec_video_embed_loaded = true;
       tec_video_embed_on_load(tec_header, tec_X, tec_fullScreen);
 
       var tec_fullscreen_observer = new MutationObserver(() => {
@@ -77,9 +84,9 @@ function tec_init_recent_videos_embed() {
   });
 
   document.body.appendChild(tec_div);
-  document.body.addEventListener("keypress", (event) => {
+  document.addEventListener("keydown", (event) => {
     if(event.code == 'Escape') {
-      tec_deactivate_fullscreen();
+      tec_fullScreen.click();
     }
   });
 

@@ -182,6 +182,7 @@ div.tec-video-embed-header img {
     width: 100% !important;
     bottom: 0px !important;
     height: calc(100% - 25px);
+    background: black;
 }
 
 .pbs__player.shown {
