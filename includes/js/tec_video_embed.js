@@ -1,3 +1,5 @@
+var tec_video_embed_fs_active = false;
+
 function tec_insert_recent_videos_embed() {
   var tec_fjs = document.getElementsByTagName('script')[0];
   var tec_js = document.createElement('script');
@@ -31,7 +33,6 @@ function tec_init_recent_videos_embed() {
   tec_fullScreen.id = "tec-video-embed-fs";
   tec_fullScreen.addEventListener("mouseover", (event) => {
     setTimeout(() => {
-      console.log("attempting to do hover event activation...");
       document.querySelector("#ed4b9e7b-2701-4f2d-ba75-695d07041d7c .pbs__player.shown .exp-ui__wrapper").classList.add("exp-ui__state__hovered");
       document.querySelector("#ed4b9e7b-2701-4f2d-ba75-695d07041d7c .pbs__player.shown .exp-ui__sound-button").classList.add("exp-ui__state__shown");
       document.querySelector("#ed4b9e7b-2701-4f2d-ba75-695d07041d7c .pbs__player.shown .exp-ui__prev-button").classList.add("exp-ui__state__shown");
@@ -43,6 +44,15 @@ function tec_init_recent_videos_embed() {
   tec_fullScreen.addEventListener("onmouseexit", (event) => {
     event.target.classList.add("hidden");
   })
+  tec_fullScreen.addEventListener("click", () => {
+    console.log("fullscreen activated...");
+    if(tec_video_embed_fs_active) {
+      tec_deactivate_fullscreen();
+    } else {
+      tec_activate_fullscreen();
+    }
+    tec_video_embed_fs_active = !tec_video_embed_fs_active;
+  });
   document.body.appendChild(tec_fullScreen);
   tec_header.innerText = "Check out the latest from our ";
   tec_header.appendChild(tec_header_yt_link);
@@ -54,7 +64,7 @@ function tec_init_recent_videos_embed() {
     }
   });
 
-  document.body.insertBefore(tec_div, document.body.children[0]);
+  document.body.appendChild(tec_div);
   tec_observer.observe(tec_div, {childList: true});
   
   tec_insert_recent_videos_embed();
@@ -84,6 +94,30 @@ function tec_video_embed_on_load(tec_header, tec_X, tec_fullScreen) {
 
 function tec_safe_remove_class(node, _class) {
   if(node.classList.contains(_class)) node.classList.remove(_class);
+}
+
+function tec_activate_fullscreen() {
+  document.querySelector("#ed4b9e7b-2701-4f2d-ba75-695d07041d7c .pbs__player.shown").classList.add("tec-video-embed-fs-active");
+  document.querySelector("#tec-video-embed-fs").classList.add("tec-video-embed-fs-active");
+  document.querySelector("#tec-video-embed-X").classList.add("tec-video-embed-fs-active");
+  document.querySelector(".tec-video-embed-header").classList.add("tec-video-embed-fs-active");
+  document.querySelectorAll("header").forEach(h => {
+    h.style.display = "none";
+  });
+  
+  //deliberately NOT removed on deactivation...
+  document.querySelector(".tec-video-embed-header").classList.add("tec-video-embed-transition-off");
+  document.querySelector("#tec-video-embed-X").classList.add("tec-video-embed-transition-off");
+}
+
+function tec_deactivate_fullscreen() {
+  tec_safe_remove_class(document.querySelector("#ed4b9e7b-2701-4f2d-ba75-695d07041d7c .pbs__player.shown"), "tec-video-embed-fs-active");
+  tec_safe_remove_class(document.querySelector("#tec-video-embed-fs"), "tec-video-embed-fs-active");
+  tec_safe_remove_class(document.querySelector("#tec-video-embed-X"), "tec-video-embed-fs-active");
+  tec_safe_remove_class(document.querySelector(".tec-video-embed-header"), "tec-video-embed-fs-active");
+  document.querySelectorAll("header").forEach(h => {
+    h.style.display = "";
+  });
 }
 
 function tec_close_cancel_video_embed() {

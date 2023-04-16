@@ -101,6 +101,10 @@ div.tec-video-embed {
     transition: all ease 0.5s;
 }
 
+.tec-video-embed-transition-off {
+    transition: none !important;
+}
+
 .tec-video-embed-out {
     right: -350px !important;
 }
@@ -173,6 +177,41 @@ div.tec-video-embed-header img {
     color: #f6dd95;
 }
 
+.pbs__player.shown.tec-video-embed-fs-active {
+    right: 0px !important;
+    width: 100% !important;
+    bottom: 0px !important;
+    height: calc(100% - 25px);
+}
+
+.pbs__player.shown {
+    transition: all 0.15s ease !important;
+}
+
+.pbs__player.shown.tec-video-embed-fs-active .pb-stream {
+    max-height: 100% !important;
+    max-width: 100% !important;
+}
+
+#tec-video-embed-fs.tec-video-embed-fs-active {
+    bottom: 5px;
+    right: 8px;
+}
+
+.tec-video-embed-header.tec-video-embed-fs-active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 25px;
+    z-index: 10000;
+}
+
+#tec-video-embed-X.tec-video-embed-fs-active {
+    top: 2px !important;
+    right: 5px !important;
+    height: 18px !important;
+}
 /*
 The video box uses this to position itself automatically...
 position: fixed;
