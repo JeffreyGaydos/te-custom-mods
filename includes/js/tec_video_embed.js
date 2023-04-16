@@ -158,23 +158,4 @@ function tec_close_cancel_video_embed() {
   tec_deactivate_fullscreen(); //safe if not in fullscreen
 }
 
-// function tec_fullscreen_mimic_embed(tec_el) {
-//   document.body.addEventListener("mousemove", (e) => {
-//     if(document.querySelector("#ed4b9e7b-2701-4f2d-ba75-695d07041d7c").childElementCount < 4) return; //at 4 children, the video has actually been inserted
-//     const x_left = window.innerWidth - 367;
-//     const x_right = window.innerWidth - 17;
-//     const y_bottom = window.innerHeight - 100;
-//     const y_top = window.innerHeight - 296.6;
-//     if(e.clientX > x_left && e.pageX < x_right && e.clientY < y_bottom && e.clientY > y_top) {
-//       tec_safe_remove_class(tec_el, "hidden");
-//     } else if(!tec_el.classList.contains("hidden")) {
-//       setTimeout(() => {
-//         tec_el.classList.add("hidden");
-//       }, 200);
-//     }
-//   });
-// }
-
-//const tec_video_embed_delay_ms = 10000; //10 seconds
-
 tec_init_recent_videos_embed(); //TODO: Only insert the video if the article does not already have a video (and yes, it needs to be only articles)

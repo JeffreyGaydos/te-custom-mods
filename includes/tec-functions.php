@@ -95,7 +95,7 @@ if(get_option('tec_index') == 'on') {
 
 if(!function_exists("tec_index_generate")) {
     function tec_index_generate() {
-        wp_enqueue_script('tec-index-gen', plugins_url('/js/tec_index.js', __FILE__), '', '2.1');
+        wp_enqueue_script('tec-index-gen', plugins_url('/js/tec_index.js', __FILE__), '', '2.2');
     }
 }
 /********************************************************************
@@ -148,6 +148,8 @@ if(get_option('tec_video_embed') == 'on') {
 
 if( !function_exists("tec_video_embed") ) {
     function tec_video_embed() {
-        wp_enqueue_script( 'tec-video-embed', plugins_url('/js/tec_video_embed.js', __FILE__), '', '2.85');
+        if(is_single() && !is_category("has-own-video")) {
+            wp_enqueue_script( 'tec-video-embed', plugins_url('/js/tec_video_embed.js', __FILE__), '', '2.85');
+        }
     }
 }
