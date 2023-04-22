@@ -32,7 +32,6 @@ function randomArticleButton() {
 }
 
 var tec_random_article_button_active = false;
-var tec_random_article_button_debounce = true;
 
 function tec_rand_scroll_test() {
   if(window.pageYOffset > 500 && !tec_is_in_viewport(document.getElementsByClassName("footer-nav-widgets-wrapper header-footer-group")[0]) && !tec_random_article_button_active) {
@@ -47,16 +46,12 @@ function tec_rand_scroll_test() {
 function tec_rand_activate() {  
   document.getElementsByClassName("tec-rand-link")[0].style.bottom = "50px";
   document.getElementsByClassName("tec-rand-text")[0].style.bottom = "15px";
-  tec_rand_active = true;
 }
 
 function tec_rand_deactivate() {
   document.getElementsByClassName("tec-rand-link")[0].style.bottom = "-100px";
   document.getElementsByClassName("tec-rand-text")[0].style.bottom = "-100px";
-  tec_rand_active = false;
 }
-
-var tec_rand_active = false;
 
 randomArticleButton();
 
