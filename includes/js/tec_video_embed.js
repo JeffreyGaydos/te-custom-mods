@@ -38,7 +38,7 @@ function tec_init_recent_videos_embed() {
   document.body.appendChild(tec_X);
   
   var tec_fullScreen = document.createElement("IMG");
-  tec_fullScreen.src = "http://localhost:8080/wp-content/plugins/te-custom-mods/images/FullscreenIcon.png";
+  tec_fullScreen.src = "/wp-content/plugins/te-custom-mods/images/FullscreenIcon.png";
   tec_fullScreen.classList.add("tec-video-embed-out");
   tec_fullScreen.classList.add("hidden");
   tec_fullScreen.id = "tec-video-embed-fs";
