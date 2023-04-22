@@ -57,7 +57,7 @@ if( !function_exists("tec_acp_page") ) {
             <br><br>
             <input type="checkbox" name="tec_random_article" <?php tec_get_checked('tec_random_article') ?> >Random Article Button (Deactivate "Redirect URL to Post" plugin as well if deactivating)</input>
             <br><br>
-            <input type="checkbox" name="tec_discord" <?php tec_get_checked('tec_discord') ?> >Discord Button</input>
+            <input type="checkbox" name="tec_discord" <?php tec_get_checked('tec_discord') ?> >Discord Button (DEPRECATED)</input>
             <br><br>
             <input type="checkbox" name="tec_index" <?php tec_get_checked('tec_index') ?> >Article Contents Generator</input>
             <br><br>
