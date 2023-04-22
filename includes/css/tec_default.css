@@ -208,6 +208,10 @@ div.tec-video-embed-header img {
     z-index: 10000;
 }
 
+.tec-video-embed-fs-active > .pb-stream {
+    height: 100% !important;
+}
+
 #tec-video-embed-X.tec-video-embed-fs-active {
     top: 2px !important;
     right: 5px !important;
