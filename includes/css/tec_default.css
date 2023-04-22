@@ -221,3 +221,98 @@ bottom: 100px;
 right: 15px;
 width: 350px;
 */
+
+/*Ripped from "Additional CSS". Just the plugin specific stuff. Keep in mind that anything originally on the site will still be contained in the additional.css file*/
+.site-logo.faux-heading {
+	display: inline-block;
+}
+
+.site-description {
+	display: inline-block;
+	word-break: break-word;
+	min-width: 100px;
+}
+
+.header-titles .tec-donation {
+		position: relative;
+		top: 8px;
+}
+
+@media(max-width: 1550px) {
+	.site-description {
+		width: 10vh;
+	}
+	.header-navigation-wrapper {
+		width: 50%;	
+	}
+}
+
+@media(max-width: 1100px) {
+	.header-navigation-wrapper {
+		width: 45%;	
+	}
+}
+
+@media(max-width: 1000px) {
+	.site-description {
+		position: relative;
+		top: -15px;
+	}
+	
+	.header-titles .tec-donation {
+		position: relative;
+		top: -20px;
+	}
+}
+
+@media(max-width: 700px) {
+	.site-description {
+		display: none;
+	}
+	
+	.header-titles .tec-donation {
+		position: relative;
+		top: -5px;
+	}
+}
+
+@media(max-width: 440px) {
+	.header-titles .tec-donation img {
+		height: 30px !important;
+		width: auto !important;
+		position: relative !important;
+		top: -8px !important;
+		padding: 0px 2px 2px 10px !important;
+	}
+	
+	.tec_dm_div {
+		padding-left: 15px !important;
+		width: 6rem !important;
+	}
+	
+	.tec_dm_button {
+		width: 6rem !important;
+		padding-left: 0px !important;
+		padding-right: 0px !important;
+	}
+	
+	.tec_dm_button p {
+		font-size: 15px !important;
+	}
+}
+
+@media(max-width: 355px) {
+	.header-titles .tec-donation {
+		display: none;
+	}
+}
+
+/*Gallery Styling*/
+.tec_g_pos_ind.current, .tec_g_pos_ind.hovered {
+	background-color: #f6dd95 !important;
+}
+
+/*Additional Misc. Styling*/
+#cookie-law-info-bar {
+	z-index: 2147483641 !important;
+}
