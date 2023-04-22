@@ -158,4 +158,4 @@ function tec_close_cancel_video_embed() {
   tec_deactivate_fullscreen(); //safe if not in fullscreen
 }
 
-tec_init_recent_videos_embed(); //TODO: Only insert the video if the article does not already have a video (and yes, it needs to be only articles)
+tec_init_recent_videos_embed();
