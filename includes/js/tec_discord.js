@@ -1,5 +1,9 @@
 /*
  * Creates a Discord link to join the community channel bellow the normal social media links
+ *
+ * DEPRECATED: The plugin this depends on is no longer in use, and this has not recieved
+ * updates to safely set innerHTML
+ *      However, this may come back, leaving here for now
  */
 function discordButton() {
     try {
@@ -12,4 +16,4 @@ function discordButton() {
     }
 }
 
-discordButton();
+//discordButton();
