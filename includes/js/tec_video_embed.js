@@ -158,6 +158,6 @@ function tec_close_cancel_video_embed() {
   tec_deactivate_fullscreen(); //safe if not in fullscreen
 }
 
-if(window.innerWidth >= 400) { //mobile is not yet supported (and likely won't be for performance reasons)
+if(window.innerWidth >= 400 && !navigator.userAgentData.mobile) { //screens under 400px are just too small, mobile devices need custom styling
   tec_init_recent_videos_embed();
 }
