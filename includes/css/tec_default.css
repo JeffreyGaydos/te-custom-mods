@@ -1,0 +1,322 @@
+/*Random Article Button Styling*/
+a.tec-rand-link {
+    cursor: pointer;
+    width: 40px !important;
+    height: 40px !important;
+    position: fixed;
+    bottom: -100px;
+    left: 20px;
+    background-color: rgba(55, 60, 42, 1);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+a.tec-rand-link > img {
+    padding: "0px 0px 0px 0px";
+}
+
+div.tec-rand-text {
+    text-align: center;
+    font-size: 12px;
+    position: fixed;
+    left: 12.5px;
+    bottom: -100px;
+    width: 55px;
+}
+
+div.tec-rand-text > p.wp-caption-text {
+    font-size: inherit;
+    margin: 0px;
+}
+
+/*To Top Button Styling*/
+img#tec-to-top {
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    bottom: -100px;
+    right: 35px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+/*Dark Mode Defaults*/
+.tec_dm_div {
+    width: 10rem;
+    padding-left: 5px;
+}
+
+.tec_dm_button {
+    border-radius: 5px;
+    height: 50px;
+    width: 9rem;
+    padding-top: 0.5rem;
+}
+
+/*Needs to be more specific to override WP*/
+button:not(.toggle).tec_dm_button {
+    background-color: #000;
+}
+
+.tec_dm_p {
+    color: #f6dd95;
+    display: block;
+    line-height: 1.2;
+    word-break: normal;
+    text-align: inherit;
+    font-size: 19px;
+    font-weight: 500;
+    letter-spacing: -0.0277em;
+    font-family: 'Allerta Stencil', sans-serif !important;
+    padding-top: 0px;
+    padding-right: 0rem;
+    text-transform: none;
+}
+
+/*Donation Styling*/
+.tec_donation_patreon > img {
+    width: 63px;
+    height: 45px;
+    padding: 0px 2px 2px 0px;
+}
+
+.tec_donation_paypal > img {
+    width: 49px;
+    height: 45px;
+    padding: 0px 2px 2px 0px;
+}
+
+/*Video Embed Styling*/
+div.tec-video-embed {
+    position: fixed;
+    left: -5000px;
+}
+
+#ed4b9e7b-2701-4f2d-ba75-695d07041d7c {
+    z-index: 100; /*required to get z-index to work on children*/
+}
+
+.tec-video-embed-transition {
+    transition: all ease 0.5s;
+}
+
+.tec-video-embed-transition-off {
+    transition: none !important;
+}
+
+.tec-video-embed-out {
+    right: -350px !important;
+}
+
+.tec-video-embed-show {
+    bottom: 290px !important;
+}
+
+#ed4b9e7b-2701-4f2d-ba75-695d07041d7c div.tec-video-embed-header {
+    position: fixed;
+    bottom: 267px;
+    right: 15px;
+    width: 350px;
+    padding: 5px 5px 10px 5px;
+    font-size: 13px;
+    font-family: 'Trebuchet MS';
+    letter-spacing: 0.2px;
+    background-color: #373c2a;
+    color: #f6dd95;
+}
+
+#tec-video-embed-X {
+    position: fixed;
+    right: 17px;
+    bottom: 276px;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgba(0, 0, 0, 0);
+    font-size: 15px;
+    padding: 0px 3px;
+    cursor: pointer;
+}
+
+#tec-video-embed-X.tec-video-embed-show {
+    bottom: 300px !important;
+    color: #f6dd95;
+    background-color: #373c2a;
+    z-index: 10000;
+}
+
+#tec-video-embed-fs {
+    position: fixed;
+    right: 17px;
+    z-index: 10000;
+    bottom: 106px;
+    font-size: 15px;
+    padding: 0px 3px;
+    cursor: pointer;
+    transition: all 0.15s linear !important;
+}
+
+#tec-video-embed-fs:hover {
+    scale: 110%;
+}
+
+#tec-video-embed-fs.hidden {
+    opacity: 0;
+}
+
+div.tec-video-embed-header img {
+    padding: 48.5px 125px;
+    position: fixed;
+    background-color: #373c2a;
+    right: 15px;
+    bottom: 100px;
+    width: 350px;
+    height: 197px;
+}
+
+#ed4b9e7b-2701-4f2d-ba75-695d07041d7c a.tec-video-yt-link {
+    color: #f6dd95;
+}
+
+.pbs__player.shown.tec-video-embed-fs-active {
+    right: 0px !important;
+    width: 100% !important;
+    bottom: 0px !important;
+    height: calc(100% - 25px);
+    background: black;
+}
+
+.pbs__player.shown {
+    transition: all 0.15s ease !important;
+}
+
+.pbs__player.shown.tec-video-embed-fs-active .pb-stream {
+    max-height: 100% !important;
+    max-width: 100% !important;
+}
+
+#tec-video-embed-fs.tec-video-embed-fs-active {
+    bottom: 5px;
+    right: 8px;
+}
+
+.tec-video-embed-header.tec-video-embed-fs-active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 25px;
+    z-index: 10000;
+}
+
+.tec-video-embed-fs-active > .pb-stream {
+    height: 100% !important;
+}
+
+#tec-video-embed-X.tec-video-embed-fs-active {
+    top: 2px !important;
+    right: 0px !important;
+    height: 18px !important;
+}
+/*
+The video box uses this to position itself automatically...
+position: fixed;
+z-index: 2147483647;
+bottom: 100px;
+right: 15px;
+width: 350px;
+*/
+
+/*Ripped from "Additional CSS". Just the plugin specific stuff. Keep in mind that anything originally on the site will still be contained in the additional.css file*/
+.site-logo.faux-heading {
+	display: inline-block;
+}
+
+.site-description {
+	display: inline-block;
+	word-break: break-word;
+	min-width: 100px;
+}
+
+.header-titles .tec-donation {
+		position: relative;
+		top: 8px;
+}
+
+@media(max-width: 1550px) {
+	.site-description {
+		width: 10vh;
+	}
+	.header-navigation-wrapper {
+		width: 50%;	
+	}
+}
+
+@media(max-width: 1100px) {
+	.header-navigation-wrapper {
+		width: 45%;	
+	}
+}
+
+@media(max-width: 1000px) {
+	.site-description {
+		position: relative;
+		top: -15px;
+	}
+	
+	.header-titles .tec-donation {
+		position: relative;
+		top: -20px;
+	}
+}
+
+@media(max-width: 700px) {
+	.site-description {
+		display: none;
+	}
+	
+	.header-titles .tec-donation {
+		position: relative;
+		top: -5px;
+	}
+}
+
+@media(max-width: 440px) {
+	.header-titles .tec-donation img {
+		height: 30px !important;
+		width: auto !important;
+		position: relative !important;
+		top: -8px !important;
+		padding: 0px 2px 2px 10px !important;
+	}
+	
+	.tec_dm_div {
+		padding-left: 15px !important;
+		width: 6rem !important;
+	}
+	
+	.tec_dm_button {
+		width: 6rem !important;
+		padding-left: 0px !important;
+		padding-right: 0px !important;
+	}
+	
+	.tec_dm_button p {
+		font-size: 15px !important;
+	}
+}
+
+@media(max-width: 355px) {
+	.header-titles .tec-donation {
+		display: none;
+	}
+}
+
+/*Gallery Styling*/
+.tec_g_pos_ind.current, .tec_g_pos_ind.hovered {
+	background-color: #f6dd95 !important;
+}
+
+/*Additional Misc. Styling*/
+#cookie-law-info-bar {
+	z-index: 2147483641 !important;
+}
