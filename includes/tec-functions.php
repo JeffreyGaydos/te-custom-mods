@@ -135,7 +135,7 @@ if(get_option('tec_to_top') == 'on') {
 
 if( !function_exists("tec_to_top") ) {
     function tec_to_top() {
-        wp_enqueue_script( 'tec-to-top', plugins_url('/js/tec_to_top.js', __FILE__), '', '2.27');
+        wp_enqueue_script( 'tec-to-top', plugins_url('/js/tec_to_top.js', __FILE__), '', '2.4');
     }
 }
 
@@ -150,21 +150,6 @@ if( !function_exists("tec_video_embed") ) {
     function tec_video_embed() {
         if(is_single() && !in_category("has-own-video")) {
             wp_enqueue_script( 'tec-video-embed', plugins_url('/js/tec_video_embed.js', __FILE__), '', '1.2');
-        }
-    }
-}
-
-/********************************************************************
- * Routing Recent Video Embed
- ********************************************************************/
-if(get_option('tec_video_embed') == 'on') {
-    add_action("wp_head", "tec_video_embed", 10);
-}
-
-if( !function_exists("tec_video_embed") ) {
-    function tec_video_embed() {
-        if(is_single() && !in_category("has-own-video")) {
-            wp_enqueue_script( 'tec-video-embed', plugins_url('/js/tec_test_something_else.js', __FILE__), '', '2.2');
         }
     }
 }
