@@ -11,8 +11,5 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
-      - run: cd includes
-      - run: cd build_scripts
-      - run: build.sh
       - name: Create Release PR
       - uses: peter-evans/create-pull-request@v5
