@@ -10,6 +10,7 @@ jobs:
   build_release_pr:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Create Release PR
-      - uses: peter-evans/create-pull-request@v5
+      run: echo "Hello World"
+      #- uses: actions/checkout@v3
+      #- name: Create Release PR
+      #- uses: peter-evans/create-pull-request@v5
