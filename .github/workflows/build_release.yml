@@ -1,0 +1,18 @@
+name: release-te-custom-mods
+run-name: Build ${{ github.ref_name }}
+on:
+  pull_request:
+    branches-ignore:
+      #the release branch will is a permanent branch and has the build. A separate PR
+      #is created for you to approve that the build is ok
+      - 'release/**'
+jobs:
+  build_release_pr:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: cd includes
+      - run: cd build_scripts
+      - run: build.sh
+      - name: Create Release PR
+      - uses: peter-evans/create-pull-request@v5
