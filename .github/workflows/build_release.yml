@@ -10,7 +10,7 @@ jobs:
   build_release_pr:
     runs-on: windows-latest
     steps:
-      - name: create release branch
-        run: git checkout -b releaseTEST origin/${{ github.ref_name }}
       - name: create pull request
         run: git pr create -B master -H 
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
