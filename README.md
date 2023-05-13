@@ -1,4 +1,4 @@
-# te-custom-mods
+# te-custom-mods 
 
 A wordpress plugin that performs various customizations for the website https://tanks-encyclopedia.com/
 
