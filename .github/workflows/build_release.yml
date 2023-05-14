@@ -13,7 +13,9 @@ jobs:
       - name: checkout repository
         uses: actions/checkout@v3
       - name: create release branch
-        run: gh checkout -b releaseTEST origin/master
+        run: git checkout -b releaseTEST origin/master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: create pull request
         run: gh pr create -B master -H test-branch-that-exists --title "Created by GH Actions!" --body "The first step in my attempt to automatically build and release plugin updates, which can then be downloaded and installed in Wordpress."
         env:
