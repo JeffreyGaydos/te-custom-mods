@@ -9,7 +9,7 @@ on:
 jobs:
   build_release_pr:
     runs-on: windows-latest
-    if: git ls-remote --exit-code --heads origin release-DNE
+    if: contains(git ls-remote --heads origin release-, 'release-')
     steps:
       - name: checkout repository
         uses: actions/checkout@v3
