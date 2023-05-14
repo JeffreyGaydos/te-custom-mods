@@ -9,7 +9,7 @@ on:
 jobs:
   build_release_pr:
     runs-on: windows-latest
-    if: git ls-remote --exit-code --heads origin release-${{github.GITHUB_REF}}
+    if: git ls-remote --exit-code --heads origin release-DNE
     steps:
       - name: checkout repository
         uses: actions/checkout@v3
