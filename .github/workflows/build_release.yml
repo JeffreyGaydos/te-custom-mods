@@ -35,13 +35,13 @@ jobs:
         run: git push --set-upstream origin release-${{github.GITHUB_REF}} ${{github.GITHUB_SHA}}
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      - name: Create pull request
-        if: steps.check_branch.outputs.exists == 'false'
-        run: gh pr create -B master -H test-branch-that-exists --title "Created by GH Actions!" --body "The first step in my attempt to automatically build and release plugin updates, which can then be downloaded and installed in Wordpress."
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      - name: Push to release branch
-        if: steps.check_branch.outputs.exists == 'true'
-        run: git merge ${{branchName}}
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      # - name: Create pull request
+      #   if: steps.check_branch.outputs.exists == 'false'
+      #   run: gh pr create -B master -H test-branch-that-exists --title "Created by GH Actions!" --body "The first step in my attempt to automatically build and release plugin updates, which can then be downloaded and installed in Wordpress."
+      #   env:
+      #     GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      # - name: Push to release branch
+      #   if: steps.check_branch.outputs.exists == 'true'
+      #   run: git merge ${{branchName}}
+      #   env:
+      #     GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
