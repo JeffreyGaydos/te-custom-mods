@@ -10,9 +10,17 @@ jobs:
   build_release_pr:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v3
-      - run: cd includes
-      - run: cd build_scripts
-      - run: build.sh
-      - name: Create Release PR
-      - uses: peter-evans/create-pull-request@v5
+      - name: checkout repository
+        uses: actions/checkout@v3
+      - name: create release branch
+        run: git checkout -b releaseTEST ${{ github.GITHUB_SHA }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: push release branch
+        run: git push --set-upstream origin releaseTEST
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: create pull request
+        run: gh pr create -B master -H test-branch-that-exists --title "Created by GH Actions!" --body "The first step in my attempt to automatically build and release plugin updates, which can then be downloaded and installed in Wordpress."
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
