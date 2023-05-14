@@ -13,7 +13,7 @@ jobs:
       - name: checkout repository
         uses: actions/checkout@v3
       - name: create release branch
-        run: git checkout -b releaseTEST origin/master
+        run: git checkout -b releaseTEST ${{ GITHUB_SHA }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: create pull request
