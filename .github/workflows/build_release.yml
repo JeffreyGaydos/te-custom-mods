@@ -12,8 +12,8 @@ jobs:
     steps:
       - name: Declare internal variables
         run: |
-          echo "branchName=release-${{github.GITHUB_REF}} >> $GITHUB_STATE"
-          echo "existance=git ls-remote --heads origin ${{github.GITHUB_STATE.branchName}} >> $GITHUB_STATE"
+          echo "branchName=release-${{github.GITHUB_REF}}" >> $GITHUB_STATE
+          echo "existance=git ls-remote --heads origin ${{github.GITHUB_STATE.branchName}}" >> $GITHUB_STATE
       - name: checkout repository
         uses: actions/checkout@v3
         env:
@@ -27,7 +27,7 @@ jobs:
       #       echo "::set-output name=exists::false"
       #     fi
       - name: Create release branch
-        if: steps.check_branch.outputs.existance == 'false'
+        if: ${{github.GITHUB_STATE.existance}}
         run: git checkout -b release-${{github.GITHUB_REF}} ${{github.GITHUB_SHA}}
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
