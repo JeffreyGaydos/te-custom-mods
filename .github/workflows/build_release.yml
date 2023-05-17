@@ -8,7 +8,7 @@ on:
       - 'release/**'
 jobs:
   build_release_pr:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Declare internal variables
         run: |
