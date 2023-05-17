@@ -15,8 +15,8 @@ jobs:
           echo "branchName=release-${{github.GITHUB_REF}}" >> $GITHUB_ENV
           echo "existance=git ls-remote --heads origin ${{env.branchName}}" >> $GITHUB_ENV
           echo ::group::Vars
-          echo ${{env.branchName}}
-          echo ${{env.existance}}
+          echo env.branchName
+          echo env.existance
           echo ::endgroup::
       - name: checkout repository
         uses: actions/checkout@v3
