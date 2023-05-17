@@ -12,13 +12,12 @@ jobs:
     steps:
       - name: Declare internal variables
         run: |
-          echo "branchName=release-${{github.GITHUB_REF}}" >> $GITHUB_STATE
-          echo "existance=git ls-remote --heads origin ${{github.GITHUB_STATE.branchName}}" >> $GITHUB_STATE
+          echo "branchName=release-${{github.GITHUB_REF}}" >> $GITHUB_ENV
+          echo "existance=git ls-remote --heads origin ${{state.branchName}}" >> $GITHUB_ENV
           echo ::group::Vars
-          echo $GITHUB_STATE.branchName
-          echo $GITHUB_STATE.existance
+          echo ${{env.branchName}}
+          echo ${{env.existance}}
           echo ::endgroup::
-          echo $GITHUB_STATE
       - name: checkout repository
         uses: actions/checkout@v3
         env:
