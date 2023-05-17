@@ -8,25 +8,26 @@ on:
       - 'release/**'
 jobs:
   build_release_pr:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Declare internal variables
         run: |
-          echo "::set-output name=branchName::release-${{github.GITHUB_REF}}"
+          echo "branchName=release-${{github.GITHUB_REF}} >> $GITHUB_STATE"
+          echo "existance=git ls-remote --heads origin ${{github.GITHUB_STATE.branchName}} >> $GITHUB_STATE"
       - name: checkout repository
         uses: actions/checkout@v3
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      - name: Check if release exists
-        id: check_branch
-        run: |
-          if [[ git ls-remote --heads origin release-${{github.GITHUB_REF}} ]]; then
-            echo "::set-output name=exists::true"
-          else
-            echo "::set-output name=exists::false"
-          fi
+      # - name: Check if release exists
+      #   id: check_branch
+      #   run: |
+      #     if [[ git ls-remote --heads origin release-${{github.GITHUB_REF}} ]]; then
+      #       echo "::set-output name=exists::true"
+      #     else
+      #       echo "::set-output name=exists::false"
+      #     fi
       - name: Create release branch
-        if: steps.check_branch.outputs.exists == 'false'
+        if: steps.check_branch.outputs.existance == 'false'
         run: git checkout -b release-${{github.GITHUB_REF}} ${{github.GITHUB_SHA}}
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
