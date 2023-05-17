@@ -13,7 +13,7 @@ jobs:
       - name: Declare internal variables
         run: |
           echo "branchName=release-${{github.GITHUB_REF}}" >> $GITHUB_ENV
-          echo "existance=git ls-remote --heads origin ${{state.branchName}}" >> $GITHUB_ENV
+          echo "existance=git ls-remote --heads origin ${{env.branchName}}" >> $GITHUB_ENV
           echo ::group::Vars
           echo ${{env.branchName}}
           echo ${{env.existance}}
