@@ -32,8 +32,7 @@ jobs:
       #       echo "::set-output name=exists::false"
       #     fi
       - name: Create release branch
-        if: ${{github.GITHUB_STATE.existance}}
-        run: git checkout -b release-${{github.GITHUB_REF}} ${{github.GITHUB_SHA}}
+        run: git checkout -b release-$BRANCH_NAME master
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: Publish release branch
