@@ -16,7 +16,7 @@ jobs:
         run: |
           echo "existance=git ls-remote --heads origin $BRANCH_NAME" >> $GITHUB_ENV
           echo ::group::Vars
-          echo $BRANCH_NAME
+          echo "$BRANCH_NAME"
           echo ::endgroup::
       - name: checkout repository
         uses: actions/checkout@v3
