@@ -13,11 +13,12 @@ jobs:
       BRANCH_NAME: literallyAnything
     steps:
       - name: Declare internal variables
-        run: |
-          echo "existance=git ls-remote --heads origin $BRANCH_NAME" >> $GITHUB_ENV
-          echo ::group::Vars
-          echo "$BRANCH_NAME"
-          echo ::endgroup::
+        run: echo "$BRANCH_NAME"
+        # run: |
+        #   echo "existance=git ls-remote --heads origin $BRANCH_NAME" >> $GITHUB_ENV
+        #   echo ::group::Vars
+        #   echo "$BRANCH_NAME"
+        #   echo ::endgroup::
       - name: checkout repository
         uses: actions/checkout@v3
         env:
