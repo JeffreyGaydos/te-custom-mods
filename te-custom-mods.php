@@ -68,6 +68,8 @@ if( !function_exists("tec_acp_page") ) {
             <input type="checkbox" name="tec_to_top" <?php tec_get_checked('tec_to_top') ?> >To Top Button</input>
             <br><br>
             <input type="checkbox" name="tec_video_embed" <?php tec_get_checked('tec_video_embed') ?> >Recent TE Video Embed</input>
+            <br><br>
+            <input type="checkbox" name="tec_coauthor_display" <?php tec_get_checked('tec_coauthor_display') ?> >Co-Author Display</input>
             <?php
                 submit_button();
             ?>
@@ -101,5 +103,6 @@ if( !function_exists("update_tec_info") ) {
         register_setting( 'tec-settings', 'tec_mobile' );
         register_setting( 'tec-settings', 'tec_to_top' );
         register_setting( 'tec-settings', 'tec_video_embed' );
+        register_setting( 'tec-settings', 'tec_coauthor_display' );
     }
 }

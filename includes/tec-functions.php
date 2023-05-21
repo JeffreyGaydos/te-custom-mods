@@ -154,14 +154,19 @@ if( !function_exists("tec_video_embed") ) {
     }
 }
 
-add_action("wp_head", "tec_coauthor_display", 11);
+if(get_option('tec_coauthor_display') == 'on') {
+    add_action("wp_head", "tec_coauthor_display", 11);
+}
 
-function tec_coauthor_display() {
-    $user = get_field('co_author');
-    if($user) {
-        $nickname = $user['nickname'];
-        $link_prefix = "/author/";
-        $author_link = $link_prefix.$nickname;
-        ?><a style="display: none" id="tec_coauthor" href=<?php echo $author_link; ?>><?php echo $user['display_name']; ?></a><?php
+if( !function_exists("tec_coauthor_display")) {
+    function tec_coauthor_display() {
+        $user = get_field('co_author');
+        if($user) {
+            $nickname = $user['user_nicename'];
+            $link_prefix = "/author/";
+            $author_link = $link_prefix.$nickname;
+            ?><a style="display: none" id="tec_coauthor" href=<?php echo $author_link; ?>><?php echo $user['display_name']; ?></a><?php
+            wp_enqueue_script( 'tec-coauthor-display', plugins_url('/js/tec_coauthor_display.js', __FILE__), '', '1.8');
+        }
     }
 }
