@@ -154,6 +154,9 @@ if( !function_exists("tec_video_embed") ) {
     }
 }
 
+/********************************************************************
+ * Routing Co-Author Display
+ ********************************************************************/
 if(get_option('tec_coauthor_display') == 'on') {
     add_action("wp_head", "tec_coauthor_display", 11);
 }
@@ -166,7 +169,7 @@ if( !function_exists("tec_coauthor_display")) {
             $link_prefix = "/author/";
             $author_link = $link_prefix.$nickname;
             ?><a style="display: none" id="tec_coauthor" href=<?php echo $author_link; ?>><?php echo $user['display_name']; ?></a><?php
-            wp_enqueue_script( 'tec-coauthor-display', plugins_url('/js/tec_coauthor_display.js', __FILE__), '', '1.8');
+            wp_enqueue_script( 'tec-coauthor-display', plugins_url('/js/tec_coauthor_display.js', __FILE__), '', '1.9');
         }
     }
 }
