@@ -153,3 +153,15 @@ if( !function_exists("tec_video_embed") ) {
         }
     }
 }
+
+add_action("wp_head", "tec_coauthor_display", 11);
+
+function tec_coauthor_display() {
+    $user = get_field('co_author');
+    if($user) {
+        $nickname = $user['nickname'];
+        $link_prefix = "/author/";
+        $author_link = $link_prefix.$nickname;
+        ?><a style="display: none" id="tec_coauthor" href=<?php echo $author_link; ?>><?php echo $user['display_name']; ?></a><?php
+    }
+}
