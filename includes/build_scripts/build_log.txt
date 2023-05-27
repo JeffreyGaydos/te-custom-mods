@@ -1,13 +1,44 @@
-[build.sh]: Build Start 04-30-2023_02:05:41Z (UTC)
-[build_js_version_tick.py]: Minimizing version numbers based on prod values...
-[build_js_version_tick.py]: '/js/tec_to_top.js', needs upgraded to 2.10
-[build_js_version_tick.py]: Major version update. Setting global flag
-[build_js_version_tick.py]: '/js/tec_test_something.js', needs upgraded to 2.0
-[build_js_version_tick.py]: writing updates to tec-functions.php
-[build_js_version_tick.py]: te-custom-mods release version: 2.1.2 >> 2.2.0
-[build_js_version_tick.py]: writing updates back to prod-versions.ini
+[build.sh]: Build Start 05-27-2023_18:38:37Z (UTC)
+[build_js_version_tick.py]: Minimizing JS version numbers based on prod values...
+[build_js_version_tick.py]: Writing updates to tec-functions.php
+[build_js_version_tick.py]: te-custom-mods release version: 2.1.2 >> 2.1.3
+[build_js_version_tick.py]: Writing updates back to prod-versions.ini
 [build_js_version_tick.py]: Versioning tick completed
-[build_css_version_tick.py]: TODO: Unimplemented...
-[build_localhost_path_cleanup.py]: TODO: Unimplemented...
-[build_zip_plugin.py]: TODO: Unimplemented...
+[build_css_version_tick.py]: Minimizing CSS version numbers based on prod values...
+[build_css_version_tick.py]: Looking for CSS references in files:
+[build_css_version_tick.py]: Found CSS ref(s) in file ../js/tec_dm_init.js
+[build_css_version_tick.py]: UPDATE: tec_darkMode.css to version 1.0
+[build_css_version_tick.py]: Found CSS ref(s) in file ../js/tec_init.js
+[build_css_version_tick.py]: SKIP: tec_default.css did not need updated
+[build_css_version_tick.py]: Found 0 deleted CSS files
+[build_zip_plugin.py]: created build
+[build_zip_plugin.py]: created build/includes
+[build_zip_plugin.py]: created build/includes/js
+[build_zip_plugin.py]: copied 'tec_coauthor_display.js' to 'build/includes/js'
+[build_zip_plugin.py]: copied 'tec_discord.js' to 'build/includes/js'
+[build_zip_plugin.py]: copied 'tec_dm_init.js' to 'build/includes/js'
+[build_zip_plugin.py]: copied 'tec_dm_placer.js' to 'build/includes/js'
+[build_zip_plugin.py]: copied 'tec_donation.js' to 'build/includes/js'
+[build_zip_plugin.py]: copied 'tec_gallery.js' to 'build/includes/js'
+[build_zip_plugin.py]: copied 'tec_header_follow.js' to 'build/includes/js'
+[build_zip_plugin.py]: copied 'tec_index.js' to 'build/includes/js'
+[build_zip_plugin.py]: copied 'tec_init.js' to 'build/includes/js'
+[build_zip_plugin.py]: copied 'tec_mobile_comp.js' to 'build/includes/js'
+[build_zip_plugin.py]: copied 'tec_mobile_comp_init.js' to 'build/includes/js'
+[build_zip_plugin.py]: copied 'tec_random_article.js' to 'build/includes/js'
+[build_zip_plugin.py]: copied 'tec_to_top.js' to 'build/includes/js'
+[build_zip_plugin.py]: copied 'tec_video_embed.js' to 'build/includes/js'
+[build_zip_plugin.py]: created build/includes/css
+[build_zip_plugin.py]: copied 'tec_darkMode.css' to 'build/includes/css'
+[build_zip_plugin.py]: copied 'tec_darkMode_search.css' to 'build/includes/css'
+[build_zip_plugin.py]: copied 'tec_default.css' to 'build/includes/css'
+[build_zip_plugin.py]: copied 'tec-functions.php'
+[build_zip_plugin.py]: copied 'te-custom-mods.php'
+[build_zip_plugin.py]: creted build/images
+[build_zip_plugin.py]: copied 'FullscreenIcon.png' to 'build/images'
+[build_zip_plugin.py]: copied 'ToTopBlack.png' to 'build/images'
+[build_zip_plugin.py]: copied 'ToTopYellow.png' to 'build/images'
+[build_zip_plugin.py]: zipping...
+[build_zip_plugin.py]: zipped to 'te-custom-modszip'
+[build_zip_plugin.py]: Deleted build directory. Build Complete
 [build.sh]: Build Completed Successfully

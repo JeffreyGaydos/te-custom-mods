@@ -95,6 +95,8 @@ for text in arrayText:
         #print("filename: " + filename)
         
     i += 1
+    if(i == prod.__len__()):
+        break #abort if we are about to go out of range
 
 updatedText += "}"
 
