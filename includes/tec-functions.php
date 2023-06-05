@@ -174,6 +174,9 @@ if( !function_exists("tec_coauthor_display")) {
     }
 }
 
+/********************************************************************
+ * Routing Author Archive
+ ********************************************************************/
 add_action("wp_head", "tec_author_archive", 12);
 
 function tec_author_archive() {
@@ -227,8 +230,10 @@ function tec_author_archive() {
 			if ( $i > 1 ) {
 				echo '<hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true" />';
 			}
-			the_title( '<h2>', '</h2>' ); 
-			the_excerpt();
+			the_title( '<h2 style="margin-left: 40rem; margin-right: 40rem;">', '</h2>' );
+			?><div style="margin-left: 40rem; margin-right: 40rem"><?php
+            the_excerpt();
+            ?></div><?php
 		endwhile; 
 	else: 
 		_e( 'Sorry, no posts matched your criteria.', 'textdomain' ); 
