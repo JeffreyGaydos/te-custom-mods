@@ -177,10 +177,13 @@ if( !function_exists("tec_coauthor_display")) {
 /********************************************************************
  * Routing Author Archive
  ********************************************************************/
-add_action("wp_head", "tec_author_archive", 12);
+if(get_option('tec_author_archive') == 'on') {
+    add_action("wp_head", "tec_author_archive", 12);
+}
 
-function tec_author_archive() {
-    if(is_author()) {
+if(!function_exists("tec_author_archive")) {
+    function tec_author_archive() {
+        if(is_author()) {
 ?>
 <main style="display:block" id="tec_author_archive" role="main">
 
@@ -243,6 +246,7 @@ function tec_author_archive() {
 </main><!-- #site-content -->
 
 <?php
-        wp_enqueue_script( 'tec-author-archive', plugins_url('/js/tec_author_archive.js', __FILE__), '', '1.7');
+            wp_enqueue_script( 'tec-author-archive', plugins_url('/js/tec_author_archive.js', __FILE__), '', '1.7');
+        }
     }
 }
