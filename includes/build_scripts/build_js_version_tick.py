@@ -103,8 +103,8 @@ updatedText += "}"
 #Write to file
 print(printPrefix + "Writing updates to tec-functions.php")
 # print(updatedText)
-#writer = open("../includes/tec-functions.php", "w")
-#writer.write(updatedText)
+writer = open("../includes/tec-functions.php", "w")
+writer.write(updatedText)
 pluginVersionOrig = pluginProd.split(":")[1][1:]
 pluginVersions = pluginProd.split(":")[1][1:].split(".")
 pluginVersions[2] = (str)((int)(pluginVersions[2]) + 1)
@@ -125,7 +125,7 @@ for prodLine in prod:
     j += 1
 finalProdVersions += "te-custom-mods: " + pluginVersionFinal
 # print(finalProdVersions)
-# prodw = open("../../prod-versions.ini", "w")
-# prodw.write(finalProdVersions)
+prodw = open("../../prod-versions.ini", "w")
+prodw.write(finalProdVersions)
 
 print(printPrefix + "Versioning tick completed")
