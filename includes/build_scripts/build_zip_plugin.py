@@ -34,7 +34,7 @@ print(printPrefix + "copied 'te-custom-mods.php'")
 imgPrefix = "../../images"
 imgDest = buildDir + "/images"
 os.mkdir(imgDest)
-print(printPrefix + "creted " + imgDest)
+print(printPrefix + "created " + imgDest)
 for img in os.listdir(imgPrefix):
     shutil.copy(imgPrefix + "/" + img, imgDest)
     print(printPrefix + "copied '" + img + "' to '" + imgDest + "'")
