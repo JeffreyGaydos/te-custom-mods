@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Tank Encyclopedia Custom Mods
-Author: Jeffrey Gaydos | Discord: Jeff_G#3210 | Email: jeff13gaydos@gmail.com
+Author: Jeffrey Gaydos | Discord: Jeff_G#3210 | Email: jeff13gaydos@gmail.com | Github Repo: https://github.com/JeffreyGaydos/te-custom-mods
 
 Description: A plugin created to organize the various functions of the old child theme, thereby removing the need for the child theme. Includes toggles in case any functions fail during udpates.
 */
@@ -68,6 +68,10 @@ if( !function_exists("tec_acp_page") ) {
             <input type="checkbox" name="tec_to_top" <?php tec_get_checked('tec_to_top') ?> >To Top Button</input>
             <br><br>
             <input type="checkbox" name="tec_video_embed" <?php tec_get_checked('tec_video_embed') ?> >Recent TE Video Embed</input>
+            <br><br>
+            <input type="checkbox" name="tec_coauthor_display" <?php tec_get_checked('tec_coauthor_display') ?> >Co-Author Display</input>
+            <br><br>
+            <input type="checkbox" name="tec_author_archive" <?php tec_get_checked('tec_author_archive') ?> >Author Archive Display</input>
             <?php
                 submit_button();
             ?>
@@ -101,5 +105,7 @@ if( !function_exists("update_tec_info") ) {
         register_setting( 'tec-settings', 'tec_mobile' );
         register_setting( 'tec-settings', 'tec_to_top' );
         register_setting( 'tec-settings', 'tec_video_embed' );
+        register_setting( 'tec-settings', 'tec_coauthor_display' );
+        register_setting( 'tec-settings', 'tec_author_archive' );
     }
 }

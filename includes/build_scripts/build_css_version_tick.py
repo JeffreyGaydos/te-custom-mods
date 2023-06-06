@@ -120,6 +120,6 @@ if(prodUnfoundCSS.__len__() > 0):
         print(printPrefix + "DELETE: " + unfound + " was not found in any js files. Removing from prod-versions.ini")
         prodStr = prodStr.replace("    " + unfound + "\n", "")
 #write updates to prod file
-#print(prodStr)
-#prodw = open("../../prod-versions.ini", "w")
-#prodw.write(prodStr)
+# print(prodStr)
+prodw = open("../../prod-versions.ini", "w")
+prodw.write(prodStr)

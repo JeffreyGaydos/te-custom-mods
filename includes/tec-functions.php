@@ -153,3 +153,39 @@ if( !function_exists("tec_video_embed") ) {
         }
     }
 }
+
+/********************************************************************
+ * Routing Co-Author Display
+ ********************************************************************/
+if(get_option('tec_coauthor_display') == 'on') {
+    add_action("wp_head", "tec_coauthor_display", 11);
+}
+
+if( !function_exists("tec_coauthor_display")) {
+    function tec_coauthor_display() {
+        $user = get_field('co_author');
+        if($user) {
+            $nickname = $user['user_nicename'];
+            $link_prefix = "/author/";
+            $author_link = $link_prefix.$nickname;
+            ?><a style="display: none" id="tec_coauthor" href=<?php echo $author_link; ?>><?php echo $user['display_name']; ?></a><?php
+            wp_enqueue_script( 'tec-coauthor-display', plugins_url('/js/tec_coauthor_display.js', __FILE__), '', '1.0');
+        }
+    }
+}
+
+/********************************************************************
+ * Routing Author Archive
+ ********************************************************************/
+if(get_option('tec_author_archive') == 'on') {
+    add_action("wp_head", "tec_author_archive", 12);
+}
+
+if(!function_exists("tec_author_archive")) {
+    function tec_author_archive() {
+        if(is_author()) {
+            include( plugin_dir_path( __FILE__ ) . 'php/author.php');
+            wp_enqueue_script( 'tec-author-archive', plugins_url('/js/tec_author_archive.js', __FILE__), '', '1.0');
+        }
+    }
+}
