@@ -1,9 +1,6 @@
-[build.sh]: Build Start 05-27-2023_18:38:37Z (UTC)
+[build.sh]: Build Start 06-06-2023_15:20:09Z (UTC)
 [build_js_version_tick.py]: Minimizing JS version numbers based on prod values...
 [build_js_version_tick.py]: Writing updates to tec-functions.php
-[build_js_version_tick.py]: te-custom-mods release version: 2.1.2 >> 2.1.3
-[build_js_version_tick.py]: Writing updates back to prod-versions.ini
-[build_js_version_tick.py]: Versioning tick completed
 [build_css_version_tick.py]: Minimizing CSS version numbers based on prod values...
 [build_css_version_tick.py]: Looking for CSS references in files:
 [build_css_version_tick.py]: Found CSS ref(s) in file ../js/tec_dm_init.js
@@ -14,6 +11,7 @@
 [build_zip_plugin.py]: created build
 [build_zip_plugin.py]: created build/includes
 [build_zip_plugin.py]: created build/includes/js
+[build_zip_plugin.py]: copied 'tec_author_archive.js' to 'build/includes/js'
 [build_zip_plugin.py]: copied 'tec_coauthor_display.js' to 'build/includes/js'
 [build_zip_plugin.py]: copied 'tec_discord.js' to 'build/includes/js'
 [build_zip_plugin.py]: copied 'tec_dm_init.js' to 'build/includes/js'
