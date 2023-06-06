@@ -221,7 +221,7 @@ if(!function_exists("tec_author_archive")) {
 	
 	//excerpt 'continue reading' link------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	function twentytwentychild_excerpt_more_add_continue_reading( $more ) {
-		return ' ... <div class="read-more-button-wrap"><a href="' . get_permalink( get_the_ID() ) . '" class="more-link"><span class="faux-button">Continue reading</span> <span class="screen-reader-text">“' . get_the_title( get_the_ID() ) . '”</span></a></div>';
+		return ' ... <div class="read-more-button-wrap"><a href="' . get_permalink( get_the_ID() ) . '" class="more-link"><span class="faux-button">Continue reading</span> <span class="screen-reader-text">“' . get_the_title( get_the_ID() ) . '"</span></a></div>';
 	}
 	add_filter('excerpt_more', 'twentytwentychild_excerpt_more_add_continue_reading' );
 	//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
