@@ -46,8 +46,8 @@
 			if ( $i > 1 ) {
 				echo '<hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true" />';
 			}
-			the_title( '<h2 style="margin-left: 40rem; margin-right: 40rem;">', '</h2>' );
-			?><div style="margin-left: 40rem; margin-right: 40rem"><?php
+			the_title( '<h2 style="margin-left: 20%; margin-right: 20%;">', '</h2>' );
+			?><div style="margin-left: 20%; margin-right: 20%"><?php
             the_excerpt();
             ?></div><?php
 		endwhile; 
