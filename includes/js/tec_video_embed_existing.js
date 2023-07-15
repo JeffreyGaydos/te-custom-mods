@@ -3,12 +3,37 @@ function tec_init_existing_embed_video() {
     //add maximization feature to follow-me video
 }
 
+function tec_init_exisiting_embed_video_add_fullscreen_button_UI() {
+  var tec_fullScreen = document.createElement("IMG");
+  tec_fullScreen.src = "/wp-content/plugins/te-custom-mods/images/FullscreenIcon.png";
+  tec_fullScreen.classList.add("tec-video-embed-out");
+  tec_fullScreen.classList.add("hidden");
+  tec_fullScreen.id = "tec-video-embed-existing-fs";
+  tec_fullScreen.addEventListener("mouseover", (event) => {
+    setTimeout(() => {
+      document.querySelector("#ed4b9e7b-2701-4f2d-ba75-695d07041d7c .pbs__player.shown .exp-ui__wrapper").classList.add("exp-ui__state__hovered");
+      document.querySelector("#ed4b9e7b-2701-4f2d-ba75-695d07041d7c .pbs__player.shown .exp-ui__sound-button").classList.add("exp-ui__state__shown");
+      document.querySelector("#ed4b9e7b-2701-4f2d-ba75-695d07041d7c .pbs__player.shown .exp-ui__prev-button").classList.add("exp-ui__state__shown");
+      document.querySelector("#ed4b9e7b-2701-4f2d-ba75-695d07041d7c .pbs__player.shown .exp-ui__pause-button").classList.add("exp-ui__state__shown");
+      document.querySelector("#ed4b9e7b-2701-4f2d-ba75-695d07041d7c .pbs__player.shown .exp-ui__next-button").classList.add("exp-ui__state__shown");
+    }, 200);
+  });
+  tec_fullScreen.addEventListener("click", () => {
+    
+  });
+
+  document.querySelector(".exp-ui__progress-wrapper").appendChild(tec_fullScreen);
+
+
+}
+
 function tec_init_existing_embed_video_mobile() {
   //immediately remove the follow-me video when it appears
   var followObserver = new MutationObserver(() => {
     var closeButton = document.querySelector(".exp-ui__sticky__close-btn");
     if(closeButton) {
-      closeButton.click();
+      closeButton.click(); //"closing" the video essentially resets the embed's UI
+      tec_init_exisiting_embed_video_add_fullscreen_button_UI();
       followObserver.disconnect();
     }
   });
@@ -19,6 +44,7 @@ function tec_init_existing_embed_video_mobile() {
       var videoPlayerParent = document.querySelector("div[data-exs-config]");
       if(videoPlayerParent) {
         followObserver.observe(videoPlayerParent, { childList: true });
+        tec_init_exisiting_embed_video_add_fullscreen_button_UI();
         articleObserver.disconnect();
       }
     }
