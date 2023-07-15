@@ -226,6 +226,15 @@ right: 15px;
 width: 350px;
 */
 
+/*For existing videos, styling to add the fullscreen button*/
+div.exp-ui__progress.exp-ui__inline-timers {
+    padding-right: 14px;
+}
+
+div.exp-ui__timers.exp-ui__inline-timers {
+    right: 35px;
+}
+
 /*Ripped from "Additional CSS". Just the plugin specific stuff. Keep in mind that anything originally on the site will still be contained in the additional.css file*/
 .site-logo.faux-heading {
 	display: inline-block;

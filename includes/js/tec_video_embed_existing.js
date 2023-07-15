@@ -6,10 +6,8 @@ function tec_init_existing_embed_video() {
 function tec_init_existing_embed_video_mobile() {
   //immediately remove the follow-me video when it appears
   var followObserver = new MutationObserver(() => {
-    console.log("Observed a change!");
     var closeButton = document.querySelector(".exp-ui__sticky__close-btn");
     if(closeButton) {
-      console.log("Attempting removal...");
       closeButton.click();
       followObserver.disconnect();
     }
