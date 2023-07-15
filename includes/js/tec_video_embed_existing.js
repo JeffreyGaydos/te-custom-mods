@@ -4,13 +4,29 @@ function tec_init_existing_embed_video() {
 }
 
 function tec_init_existing_embed_video_mobile() {
-    //make sure the X is still there - PRIO
-    var tec_X = document.querySelector(".exp-ui__sticky__close-btn");
-    tec_X.style.top = "0px";
-    tec_X.style.margin = "10px";
-    tec_X.style.transform = "scale(1.5)";
-    //add maximization feature to in-article video
-    //add maximization feature to follow-me video
+  //immediately remove the follow-me video when it appears
+  var followObserver = new MutationObserver(() => {
+    console.log("Observed a change!");
+    var closeButton = document.querySelector(".exp-ui__sticky__close-btn");
+    if(closeButton) {
+      console.log("Attempting removal...");
+      closeButton.click();
+      followObserver.disconnect();
+    }
+  });
+
+  //wait until the video has loaded (our elements get replaced by the exco player somtimes)
+  var articleObserver = new MutationObserver(() => {
+    if(document.querySelector("div[data-exs-config] video")) {
+      var videoPlayerParent = document.querySelector("div[data-exs-config]");
+      if(videoPlayerParent) {
+        followObserver.observe(videoPlayerParent, { childList: true });
+        articleObserver.disconnect();
+      }
+    }
+  });
+  var articleContent = document.querySelector(".entry-content");
+  articleObserver.observe(articleContent, {childList: true, subtree: true });
 }
 
 if(window.innerWidth >= 400) {
