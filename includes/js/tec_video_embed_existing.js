@@ -23,6 +23,15 @@ function tec_init_exisiting_embed_video_add_fullscreen_button_UI() {
     //document.querySelector("div[data-exs-config]").style.position = "fixed";
     //var player = document.querySelector("div[data-exs-config] > div.pbs__player > div.pb-stream");
     var player = document.querySelector("div[data-exs-config] > div.pbs__player");
+    document.querySelector("div[data-exs-config]").style.position = "fixed";
+    document.querySelector("div[data-exs-config]").style.top = "0px";
+    document.querySelector("div[data-exs-config]").style.left = "0px";
+    document.querySelector("div[data-exs-config]").style.zIndex = 10000;
+    document.querySelector("div[data-exs-config]").style.width = "100%";
+    document.querySelector("div[data-exs-config]").style.height = "100%";
+    document.querySelector("div[data-exs-config]").style.backgroundColor = "black";
+    
+    document.querySelector(".exp-ui__meta-title-wrapper").style.display = "none";
     //var player = document.querySelector("div[data-exs-config]");
     //player.classList.add("tec_video_embed_existing_fullscreen");
     //Videos are 16:9 by default, figure out which dimension of the mobile screen is the "long side" according to the ratio
@@ -50,6 +59,7 @@ function tec_init_exisiting_embed_video_add_fullscreen_button_UI() {
     player.style.width = `${calcWidth}px`;
     player.style.marginLeft = ratio > screenRatio ? `${(screen.width - calcHeight) / 2}px` : 0;
     player.style.marginTop = ratio > screenRatio ? 0 : `${(screen.height - calcWidth) / 2}px`;
+    player.style.zIndex = 10000;
 
   });
   tec_fullScreenImage = document.createElement("IMG");
