@@ -4,10 +4,11 @@ function tec_init_existing_embed_video() {
 }
 
 function tec_init_exisiting_embed_video_add_fullscreen_button_UI() {
-  var tec_fullScreen = document.createElement("IMG");
-  tec_fullScreen.src = "/wp-content/plugins/te-custom-mods/images/FullscreenIcon.png";
+  var tec_fullScreen = document.createElement("DIV");
   tec_fullScreen.classList.add("tec-video-embed-out");
   tec_fullScreen.classList.add("hidden");
+  tec_fullScreen.classList.add("exp-ui__sound-button");
+  tec_fullScreen.classList.add("exp-ui__state__shown");
   tec_fullScreen.id = "tec-video-embed-existing-fs";
   tec_fullScreen.addEventListener("mouseover", (event) => {
     setTimeout(() => {
@@ -19,12 +20,22 @@ function tec_init_exisiting_embed_video_add_fullscreen_button_UI() {
     }, 200);
   });
   tec_fullScreen.addEventListener("click", () => {
-    
+    console.log("hello??");
+    var player = document.querySelector("div[data-exs-config] > div.pbs__player > div.pb-stream");
+    //player.classList.add("tec_video_embed_existing_fullscreen");
+    player.style.position = "fixed";
+    player.style.top = `-${screen.width / 2}px`;
+    player.style.left = `${screen.width / 2}px`;
+    player.style.transform = "rotate(90deg)";
+    player.style.transformOrigin = "left";
+    player.style.height = `${screen.width}px`;
+    player.style.width = `${screen.height}px`;
   });
-
+  tec_fullScreenImage = document.createElement("IMG");
+  tec_fullScreenImage.src = "/wp-content/plugins/te-custom-mods/images/FullscreenIcon.png";
+  
+  tec_fullScreen.appendChild(tec_fullScreenImage);
   document.querySelector(".exp-ui__progress-wrapper").appendChild(tec_fullScreen);
-
-
 }
 
 function tec_init_existing_embed_video_mobile() {

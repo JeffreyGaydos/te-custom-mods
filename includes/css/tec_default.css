@@ -235,9 +235,10 @@ div.exp-ui__timers.exp-ui__inline-timers {
     right: 35px;
 }
 
-img#tec-video-embed-existing-fs {
+#tec-video-embed-existing-fs {
     position: relative;
-    margin: 0px 0px -10.5px -25px;
+    left: calc(100% - 27px) !important;
+    top: 8px !important;
     cursor: pointer;
 }
 
