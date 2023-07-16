@@ -242,6 +242,46 @@ div.exp-ui__timers.exp-ui__inline-timers {
     cursor: pointer;
 }
 
+div[data-exs-config].pbs.tec-video-embed-existing-fs {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    max-width: 100% !important;
+    z-index: 10000;
+    background-color: black;
+    margin: 0 !important;
+}
+
+div[data-exs-config].pbs.tec-video-embed-existing-fs .exp-ui__meta-title-wrapper {
+    display: none;
+}
+
+div[data-exs-config] > div.pbs__player.tec-video-embed-existing-fs {
+    position: fixed;
+    z-index: 10000;
+}
+
+div[data-exs-config] > div.pbs__player.tec-video-embed-existing-fs.portrait {
+    transform: rotate(90deg);
+    transform-origin: left;
+}
+
+div[data-exs-config] > div.pbs__player.tec-video-embed-existing-fs.landscape {
+    top: 0;
+    left: 0;
+}
+
+div[data-pbs-position='sticky'] video, div[data-pbs-position='static'] video {
+    width: auto !important; /*for some reason the exco player gets confused sometimes and needs a reset*/
+}
+
+div[data-pbs-position] > div.pbs__player.tec-video-embed-existing-fs div.pb-stream {
+    width: 100% !important; /*again, the exco player forgets what it's doing sometimes*/
+    height: 100% !important;
+}
+
 /*Ripped from "Additional CSS". Just the plugin specific stuff. Keep in mind that anything originally on the site will still be contained in the additional.css file*/
 .site-logo.faux-heading {
 	display: inline-block;

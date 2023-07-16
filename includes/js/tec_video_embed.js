@@ -117,10 +117,6 @@ function tec_video_embed_on_load(tec_header, tec_X, tec_fullScreen) {
   }, 1000);
 }
 
-function tec_safe_remove_class(node, _class) {
-  if(node && node.classList.contains(_class)) node.classList.remove(_class);
-}
-
 function tec_activate_fullscreen() {
   document.querySelector("#ed4b9e7b-2701-4f2d-ba75-695d07041d7c .pbs__player.shown").classList.add("tec-video-embed-fs-active");
   document.querySelector("#tec-video-embed-fs").classList.add("tec-video-embed-fs-active");

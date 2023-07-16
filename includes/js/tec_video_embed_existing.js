@@ -1,7 +1,4 @@
-function tec_init_existing_embed_video() {
-    //add maximization feature to in-article video
-    //add maximization feature to follow-me video
-}
+var tec_video_embed_existing_is_fs = false;
 
 function tec_init_exisiting_embed_video_add_fullscreen_button_UI() {
   var tec_fullScreen = document.createElement("DIV");
@@ -20,53 +17,111 @@ function tec_init_exisiting_embed_video_add_fullscreen_button_UI() {
     }, 200);
   });
   tec_fullScreen.addEventListener("click", () => {
-    //document.querySelector("div[data-exs-config]").style.position = "fixed";
-    //var player = document.querySelector("div[data-exs-config] > div.pbs__player > div.pb-stream");
-    var player = document.querySelector("div[data-exs-config] > div.pbs__player");
-    document.querySelector("div[data-exs-config]").style.position = "fixed";
-    document.querySelector("div[data-exs-config]").style.top = "0px";
-    document.querySelector("div[data-exs-config]").style.left = "0px";
-    document.querySelector("div[data-exs-config]").style.zIndex = 10000;
-    document.querySelector("div[data-exs-config]").style.width = "100%";
-    document.querySelector("div[data-exs-config]").style.height = "100%";
-    document.querySelector("div[data-exs-config]").style.backgroundColor = "black";
-    
-    document.querySelector(".exp-ui__meta-title-wrapper").style.display = "none";
-    //var player = document.querySelector("div[data-exs-config]");
-    //player.classList.add("tec_video_embed_existing_fullscreen");
-    //Videos are 16:9 by default, figure out which dimension of the mobile screen is the "long side" according to the ratio
-    const ratio = 16 / 9; //w /h
-    const screenRatio = screen.height / screen.width;
-
-    player.style.position = "fixed";
-    player.style.top = `-${ratio > screenRatio ? screen.height / ratio / 2 : screen.width / 2}px`;
-    player.style.left = `${ratio > screenRatio ? screen.height / ratio / 2 : screen.width / 2}px`;
-    player.style.transform = "rotate(90deg)";
-    player.style.transformOrigin = "left";
-    
-    var calcWidth = ratio > screenRatio ? screen.height : screen.width * ratio;
-    var calcHeight = ratio > screenRatio ? screen.height / ratio : screen.width;
-    // if(ratio > screenRatio) {
-    //   //use height as primary, calculate width from that
-    //   player.style.height = `${screen.width}px`;
-    //   player.style.width = `${screen.width * ratio}px`;
-    // } else {
-    //   //use width as primary, calculate height from that
-    //   player.style.height = `${screen.height * ratio}px`;
-    //   player.style.width = `${screen.height}px`;
-    // }
-    player.style.height = `${calcHeight}px`;
-    player.style.width = `${calcWidth}px`;
-    player.style.marginLeft = ratio > screenRatio ? `${(screen.width - calcHeight) / 2}px` : 0;
-    player.style.marginTop = ratio > screenRatio ? 0 : `${(screen.height - calcWidth) / 2}px`;
-    player.style.zIndex = 10000;
-
+    if(tec_video_embed_existing_is_fs) {
+      tec_video_embed_existing_deactivate_fs();
+    } else {
+      tec_video_embed_existing_activate_fs();      
+    }
   });
   tec_fullScreenImage = document.createElement("IMG");
   tec_fullScreenImage.src = "/wp-content/plugins/te-custom-mods/images/FullscreenIcon.png";
   
   tec_fullScreen.appendChild(tec_fullScreenImage);
   document.querySelector(".exp-ui__progress-wrapper").appendChild(tec_fullScreen);
+}
+
+function tec_video_embed_existing_activate_fs() {
+  document.querySelector("div[data-exs-config].pbs").classList.add("tec-video-embed-existing-fs");
+  document.querySelector("div[data-exs-config].pbs").classList.add("alignfull"); //removes a max-width wp style
+  //document.querySelector(".exp-ui__meta-title-wrapper").classList.add("tec-video-embed-existing-fs");
+  document.querySelector("div[data-exs-config] > div.pbs__player").classList.add("tec-video-embed-existing-fs");
+  
+  tec_video_embed_existing_calculate_styles();
+
+  tec_video_embed_existing_is_fs = true;
+}
+
+function tec_video_embed_existing_deactivate_fs() {
+  tec_safe_remove_class(document.querySelector("div[data-exs-config].pbs"), "tec-video-embed-existing-fs");
+  tec_safe_remove_class(document.querySelector("div[data-exs-config].pbs"), "alignfull");
+  //tec_safe_remove_class(document.querySelector(".exp-ui__meta-title-wrapper"), "tec-video-embed-existing-fs");
+  tec_safe_remove_class(document.querySelector("div[data-exs-config] > div.pbs__player"), "tec-video-embed-existing-fs");
+
+  var player = document.querySelector("div[data-exs-config] > div.pbs__player");
+
+  //unset all calculated values
+  player.style.top = "";
+  player.style.left = "";
+  player.style.height = "";
+  player.style.width = "";
+  player.style.marginLeft = "";
+  player.style.marginTop = "";
+
+  tec_safe_remove_class(player, "portrait");
+  tec_safe_remove_class(player, "landscape");
+
+  tec_video_embed_existing_is_fs = false;
+}
+
+function tec_video_embed_existing_calculate_styles() {
+  var player = document.querySelector("div[data-exs-config] > div.pbs__player");
+
+  //Videos are 16:9 by default, figure out which dimension of the mobile screen is the "long side" according to the ratio
+  const W = document.body.clientWidth; //the window width does nto account for scrollbar width
+  const H = window.innerHeight;
+  console.log("inner: " + W + " x " + H);
+  const ratio = 16 / 9; //w /h
+  
+  if(window.innerHeight > window.innerWidth && tec_is_client_mobile) {
+    //portrait fullscreen
+    player.classList.add("portrait"); //to add non-calculated styling
+    tec_safe_remove_class(player, "landscape");
+    
+    const screenRatio = H / W;
+    const calcWidth = ratio > screenRatio ? H : W * ratio;
+    const calcHeight = ratio > screenRatio ? H / ratio : W;
+
+    player.style.top = `-${ratio > screenRatio ? H / ratio / 2 : W / 2}px`;
+    player.style.left = `${ratio > screenRatio ? H / ratio / 2 : W / 2}px`;
+    
+    player.style.height = `${calcHeight}px`;
+    player.style.width = `${calcWidth}px`;
+    player.style.marginLeft = ratio > screenRatio ? `${(W - calcHeight) / 2}px` : 0;
+    player.style.marginTop = ratio > screenRatio ? 0 : `${(H - calcWidth) / 2}px`;
+  } else {
+    //landscape fullscreen
+    console.log("landscape fullscreen");
+    player.classList.add("landscape"); //to add non-calculated styling
+    tec_safe_remove_class(player, "portrait");
+
+    const screenRatio = W / H;
+    const calcWidth = ratio <= screenRatio ? H * ratio : W;
+    const calcHeight = ratio <= screenRatio ? H : W / ratio;
+
+    player.style.top = 0;
+    player.style.left = 0;
+    
+    player.style.height = `${calcHeight}px`;
+    player.style.width = `${calcWidth}px`;
+    player.style.marginLeft = ratio <= screenRatio ? `${(W - calcWidth) / 2}px` : 0;
+    player.style.marginTop = ratio <= screenRatio ? 0 : `${(H - calcHeight) / 2}px`;
+  }
+}
+
+function tec_init_existing_embed_video() {
+  //add maximization feature to in-article video
+  //add maximization feature to follow-me video
+  //wait until the video has loaded (our elements get replaced by the exco player somtimes)
+  var articleObserver = new MutationObserver(() => {
+    if(document.querySelector("div[data-exs-config] video")) {
+      var videoPlayerParent = document.querySelector("div[data-exs-config]");
+      if(videoPlayerParent && document.querySelector(".exp-ui__progress-wrapper") && !document.querySelector("#tec-video-embed-existing-fs")) {
+        tec_init_exisiting_embed_video_add_fullscreen_button_UI();
+      }
+    }
+  });
+  var articleContent = document.querySelector(".entry-content");
+  articleObserver.observe(articleContent, {childList: true, subtree: true });
 }
 
 function tec_init_existing_embed_video_mobile() {
@@ -84,10 +139,9 @@ function tec_init_existing_embed_video_mobile() {
   var articleObserver = new MutationObserver(() => {
     if(document.querySelector("div[data-exs-config] video")) {
       var videoPlayerParent = document.querySelector("div[data-exs-config]");
-      if(videoPlayerParent) {
+      if(videoPlayerParent && document.querySelector(".exp-ui__progress-wrapper") && !document.querySelector("#tec-video-embed-existing-fs")) {
         followObserver.observe(videoPlayerParent, { childList: true });
         tec_init_exisiting_embed_video_add_fullscreen_button_UI();
-        articleObserver.disconnect();
       }
     }
   });
@@ -96,16 +150,15 @@ function tec_init_existing_embed_video_mobile() {
 }
 
 
-if(navigator.userAgentData === undefined) { //firefox, safari, and smaller browser compatibility
-  //thank you http://detectmobilebrowsers.com/:
-  var tec_video_embed_existing_a = navigator.userAgent;
-  if(!/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(tec_video_embed_existing_a) && !/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(tec_video_embed_existing_a.substring(0,4))) {
-    tec_init_existing_embed_video();
-  } else {
-    tec_init_existing_embed_video_mobile();
-  }
-} else if(!navigator.userAgentData.mobile) {
-  tec_init_existing_embed_video();
-} else {
+if(tec_is_client_mobile) {
   tec_init_existing_embed_video_mobile();
+} else {
+  tec_init_existing_embed_video();
 }
+  
+//We need to prevent switching to portrait on desktop machines before activating this
+window.addEventListener("resize", () => {
+  if(tec_video_embed_existing_is_fs) {
+    tec_video_embed_existing_calculate_styles();
+  }
+});
