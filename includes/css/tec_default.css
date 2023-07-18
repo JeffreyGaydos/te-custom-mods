@@ -236,13 +236,22 @@ div.exp-ui__timers.exp-ui__inline-timers {
 }
 
 #tec-video-embed-existing-fs {
-    position: relative;
+    position: absolute;
     left: calc(100% - 27px) !important;
-    top: 8px !important;
+    bottom: 8px !important;
+    width: 20px;
     cursor: pointer;
 }
 
-div[data-exs-config].pbs.tec-video-embed-existing-fs {
+#tec-video-embed-existing-fs > img:hover {
+    scale: 110%;
+}
+
+#tec-video-embed-existing-fs.hidden {
+    opacity: 0 !important;
+}
+
+div[data-pbs-root].pbs.tec-video-embed-existing-fs {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -254,21 +263,21 @@ div[data-exs-config].pbs.tec-video-embed-existing-fs {
     margin: 0 !important;
 }
 
-div[data-exs-config].pbs.tec-video-embed-existing-fs .exp-ui__meta-title-wrapper {
+div[data-pbs-root].pbs.tec-video-embed-existing-fs .exp-ui__meta-title-wrapper {
     display: none;
 }
 
-div[data-exs-config] > div.pbs__player.tec-video-embed-existing-fs {
+div[data-pbs-root] > div.pbs__player.tec-video-embed-existing-fs {
     position: fixed;
     z-index: 10000;
 }
 
-div[data-exs-config] > div.pbs__player.tec-video-embed-existing-fs.portrait {
+div[data-pbs-root] > div.pbs__player.tec-video-embed-existing-fs.portrait {
     transform: rotate(90deg);
     transform-origin: left;
 }
 
-div[data-exs-config] > div.pbs__player.tec-video-embed-existing-fs.landscape {
+div[data-pbs-root] > div.pbs__player.tec-video-embed-existing-fs.landscape {
     top: 0;
     left: 0;
 }
@@ -280,6 +289,9 @@ div[data-pbs-position='sticky'] video, div[data-pbs-position='static'] video {
 div[data-pbs-position] > div.pbs__player.tec-video-embed-existing-fs div.pb-stream {
     width: 100% !important; /*again, the exco player forgets what it's doing sometimes*/
     height: 100% !important;
+    max-height: 100% !important;
+    max-width: 100% !important;
+    /* position: fixed; */
 }
 
 /*Ripped from "Additional CSS". Just the plugin specific stuff. Keep in mind that anything originally on the site will still be contained in the additional.css file*/
