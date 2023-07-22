@@ -22,14 +22,15 @@ function tec_video_embed_recent_init() {
 
   var tec_div = document.createElement("DIV");
   tec_div.classList.add("tec-video-embed");
+  tec_div.classList.add("recent");
   tec_div.id = "ed4b9e7b-2701-4f2d-ba75-695d07041d7c";
   var tec_header = document.createElement("DIV");
-  tec_header.classList.add("tec-video-embed-header");
-  tec_header.classList.add("tec-video-embed-out");
+  tec_header.classList.add("tec-video-embed-recent-header");
+  tec_header.classList.add("tec-video-embed-recent-out");
   var tec_header_yt_link = document.createElement("A");
   tec_header_yt_link.setAttribute("href", "https://www.youtube.com/@TanksEncyclopediaYT");
   tec_header_yt_link.innerText = "YouTube channel";
-  tec_header_yt_link.classList.add("tec-video-yt-link");
+  tec_header_yt_link.classList.add("tec-video-embed-recent-yt-link");
   tec_header_yt_link.setAttribute("target", "_blank");
 
   tec_header.innerText = "Check out the latest from our ";
@@ -53,18 +54,18 @@ function tec_video_embed_recent_on_load() {
   });
   tec_video_embed_ui_observer.observe(document.querySelector(".exp-ui__wrapper"), { childList: true });
 
-  const tec_video_header = document.querySelector(".tec-video-embed-header");
-  tec_safe_remove_class(tec_video_header, "tec-video-embed-out");
+  const tec_video_header = document.querySelector(".tec-video-embed-recent-header");
+  tec_safe_remove_class(tec_video_header, "tec-video-embed-recent-out");
   setTimeout(() => {
-    tec_video_header.classList.add("tec-video-embed-transition");
-    tec_video_header.classList.add("tec-video-embed-show");
-    document.querySelector(".exp-ui__sticky__close-btn svg path").classList.add("tec-video-embed-transition");
+    tec_video_header.classList.add("tec-video-embed-recent-transition");
+    tec_video_header.classList.add("show");
+    document.querySelector(".exp-ui__sticky__close-btn svg path").classList.add("tec-video-embed-recent-transition");
     document.querySelector(".exp-ui__sticky__close-btn").addEventListener("click", () => tec_video_embed_recent_close_cancel());
   }, 1000);
 
   setTimeout(() => {
     //keep fullscreen animation snappy
-    tec_safe_remove_class(tec_video_header, "tec-video-embed-transition");
+    tec_safe_remove_class(tec_video_header, "tec-video-embed-recent-transition");
   }, 2000);
 }
 

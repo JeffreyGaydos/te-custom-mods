@@ -5,11 +5,11 @@ var tec_video_embed_load_observer;
 var tec_video_embed_fs_observer;
 
 function tec_video_embed_activate_fs() {
-    document.querySelector("div[data-pbs-root].pbs").classList.add("tec-video-embed-existing-fs");
+    document.querySelector("div[data-pbs-root].pbs").classList.add("tec-video-embed-fs");
     document.querySelector("div[data-pbs-root].pbs").classList.add("alignfull"); //removes a max-width wp style
-    document.querySelector("div[data-pbs-root].pbs").classList.add("tec-video-embed-fs-active");
-    //document.querySelector(".exp-ui__meta-title-wrapper").classList.add("tec-video-embed-existing-fs");
-    document.querySelector("div[data-pbs-root] > div.pbs__player").classList.add("tec-video-embed-existing-fs");
+    document.querySelector("div[data-pbs-root].pbs").classList.add("active");
+    //document.querySelector(".exp-ui__meta-title-wrapper").classList.add("tec-video-embed-fs");
+    document.querySelector("div[data-pbs-root] > div.pbs__player").classList.add("tec-video-embed-fs");
     
     tec_video_embed_existing_calculate_styles();
   
@@ -19,11 +19,11 @@ function tec_video_embed_activate_fs() {
 function tec_video_embed_deactivate_fs() {
     tec_video_embed_disconnect_width_hack(); //we no longer need the hack, only on entering fullscreen
 
-    tec_safe_remove_class(document.querySelector("div[data-pbs-root].pbs"), "tec-video-embed-existing-fs");
+    tec_safe_remove_class(document.querySelector("div[data-pbs-root].pbs"), "tec-video-embed-fs");
     tec_safe_remove_class(document.querySelector("div[data-pbs-root].pbs"), "alignfull");
-    tec_safe_remove_class(document.querySelector("div[data-pbs-root].pbs"), "tec-video-embed-fs-active");
-    //tec_safe_remove_class(document.querySelector(".exp-ui__meta-title-wrapper"), "tec-video-embed-existing-fs");
-    tec_safe_remove_class(document.querySelector("div[data-pbs-root] > div.pbs__player"), "tec-video-embed-existing-fs");
+    tec_safe_remove_class(document.querySelector("div[data-pbs-root].pbs"), "active");
+    //tec_safe_remove_class(document.querySelector(".exp-ui__meta-title-wrapper"), "tec-video-embed-fs");
+    tec_safe_remove_class(document.querySelector("div[data-pbs-root] > div.pbs__player"), "tec-video-embed-fs");
   
     var player = document.querySelector("div[data-pbs-root] > div.pbs__player");
   
@@ -35,7 +35,6 @@ function tec_video_embed_deactivate_fs() {
     player.style.marginLeft = "";
     player.style.marginTop = "";
   
-    tec_safe_remove_class(player, "portrait");
     tec_safe_remove_class(player, "landscape");
   
     tec_video_embed_is_fs = false;
@@ -48,46 +47,25 @@ function tec_video_embed_existing_calculate_styles() {
     //Videos are 16:9 by default, figure out which dimension of the mobile screen is the "long side" according to the ratio
     const W = document.body.clientWidth; //the window width does nto account for scrollbar width
     const H = window.innerHeight;
-    console.log("inner: " + W + " x " + H);
     const ratio = 16 / 9; //w /h
     
-    if(window.innerHeight > window.innerWidth && tec_is_client_mobile) {
-        //portrait fullscreen
-        player.classList.add("portrait"); //to add non-calculated styling
-        tec_safe_remove_class(player, "landscape");
-      
-        const screenRatio = H / W;
-        const calcWidth = ratio > screenRatio ? H : W * ratio;
-        const calcHeight = ratio > screenRatio ? H / ratio : W;
+    //landscape fullscreen
+    player.classList.add("landscape"); //to add non-calculated styling
   
-        player.style.top = `-${ratio > screenRatio ? H / ratio / 2 : W / 2}px`;
-        player.style.left = `${ratio > screenRatio ? H / ratio / 2 : W / 2}px`;
-      
-        player.style.height = `${calcHeight}px`;
-        player.style.width = `${calcWidth}px`;
-        player.style.marginLeft = ratio > screenRatio ? `${(W - calcHeight) / 2}px` : 0;
-        player.style.marginTop = ratio > screenRatio ? 0 : `${(H - calcWidth) / 2}px`;
-    } else {
-        //landscape fullscreen
-        console.log("landscape fullscreen");
-        player.classList.add("landscape"); //to add non-calculated styling
-        tec_safe_remove_class(player, "portrait");
+    const screenRatio = W / H;
+    const calcWidth = ratio <= screenRatio ? H * ratio : W;
+    const calcHeight = ratio <= screenRatio ? H : W / ratio;
   
-        const screenRatio = W / H;
-        const calcWidth = ratio <= screenRatio ? H * ratio : W;
-        const calcHeight = ratio <= screenRatio ? H : W / ratio;
-  
-        player.style.top = 0;
-        player.style.left = 0;
+    player.style.top = 0;
+    player.style.left = 0;
       
-        player.style.height = `${calcHeight}px`;
-        player.style.width = `${calcWidth}px`;
+    player.style.height = `${calcHeight}px`;
+    player.style.width = `${calcWidth}px`;
 
-        tec_video_embed_observe_width_hack(calcWidth);
+    tec_video_embed_observe_width_hack(calcWidth);
 
-        player.style.marginLeft = ratio <= screenRatio ? `${(W - calcWidth) / 2}px` : 0;
-        player.style.marginTop = ratio <= screenRatio ? 0 : `${(H - calcHeight) / 2}px`;
-    }
+    player.style.marginLeft = ratio <= screenRatio ? `${(W - calcWidth) / 2}px` : 0;
+    player.style.marginTop = ratio <= screenRatio ? 0 : `${(H - calcHeight) / 2}px`;
 }
 
 function tec_video_embed_init_add_fullscreen_button_UI() {
@@ -96,7 +74,7 @@ function tec_video_embed_init_add_fullscreen_button_UI() {
     tec_fullScreen.classList.add("hidden");
     tec_fullScreen.classList.add("exp-ui__sound-button");
     tec_fullScreen.classList.add("exp-ui__state__shown");
-    tec_fullScreen.id = "tec-video-embed-existing-fs";
+    tec_fullScreen.id = "tec-video-embed-fs";
     tec_fullScreen.addEventListener("click", () => {
       if(tec_video_embed_is_fs) {
         tec_video_embed_deactivate_fs();
@@ -112,7 +90,7 @@ function tec_video_embed_init_add_fullscreen_button_UI() {
   
     //helps us get the fading right...
     tec_video_embed_fs_observer = new MutationObserver(() => {
-      tec_fullScreen = document.querySelector("#tec-video-embed-existing-fs");
+      tec_fullScreen = document.querySelector("#tec-video-embed-fs");
       if(!document.querySelector(".exp-ui__wrapper")?.classList.contains("exp-ui__state__hovered") && !tec_fullScreen?.classList.contains("hidden")) {
         tec_fullScreen.classList.add("hidden");
       }
@@ -128,10 +106,11 @@ function tec_video_embed_init_add_fullscreen_button_UI() {
     tec_video_embed_load_observer = new MutationObserver(() => {
       if(!tec_video_embed_loaded) {
         var videoPlayerParent = document.querySelector("div[data-pbs-root]");
-        if(videoPlayerParent && document.querySelector(".exp-ui__wrapper") && !document.querySelector("#tec-video-embed-existing-fs")) {
+        if(videoPlayerParent && document.querySelector(".exp-ui__wrapper") && !document.querySelector("#tec-video-embed-fs")) {
           tec_video_embed_init_add_fullscreen_button_UI();
         }
-        if(document.querySelector("div[data-pbs-root]")?.childElementCount >= 4) {
+        if((!tec_is_client_mobile && document.querySelector("div[data-pbs-root]")?.childElementCount >= 4)
+        || (tec_is_client_mobile && document.querySelector("div[data-pbs-root]")?.childElementCount >= 2)) {
           //at this point the video has appeared and started playing...
           tec_video_embed_loaded = true;
           tec_video_embed_remove_load_observer();
@@ -196,6 +175,6 @@ window.addEventListener("resize", () => {
 
 document.addEventListener("keydown", (event) => {
   if(tec_video_embed_is_fs && event.code == 'Escape') {
-    document.querySelector("#tec-video-embed-existing-fs").click();
+    document.querySelector("#tec-video-embed-fs").click();
   }
 });
