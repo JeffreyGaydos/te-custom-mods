@@ -237,13 +237,13 @@ tagSpot.prototype.hVal = function() {
 function insertAt(index, array, element) {
     if(index == array.length) {
         array[index] = element;
-        console.log("inserted at the end of array");
+        //console.log("inserted at the end of array");
         return array;
     }
     var arrayCopy = Array.from(array);
     var half1 = arrayCopy.slice(0, index);
     var half2 = arrayCopy.slice(index, array.length - 1);
-    console.log("inserted at position " + index + " of array");
+    //console.log("inserted at position " + index + " of array");
     return half1.concat(element, half2);
 }
 
