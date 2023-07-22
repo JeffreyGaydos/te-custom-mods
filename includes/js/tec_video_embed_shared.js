@@ -1,22 +1,27 @@
-var tec_video_embed_existing_is_fs = false;
+var tec_video_embed_is_fs = false;
 var tec_something_is_really_dumb_and_removes_my_width_style_for_no_reason;
+var tec_video_embed_loaded = false;
+var tec_video_embed_load_observer;
+var tec_video_embed_fs_observer;
 
-function tec_video_embed_existing_activate_fs() {
+function tec_video_embed_activate_fs() {
     document.querySelector("div[data-pbs-root].pbs").classList.add("tec-video-embed-existing-fs");
     document.querySelector("div[data-pbs-root].pbs").classList.add("alignfull"); //removes a max-width wp style
+    document.querySelector("div[data-pbs-root].pbs").classList.add("tec-video-embed-fs-active");
     //document.querySelector(".exp-ui__meta-title-wrapper").classList.add("tec-video-embed-existing-fs");
     document.querySelector("div[data-pbs-root] > div.pbs__player").classList.add("tec-video-embed-existing-fs");
     
     tec_video_embed_existing_calculate_styles();
   
-    tec_video_embed_existing_is_fs = true;
+    tec_video_embed_is_fs = true;
 }
   
-function tec_video_embed_existing_deactivate_fs() {
+function tec_video_embed_deactivate_fs() {
     tec_video_embed_disconnect_width_hack(); //we no longer need the hack, only on entering fullscreen
 
     tec_safe_remove_class(document.querySelector("div[data-pbs-root].pbs"), "tec-video-embed-existing-fs");
     tec_safe_remove_class(document.querySelector("div[data-pbs-root].pbs"), "alignfull");
+    tec_safe_remove_class(document.querySelector("div[data-pbs-root].pbs"), "tec-video-embed-fs-active");
     //tec_safe_remove_class(document.querySelector(".exp-ui__meta-title-wrapper"), "tec-video-embed-existing-fs");
     tec_safe_remove_class(document.querySelector("div[data-pbs-root] > div.pbs__player"), "tec-video-embed-existing-fs");
   
@@ -33,7 +38,7 @@ function tec_video_embed_existing_deactivate_fs() {
     tec_safe_remove_class(player, "portrait");
     tec_safe_remove_class(player, "landscape");
   
-    tec_video_embed_existing_is_fs = false;
+    tec_video_embed_is_fs = false;
 }
 
   
@@ -85,7 +90,7 @@ function tec_video_embed_existing_calculate_styles() {
     }
 }
 
-function tec_init_exisiting_embed_video_add_fullscreen_button_UI() {
+function tec_video_embed_init_add_fullscreen_button_UI() {
     var tec_fullScreen = document.createElement("DIV");
     tec_fullScreen.classList.add("tec-video-embed-out");
     tec_fullScreen.classList.add("hidden");
@@ -93,10 +98,10 @@ function tec_init_exisiting_embed_video_add_fullscreen_button_UI() {
     tec_fullScreen.classList.add("exp-ui__state__shown");
     tec_fullScreen.id = "tec-video-embed-existing-fs";
     tec_fullScreen.addEventListener("click", () => {
-      if(tec_video_embed_existing_is_fs) {
-        tec_video_embed_existing_deactivate_fs();
+      if(tec_video_embed_is_fs) {
+        tec_video_embed_deactivate_fs();
       } else {
-        tec_video_embed_existing_activate_fs();      
+        tec_video_embed_activate_fs();      
       }
     });
     tec_fullScreenImage = document.createElement("IMG");
@@ -106,7 +111,7 @@ function tec_init_exisiting_embed_video_add_fullscreen_button_UI() {
     document.querySelector(".exp-ui__wrapper").appendChild(tec_fullScreen);
   
     //helps us get the fading right...
-    new MutationObserver(() => {
+    tec_video_embed_fs_observer = new MutationObserver(() => {
       tec_fullScreen = document.querySelector("#tec-video-embed-existing-fs");
       if(!document.querySelector(".exp-ui__wrapper")?.classList.contains("exp-ui__state__hovered") && !tec_fullScreen?.classList.contains("hidden")) {
         tec_fullScreen.classList.add("hidden");
@@ -114,24 +119,42 @@ function tec_init_exisiting_embed_video_add_fullscreen_button_UI() {
       if(document.querySelector(".exp-ui__wrapper")?.classList.contains("exp-ui__state__hovered") && tec_fullScreen?.classList.contains("hidden")) {
         tec_safe_remove_class(tec_fullScreen, "hidden");
       }
-    }).observe(document.querySelector(".exp-ui__wrapper"), { attributes: true });
+    });
+    tec_video_embed_fs_observer.observe(document.querySelector(".exp-ui__wrapper"), { attributes: true });
   }
   
-  function tec_init_existing_embed_video() {
-    //add maximization feature to in-article video
-    //add maximization feature to follow-me video
+  function tec_video_embed_init(onload_callback) {
     //wait until the video has loaded (our elements get replaced by the exco player somtimes)
-    var articleObserver = new MutationObserver(() => {
-      if(document.querySelector("div[data-exs-config] video")) {
-        var videoPlayerParent = document.querySelector("div[data-exs-config]");
-        if(videoPlayerParent && document.querySelector(".exp-ui__progress-wrapper") && !document.querySelector("#tec-video-embed-existing-fs")) {
-          tec_init_exisiting_embed_video_add_fullscreen_button_UI();
+    tec_video_embed_load_observer = new MutationObserver(() => {
+      if(!tec_video_embed_loaded) {
+        var videoPlayerParent = document.querySelector("div[data-pbs-root]");
+        if(videoPlayerParent && document.querySelector(".exp-ui__wrapper") && !document.querySelector("#tec-video-embed-existing-fs")) {
+          tec_video_embed_init_add_fullscreen_button_UI();
+        }
+        if(document.querySelector("div[data-pbs-root]")?.childElementCount >= 4) {
+          //at this point the video has appeared and started playing...
+          tec_video_embed_loaded = true;
+          tec_video_embed_remove_load_observer();
+          onload_callback();
         }
       }
     });
     var articleContent = document.querySelector(".entry-content");
-    articleObserver.observe(articleContent, {childList: true, subtree: true });
+    tec_video_embed_load_observer.observe(articleContent, {childList: true, subtree: true, attributes: true });
   }
+
+function tec_video_embed_remove_load_observer() {
+  tec_video_embed_load_observer?.disconnect();
+}
+
+//cleans up all mutation observers so they don't explode (if present)
+//should be called when you need to remove the video embed entirely
+//(ex. recent videos close button)
+function tec_video_embed_close_cleanup() {
+  tec_video_embed_fs_observer?.disconnect();
+  tec_video_embed_remove_load_observer();
+  tec_video_embed_disconnect_width_hack();
+}
 
 /*
  * Yes, all this is just because some unknown system is obliterating our width style, not though a
@@ -151,18 +174,13 @@ function tec_video_embed_observe_width_hack(widthToSet) {
             tec_video_embed_width_changes++;
             if(tec_video_embed_width_changes == 2) {
                 document.querySelector("div[data-pbs-root] > div.pbs__player").style.width = `${widthToSet}px`;
-                console.log("set width to " + widthToSet)
             }
-            console.log("Observed attribute change");
         });
         tec_video_embed_width_observer.observe(document.querySelector("div[data-pbs-root] > div.pbs__player"), { attributes: true });
-    } else {
-        console.log("skipped creating observer");
     }
 }
 
 function tec_video_embed_disconnect_width_hack() {
-    console.log("Disconnected: " + tec_video_embed_width_observer);
     tec_video_embed_width_observer?.disconnect();
     tec_video_embed_width_observer = undefined; //garbage collection? also we shouldn't be using it at this point
     tec_video_embed_width_observing = false;
@@ -171,7 +189,13 @@ function tec_video_embed_disconnect_width_hack() {
 
 window.addEventListener("resize", () => {
     tec_video_embed_disconnect_width_hack();
-    if(tec_video_embed_existing_is_fs) {
+    if(tec_video_embed_is_fs) {
       tec_video_embed_existing_calculate_styles();
     }
+});
+
+document.addEventListener("keydown", (event) => {
+  if(tec_video_embed_is_fs && event.code == 'Escape') {
+    document.querySelector("#tec-video-embed-existing-fs").click();
+  }
 });

@@ -1,3 +1,16 @@
+/*ted: TE Default, in case they conflict with the dark mode color vars*/
+:root {
+    --ted-yellow: #f6dd95;
+    --ted-beige: #a2aa88;
+    --ted-beige2: #6e7653;
+    --ted-dbeige: #424732;
+    --ted-brown: #755b0a;
+    --ted-dgreen: #373c2a;
+    --ted-dgreen2: #2a2d20;
+    --ted-lgray: #bfbfbf;
+    --ted-black: #0e0f0a;
+}
+
 /*Random Article Button Styling*/
 a.tec-rand-link {
     cursor: pointer;
@@ -94,7 +107,7 @@ div.tec-video-embed {
 }
 
 #ed4b9e7b-2701-4f2d-ba75-695d07041d7c {
-    z-index: 100; /*required to get z-index to work on children*/
+    z-index: 1000; /*required to get z-index to work on children*/
 }
 
 .tec-video-embed-transition {
@@ -140,8 +153,6 @@ div.tec-video-embed {
 #tec-video-embed-X.tec-video-embed-show {
     bottom: 300px !important;
     color: #f6dd95;
-    background-color: #373c2a;
-    z-index: 10000;
 }
 
 #tec-video-embed-fs {
@@ -216,6 +227,22 @@ div.tec-video-embed-header img {
     top: 2px !important;
     right: 0px !important;
     height: 18px !important;
+}
+
+.tec-video-embed:not(.existing) .exp-ui__sticky.exp-ui__sticky-position__bottom-right .exp-ui__sticky__close-btn {
+    right: 0px !important;
+}
+
+.tec-video-embed:not(.existing) .exp-ui__sticky__close-btn svg path {
+    stroke: var(--ted-yellow);
+}
+
+.tec-video-embed-fs-active div.tec-video-embed-header {
+    width: 100% !important;
+    right: 0 !important;
+    top: 0 !important;
+    height: min-content !important;
+    transition: none !important;
 }
 /*
 The video box uses this to position itself automatically...
