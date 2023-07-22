@@ -66,6 +66,7 @@ function tec_video_embed_existing_calculate_styles() {
 
     player.style.marginLeft = ratio <= screenRatio ? `${(W - calcWidth) / 2}px` : 0;
     player.style.marginTop = ratio <= screenRatio ? 0 : `${(H - calcHeight) / 2}px`;
+
 }
 
 function tec_video_embed_init_add_fullscreen_button_UI() {

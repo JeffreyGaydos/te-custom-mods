@@ -149,11 +149,7 @@ div.tec-video-embed {
 }
 
 .tec-video-embed-fs.active div.tec-video-embed-recent-header {
-    width: 100% !important;
-    right: 0 !important;
-    top: 0 !important;
-    height: min-content !important;
-    transition: none !important;
+    opacity: 0 !important;
 }
 /*
 The video box uses this to position itself automatically...
