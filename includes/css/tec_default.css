@@ -1,3 +1,16 @@
+/*ted: TE Default, in case they conflict with the dark mode color vars*/
+:root {
+    --ted-yellow: #f6dd95;
+    --ted-beige: #a2aa88;
+    --ted-beige2: #6e7653;
+    --ted-dbeige: #424732;
+    --ted-brown: #755b0a;
+    --ted-dgreen: #373c2a;
+    --ted-dgreen2: #2a2d20;
+    --ted-lgray: #bfbfbf;
+    --ted-black: #0e0f0a;
+}
+
 /*Random Article Button Styling*/
 a.tec-rand-link {
     cursor: pointer;
@@ -39,6 +52,7 @@ img#tec-to-top {
     right: 35px;
     transition: all 0.2s ease;
     cursor: pointer;
+    z-index: 10;
 }
 
 /*Dark Mode Defaults*/
@@ -94,26 +108,22 @@ div.tec-video-embed {
 }
 
 #ed4b9e7b-2701-4f2d-ba75-695d07041d7c {
-    z-index: 100; /*required to get z-index to work on children*/
+    z-index: 1000; /*required to get z-index to work on children*/
 }
 
-.tec-video-embed-transition {
+.tec-video-embed-recent-transition {
     transition: all ease 0.5s;
 }
 
-.tec-video-embed-transition-off {
-    transition: none !important;
-}
-
-.tec-video-embed-out {
+.tec-video-embed-recent-out {
     right: -350px !important;
 }
 
-.tec-video-embed-show {
+.tec-video-embed.recent div.tec-video-embed-recent-header.show {
     bottom: 290px !important;
 }
 
-#ed4b9e7b-2701-4f2d-ba75-695d07041d7c div.tec-video-embed-header {
+#ed4b9e7b-2701-4f2d-ba75-695d07041d7c div.tec-video-embed-recent-header {
     position: fixed;
     bottom: 267px;
     right: 15px;
@@ -122,100 +132,24 @@ div.tec-video-embed {
     font-size: 13px;
     font-family: 'Trebuchet MS';
     letter-spacing: 0.2px;
-    background-color: #373c2a;
-    color: #f6dd95;
+    background-color: var(--ted-dgreen);
+    color: var(--ted-yellow);
 }
 
-#tec-video-embed-X {
-    position: fixed;
-    right: 17px;
-    bottom: 276px;
-    background-color: rgba(0, 0, 0, 0);
-    color: rgba(0, 0, 0, 0);
-    font-size: 15px;
-    padding: 0px 3px;
-    cursor: pointer;
+#ed4b9e7b-2701-4f2d-ba75-695d07041d7c a.tec-video-embed-recent-yt-link {
+    color: var(--ted-yellow) !important;
 }
 
-#tec-video-embed-X.tec-video-embed-show {
-    bottom: 300px !important;
-    color: #f6dd95;
-    background-color: #373c2a;
-    z-index: 10000;
-}
-
-#tec-video-embed-fs {
-    position: fixed;
-    right: 17px;
-    z-index: 10000;
-    bottom: 106px;
-    font-size: 15px;
-    padding: 0px 3px;
-    cursor: pointer;
-    transition: all 0.15s linear !important;
-}
-
-#tec-video-embed-fs:hover {
-    scale: 110%;
-}
-
-#tec-video-embed-fs.hidden {
-    opacity: 0;
-}
-
-div.tec-video-embed-header img {
-    padding: 48.5px 125px;
-    position: fixed;
-    background-color: #373c2a;
-    right: 15px;
-    bottom: 100px;
-    width: 350px;
-    height: 197px;
-}
-
-#ed4b9e7b-2701-4f2d-ba75-695d07041d7c a.tec-video-yt-link {
-    color: #f6dd95;
-}
-
-.pbs__player.shown.tec-video-embed-fs-active {
+.tec-video-embed.recent .exp-ui__sticky.exp-ui__sticky-position__bottom-right .exp-ui__sticky__close-btn {
     right: 0px !important;
-    width: 100% !important;
-    bottom: 0px !important;
-    height: calc(100% - 25px);
-    background: black;
 }
 
-.pbs__player.shown {
-    transition: all 0.15s ease !important;
+.tec-video-embed.recent .exp-ui__sticky__close-btn svg path {
+    stroke: var(--ted-yellow);
 }
 
-.pbs__player.shown.tec-video-embed-fs-active .pb-stream {
-    max-height: 100% !important;
-    max-width: 100% !important;
-}
-
-#tec-video-embed-fs.tec-video-embed-fs-active {
-    bottom: 5px;
-    right: 8px;
-}
-
-.tec-video-embed-header.tec-video-embed-fs-active {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100% !important;
-    height: 25px;
-    z-index: 10000;
-}
-
-.tec-video-embed-fs-active > .pb-stream {
-    height: 100% !important;
-}
-
-#tec-video-embed-X.tec-video-embed-fs-active {
-    top: 2px !important;
-    right: 0px !important;
-    height: 18px !important;
+.tec-video-embed-fs.active div.tec-video-embed-recent-header {
+    opacity: 0 !important;
 }
 /*
 The video box uses this to position itself automatically...
@@ -225,6 +159,69 @@ bottom: 100px;
 right: 15px;
 width: 350px;
 */
+
+/*For existing videos, styling to add the fullscreen button*/
+div.exp-ui__progress.exp-ui__inline-timers {
+    padding-right: 14px;
+}
+
+div.exp-ui__timers.exp-ui__inline-timers {
+    right: 35px;
+}
+
+#tec-video-embed-fs {
+    position: absolute;
+    left: calc(100% - 27px) !important;
+    bottom: 8px !important;
+    width: 20px;
+    cursor: pointer;
+}
+
+#tec-video-embed-fs > img:hover {
+    scale: 110%;
+}
+
+#tec-video-embed-fs.hidden {
+    opacity: 0 !important;
+}
+
+div[data-pbs-root].pbs.tec-video-embed-fs {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    max-width: 100% !important;
+    z-index: 10000;
+    background-color: black;
+    margin: 0 !important;
+}
+
+div[data-pbs-root].pbs.tec-video-embed-fs .exp-ui__meta-title-wrapper {
+    display: none;
+}
+
+div[data-pbs-root] > div.pbs__player.tec-video-embed-fs {
+    position: fixed;
+    z-index: 10000;
+}
+
+div[data-pbs-root] > div.pbs__player.tec-video-embed-fs.landscape {
+    top: 0;
+    left: 0;
+}
+
+div[data-pbs-position='sticky'] video, div[data-pbs-position='static'] video {
+    width: auto !important; /*for some reason the exco player gets confused sometimes and needs a reset*/
+}
+
+div[data-pbs-position] > div.pbs__player.tec-video-embed-fs div.pb-stream {
+    width: 100% !important; /*again, the exco player forgets what it's doing sometimes*/
+    height: 100% !important;
+    max-height: 100% !important;
+    max-width: 100% !important;
+    /* position: fixed; */
+}
 
 /*Ripped from "Additional CSS". Just the plugin specific stuff. Keep in mind that anything originally on the site will still be contained in the additional.css file*/
 .site-logo.faux-heading {
