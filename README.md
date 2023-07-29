@@ -11,7 +11,7 @@ A plugin created to organize the various functions of the old child theme, there
 
 ## Important Differences From Live Site
 - The name of the zip MUST be "te-custom-mods" in order for the dark mode CSS to work
-- Version numbers of enqueued JavaScript files will often be higher than those in production
+- Version numbers of enqueued JavaScript files will often be higher than those in production during development
   - This is due to the need to force the browser to pull updated scripts instead of using any cached scripts
   - Final version numbers in the release should be 1 minor version higher than what is currently in production if that js file was changed
 
