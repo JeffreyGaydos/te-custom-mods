@@ -6,7 +6,7 @@ on:
 
 jobs:
   run-script-and-commit-changes:
-    if: github.event.label.name == 'Pending Deploy'
+    if: github.event.label.name == 'Deploy Pending'
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
