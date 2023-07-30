@@ -82,7 +82,7 @@ updated_prod_versions = re.sub("(?<=te-custom-mods: )[0-9]+\.[0-9]+\.[0-9-]+", f
 
 #clean up extra newlines...
 updated_prod_versions = re.sub("\n\n", "\n", updated_prod_versions)
-print(updated_prod_versions)
+
 open("./prod-versions.ini", "w").write(updated_prod_versions)
 
 pprint(v)
