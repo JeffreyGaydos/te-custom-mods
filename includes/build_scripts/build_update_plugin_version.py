@@ -93,6 +93,8 @@ pprint(f"{info}Updating README.md...")
 
 updated_readme = readme
 
-updated_readme = re.sub("(?<=te-custom-mods | Current Version: )[0-9]+\.[0-9]+\.[0-9]+", f"{v.v}", updated_readme)
+updated_readme = re.sub("(?<=te-custom-mods \| Current Version: )[0-9]+\.[0-9]+\.[0-9]+", f"{v.v}", updated_readme)
+
+open("./README.md", "w").write(updated_readme)
 
 stop(True)
