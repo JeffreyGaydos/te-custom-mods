@@ -41,7 +41,7 @@ class Version:
             pprint(f"{warn}Prod major version for {self.filename} was greater than current version. Setting current version ({self.v}) to prod version ({prodVersion})")
             self.v = prodVersion
         elif(prod_major < v_major):
-            self.v = prod_major + 1 # always X.0
+            self.v = (float)(prod_major + 1) # always X.0
             pprint(f"Updated {self.filename} to version {self.v} (major)")
         elif(v_minor < prod_minor):
             pprint(f"{warn}Prod minor version for {self.filename} was greater than current version. Setting current version ({self.v}) to prod version ({prodVersion})")
@@ -51,8 +51,7 @@ class Version:
             pprint(f"Update {self.filename} to version {self.v} (minor)")
         else:
             pprint(f"No updates necessary for {self.filename} ({self.v})")
-        self.v = (str)((float)(self.v)) # ensures that we are both a string and have the possibly unnecessary X.0 at the end
-    
+
     def compareVersion(self, otherVersion):
         if(otherVersion == "0.0"):
             self.v = "1.0" # an "override" for certain files. Logging as to why is handled externally
