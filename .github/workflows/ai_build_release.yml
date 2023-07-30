@@ -51,6 +51,8 @@ jobs:
         git commit -m "GHA_BUILD: Zip Plugin"
         git push origin ${{ github.event.pull_request.head.ref }}
     - name: Create Release
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         RELEASE_BRANCH=${{ github.event.pull_request.head.ref }}
         RELEASE_TAG=$(date -R)
