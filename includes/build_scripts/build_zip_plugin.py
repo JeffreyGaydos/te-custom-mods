@@ -35,7 +35,7 @@ fileExclude = ["additional.css"]
 
 def zip_files(directory):
     with zipfile.ZipFile('te-custom-mods.zip', 'w') as zipf:
-        for root, files in os.walk(directory):
+        for root, _, files in os.walk(directory):
             for file in files:
                 if fileExclude.__contains__(file):
                     continue
