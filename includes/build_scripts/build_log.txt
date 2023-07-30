@@ -29,3 +29,29 @@
 2023-07-30 19:59:19.444644 [build_css_version_minimize.py]: [INFO] Updating tec_dm_init.js for tec_darkMode.css to version 6.0...
 2023-07-30 19:59:19.445048 [build_css_version_minimize.py]: [INFO] Updating tec_init.js for tec_default.css to version 1.1...
 2023-07-30 19:59:19.445382 [build_css_version_minimize.py]: Completed successfully
+2023-07-30 19:59:20.928176 [build_zip_plugin.py]: te-custom-mods.php
+2023-07-30 19:59:20.928462 [build_zip_plugin.py]: tec-functions.php
+2023-07-30 19:59:20.928649 [build_zip_plugin.py]: tec_mobile_comp_init.js
+2023-07-30 19:59:20.928781 [build_zip_plugin.py]: tec_dm_init.js
+2023-07-30 19:59:20.928905 [build_zip_plugin.py]: tec_discord.js
+2023-07-30 19:59:20.929020 [build_zip_plugin.py]: tec_donation.js
+2023-07-30 19:59:20.929127 [build_zip_plugin.py]: tec_gallery.js
+2023-07-30 19:59:20.929268 [build_zip_plugin.py]: tec_video_embed_existing.js
+2023-07-30 19:59:20.929380 [build_zip_plugin.py]: tec_video_embed.js
+2023-07-30 19:59:20.929497 [build_zip_plugin.py]: tec_index.js
+2023-07-30 19:59:20.929631 [build_zip_plugin.py]: tec_dm_placer.js
+2023-07-30 19:59:20.929738 [build_zip_plugin.py]: tec_header_follow.js
+2023-07-30 19:59:20.929862 [build_zip_plugin.py]: tec_random_article.js
+2023-07-30 19:59:20.929975 [build_zip_plugin.py]: tec_to_top.js
+2023-07-30 19:59:20.930081 [build_zip_plugin.py]: tec_coauthor_display.js
+2023-07-30 19:59:20.930190 [build_zip_plugin.py]: tec_mobile_comp.js
+2023-07-30 19:59:20.930306 [build_zip_plugin.py]: tec_init.js
+2023-07-30 19:59:20.930413 [build_zip_plugin.py]: tec_author_archive.js
+2023-07-30 19:59:20.930518 [build_zip_plugin.py]: tec_video_embed_shared.js
+2023-07-30 19:59:20.930678 [build_zip_plugin.py]: tec_darkMode_search.css
+2023-07-30 19:59:20.930786 [build_zip_plugin.py]: tec_darkMode.css
+2023-07-30 19:59:20.930910 [build_zip_plugin.py]: tec_default.css
+2023-07-30 19:59:20.931108 [build_zip_plugin.py]: author.php
+2023-07-30 19:59:20.933301 [build_zip_plugin.py]: FullscreenIcon.png
+2023-07-30 19:59:20.933451 [build_zip_plugin.py]: ToTopYellow.png
+2023-07-30 19:59:20.933605 [build_zip_plugin.py]: ToTopBlack.png
