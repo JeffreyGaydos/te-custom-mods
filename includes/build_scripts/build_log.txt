@@ -8,15 +8,15 @@
 [build_js_version_minimize.py]: No updates necessary for tec_random_article (2.5)
 [build_js_version_minimize.py]: No updates necessary for tec_discord (2.1)
 [build_js_version_minimize.py]: No updates necessary for tec_index (2.2)
-[build_js_version_minimize.py]: Update tec_gallery to version 2.6 (minor)
-[build_js_version_minimize.py]: Update tec_mobile_comp_init to version 2.8 (minor)
-[build_js_version_minimize.py]: Update tec_to_top to version 2.10 (minor)
-[build_js_version_minimize.py]: Update tec_video_embed_shared to version 1.5 (minor)
-[build_js_version_minimize.py]: Update tec_video_embed to version 2.5 (minor)
-[build_js_version_minimize.py]: Update tec_video_embed_existing to version 1.5 (minor)
+[build_js_version_minimize.py]: Update tec_gallery to version 2.7 (minor)
+[build_js_version_minimize.py]: Update tec_mobile_comp_init to version 2.9 (minor)
+[build_js_version_minimize.py]: Update tec_to_top to version 2.2 (minor)
+[build_js_version_minimize.py]: Update tec_video_embed_shared to version 1.6 (minor)
+[build_js_version_minimize.py]: Update tec_video_embed to version 2.6 (minor)
+[build_js_version_minimize.py]: Update tec_video_embed_existing to version 1.6 (minor)
 [build_js_version_minimize.py]: No updates necessary for tec_coauthor_display (1.0)
 [build_js_version_minimize.py]: No updates necessary for tec_author_archive (1.1)
-[build_js_version_minimize.py]: Final Versions: [(tec_init: 1.1), (tec_dm_placer: 2.2), (tec_dm_init: 3.3), (tec_donation: 2.4), (tec_header_follow: 2.1), (tec_random_article: 2.5), (tec_discord: 2.1), (tec_index: 2.2), (tec_gallery: 2.6), (tec_mobile_comp_init: 2.8), (tec_to_top: 2.1), (tec_video_embed_shared: 1.5), (tec_video_embed: 2.5), (tec_video_embed_existing: 1.5), (tec_coauthor_display: 1.0), (tec_author_archive: 1.1)]
+[build_js_version_minimize.py]: Final Versions: [(tec_init: 1.1), (tec_dm_placer: 2.2), (tec_dm_init: 3.3), (tec_donation: 2.4), (tec_header_follow: 2.1), (tec_random_article: 2.5), (tec_discord: 2.1), (tec_index: 2.2), (tec_gallery: 2.7), (tec_mobile_comp_init: 2.9), (tec_to_top: 2.2), (tec_video_embed_shared: 1.6), (tec_video_embed: 2.6), (tec_video_embed_existing: 1.6), (tec_coauthor_display: 1.0), (tec_author_archive: 1.1)]
 [build_js_version_minimize.py]: [INFO] Updating prod-versions.ini...
 [build_js_version_minimize.py]: [INFO]  Updating tec-functions.php...
 [build_js_version_minimize.py]: Completed successfully
@@ -29,3 +29,36 @@
 [build_css_version_minimize.py]: [INFO] Updating tec_dm_init.js for tec_darkMode.css to version 6.0...
 [build_css_version_minimize.py]: [INFO] Updating tec_init.js for tec_default.css to version 1.1...
 [build_css_version_minimize.py]: Completed successfully
+[build_zip_plugin.py]: created build
+[build_zip_plugin.py]: created build/includes
+[build_zip_plugin.py]: created build/includes/js
+[build_zip_plugin.py]: copied 'tec_mobile_comp_init.js' to 'build/includes/js'
+[build_zip_plugin.py]: copied 'tec_dm_init.js' to 'build/includes/js'
+[build_zip_plugin.py]: copied 'tec_discord.js' to 'build/includes/js'
+[build_zip_plugin.py]: copied 'tec_donation.js' to 'build/includes/js'
+[build_zip_plugin.py]: copied 'tec_gallery.js' to 'build/includes/js'
+[build_zip_plugin.py]: copied 'tec_video_embed_existing.js' to 'build/includes/js'
+[build_zip_plugin.py]: copied 'tec_video_embed.js' to 'build/includes/js'
+[build_zip_plugin.py]: copied 'tec_index.js' to 'build/includes/js'
+[build_zip_plugin.py]: copied 'tec_dm_placer.js' to 'build/includes/js'
+[build_zip_plugin.py]: copied 'tec_header_follow.js' to 'build/includes/js'
+[build_zip_plugin.py]: copied 'tec_random_article.js' to 'build/includes/js'
+[build_zip_plugin.py]: copied 'tec_to_top.js' to 'build/includes/js'
+[build_zip_plugin.py]: copied 'tec_coauthor_display.js' to 'build/includes/js'
+[build_zip_plugin.py]: copied 'tec_mobile_comp.js' to 'build/includes/js'
+[build_zip_plugin.py]: copied 'tec_init.js' to 'build/includes/js'
+[build_zip_plugin.py]: copied 'tec_author_archive.js' to 'build/includes/js'
+[build_zip_plugin.py]: copied 'tec_video_embed_shared.js' to 'build/includes/js'
+[build_zip_plugin.py]: created build/includes/css
+[build_zip_plugin.py]: copied 'tec_darkMode_search.css' to 'build/includes/css'
+[build_zip_plugin.py]: copied 'tec_darkMode.css' to 'build/includes/css'
+[build_zip_plugin.py]: copied 'tec_default.css' to 'build/includes/css'
+[build_zip_plugin.py]: copied 'tec-functions.php'
+[build_zip_plugin.py]: copied 'te-custom-mods.php'
+[build_zip_plugin.py]: created build/images
+[build_zip_plugin.py]: copied 'FullscreenIcon.png' to 'build/images'
+[build_zip_plugin.py]: copied 'ToTopYellow.png' to 'build/images'
+[build_zip_plugin.py]: copied 'ToTopBlack.png' to 'build/images'
+[build_zip_plugin.py]: zipping...
+[build_zip_plugin.py]: zipped to 'te-custom-modszip'
+[build_zip_plugin.py]: Deleted build directory. Build Complete
