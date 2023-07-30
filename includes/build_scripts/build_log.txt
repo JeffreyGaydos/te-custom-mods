@@ -8,15 +8,15 @@
 [build_js_version_minimize.py]: No updates necessary for tec_random_article (2.5)
 [build_js_version_minimize.py]: No updates necessary for tec_discord (2.1)
 [build_js_version_minimize.py]: No updates necessary for tec_index (2.2)
-[build_js_version_minimize.py]: Update tec_gallery to version 2.5 (minor)
-[build_js_version_minimize.py]: Update tec_mobile_comp_init to version 2.7 (minor)
-[build_js_version_minimize.py]: Update tec_to_top to version 2.9 (minor)
-[build_js_version_minimize.py]: Update tec_video_embed_shared to version 1.4 (minor)
-[build_js_version_minimize.py]: Update tec_video_embed to version 2.4 (minor)
-[build_js_version_minimize.py]: Update tec_video_embed_existing to version 1.4 (minor)
+[build_js_version_minimize.py]: Update tec_gallery to version 2.6 (minor)
+[build_js_version_minimize.py]: Update tec_mobile_comp_init to version 2.8 (minor)
+[build_js_version_minimize.py]: Update tec_to_top to version 2.10 (minor)
+[build_js_version_minimize.py]: Update tec_video_embed_shared to version 1.5 (minor)
+[build_js_version_minimize.py]: Update tec_video_embed to version 2.5 (minor)
+[build_js_version_minimize.py]: Update tec_video_embed_existing to version 1.5 (minor)
 [build_js_version_minimize.py]: No updates necessary for tec_coauthor_display (1.0)
 [build_js_version_minimize.py]: No updates necessary for tec_author_archive (1.1)
-[build_js_version_minimize.py]: Final Versions: [(tec_init: 1.1), (tec_dm_placer: 2.2), (tec_dm_init: 3.3), (tec_donation: 2.4), (tec_header_follow: 2.1), (tec_random_article: 2.5), (tec_discord: 2.1), (tec_index: 2.2), (tec_gallery: 2.5), (tec_mobile_comp_init: 2.7), (tec_to_top: 2.9), (tec_video_embed_shared: 1.4), (tec_video_embed: 2.4), (tec_video_embed_existing: 1.4), (tec_coauthor_display: 1.0), (tec_author_archive: 1.1)]
+[build_js_version_minimize.py]: Final Versions: [(tec_init: 1.1), (tec_dm_placer: 2.2), (tec_dm_init: 3.3), (tec_donation: 2.4), (tec_header_follow: 2.1), (tec_random_article: 2.5), (tec_discord: 2.1), (tec_index: 2.2), (tec_gallery: 2.6), (tec_mobile_comp_init: 2.8), (tec_to_top: 2.1), (tec_video_embed_shared: 1.5), (tec_video_embed: 2.5), (tec_video_embed_existing: 1.5), (tec_coauthor_display: 1.0), (tec_author_archive: 1.1)]
 [build_js_version_minimize.py]: [INFO] Updating prod-versions.ini...
 [build_js_version_minimize.py]: [INFO]  Updating tec-functions.php...
 [build_js_version_minimize.py]: Completed successfully
