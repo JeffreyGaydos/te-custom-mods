@@ -1,4 +1,5 @@
-# te-custom-mods
+# Tank Encyclopedia Custom Modifications
+## te-custom-mods | Current Version: 2.1.5
 
 A wordpress plugin that performs various customizations for the website https://tanks-encyclopedia.com/
 
@@ -23,8 +24,24 @@ To increase quality of deploys, the following pre-checks should be taken to ensu
 - Check that all features work on Chrome, Edge, and Firefox
 
 ## Build Process
-The automated build process is still a work in progress. This process will run the following steps automatically:
-- **Minimizes version numbers**: for any js or css scripts that were changed, the version in the build should be 1 minor version above those in production
-- **Removes references to localhost**: for certain scripts, it is necessary to specify absolute paths when working locally. All references to these absolute paths are changed to relative paths on build
-- **Zips all necessary files**: This creates a zip that is "WordPress-ready". Only the scripts and images are part of the actual wordpress plugin, other files are for local development and documentation only.
-- **Creates a github release**: After merging a pull request, will run the automated build process steps listed above and create a sparse release with a proper tag version
+The automated build process is activated once a PR is marked ready for review and labeled with the label "Deploy Pending". See `./.github/workflows/build_release.yml`. This will kick off a build which will do the following:
+- **Minimize Version Numbers**: For any `.js` or `.css` scripts that were changed, the version in the build should be 1 minor version above those in production. Major version updates will always set the minor version to 0. Production versions are determined based on the `prod-versions.ini` file. If anything unexpected happens, check that file first. The `prod-versions.ini` file will also be updated with the new versions that this script determines it needs (based on which versions are higher in the `tec-functions.php` file) as well as any new files it detects in `tec-functions.php`. Files that are no longer used should also get deleted from the `prod-versions.ini` file.
+  - Relevant Files:
+    - `./includes/build_scripts/build_js_version_minimize.py`
+    - `./includes/build_scripts/build_css_version_minimize.py`
+- **Increment Plugin Version**: The next step takes whatever version is listed in `prod-versions.ini` (looking for `te-custom-mods:`) and increments the minor version. It will increment this regardless of what the previous version is. If you would like to have a major version update (or middle version update) and want the minor version to restart at 0, be sure to set the minor version to -1 (i.e. setting the version to `te-custom-mods: 2.4.-1` will result in the version `2.4.0`). This step also updates the readme to match the new version.
+  - Relevant Files:
+    - `./includes/build_scripts/build_update_plugin_version.py`
+- **Zip All Necessary Files**: This creates a zip that is "WordPress-ready". Only the scripts and images are part of the actual wordpress plugin, other files are for local development and documentation only. Be sure to change this if you intend to add a new kind of file. The output zip can be found at the root of the repo and must remain named `te-custom-mods.zip` in order to work properly with WordPress. Currently, the following rules apply to zipped files:
+  - Included Extensions: `.css`, `.js`, `.php`, `.png`
+  - Excluded Extensions: `.orig` before the final extension (`.orig.js`)
+  - Excluded Files: `additional.css`
+  - Relevant Files:
+    - `./includes/build_scripts/build_zip_plugin.py`
+- **Create Github Release**: After making the above changes and committing them to the branch, a release draft is created with the version determined by the plugin version incremeter. Note that the workflow will not overrite a release with the same tag, so the release may not show up if you used the same tag as a previous release. The title and body of the PR from which the release was created are added to the release title and body respectively. A link to the PR is added at the end of the release notes as well. This is all internal to the workflow and does not involve any python scripts
+
+## AI
+
+The following files were written with the help of AI:
+- `./.github/workflows/build_release.yml`
+- `./includes/build_scripts/build_zip_plugin.py`
