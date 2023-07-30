@@ -15,7 +15,6 @@ jobs:
         run: echo ${{ github.sha }} >> ./includes/build_scripts/build_log.txt
       - name: Release
         uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
         with:
           body: echo ${{ github.event.pull_request.body }}
           name: echo "$(grep -oP '(?<=te-custom-mods: )[0-9]+\.[0-9]+\.[0-9]+' ./prod-versions.ini): ${{ github.event.pull_request.title }}"
