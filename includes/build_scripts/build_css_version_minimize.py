@@ -208,7 +208,7 @@ open("./prod-versions.ini", "w").write(updated_prod_versions)
 for cv in currentVs:
     pprint(f"{info}Updating {cv.jsfilename}.js for {cv.filename}.css to version {cv.v}...")
     jscontent = open(f"./includes/js/{cv.jsfilename}.js", "r").read()
-    jscontent = re.sub(f"(?<={cv.filename}.css\?v)[0-9]+\.+[0-9]+", f"{cv.filename}.css?v{cv.v}", jscontent)
+    jscontent = re.sub(f"(?<={cv.filename}.css\?v)[0-9]+\.+[0-9]+", f"{cv.v}", jscontent)
     open(f"./includes/js/{cv.jsfilename}.js", "w").write(jscontent)
 
 stop(True)
