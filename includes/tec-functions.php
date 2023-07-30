@@ -149,11 +149,11 @@ if(get_option('tec_video_embed') == 'on') {
 if( !function_exists("tec_video_embed") ) {
     function tec_video_embed() {
         if(is_single()) {
-            wp_enqueue_script( 'tec-video-embed-shared', plugins_url('/js/tec_video_embed_shared.js', __FILE__), '', '1.0');
+            wp_enqueue_script( 'tec-video-embed-shared', plugins_url('/js/tec_video_embed_shared.js', __FILE__), '', '1.7');
             if(is_single() && !in_category("has-own-video")) {
-                wp_enqueue_script( 'tec-video-embed', plugins_url('/js/tec_video_embed.js', __FILE__), '', '2.0');
+                wp_enqueue_script( 'tec-video-embed', plugins_url('/js/tec_video_embed.js', __FILE__), '', '2');
             } else {
-                wp_enqueue_script( 'tec-video-embed-existing', plugins_url('/js/tec_video_embed_existing.js', __FILE__), '', '1.0');
+                wp_enqueue_script( 'tec-video-embed-existing', plugins_url('/js/tec_video_embed_existing.js', __FILE__), '', '1.7');
             }
         }
     }
