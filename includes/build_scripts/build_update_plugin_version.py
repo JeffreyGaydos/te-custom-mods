@@ -32,6 +32,8 @@ class PluginVersion:
         v_forte = (int)(self.v.split(".")[0])
         v_mezzo = (int)(self.v.split(".")[1])
         v_piano = (int)(self.v.split(".")[2]) + 1
+        if(v_piano < 0):
+            pprint(f"{err}A negative value was found after attempting to increment plugin version")
         self.v = f"{v_forte}.{v_mezzo}.{v_piano}"
         
 
@@ -50,6 +52,7 @@ class PluginVersion:
 ###########################################################################################
 pprint(f"{info}Openning files...")
 prod_versions = open("./prod-versions.ini", "r").read()
+readme = open("./README.md", "r").read()
 
 ###########################################################################################
 # Generate Version Objects & Increments
@@ -82,5 +85,14 @@ print(updated_prod_versions)
 open("./prod-versions.ini", "w").write(updated_prod_versions)
 
 pprint(v)
+
+###########################################################################################
+# Update README.md
+###########################################################################################
+pprint(f"{info}Updating README.md...")
+
+updated_readme = readme
+
+updated_readme = re.sub("(?<=te-custom-mods | Current Version: )[0-9]+\.[0-9]+\.[0-9]+", f"{v.v}", updated_readme)
 
 stop(True)
