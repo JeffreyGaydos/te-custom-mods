@@ -9,12 +9,44 @@ jobs:
     if: github.event.label.name == 'Deploy Pending'
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-        uses: actions/checkout@v3
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        with:
-          body: echo Hello
-          draft: true
-          files: |
-            ./includes/build_scripts/te-custom-mods.zip
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.pull_request.head.ref }}
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+    - name: Run JS Version Minimization Script
+      run: |
+        python ./includes/build_scripts/build_js_version_minimize.py > ./includes/build_scripts/build_log.txt
+    - name: Commit Changes
+      run: |
+        git config --global user.email "actions@github.com"
+        git config --global user.name "GitHub Actions"
+        git add .
+        git commit -m "GHA_BUILD: Minimize JS Versions"
+        git push origin ${{ github.event.pull_request.head.ref }}
+    - name: Run CSS Version Minimization Script
+      run: |
+        python ./includes/build_scripts/build_css_version_minimize.py >> ./includes/build_scripts/build_log.txt
+    - name: Commit Changes
+      run: |
+        git config --global user.email "actions@github.com"
+        git config --global user.name "GitHub Actions"
+        git add .
+        git commit -m "GHA_BUILD: Minimize CSS Versions"
+        git push origin ${{ github.event.pull_request.head.ref }}
+    - name: Zip Plugin
+      run: |
+        python ./includes/build_scripts/build_zip_plugin.py >> ./includes/build_scripts/build_log.txt
+    - name: Commit Changes
+      run: |
+        git config --global user.email "actions@github.com"
+        git config --global user.name "GitHub Actions"
+        git add .
+        git commit -m "GHA_BUILD: Zip Plugin"
+        git push origin ${{ github.event.pull_request.head.ref }}
