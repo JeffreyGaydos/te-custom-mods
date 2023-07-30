@@ -42,7 +42,7 @@ jobs:
         git push origin ${{ github.event.pull_request.head.ref }}
     - name: Run Plugin Version Incrementer
       run: |
-        python ./includes/build_scripts/build_update_plugin_version.py
+        python ./includes/build_scripts/build_update_plugin_version.py  >> ./includes/build_scripts/build_log.txt
     - name: Commit Changes
       run: |
         git config --global user.email "actions@github.com"
