@@ -28,6 +28,6 @@ jobs:
       run: |
         git config --global user.email "actions@github.com"
         git config --global user.name "GitHub Actions"
-        git add includes/js/*
+        git add .
         git commit -m "GHA_BUILD: Minimize JS Versions"
         git push origin ${{ github.event.pull_request.head.ref }}
