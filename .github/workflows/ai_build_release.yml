@@ -5,8 +5,8 @@ on:
     types: [labeled]
 
 jobs:
-  test-release-create:
-    if: github.event.label.name == 'Create Release'
+  prepare-for-release-build:
+    if: github.event.label.name == 'Deploy Pending'
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
