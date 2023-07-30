@@ -53,7 +53,7 @@ jobs:
     - name: Create Release
       run: |
         RELEASE_BRANCH=${{ github.event.pull_request.head.ref }}
-        RELEASE_TAG=$(date + '%Y%m%d%H%M%S')
+        RELEASE_TAG=$(date -R)
         RELEASE_TITLE="TEST TEST $RELEASE_TAG"
         RELEASE_BODY="Hi this is a release"
         gh release create $RELEASE_TAG --title "$RELEASE_TITLE" --notes "$RELEASE_BODY" --target $RELEASE_BRANCH
