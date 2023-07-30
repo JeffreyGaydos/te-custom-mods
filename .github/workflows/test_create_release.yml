@@ -5,7 +5,7 @@ on:
     types: [labeled]
 
 jobs:
-  prepare-for-release-build:
+  tset-release-create:
     if: github.event.label.name == 'Create Release'
     runs-on: ubuntu-latest
     steps:
