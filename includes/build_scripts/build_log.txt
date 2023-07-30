@@ -29,3 +29,36 @@
 2023-07-30 17:25:59.211547 [build_css_version_minimize.py]: [INFO] Updating tec_dm_init.js for tec_darkMode.css to version 6.0...
 2023-07-30 17:25:59.211927 [build_css_version_minimize.py]: [INFO] Updating tec_init.js for tec_default.css to version 1.1...
 2023-07-30 17:25:59.212240 [build_css_version_minimize.py]: Completed successfully
+2023-07-30 17:25:59.818988 [build_zip_plugin.py]: created build
+2023-07-30 17:25:59.819025 [build_zip_plugin.py]: created build/includes
+2023-07-30 17:25:59.819046 [build_zip_plugin.py]: created build/includes/js
+2023-07-30 17:25:59.819210 [build_zip_plugin.py]: copied 'tec_mobile_comp_init.js' to 'build/includes/js'
+2023-07-30 17:25:59.819346 [build_zip_plugin.py]: copied 'tec_dm_init.js' to 'build/includes/js'
+2023-07-30 17:25:59.819431 [build_zip_plugin.py]: copied 'tec_discord.js' to 'build/includes/js'
+2023-07-30 17:25:59.819510 [build_zip_plugin.py]: copied 'tec_donation.js' to 'build/includes/js'
+2023-07-30 17:25:59.819593 [build_zip_plugin.py]: copied 'tec_gallery.js' to 'build/includes/js'
+2023-07-30 17:25:59.819668 [build_zip_plugin.py]: copied 'tec_video_embed_existing.js' to 'build/includes/js'
+2023-07-30 17:25:59.819743 [build_zip_plugin.py]: copied 'tec_video_embed.js' to 'build/includes/js'
+2023-07-30 17:25:59.819826 [build_zip_plugin.py]: copied 'tec_index.js' to 'build/includes/js'
+2023-07-30 17:25:59.819901 [build_zip_plugin.py]: copied 'tec_dm_placer.js' to 'build/includes/js'
+2023-07-30 17:25:59.819979 [build_zip_plugin.py]: copied 'tec_header_follow.js' to 'build/includes/js'
+2023-07-30 17:25:59.820055 [build_zip_plugin.py]: copied 'tec_random_article.js' to 'build/includes/js'
+2023-07-30 17:25:59.820130 [build_zip_plugin.py]: copied 'tec_to_top.js' to 'build/includes/js'
+2023-07-30 17:25:59.820205 [build_zip_plugin.py]: copied 'tec_coauthor_display.js' to 'build/includes/js'
+2023-07-30 17:25:59.820279 [build_zip_plugin.py]: copied 'tec_mobile_comp.js' to 'build/includes/js'
+2023-07-30 17:25:59.820353 [build_zip_plugin.py]: copied 'tec_init.js' to 'build/includes/js'
+2023-07-30 17:25:59.820426 [build_zip_plugin.py]: copied 'tec_author_archive.js' to 'build/includes/js'
+2023-07-30 17:25:59.820504 [build_zip_plugin.py]: copied 'tec_video_embed_shared.js' to 'build/includes/js'
+2023-07-30 17:25:59.820541 [build_zip_plugin.py]: created build/includes/css
+2023-07-30 17:25:59.820640 [build_zip_plugin.py]: copied 'tec_darkMode_search.css' to 'build/includes/css'
+2023-07-30 17:25:59.820720 [build_zip_plugin.py]: copied 'tec_darkMode.css' to 'build/includes/css'
+2023-07-30 17:25:59.820800 [build_zip_plugin.py]: copied 'tec_default.css' to 'build/includes/css'
+2023-07-30 17:25:59.820919 [build_zip_plugin.py]: copied 'tec-functions.php'
+2023-07-30 17:25:59.821002 [build_zip_plugin.py]: copied 'te-custom-mods.php'
+2023-07-30 17:25:59.821030 [build_zip_plugin.py]: created build/images
+2023-07-30 17:25:59.821122 [build_zip_plugin.py]: copied 'FullscreenIcon.png' to 'build/images'
+2023-07-30 17:25:59.821206 [build_zip_plugin.py]: copied 'ToTopYellow.png' to 'build/images'
+2023-07-30 17:25:59.821290 [build_zip_plugin.py]: copied 'ToTopBlack.png' to 'build/images'
+2023-07-30 17:25:59.821295 [build_zip_plugin.py]: zipping...
+2023-07-30 17:25:59.830212 [build_zip_plugin.py]: zipped to 'te-custom-modszip'
+2023-07-30 17:25:59.830790 [build_zip_plugin.py]: Deleted build directory. Build Complete
