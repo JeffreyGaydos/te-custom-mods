@@ -58,4 +58,4 @@ jobs:
         RELEASE_TAG=$(date -R)
         RELEASE_TITLE="TEST TEST $RELEASE_TAG"
         RELEASE_BODY="Hi this is a release"
-        gh release create $RELEASE_TAG --title "$RELEASE_TITLE" --notes "$RELEASE_BODY" --target $RELEASE_BRANCH
+        gh release create "$RELEASE_TAG" --title "$RELEASE_TITLE" --notes "$RELEASE_BODY" --target $RELEASE_BRANCH
