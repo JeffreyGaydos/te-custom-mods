@@ -53,6 +53,7 @@ class PluginVersion:
 pprint(f"{info}Openning files...")
 prod_versions = open("./prod-versions.ini", "r").read()
 readme = open("./README.md", "r").read()
+te_custom_mods = open("./te-custom-mods.php", "r").read()
 
 ###########################################################################################
 # Generate Version Objects & Increments
@@ -96,5 +97,16 @@ updated_readme = readme
 updated_readme = re.sub("(?<=te-custom-mods \| Current Version: )[0-9]+\.[0-9]+\.[0-9]+", f"{v.v}", updated_readme)
 
 open("./README.md", "w").write(updated_readme)
+
+###########################################################################################
+# Update te-custom-mods.php
+###########################################################################################
+pprint(f"{info}Updating te-custom-mods.php...")
+
+updated_te_custom_mods = te_custom_mods
+
+updated_te_custom_mods = re.sub("(?<=Version: )[0-9]+\.[0-9]+\.[0-9]+", f"{v.v}", updated_te_custom_mods)
+
+open("./te-custom-mods.php", "w").write(updated_te_custom_mods)
 
 stop(True)
