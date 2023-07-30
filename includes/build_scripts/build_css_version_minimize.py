@@ -197,7 +197,7 @@ for pv in prodVs:
 #clean up extra newlines...
 updated_prod_versions = re.sub("\n\n", "\n", updated_prod_versions)
 
-#pprint(updated_prod_versions) #TODO: Write to the prod-versions.ini file
+open("./prod-versions.ini", "w").write(updated_prod_versions)
 
 ###########################################################################################
 # Update CSS Versions in-file
