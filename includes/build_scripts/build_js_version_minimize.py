@@ -51,7 +51,6 @@ class Version:
             pprint(f"Update {self.filename} to version {self.v} (minor)")
         else:
             pprint(f"No updates necessary for {self.filename} ({self.v})")
-        self.v = (str)((float)(self.v)) # ensures that we are both a string and have the possibly unnecessary X.0 at the end
 
     def __init__(self, v, filename):
         self.v = v        
