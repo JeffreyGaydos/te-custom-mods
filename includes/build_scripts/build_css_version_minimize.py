@@ -7,19 +7,21 @@ import os
 
 printPrefix = "[build_css_version_minimize.py]: "
 
-warn = "⚠️  "
-err = "⛔ "
-info = "📎 "
+warn = "[WARNING] " #"⚠️  "
+err = "[ERROR] " #"⛔ "
+info = "[INFO] " #"📎 "
 
 def pprint(any):
     print(f"{printPrefix}{any}")
 
 def stop(success):
     if(success):
-        pprint("✔ Completed successfully")
+        #pprint("✔ Completed successfully")
+        pprint("Completed successfully")
     else:
+        #pprint("✘ Ended prematurely")
         pprint("✘ Ended prematurely")
-    exit()
+        exit()
 
 ###########################################################################################
 # Version Object Definition
