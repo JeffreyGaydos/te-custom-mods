@@ -1,64 +1,64 @@
-2023-07-30 17:42:37.616296 [build_js_version_minimize.py]: [INFO] Openning files...
-2023-07-30 17:42:37.616409 [build_js_version_minimize.py]: [INFO] Calculating version incrementes...
-2023-07-30 17:42:37.617488 [build_js_version_minimize.py]: No updates necessary for tec_init (1.1)
-2023-07-30 17:42:37.617502 [build_js_version_minimize.py]: No updates necessary for tec_dm_placer (2.2)
-2023-07-30 17:42:37.617511 [build_js_version_minimize.py]: No updates necessary for tec_dm_init (3.3)
-2023-07-30 17:42:37.617519 [build_js_version_minimize.py]: No updates necessary for tec_donation (2.4)
-2023-07-30 17:42:37.617528 [build_js_version_minimize.py]: No updates necessary for tec_header_follow (2.1)
-2023-07-30 17:42:37.617536 [build_js_version_minimize.py]: No updates necessary for tec_random_article (2.5)
-2023-07-30 17:42:37.617544 [build_js_version_minimize.py]: No updates necessary for tec_discord (2.1)
-2023-07-30 17:42:37.617552 [build_js_version_minimize.py]: No updates necessary for tec_index (2.2)
-2023-07-30 17:42:37.617560 [build_js_version_minimize.py]: No updates necessary for tec_gallery (2.9)
-2023-07-30 17:42:37.617568 [build_js_version_minimize.py]: No updates necessary for tec_mobile_comp_init (2.2)
-2023-07-30 17:42:37.617576 [build_js_version_minimize.py]: No updates necessary for tec_to_top (2.4)
-2023-07-30 17:42:37.617584 [build_js_version_minimize.py]: No updates necessary for tec_video_embed_shared (1.0)
-2023-07-30 17:42:37.617592 [build_js_version_minimize.py]: No updates necessary for tec_video_embed (2.0)
-2023-07-30 17:42:37.617600 [build_js_version_minimize.py]: No updates necessary for tec_video_embed_existing (1.0)
-2023-07-30 17:42:37.617608 [build_js_version_minimize.py]: No updates necessary for tec_coauthor_display (1.0)
-2023-07-30 17:42:37.617616 [build_js_version_minimize.py]: No updates necessary for tec_author_archive (1.1)
-2023-07-30 17:42:37.617630 [build_js_version_minimize.py]: Final Versions: [(tec_init: 1.1), (tec_dm_placer: 2.2), (tec_dm_init: 3.3), (tec_donation: 2.4), (tec_header_follow: 2.1), (tec_random_article: 2.5), (tec_discord: 2.1), (tec_index: 2.2), (tec_gallery: 2.9), (tec_mobile_comp_init: 2.2), (tec_to_top: 2.4), (tec_video_embed_shared: 1.0), (tec_video_embed: 2.0), (tec_video_embed_existing: 1.0), (tec_coauthor_display: 1.0), (tec_author_archive: 1.1)]
-2023-07-30 17:42:37.617634 [build_js_version_minimize.py]: [INFO] Updating prod-versions.ini...
-2023-07-30 17:42:37.620180 [build_js_version_minimize.py]: [INFO]  Updating tec-functions.php...
-2023-07-30 17:42:37.625549 [build_js_version_minimize.py]: Completed successfully
-2023-07-30 17:42:38.220147 [build_css_version_minimize.py]: [INFO] Openning files...
-2023-07-30 17:42:38.220894 [build_css_version_minimize.py]: [INFO] Calculating version incrementes...
-2023-07-30 17:42:38.230627 [build_css_version_minimize.py]: No updates necessary for tec_darkMode (6.0)
-2023-07-30 17:42:38.230640 [build_css_version_minimize.py]: No updates necessary for tec_default (1.1)
-2023-07-30 17:42:38.230648 [build_css_version_minimize.py]: Final Versions: [(tec_dm_init > tec_darkMode: 6.0), (tec_init > tec_default: 1.1)]
-2023-07-30 17:42:38.230651 [build_css_version_minimize.py]: [INFO] Updating prod-versions.ini...
-2023-07-30 17:42:38.231113 [build_css_version_minimize.py]: [INFO] Updating tec_dm_init.js for tec_darkMode.css to version 6.0...
-2023-07-30 17:42:38.231514 [build_css_version_minimize.py]: [INFO] Updating tec_init.js for tec_default.css to version 1.1...
-2023-07-30 17:42:38.231830 [build_css_version_minimize.py]: Completed successfully
-2023-07-30 17:42:38.838101 [build_zip_plugin.py]: created build
-2023-07-30 17:42:38.838136 [build_zip_plugin.py]: created build/includes
-2023-07-30 17:42:38.838158 [build_zip_plugin.py]: created build/includes/js
-2023-07-30 17:42:38.838310 [build_zip_plugin.py]: copied 'tec_mobile_comp_init.js' to 'build/includes/js'
-2023-07-30 17:42:38.838402 [build_zip_plugin.py]: copied 'tec_dm_init.js' to 'build/includes/js'
-2023-07-30 17:42:38.838487 [build_zip_plugin.py]: copied 'tec_discord.js' to 'build/includes/js'
-2023-07-30 17:42:38.838567 [build_zip_plugin.py]: copied 'tec_donation.js' to 'build/includes/js'
-2023-07-30 17:42:38.838650 [build_zip_plugin.py]: copied 'tec_gallery.js' to 'build/includes/js'
-2023-07-30 17:42:38.838727 [build_zip_plugin.py]: copied 'tec_video_embed_existing.js' to 'build/includes/js'
-2023-07-30 17:42:38.838803 [build_zip_plugin.py]: copied 'tec_video_embed.js' to 'build/includes/js'
-2023-07-30 17:42:38.838885 [build_zip_plugin.py]: copied 'tec_index.js' to 'build/includes/js'
-2023-07-30 17:42:38.838961 [build_zip_plugin.py]: copied 'tec_dm_placer.js' to 'build/includes/js'
-2023-07-30 17:42:38.839040 [build_zip_plugin.py]: copied 'tec_header_follow.js' to 'build/includes/js'
-2023-07-30 17:42:38.839117 [build_zip_plugin.py]: copied 'tec_random_article.js' to 'build/includes/js'
-2023-07-30 17:42:38.839192 [build_zip_plugin.py]: copied 'tec_to_top.js' to 'build/includes/js'
-2023-07-30 17:42:38.839301 [build_zip_plugin.py]: copied 'tec_coauthor_display.js' to 'build/includes/js'
-2023-07-30 17:42:38.839379 [build_zip_plugin.py]: copied 'tec_mobile_comp.js' to 'build/includes/js'
-2023-07-30 17:42:38.839456 [build_zip_plugin.py]: copied 'tec_init.js' to 'build/includes/js'
-2023-07-30 17:42:38.839530 [build_zip_plugin.py]: copied 'tec_author_archive.js' to 'build/includes/js'
-2023-07-30 17:42:38.839610 [build_zip_plugin.py]: copied 'tec_video_embed_shared.js' to 'build/includes/js'
-2023-07-30 17:42:38.839644 [build_zip_plugin.py]: created build/includes/css
-2023-07-30 17:42:38.839738 [build_zip_plugin.py]: copied 'tec_darkMode_search.css' to 'build/includes/css'
-2023-07-30 17:42:38.839823 [build_zip_plugin.py]: copied 'tec_darkMode.css' to 'build/includes/css'
-2023-07-30 17:42:38.839920 [build_zip_plugin.py]: copied 'tec_default.css' to 'build/includes/css'
-2023-07-30 17:42:38.840024 [build_zip_plugin.py]: copied 'tec-functions.php'
-2023-07-30 17:42:38.840108 [build_zip_plugin.py]: copied 'te-custom-mods.php'
-2023-07-30 17:42:38.840138 [build_zip_plugin.py]: created build/images
-2023-07-30 17:42:38.840230 [build_zip_plugin.py]: copied 'FullscreenIcon.png' to 'build/images'
-2023-07-30 17:42:38.840317 [build_zip_plugin.py]: copied 'ToTopYellow.png' to 'build/images'
-2023-07-30 17:42:38.840404 [build_zip_plugin.py]: copied 'ToTopBlack.png' to 'build/images'
-2023-07-30 17:42:38.840408 [build_zip_plugin.py]: zipping...
-2023-07-30 17:42:38.849362 [build_zip_plugin.py]: zipped to 'te-custom-modszip'
-2023-07-30 17:42:38.849957 [build_zip_plugin.py]: Deleted build directory. Build Complete
+2023-07-30 17:45:43.848092 [build_js_version_minimize.py]: [INFO] Openning files...
+2023-07-30 17:45:43.848198 [build_js_version_minimize.py]: [INFO] Calculating version incrementes...
+2023-07-30 17:45:43.849243 [build_js_version_minimize.py]: No updates necessary for tec_init (1.1)
+2023-07-30 17:45:43.849258 [build_js_version_minimize.py]: No updates necessary for tec_dm_placer (2.2)
+2023-07-30 17:45:43.849267 [build_js_version_minimize.py]: No updates necessary for tec_dm_init (3.3)
+2023-07-30 17:45:43.849275 [build_js_version_minimize.py]: No updates necessary for tec_donation (2.4)
+2023-07-30 17:45:43.849283 [build_js_version_minimize.py]: No updates necessary for tec_header_follow (2.1)
+2023-07-30 17:45:43.849291 [build_js_version_minimize.py]: No updates necessary for tec_random_article (2.5)
+2023-07-30 17:45:43.849299 [build_js_version_minimize.py]: No updates necessary for tec_discord (2.1)
+2023-07-30 17:45:43.849307 [build_js_version_minimize.py]: No updates necessary for tec_index (2.2)
+2023-07-30 17:45:43.849315 [build_js_version_minimize.py]: No updates necessary for tec_gallery (2.9)
+2023-07-30 17:45:43.849323 [build_js_version_minimize.py]: No updates necessary for tec_mobile_comp_init (2.2)
+2023-07-30 17:45:43.849331 [build_js_version_minimize.py]: No updates necessary for tec_to_top (2.4)
+2023-07-30 17:45:43.849339 [build_js_version_minimize.py]: No updates necessary for tec_video_embed_shared (1.0)
+2023-07-30 17:45:43.849346 [build_js_version_minimize.py]: No updates necessary for tec_video_embed (2.0)
+2023-07-30 17:45:43.849354 [build_js_version_minimize.py]: No updates necessary for tec_video_embed_existing (1.0)
+2023-07-30 17:45:43.849362 [build_js_version_minimize.py]: No updates necessary for tec_coauthor_display (1.0)
+2023-07-30 17:45:43.849370 [build_js_version_minimize.py]: No updates necessary for tec_author_archive (1.1)
+2023-07-30 17:45:43.849384 [build_js_version_minimize.py]: Final Versions: [(tec_init: 1.1), (tec_dm_placer: 2.2), (tec_dm_init: 3.3), (tec_donation: 2.4), (tec_header_follow: 2.1), (tec_random_article: 2.5), (tec_discord: 2.1), (tec_index: 2.2), (tec_gallery: 2.9), (tec_mobile_comp_init: 2.2), (tec_to_top: 2.4), (tec_video_embed_shared: 1.0), (tec_video_embed: 2.0), (tec_video_embed_existing: 1.0), (tec_coauthor_display: 1.0), (tec_author_archive: 1.1)]
+2023-07-30 17:45:43.849387 [build_js_version_minimize.py]: [INFO] Updating prod-versions.ini...
+2023-07-30 17:45:43.851768 [build_js_version_minimize.py]: [INFO]  Updating tec-functions.php...
+2023-07-30 17:45:43.856594 [build_js_version_minimize.py]: Completed successfully
+2023-07-30 17:45:44.649266 [build_css_version_minimize.py]: [INFO] Openning files...
+2023-07-30 17:45:44.649957 [build_css_version_minimize.py]: [INFO] Calculating version incrementes...
+2023-07-30 17:45:44.658412 [build_css_version_minimize.py]: No updates necessary for tec_darkMode (6.0)
+2023-07-30 17:45:44.658427 [build_css_version_minimize.py]: No updates necessary for tec_default (1.1)
+2023-07-30 17:45:44.658436 [build_css_version_minimize.py]: Final Versions: [(tec_dm_init > tec_darkMode: 6.0), (tec_init > tec_default: 1.1)]
+2023-07-30 17:45:44.658439 [build_css_version_minimize.py]: [INFO] Updating prod-versions.ini...
+2023-07-30 17:45:44.658875 [build_css_version_minimize.py]: [INFO] Updating tec_dm_init.js for tec_darkMode.css to version 6.0...
+2023-07-30 17:45:44.659218 [build_css_version_minimize.py]: [INFO] Updating tec_init.js for tec_default.css to version 1.1...
+2023-07-30 17:45:44.659498 [build_css_version_minimize.py]: Completed successfully
+2023-07-30 17:45:45.361036 [build_zip_plugin.py]: created build
+2023-07-30 17:45:45.361072 [build_zip_plugin.py]: created build/includes
+2023-07-30 17:45:45.361093 [build_zip_plugin.py]: created build/includes/js
+2023-07-30 17:45:45.361252 [build_zip_plugin.py]: copied 'tec_mobile_comp_init.js' to 'build/includes/js'
+2023-07-30 17:45:45.361340 [build_zip_plugin.py]: copied 'tec_dm_init.js' to 'build/includes/js'
+2023-07-30 17:45:45.361414 [build_zip_plugin.py]: copied 'tec_discord.js' to 'build/includes/js'
+2023-07-30 17:45:45.361487 [build_zip_plugin.py]: copied 'tec_donation.js' to 'build/includes/js'
+2023-07-30 17:45:45.361565 [build_zip_plugin.py]: copied 'tec_gallery.js' to 'build/includes/js'
+2023-07-30 17:45:45.361636 [build_zip_plugin.py]: copied 'tec_video_embed_existing.js' to 'build/includes/js'
+2023-07-30 17:45:45.361706 [build_zip_plugin.py]: copied 'tec_video_embed.js' to 'build/includes/js'
+2023-07-30 17:45:45.361782 [build_zip_plugin.py]: copied 'tec_index.js' to 'build/includes/js'
+2023-07-30 17:45:45.361852 [build_zip_plugin.py]: copied 'tec_dm_placer.js' to 'build/includes/js'
+2023-07-30 17:45:45.361924 [build_zip_plugin.py]: copied 'tec_header_follow.js' to 'build/includes/js'
+2023-07-30 17:45:45.362002 [build_zip_plugin.py]: copied 'tec_random_article.js' to 'build/includes/js'
+2023-07-30 17:45:45.362073 [build_zip_plugin.py]: copied 'tec_to_top.js' to 'build/includes/js'
+2023-07-30 17:45:45.362143 [build_zip_plugin.py]: copied 'tec_coauthor_display.js' to 'build/includes/js'
+2023-07-30 17:45:45.362213 [build_zip_plugin.py]: copied 'tec_mobile_comp.js' to 'build/includes/js'
+2023-07-30 17:45:45.362283 [build_zip_plugin.py]: copied 'tec_init.js' to 'build/includes/js'
+2023-07-30 17:45:45.362351 [build_zip_plugin.py]: copied 'tec_author_archive.js' to 'build/includes/js'
+2023-07-30 17:45:45.362423 [build_zip_plugin.py]: copied 'tec_video_embed_shared.js' to 'build/includes/js'
+2023-07-30 17:45:45.362452 [build_zip_plugin.py]: created build/includes/css
+2023-07-30 17:45:45.362541 [build_zip_plugin.py]: copied 'tec_darkMode_search.css' to 'build/includes/css'
+2023-07-30 17:45:45.362615 [build_zip_plugin.py]: copied 'tec_darkMode.css' to 'build/includes/css'
+2023-07-30 17:45:45.362689 [build_zip_plugin.py]: copied 'tec_default.css' to 'build/includes/css'
+2023-07-30 17:45:45.362801 [build_zip_plugin.py]: copied 'tec-functions.php'
+2023-07-30 17:45:45.362876 [build_zip_plugin.py]: copied 'te-custom-mods.php'
+2023-07-30 17:45:45.362900 [build_zip_plugin.py]: created build/images
+2023-07-30 17:45:45.362985 [build_zip_plugin.py]: copied 'FullscreenIcon.png' to 'build/images'
+2023-07-30 17:45:45.363064 [build_zip_plugin.py]: copied 'ToTopYellow.png' to 'build/images'
+2023-07-30 17:45:45.363145 [build_zip_plugin.py]: copied 'ToTopBlack.png' to 'build/images'
+2023-07-30 17:45:45.363149 [build_zip_plugin.py]: zipping...
+2023-07-30 17:45:45.371973 [build_zip_plugin.py]: zipped to 'te-custom-modszip'
+2023-07-30 17:45:45.372599 [build_zip_plugin.py]: Deleted build directory. Build Complete
