@@ -40,6 +40,30 @@ The automated build process is activated once a PR is marked ready for review an
     - `./includes/build_scripts/build_zip_plugin.py`
 - **Create Github Release**: After making the above changes and committing them to the branch, a release draft is created with the version determined by the plugin version incremeter. Note that the workflow will not overrite a release with the same tag, so the release may not show up if you used the same tag as a previous release. The title and body of the PR from which the release was created are added to the release title and body respectively. A link to the PR is added at the end of the release notes as well. This is all internal to the workflow and does not involve any python scripts
 
+## Dev Automation
+
+The `dev_automation` folder is intended to be used with the VS Code plugin [Run on Save](https://marketplace.visualstudio.com/items?itemName=emeraldwalk.RunOnSave&ssr=false#overview). The file `.vscode/settings.json` needs to be configured as follows for those scripts to work correctly:
+```
+{
+    "emeraldwalk.runonsave": {
+        "commands": [
+            {
+                "match": "\\.css$",
+                "cmd": "py .\\includes\\dev_automation\\dev_tick_css.py -f \"${file}\" >> .\\includes\\dev_automation\\log.txt"
+            },
+            {
+                "match": "\\.js$",
+                "cmd": "py .\\includes\\dev_automation\\dev_tick_js.py -f \"${file}\" >> .\\includes\\dev_automation\\log.txt"
+            },
+            {
+                "match": ".*",
+                "cmd": "py .\\includes\\dev_automation\\dev_log_roller.py"
+            }
+        ]
+    }
+}
+```
+
 ## AI
 
 The following files were written with the help of AI:
