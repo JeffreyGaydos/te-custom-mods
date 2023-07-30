@@ -38,7 +38,7 @@ The automated build process is activated once a PR is marked ready for review an
   - Excluded Files: `additional.css`
   - Relevant Files:
     - `./includes/build_scripts/build_zip_plugin.py`
-- **Creates a github release**: After making the above changes and committing them to the branch, a release draft is created with the version
+- **Creates a github release**: After making the above changes and committing them to the branch, a release draft is created with the version determined by the plugin version incremeter. Note that the workflow will not overrite a release with the same tag, so the release may not show up if you used the same tag as a previous release. The title and body of the PR from which the release was created are added to the release title and body respectively. A link to the PR is added at the end of the release notes as well. This is all internal to the workflow and does not involve any python scripts
 
 ## AI
 
