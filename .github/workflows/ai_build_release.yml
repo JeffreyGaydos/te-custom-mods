@@ -50,3 +50,18 @@ jobs:
         git add .
         git commit -m "GHA_BUILD: Zip Plugin"
         git push origin ${{ github.event.pull_request.head.ref }}
+  test-release-create:
+    if: github.event.label.name == 'Create Release'
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+        uses: actions/checkout@v3
+      - name: Build
+        run: echo ${{ github.sha }} >> ./includes/build_scripts/build_log.txt
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          body: echo ${{ github.event.pull_request.body }}
+          draft: true
+          files: |
+            ./includes/build_scripts/te-custom-mods.zip
