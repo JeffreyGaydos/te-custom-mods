@@ -17,8 +17,6 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           body: echo ${{ github.event.pull_request.body }}
-          name: echo "$(grep -oP '(?<=te-custom-mods: )[0-9]+\.[0-9]+\.[0-9]+' ./prod-versions.ini): ${{ github.event.pull_request.title }}"
-          tag_name: grep -oP "(?<=te-custom-mods: )[0-9]+\.[0-9]+\.[0-9]+"
           draft: true
           files: |
             ./includes/build_scripts/te-custom-mods.zip
