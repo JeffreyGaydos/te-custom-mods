@@ -55,7 +55,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         RELEASE_BRANCH=${{ github.event.pull_request.head.ref }}
-        RELEASE_BODY="Hi this is a release"
+        RELEASE_BODY=${{ github.event.pull_request.body }}
         RELEASE_TAG=$(grep -oP "(?<=te-custom-mods: )[0-9]+\.[0-9]+\.[0-9]+" ./prod-versions.ini)
         RELEASE_TITLE="$RELEASE_TAG: ${{ github.event.pull_request.title }}"
-        gh release create "TEST$RELEASE_TAG" --title "$RELEASE_TITLE" --notes "$RELEASE_BODY" --target $RELEASE_BRANCH
+        gh release create "TEST$RELEASE_TAG" --title "$RELEASE_TITLE" --notes "$RELEASE_BODY" --target $RELEASE_BRANCH -d
