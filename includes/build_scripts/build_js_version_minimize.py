@@ -41,7 +41,7 @@ class Version:
             pprint(f"{warn}Prod major version for {self.filename} was greater than current version. Setting current version ({self.v}) to prod version ({prodVersion})")
             self.v = prodVersion
         elif(prod_major < v_major):
-            self.v = prod_major + 1 # always X.0
+            self.v = (float)(prod_major + 1) # always X.0
             pprint(f"Updated {self.filename} to version {self.v} (major)")
         elif(v_minor < prod_minor):
             pprint(f"{warn}Prod minor version for {self.filename} was greater than current version. Setting current version ({self.v}) to prod version ({prodVersion})")
