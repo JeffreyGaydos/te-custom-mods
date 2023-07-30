@@ -1,5 +1,6 @@
 import re
 import os
+import datetime
 
 ###########################################################################################
 # Global / Utility
@@ -12,7 +13,7 @@ err = "[ERROR] " #"⛔ "
 info = "[INFO] " #"📎 "
 
 def pprint(any):
-    print(f"{printPrefix}{any}")
+    print(f"{datetime.datetime.now()} {printPrefix}{any}")
 
 def stop(success):
     if(success):
@@ -20,7 +21,7 @@ def stop(success):
         pprint("Completed successfully")
     else:
         #pprint("✘ Ended prematurely")
-        pprint("✘ Ended prematurely")
+        pprint("Ended prematurely")
         exit()
 
 ###########################################################################################
@@ -208,7 +209,6 @@ for cv in currentVs:
     pprint(f"{info}Updating {cv.jsfilename}.js for {cv.filename}.css to version {cv.v}...")
     jscontent = open(f"./includes/js/{cv.jsfilename}.js", "r").read()
     jscontent = re.sub(f"(?<={cv.filename}.css\?v)[0-9]+\.+[0-9]+", f"{cv.filename}.css?v{cv.v}", jscontent)
-    #pprint(jscontent)
-    #TODO: write f"./includes/js/{cv.jsfilename}.js" with jscontent
+    open(f"./includes/js/{cv.jsfilename}.js", "w").write(jscontent)
 
 stop(True)

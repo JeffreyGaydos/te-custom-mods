@@ -1,4 +1,5 @@
 import re
+import datetime
 
 ###########################################################################################
 # Global / Utility
@@ -11,7 +12,7 @@ err = "[ERROR] " #"⛔ "
 info = "[INFO] " #"📎 "
 
 def pprint(any):
-    print(f"{printPrefix}{any}")
+    print(f"{datetime.datetime.now()} {printPrefix}{any}")
 
 
 def stop(success):
@@ -20,7 +21,7 @@ def stop(success):
         pprint("Completed successfully")
     else:
         #pprint("✘ Ended prematurely")
-        pprint("✘ Ended prematurely")
+        pprint("Ended prematurely")
         exit()
 
 ###########################################################################################
@@ -143,6 +144,6 @@ updated_tec_functions = tec_functions
 for cv in currentVs:
     updated_tec_functions = re.sub(f"(?<=plugins_url\('/js/{cv.filename}.js', __FILE__\), '', ')[0-9]+\.+[0-9]+", f"{cv.v}", updated_tec_functions)
 
-#pprint(updated_tec_functions) #TODO: Write to the tec-functions.php file
+open("./includes/tec-functions.php", "w").write(updated_tec_functions)
 
 stop(True)
