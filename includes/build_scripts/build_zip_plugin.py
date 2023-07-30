@@ -13,25 +13,25 @@ print(printPrefix + "created " + buildDir)
 os.mkdir(buildDir + "/includes")
 print(printPrefix + "created " + buildDir + "/includes")
 
-jsPrefix = "../js"
+jsPrefix = "./includes/js"
 jsDest = buildDir + "/includes/js"
 os.mkdir(jsDest)
 print(printPrefix + "created " + jsDest)
 for jsfile in os.listdir(jsPrefix):
     shutil.copy(jsPrefix + "/" + jsfile, jsDest)
     print(printPrefix + "copied '" + jsfile + "' to '" + jsDest + "'")
-cssPrefix = "../css"
+cssPrefix = "./includes/css"
 cssDest = buildDir + "/includes/css"
 os.mkdir(cssDest)
 print(printPrefix + "created " + cssDest)
 for cssfile in os.listdir(cssPrefix):
     shutil.copy(cssPrefix + "/" + cssfile, cssDest)
     print(printPrefix + "copied '" + cssfile + "' to '" + cssDest + "'")
-shutil.copy("../tec-functions.php", buildDir + "/includes")
+shutil.copy("./includes/tec-functions.php", buildDir + "/includes")
 print(printPrefix + "copied 'tec-functions.php'")
-shutil.copy("../../te-custom-mods.php", buildDir)
+shutil.copy("./te-custom-mods.php", buildDir)
 print(printPrefix + "copied 'te-custom-mods.php'")
-imgPrefix = "../../images"
+imgPrefix = "./images"
 imgDest = buildDir + "/images"
 os.mkdir(imgDest)
 print(printPrefix + "created " + imgDest)
