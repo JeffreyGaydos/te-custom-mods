@@ -224,7 +224,7 @@ div[data-pbs-position] > div.pbs__player.tec-video-embed-fs div.pb-stream {
 }
 
 /*REGULAR YOUTUBE EMBED STYLING*/
-#tec-video-embed.follow {
+#tec-video-embed.follow, #tec-video-embed-player {
     width: 300px !important;
     height: 168.75px !important;
     position: fixed;
