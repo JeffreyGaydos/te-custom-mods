@@ -13,22 +13,10 @@ function tec_video_embed_recent_init() {
   tec_div.classList.add("follow");
   var tec_player = document.createElement("DIV");
   tec_player.id = "tec-video-embed-player";
-  var tec_header = document.createElement("DIV");
-  tec_header.classList.add("out");
-  tec_header.id = "tec-video-embed-header";
-  tec_header.innerText = "Check out T.E.'s Recent Videos!";
-  var tec_x = document.createElement("DIV");
-  tec_x.classList.add("out");
-  tec_x.id = "tec-video-embed-x";
-  tec_x.innerText = "🞪";
-  tec_x.addEventListener("click", () => {
-    tec_video_embed_recent_close_cancel();
-  });
-  tec_div.appendChild(tec_header);
-  tec_div.appendChild(tec_x);
-  tec_div.appendChild(tec_player);
 
+  tec_div.appendChild(tec_player);
   document.querySelector(".entry-content").appendChild(tec_div);
+  tec_create_header("Check out T.E.'s Recent Videos!", tec_video_embed_recent_close_cancel, tec_player);
 
   tec_video_embed_timeouter = setTimeout(() => {
     console.log("tec_video_embed.js: Video loading timed out...");
@@ -54,9 +42,8 @@ function tec_on_player_ready(event) {
   tec_videoPlayer.setShuffle(true);
   tec_videoPlayer.mute();
   clearTimeout(tec_video_embed_timeouter);
-  console.log("tec_video_embed.js: Video loaded successfully");
-  tec_safe_remove_class(document.querySelector("#tec-video-embed-header"), "out");
-  tec_safe_remove_class(document.querySelector("#tec-video-embed-x"), "out");
+  tec_add_header_close_event();
+  tec_set_header_visibility(true);
 }
 
 function tec_video_embed_recent_close_cancel() {

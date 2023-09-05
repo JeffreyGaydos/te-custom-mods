@@ -224,7 +224,7 @@ div[data-pbs-position] > div.pbs__player.tec-video-embed-fs div.pb-stream {
 }
 
 /*REGULAR YOUTUBE EMBED STYLING*/
-#tec-video-embed.follow, #tec-video-embed-player {
+#tec-video-embed.follow, #tec-video-embed-player, iframe.follow {
     width: 300px !important;
     height: 168.75px !important;
     position: fixed;
@@ -233,25 +233,33 @@ div[data-pbs-position] > div.pbs__player.tec-video-embed-fs div.pb-stream {
     z-index: 1000;
 }
 
+#tec-frame-placeholder {
+    background: black;
+    width: 100%;
+}
+
 #tec-video-embed-header {
     position: fixed;
     font-family: 'Trebuchet MS';
     bottom: 268.75px;
+    right: 35px;
     letter-spacing: 0.2px;
     font-size: 13px;
     font-weight: 700;
     color: var(--ted-yellow);
     width: 300px;
+    height: 19.5px;
     background-color: var(--ted-dgreen);
     padding-left: 5px;
     transition: all ease 0.5s;
     opacity: 1;
-    z-index: -1;
+    z-index: 1;
 }
 
 #tec-video-embed-header.out, #tec-video-embed-x.out {
     bottom: 249.25px;
     opacity: 0;
+    transition: none;
 }
 
 #tec-video-embed-x {
@@ -264,7 +272,7 @@ div[data-pbs-position] > div.pbs__player.tec-video-embed-fs div.pb-stream {
     cursor: pointer;
     transition: all ease 0.5s;
     opacity: 1;
-    z-index: -1;
+    z-index: 2;
 }
 
 /*Ripped from "Additional CSS". Just the plugin specific stuff. Keep in mind that anything originally on the site will still be contained in the additional.css file*/
