@@ -7,13 +7,16 @@ function tec_video_embed_init() {
   var iframeParent = document.querySelector(".entry-content iframe").parentElement;
   iframeParent.id = "tec_video_embed_iframe_parent";
   loadIFrame.onload = () => {
-    console.log("onload");
     var iframe = document.querySelector(".entry-content iframe");
     var tec_frame = document.createElement("DIV");
     tec_frame.id = "tec-frame-placeholder";
     tec_frame.style.height = iframe.style.height;
     iframe.style.marginTop = `-${iframe.style.height}`;
     iframe.parentNode.insertBefore(tec_frame, iframe);
+
+    document.addEventListener("scroll", () => {
+      tec_follow_me_visibility_update(document.querySelector("#tec_video_embed_iframe"), document.querySelector("#tec-frame-placeholder"));
+    });
 
     tec_create_header("Article Video:", tec_close_existing_video_embed, iframe);
     tec_add_header_close_event();
@@ -24,9 +27,6 @@ function tec_video_embed_init() {
   const videoEmbedObserver = new MutationObserver(() => {
     if(!tec_video_embed_rappended) {
       document.querySelector("#tec_video_embed_iframe_parent").appendChild(loadIFrame);
-      document.addEventListener("scroll", () => {
-        tec_follow_me_visibility_update(document.querySelector("#tec_video_embed_iframe"), document.querySelector("#tec-frame-placeholder"));
-      });
       tec_video_embed_rappended = true;
       videoEmbedObserver.disconnect();
     }
