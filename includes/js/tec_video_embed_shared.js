@@ -19,7 +19,6 @@ var tec_video_embed_close_callback_storage;
 var tec_video_embed_x_id = "tec-video-embed-x";
 
 function tec_create_header(headerText, closeCallback, insertBeforeNode) {
-  console.log("Created header");
   var tec_x = document.createElement("DIV");
   tec_x.classList.add("out");
   tec_x.id = tec_video_embed_x_id;

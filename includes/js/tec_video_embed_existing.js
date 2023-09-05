@@ -6,6 +6,7 @@ function tec_video_embed_init() {
   var loadIFrame = document.querySelector(".entry-content iframe").cloneNode(true);
   var iframeParent = document.querySelector(".entry-content iframe").parentElement;
   iframeParent.id = "tec_video_embed_iframe_parent";
+  
   loadIFrame.onload = () => {
     var iframe = document.querySelector(".entry-content iframe");
     var tec_frame = document.createElement("DIV");
