@@ -1,19 +1,13 @@
 var tec_video_embed_close_lock = false;
 var tec_video_embed_rappended = false;
 
-
 function tec_video_embed_init() {
-  var loadIFrame = document.querySelector(".entry-content iframe").cloneNode(true);
+  var newIFrame = document.querySelector(".entry-content iframe").cloneNode(true);
   var iframeParent = document.querySelector(".entry-content iframe").parentElement;
   iframeParent.id = "tec_video_embed_iframe_parent";
   
-  loadIFrame.onload = () => {
-    var iframe = document.querySelector(".entry-content iframe");
-    var tec_frame = document.createElement("DIV");
-    tec_frame.id = "tec-frame-placeholder";
-    tec_frame.style.height = iframe.style.height;
-    iframe.style.marginTop = `-${iframe.style.height}`;
-    iframe.parentNode.insertBefore(tec_frame, iframe);
+  newIFrame.onload = () => {
+    tec_create_video_embed_placeholder();
 
     document.addEventListener("scroll", () => {
       tec_follow_me_visibility_update(document.querySelector("#tec_video_embed_iframe"), document.querySelector("#tec-frame-placeholder"));
@@ -22,18 +16,27 @@ function tec_video_embed_init() {
     tec_create_header("Article Video:", tec_close_existing_video_embed, iframe);
     tec_add_header_close_event();
   };
-  loadIFrame.id = "tec_video_embed_iframe";
+  newIFrame.id = "tec_video_embed_iframe";
   document.querySelector(".entry-content iframe").remove(); //remove the original iframe so we have the load event on the reappended one
 
-  const videoEmbedObserver = new MutationObserver(() => {
+  const entryContentObserver = new MutationObserver(() => {
     if(!tec_video_embed_rappended) {
-      document.querySelector("#tec_video_embed_iframe_parent").appendChild(loadIFrame);
+      document.querySelector("#tec_video_embed_iframe_parent").appendChild(newIFrame);
       tec_video_embed_rappended = true;
-      videoEmbedObserver.disconnect();
+      entryContentObserver.disconnect();
     }
   });
 
-  videoEmbedObserver.observe(document.querySelector(".entry-content"), { childList: true, subtree: true });
+  entryContentObserver.observe(document.querySelector(".entry-content"), { childList: true, subtree: true });
+}
+
+function tec_create_video_embed_placeholder() {
+  var iframe = document.querySelector(".entry-content iframe");
+  var tec_frame = document.createElement("DIV");
+  tec_frame.id = "tec-frame-placeholder";
+  tec_frame.style.height = iframe.style.height;
+  iframe.style.marginTop = `-${iframe.style.height}`;
+  iframe.parentNode.insertBefore(tec_frame, iframe);
 }
 
 function tec_close_existing_video_embed() {
