@@ -13,7 +13,7 @@ function tec_video_embed_init() {
       tec_follow_me_visibility_update(document.querySelector("#tec_video_embed_iframe"), document.querySelector("#tec-frame-placeholder"));
     });
 
-    tec_create_header("Article Video:", tec_close_existing_video_embed, iframe);
+    tec_create_header("Article Video:", tec_close_existing_video_embed, document.querySelector(".entry-content iframe"));
     tec_add_header_close_event();
   };
   newIFrame.id = "tec_video_embed_iframe";
