@@ -61,14 +61,16 @@ jobs:
         git add .
         git commit -m "GHA_BUILD: Zip Plugin"
         git push origin ${{ github.event.pull_request.head.ref }}
-    - name: Store PR Body
-      run: echo "R_BODY=${{ github.event.pull_request.body }}\n\n${{ github.event.pull_request.html_url }}" >> $GITHUB_ENV
     - name: Create Release
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PR_BODY: ${{ github.event.pull_request.body }}
+        PR_URL: ${{ github.event.pull_request.html_url }}
       run: |
         RELEASE_BRANCH=${{ github.event.pull_request.head.ref }}
-        RELEASE_BODY=$R_BODY
+        RELEASE_BODY="""$PR_BODY
+
+        $PR_URL"""
         RELEASE_TAG=$(grep -oP "(?<=te-custom-mods: )[0-9]+\.[0-9]+\.[0-9]+" ./prod-versions.ini)
         RELEASE_TITLE="$RELEASE_TAG: ${{ github.event.pull_request.title }}"
         gh release create "$RELEASE_TAG" --title "$RELEASE_TITLE" --notes "$RELEASE_BODY" --target $RELEASE_BRANCH -d
