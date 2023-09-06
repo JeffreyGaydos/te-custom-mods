@@ -102,7 +102,7 @@ button:not(.toggle).tec_dm_button {
 }
 
 /*REGULAR YOUTUBE EMBED STYLING*/
-#tec-video-embed.follow, #tec-video-embed-player, iframe.follow {
+#tec-video-embed.follow, #tec-video-embed-player, #tec_video_embed_iframe.follow {
     width: 300px !important;
     height: 168.75px !important;
     position: fixed;
