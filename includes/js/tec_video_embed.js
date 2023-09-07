@@ -32,15 +32,18 @@ function onYouTubeIframeAPIReady() {
     widht: '300',
     events: {
       'onReady': tec_on_player_ready
+    },
+    playerVars: {
+      'autoplay': 0,
+      'listType': 'playlist',
+      'list': 'PLXpVmFPiKKjXFYK6GGVDFYwKBpQced5uZ',
+      'suggestedQuality': 'hd720',
+      'mute': 0
     }
   });
 }
 
 function tec_on_player_ready(event) {
-  var randomVideoIndex = `${parseInt(Math.random() * 200)}`; //the YouTube iframe API only loads the first 200 videos of a large playlist. Theoretically this should include the newest 200
-  tec_videoPlayer.loadPlaylist({'listType': 'playlist', 'list': 'PLXpVmFPiKKjXFYK6GGVDFYwKBpQced5uZ', 'index': randomVideoIndex, 'startSeconds': '0','suggestedQuality': 'hd720'});
-  tec_videoPlayer.setShuffle(true);
-  tec_videoPlayer.mute();
   clearTimeout(tec_video_embed_timeouter);
   tec_add_header_close_event();
   tec_set_header_visibility(true);
