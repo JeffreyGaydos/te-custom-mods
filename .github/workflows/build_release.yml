@@ -75,5 +75,4 @@ jobs:
         RELEASE_TAG=$(grep -oP "(?<=te-custom-mods: )[0-9]+\.[0-9]+\.[0-9]+" ./prod-versions.ini)
         RELEASE_TITLE="$RELEASE_TAG: ${{ github.event.pull_request.title }}"
         gh release create "$RELEASE_TAG" --title "$RELEASE_TITLE" --notes "$RELEASE_BODY" --target $RELEASE_BRANCH -d
-        gh release upload "$RELEASE_TAG" ./te-custom-mods.zip
         gh release upload "$RELEASE_TAG" ./te-custom-mods.zip#./te-custom-mods-v$RELEASE_TAG
