@@ -37,7 +37,8 @@ function onYouTubeIframeAPIReady() {
       'autoplay': 0,
       'listType': 'playlist',
       'list': 'PLXpVmFPiKKjXFYK6GGVDFYwKBpQced5uZ',
-      'suggestedQuality': 'hd720'
+      'suggestedQuality': 'hd720',
+      'mute': 0
     }
   });
 }
