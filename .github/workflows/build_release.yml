@@ -68,10 +68,12 @@ jobs:
         PR_URL: ${{ github.event.pull_request.html_url }}
       run: |
         RELEASE_BRANCH=${{ github.event.pull_request.head.ref }}
-        RELEASE_BODY="""$PR_BODY
+        RELEASE_BODY=""":rocket: Pending Deploy
+        $PR_BODY
 
         $PR_URL"""
         RELEASE_TAG=$(grep -oP "(?<=te-custom-mods: )[0-9]+\.[0-9]+\.[0-9]+" ./prod-versions.ini)
         RELEASE_TITLE="$RELEASE_TAG: ${{ github.event.pull_request.title }}"
         gh release create "$RELEASE_TAG" --title "$RELEASE_TITLE" --notes "$RELEASE_BODY" --target $RELEASE_BRANCH -d
         gh release upload "$RELEASE_TAG" ./te-custom-mods.zip
+        gh release upload "$RELEASE_TAG" ./te-custom-mods.zip#./te-custom-mods-v$RELEASE_TAG
