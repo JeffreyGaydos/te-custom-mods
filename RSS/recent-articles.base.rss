@@ -2,7 +2,7 @@
 <rss version="2.0">
 <channel>
 <title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
-<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/master/RSS/recent-article.rss</link>
+<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
 <description>The latest TE article</description>
 <lastBuildDate>{{date}}</lastBuildDate>
 <item>
