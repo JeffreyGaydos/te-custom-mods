@@ -12,7 +12,7 @@ base = open("./RSS/recent-articles.base.rss").read()
 dateString = (str)(datetime.datetime.now())
 print(dateString[:10])
 
-regexOutput = sys.argv[1]
+regexOutput = sys.stdin.read()
 
 urlString = regexOutput.split("\">")[0]
 titleString = regexOutput.split("\">")[1]
