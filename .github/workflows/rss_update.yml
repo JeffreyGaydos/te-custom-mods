@@ -3,6 +3,8 @@ name: RSS Update
 on:
   schedule:
     - cron: '30 23 * * *'
+  pull_request:
+    types: [labeled]
 
 jobs:
   rss-update:
@@ -29,4 +31,4 @@ jobs:
         git config --global user.name "GitHub Actions"
         git add .
         git commit -m "GHA_RSS: Update RSS Feeds"
-        git push origin ${{ github.event.pull_request.head.ref }}
+        git push origin DEV-custom-rss
