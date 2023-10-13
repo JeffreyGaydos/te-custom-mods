@@ -13,6 +13,7 @@ dateString = (str)(datetime.datetime.now())
 print(dateString[:10])
 
 regexOutput = sys.stdin.read()
+print("Input from Regex: " + regexOutput)
 
 urlString = regexOutput.split('">')[0]
 print(urlString)
