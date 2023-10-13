@@ -14,9 +14,9 @@ print(dateString[:10])
 
 regexOutput = sys.stdin.read()
 
-urlString = regexOutput.split("\">")[0]
-titleString = regexOutput.split("\">")[1]
+urlString = regexOutput.split('">')[0]
 print(urlString)
+titleString = regexOutput.split('">')[1]
 print(titleString)
 
 # base = base.replace(_date, dateString[:10])
