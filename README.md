@@ -40,6 +40,10 @@ The automated build process is activated once a PR is marked ready for review an
     - `./includes/build_scripts/build_zip_plugin.py`
 - **Create Github Release**: After making the above changes and committing them to the branch, a release draft is created with the version determined by the plugin version incremeter. Note that the workflow will not overrite a release with the same tag, so the release may not show up if you used the same tag as a previous release. The title and body of the PR from which the release was created are added to the release title and body respectively. A link to the PR is added at the end of the release notes as well. This is all internal to the workflow and does not involve any python scripts
 
+## RSS Feed
+
+The custom RSS feed is implemented via the "raw" view of the code found in `RSS/recent-articles.rss`, specifically on the `DEV-custom-rss` branch. This file is updated via the GitHub action found in `.github/.workflows/rss_updates.yml` and currently runs at 7:27 AM UTC (3:27 AM EDT). The python file that actually updates the RSS feed file is at `RSS/update_rss.py`, but specifically on the `DEV-custom-rss` branch. The python file on the `master` branch is not actually used by the action to update the RSS feed. Any RSS-related updates should be applied to both the `master` and `DEV-custom-rss` branches.
+
 ## Dev Automation
 
 The `dev_automation` folder is intended to be used with the VS Code plugin [Run on Save](https://marketplace.visualstudio.com/items?itemName=emeraldwalk.RunOnSave&ssr=false#overview). The file `.vscode/settings.json` needs to be configured as follows for those scripts to work correctly:
