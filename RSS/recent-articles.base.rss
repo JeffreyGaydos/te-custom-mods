@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+<title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
+<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
+<description>The latest TE article</description>
+<lastBuildDate>{{date}}</lastBuildDate>
+<item>
+<title>{{title}}</title>
+<link>{{url}}</link>
+<guid>{{url}}</guid>
+<description></description>
+<pubDate>{{date}}</pubDate>
+</item>
+</channel>
+</rss>
