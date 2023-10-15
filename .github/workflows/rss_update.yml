@@ -2,7 +2,7 @@ name: RSS Update
 
 on:
   schedule:
-    - cron: '34 2 * * *'
+    - cron: '*/5 * * * *'
 
 jobs:
   rss-update:
@@ -10,6 +10,7 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+      with: { ref: DEV-custom-rss }
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
