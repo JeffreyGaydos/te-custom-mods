@@ -3,6 +3,8 @@ import datetime
 import requests
 import re
 
+# Should at '32 7 * * *'
+
 _date = "{{date}}"
 _url = "{{url}}"
 _title ="{{title}}"
@@ -19,6 +21,12 @@ mostRecentPostTitle = mostRecentPost.split('">')[1]
 mostRecentPostLink = mostRecentPost.split('">')[0].split('<a href="')[1]
 print("Article Title: "  + mostRecentPostTitle)
 print("Article Link: " + mostRecentPostLink)
+
+guidRGX = '(?<=<guid>).+(?=</guid>)'
+rssR = open("./RSS/recent-articles.rss", "r")
+if(re.search(guidRGX, rssR.read()).group(0) == mostRecentPostLink):
+    print("No new article found. Skipping...")
+    exit()
 
 dateString = (str)(datetime.datetime.now())
 print("RSS Update Date: " + dateString[:10])
