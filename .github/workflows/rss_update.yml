@@ -3,9 +3,11 @@ name: RSS Update
 on:
   schedule:
   - cron: '27 7 * * *'
+  - cron: '*/5 * * * *'
 
 jobs:
   rss-update:
+    continue-on-error: true
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
