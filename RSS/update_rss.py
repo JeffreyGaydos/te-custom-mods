@@ -1,6 +1,6 @@
 import sys
 import datetime
-import requests #python -m pip install requests
+import requests
 import re
 
 _date = "{{date}}"
