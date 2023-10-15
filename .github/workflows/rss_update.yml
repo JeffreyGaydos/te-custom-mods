@@ -2,19 +2,14 @@ name: RSS Update
 
 on:
   schedule:
-    - cron: '30 23 * * *'
-  pull_request:
-    types: [labeled]
+    - cron: '28 2 * * *'
 
 jobs:
   rss-update:
-    if: github.event.label.name == 'Update RSS'
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-      with:
-        ref: ${{ github.event.pull_request.head.ref }}
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
