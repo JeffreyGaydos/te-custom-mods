@@ -1,23 +1,5 @@
 Updating RSS feeds...
 Article Title: GM Otter Light Reconnaissance Car Mk I in Italian Service
 Article Link: https://tanks-encyclopedia.com/coldwar/italy/gm-otter-light-reconnaissance-car-mk-i-in-italian-service/
-RSS Update Date: 2023-10-16
-https://tanks-encyclopedia.com/coldwar/italy/gm-otter-light-reconnaissance-car-mk-i-in-italian-service/
-GM Otter Light Reconnaissance Car Mk I in Italian Service
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0">
-<channel>
-<title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
-<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
-<description>The latest TE article</description>
-<lastBuildDate>2023-10-16 08:26:37.836677</lastBuildDate>
-<item>
-<title>GM Otter Light Reconnaissance Car Mk I in Italian Service</title>
-<link>https://tanks-encyclopedia.com/coldwar/italy/gm-otter-light-reconnaissance-car-mk-i-in-italian-service/</link>
-<guid>https://tanks-encyclopedia.com/coldwar/italy/gm-otter-light-reconnaissance-car-mk-i-in-italian-service/</guid>
-<description></description>
-<pubDate>2023-10-16 08:26:37.836677</pubDate>
-</item>
-</channel>
-</rss>
+No new article found. Skipping...
 Finished updating RSS feeds...
