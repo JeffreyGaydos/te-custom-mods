@@ -42,7 +42,7 @@ The automated build process is activated once a PR is marked ready for review an
 
 ## RSS Feed
 
-The custom RSS feed is implemented via the "raw" view of the code found in `RSS/recent-articles.rss`, specifically on the `DEV-custom-rss` branch. This file is updated via the GitHub action found in `.github/.workflows/rss_updates.yml` and currently runs at 7:27 AM UTC (3:27 AM EDT). The python file that actually updates the RSS feed file is at `RSS/update_rss.py`, but specifically on the `DEV-custom-rss` branch. The python file on the `master` branch is not actually used by the action to update the RSS feed. Any RSS-related updates should be applied to both the `master` and `DEV-custom-rss` branches.
+The custom RSS feed is implemented via the "raw" view of the code found in `RSS/recent-articles.rss`, specifically on the `DEV-custom-rss` branch. This file is updated via the GitHub action found in `.github/.workflows/rss_updates.yml` and currently runs every hour at the 7th minute of each hour and every 10 minutes from 7:27 AM - 9:27 AM UTC (3:27 AM - 5:27 AM EST). The python file that actually updates the RSS feed file is at `RSS/update_rss.py`, but specifically on the `DEV-custom-rss` branch. The python file on the `master` branch is not actually used by the action to update the RSS feed. Any RSS-related updates should be applied to both the `master` and `DEV-custom-rss` branches.
 
 ## Dev Automation
 
