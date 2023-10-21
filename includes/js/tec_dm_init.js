@@ -73,18 +73,18 @@ function tec_darkMode() {
 
 function tec_index_dm() {
     if(tec_darkMode_state == 'false') {
-        document.getElementById("indexIcon").src = "https://tanks-encyclopedia.com/wp-content/uploads/2020/06/DropdownBlack.png";
+        document.getElementById("indexIcon").src = "/wp-content/plugins/te-custom-mods/images/DropdownBlack.png";
     } else {
-        document.getElementById("indexIcon").src = "https://tanks-encyclopedia.com/wp-content/uploads/2020/06/DropdownYellow.png";
+        document.getElementById("indexIcon").src = "/wp-content/plugins/te-custom-mods/images/DropdownYellow.png";
     }
 }
 
 function tec_to_top_dm() {
     if(tec_darkMode_state == 'false') {
-        document.getElementById("tec-to-top").src = "https://tanks-encyclopedia.com/wp-content/uploads/2021/05/ToTopBlack.png";
+        document.getElementById("tec-to-top").src = "/wp-content/plugins/te-custom-mods/images/ToTopBlack.png";
         document.getElementById("tec-to-top").setAttribute("onmouseover", "this.style.backgroundColor='#f6dd95';");
     } else {
-        document.getElementById("tec-to-top").src = "https://tanks-encyclopedia.com/wp-content/uploads/2021/05/ToTopYellow.png";
+        document.getElementById("tec-to-top").src = "/wp-content/plugins/te-custom-mods/images/ToTopYellow.png";
         document.getElementById("tec-to-top").setAttribute("onmouseover", "this.style.backgroundColor='rgb(110, 118, 83)'");
     }
 }
@@ -93,12 +93,12 @@ function tec_gallery_dm() {
     if(tec_darkMode_state == 'false') {
         arrow_list = document.getElementsByClassName("tec_g_arrow_img")
         for(var i = 0; i < arrow_list.length; i++) {
-            arrow_list[i].src = "https://tanks-encyclopedia.com/wp-content/uploads/2020/06/DropdownBlack.png";
+            arrow_list[i].src = "/wp-content/plugins/te-custom-mods/images/DropdownBlack.png";
         }
     } else {
         arrow_list = document.getElementsByClassName("tec_g_arrow_img")
         for(var i = 0; i < arrow_list.length; i++) {
-            arrow_list[i].src = "https://tanks-encyclopedia.com/wp-content/uploads/2020/06/DropdownYellow.png";
+            arrow_list[i].src = "/wp-content/plugins/te-custom-mods/images/DropdownYellow.png";
         }
     }
 }
