@@ -12,7 +12,7 @@ if(!(document.getElementById("no_index")) && document.title.substring(0, 16) != 
 function toggleIndex() {
 	var indexVis = toggleIndexVisible();
     var rot = (indexVis) ? 0 : -90;
-    document.getElementById("indexBox").remove();
+    //document.getElementById("indexBox").remove();
     generateIndex();
     //strict ordering^v
     document.getElementById("indexDropdown").style.transform = "rotate(" + rot + "deg)";
@@ -30,7 +30,7 @@ function toggleIndex() {
 	document.getElementById("indexBox").getElementsByTagName("ol")[0].style.animationDirection = "reverse";
 
     //mainly for ensuring that the arrow is the correct color
-    tec_index_dm()
+    //tec_index_dm()
     
     //allows the index to stay mobile friendly when clicked
     mobileCompatible();
@@ -129,9 +129,35 @@ function generateIndex() {
     var fullIndex = h3TagsList.concat(h2TagsList);
     //sorts tha array of objects according to their "p" orioerty (position on the page in y)
     fullIndex.sort(function(a, b){return a.y - b.y});
-    
+    console.log(fullIndex);
     //render the box for the index
     var articleContent = document.getElementsByClassName("entry-content")[0].innerHTML;
+    var tec_indexBox = document.createElement("H2");
+    tec_indexBox.id = "tec_indexBox";
+    var indexWrapper = document.createElement("DIV");
+    indexWrapper.class = "entry-content";
+    indexWrapper.id = "tec_indexWrapper";
+    var innerIndexBox = document.createElement("DIV");
+    innerIndexBox.id = "tec_innerIdexBox";
+    var indexToggler = document.createElement("A");
+    indexToggler.id = "tec_indexToggler";
+    indexToggler.addEventListener("click", toggleIndex);
+    var indexContent = document.createElement("H2");
+    indexContent.id = "tec_indexContent";
+    indexContent.innerText = "Contents:";
+    var indexDropdown = document.createElement("SPAN");
+    indexDropdown.id = "tec_indexDropdown";
+    var indexDropdownImage = document.createElement("IMG");
+    indexDropdownImage.id = "tec_indexIcon";
+    indexDropdownImage.src = "/wp-content/plugins/te-custom-mods/images/DropdownBlack.png";
+    indexDropdown.appendChild(indexDropdownImage);
+    indexContent.appendChild(indexDropdown);
+    indexToggler.appendChild(indexContent);
+    innerIndexBox.appendChild(indexToggler);
+    // indexWrapper.appendChild(innerIndexBox); These should not be appended until they have all the elements they need
+    // tec_indexBox.appendChild(indexWrapper);
+    var indexList = document.createElement("OL");
+    indexList.id = "tec_indexList";
     var indexBox =  '<h2 id="indexBox">'
         + '<div style="width: 100%; border: 0px solid #424732; text-align: left;" class="entry-content">'
             + '<div style="width: 50%; border: 2px solid #424732; padding: 3px 3px 3px 3px; text-align: left; margin-left: 0px; min-width: calc(25% + 300px); font-size: 15pt;" class="entry-content" id="innerIndexBox">'
@@ -139,25 +165,26 @@ function generateIndex() {
                     + '<h2 style="margin-left: 5px; margin-bottom: 0px; margin-top: 0px; width: 98%;" id="indexContent">'
                         + 'Contents:'
                         + '<span style="float: right; transform: rotate(-90deg);" id="indexDropdown">'
-                            + '<img src="https://tanks-encyclopedia.com/wp-content/uploads/2020/06/DropdownBlack.png" id="indexIcon">'
+                            + '<img src="/wp-content/plugins/te-custom-mods/images/DropdownBlack.png" id="indexIcon">'
                         + '</span>'
                     + '</h2>'
                 + '</a>'
                 + '<ol style="margin-right: 0px; margin-left: 5%;">';
     document.getElementsByClassName("entry-content")[0].innerHTML = articleContent;    
-    if(indexVisible) {
+    if(indexVisible || true) {
         //document.getElementById("indexBox").getElementById("indexDropdown").style.transform = "rotate(90deg)";
         for(var k = 0; k < fullIndex.length; k++) {
-            if(fullIndex[k].hVal() == 2) {
+            if(fullIndex[k].h == 2) {
                 if(!shouldIgnoreH2(fullIndex[k].t)) {
-                    indexBox += indexH2(fullIndex[k].t.innerText, "index" + k);
+                    // indexBox += indexH2(fullIndex[k].t.innerText, "index" + k);
+                    indexList.appendChild(indexH2(fullIndex[k].t.innerText, "index" + k));
                     //finding the in-page element so we can change its id to link to the index
                     var l = 0;
                     while(l < h2c.length && fullIndex[k].t.innerText != h2c[l].innerText) {
-                        //console.log("Linker finding tags...");
+                        console.log("Linker finding tags...");
                         l++;
                     }
-                    //console.log("Linker Found: " + h2c[l].innerHTML);
+                    console.log("Linker Found: " + h2c[l].innerHTML);
                     if(l < h2c.length) {
                         h2c[l].id = "index" + k;
                     }
@@ -165,14 +192,15 @@ function generateIndex() {
             } else {
                 if(!shouldIgnoreH3(fullIndex[k].t)) {
                     //check is so that first element looks good
-                    indexBox += k == 0 ? indexH2(fullIndex[k].t.innerText, "index" + k) : indexH3(fullIndex[k].t.innerText, "index" + k);
+                    // indexBox += k == 0 ? indexH2(fullIndex[k].t.innerText, "index" + k) : indexH3(fullIndex[k].t.innerText, "index" + k);
+                    indexList.appendChild(k == 0 ? indexH2(fullIndex[k].t.innerText, "index" + k) : indexH3(fullIndex[k].t.innerText, "index" + k));
                     //finding the in-page element so we can change its id to link to the index
                     var l = 0;
                     while(l < h3c.length && fullIndex[k].t.innerText != h3c[l].innerText) {
-                        //console.log("Linker finding tags...");
+                        console.log("Linker finding tags...");
                         l++;
                     }
-                    //console.log("Linker Found: " + h3c[l].innerHTML);
+                    console.log("Linker Found: " + h3c[l].innerHTML);
                     if(l < h3c.length) {
                         h3c[l].id = "index" + k;
                     }
@@ -180,10 +208,13 @@ function generateIndex() {
             }
         }
     }
-
+    innerIndexBox.appendChild(indexList);
+    indexWrapper.appendChild(innerIndexBox);
+    tec_indexBox.appendChild(indexWrapper);
     indexBox += '</ol></div></div></h2>';
-    var current = document.getElementsByClassName("entry-content")[0].innerHTML;
-    document.getElementsByClassName("entry-content")[0].innerHTML = indexBox + current;
+    // var current = document.getElementsByClassName("entry-content")[0].innerHTML;
+    // document.getElementsByClassName("entry-content")[0].innerHTML = indexBox + current;
+    document.getElementsByClassName("entry-content")[0].prepend(tec_indexBox);
 
     mobileCompatible();
 	
@@ -215,18 +246,6 @@ function tagSpot(tag, position, hVal) {
     this.h = hVal;
 }
 
-tagSpot.prototype.tag = function() {
-    return this.t;
-}
-
-tagSpot.prototype.position = function() {
-    return this.y;
-}
-
-tagSpot.prototype.hVal = function() {
-    return this.h;
-}
-
 /*
  *  Helper function for generate index. Inserts an element into the array just before the specified index.
  *  Updates array.
@@ -248,17 +267,31 @@ function insertAt(index, array, element) {
 }
 
 /*
- *  Helper function for generate index. ensures that this next h3 is indented on the index
+ *  Helper function for generate index. Ensures the proper indentation for the type of header.
  */
 function indexH3(h3, id) {
-    var indexElement = '<li style="margin-left: calc(5% + 50px); margin-top: 0px;"><a href="#' + id + '" class="index_text">' + h3 + '</a></li>';
-    return indexElement;
+    var headerLink = document.createElement("A");
+    headerLink.class = "tec_index_text";
+    headerLink.href = `#${id}`;
+    headerLink.innerHTML = h3; //must use HTML here since occaisionally we pick up special formatting
+    var contentItem = document.createElement("LI");
+    contentItem.class = "tec_contents_item_h3";
+    contentItem.appendChild(headerLink);
+    // var indexElement = '<li style="margin-left: calc(5% + 50px); margin-top: 0px;"><a href="#' + id + '" class="index_text">' + h3 + '</a></li>';
+    return contentItem;
 }
 
 /*
- *  Helper function for generate index. ensures that this next h3 is indented on the index
+ *  Helper function for generate index. Ensures the proper indentation for the type of header.
  */
 function indexH2(h2, id) {
-    var indexElement = '<li style="margin-top: 0px; margin-left: calc(5% + 25px);"><a href="#' + id + '" class="index_text">' + h2 + '</a></li>';
-    return indexElement;
+    var headerLink = document.createElement("A");
+    headerLink.class = "tec_index_text";
+    headerLink.href = `#${id}`;
+    headerLink.innerHTML = h2;
+    var contentItem = document.createElement("LI");
+    contentItem.class = "tec_contents_item_h3";
+    contentItem.appendChild(headerLink);
+    // var indexElement = '<li style="margin-top: 0px; margin-left: calc(5% + 25px);"><a href="#' + id + '" class="index_text">' + h2 + '</a></li>';
+    return contentItem;
 }

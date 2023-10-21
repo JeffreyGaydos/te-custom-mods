@@ -30,7 +30,7 @@ if( !function_exists("tec_dark_mode_create") ) {
 
 if( !function_exists("tec_dark_mode_init") ) {
     function tec_dark_mode_init() {
-        wp_enqueue_script('tec-dark-mode-init', plugins_url('/js/tec_dm_init.js', __FILE__), '', '3.3');
+        wp_enqueue_script('tec-dark-mode-init', plugins_url('/js/tec_dm_init.js', __FILE__), '', '3.11');
     }
 }
 
@@ -95,7 +95,7 @@ if(get_option('tec_index') == 'on') {
 
 if(!function_exists("tec_index_generate")) {
     function tec_index_generate() {
-        wp_enqueue_script('tec-index-gen', plugins_url('/js/tec_index.js', __FILE__), '', '2.2');
+        wp_enqueue_script('tec-index-gen', plugins_url('/js/tec_index.js', __FILE__), '', '2.33');
     }
 }
 /********************************************************************
@@ -109,7 +109,7 @@ if(get_option('tec_gallery') == 'on') {
 if( !function_exists("tec_gallery") ) {
     function tec_gallery() {
         wp_enqueue_script( 'jquery531', 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js');
-        wp_enqueue_script( 'tec-gallery', plugins_url('/js/tec_gallery.js', __FILE__), '', '2.9');
+        wp_enqueue_script( 'tec-gallery', plugins_url('/js/tec_gallery.js', __FILE__), '', '2.10');
     }
 }
 
@@ -135,7 +135,7 @@ if(get_option('tec_to_top') == 'on') {
 
 if( !function_exists("tec_to_top") ) {
     function tec_to_top() {
-        wp_enqueue_script( 'tec-to-top', plugins_url('/js/tec_to_top.js', __FILE__), '', '2.4');
+        wp_enqueue_script( 'tec-to-top', plugins_url('/js/tec_to_top.js', __FILE__), '', '2.5');
     }
 }
 
