@@ -137,8 +137,8 @@ function generateIndex() {
     var indexWrapper = document.createElement("DIV");
     indexWrapper.class = "entry-content";
     indexWrapper.id = "tec_indexWrapper";
-    var innerIndexBox = document.createElement("DIV");
-    innerIndexBox.id = "tec_innerIdexBox";
+    var innerIndexWrapper = document.createElement("DIV");
+    innerIndexWrapper.id = "tec_innerIndexWrapper";
     var indexToggler = document.createElement("A");
     indexToggler.id = "tec_indexToggler";
     indexToggler.addEventListener("click", toggleIndex);
@@ -153,7 +153,7 @@ function generateIndex() {
     indexDropdown.appendChild(indexDropdownImage);
     indexContent.appendChild(indexDropdown);
     indexToggler.appendChild(indexContent);
-    innerIndexBox.appendChild(indexToggler);
+    innerIndexWrapper.appendChild(indexToggler);
     // indexWrapper.appendChild(innerIndexBox); These should not be appended until they have all the elements they need
     // tec_indexBox.appendChild(indexWrapper);
     var indexList = document.createElement("OL");
@@ -208,8 +208,8 @@ function generateIndex() {
             }
         }
     }
-    innerIndexBox.appendChild(indexList);
-    indexWrapper.appendChild(innerIndexBox);
+    innerIndexWrapper.appendChild(indexList);
+    indexWrapper.appendChild(innerIndexWrapper);
     tec_indexBox.appendChild(indexWrapper);
     indexBox += '</ol></div></div></h2>';
     // var current = document.getElementsByClassName("entry-content")[0].innerHTML;

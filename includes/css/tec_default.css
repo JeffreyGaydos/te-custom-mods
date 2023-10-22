@@ -42,6 +42,58 @@ div.tec-rand-text > p.wp-caption-text {
     margin: 0px;
 }
 
+/*Index Styling*/
+div#tec_indexWrapper {
+    width: 100%;
+    border: 0px;
+    text-align: left;
+}
+
+div#tec_innerIndexWrapper {
+    width: 50%;
+    border: 2px solid var(--ted-dbeige);
+    padding: 3px 3px 3px 3px;
+    text-align: left;
+    margin-left: 0px;
+    min-width: calc(25% + 300px);
+    font-size: 15pt;
+}
+
+a#tec_indexToggler {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+h2#tec_indexContent {
+    margin-left: 5px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    width: 98%;
+}
+
+span#tec_indexDropdown {
+    float: right;
+    transform: rotate(-90deg);
+}
+
+ol#tec_indexList {
+    margin-right: 0px;
+    margin-left: 5%;
+    font-weight: 100;
+}
+
+li.tec_contents_item_h3, li.tec_contents_item_h2 {
+    margin-top: 0px;
+}
+
+li.tec_contents_item_h3 {
+    margin-left: calc(5% + 25px);
+}
+
+li.tec_contents_item_h2 {
+    margin-left: calc(5% + 50px);
+}
+
 /*To Top Button Styling*/
 img#tec-to-top {
     border-radius: 100%;
