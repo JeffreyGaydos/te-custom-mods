@@ -1,5 +1,23 @@
 Updating RSS feeds...
-Article Title: YaG-12
-Article Link: https://tanks-encyclopedia.com/ww2/soviet/yag-12/
-No new article found. Skipping...
+Article Title: Alvis Shadow \xe2\x80\x98Offensive Action Vehicle\xe2\x80\x99
+Article Link: https://tanks-encyclopedia.com/modern/uk/alvis-shadow-offensive-action-vehicle/
+RSS Update Date: 2023-10-25
+https://tanks-encyclopedia.com/modern/uk/alvis-shadow-offensive-action-vehicle/
+Alvis Shadow \xe2\x80\x98Offensive Action Vehicle\xe2\x80\x99
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+<title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
+<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
+<description>The latest TE article</description>
+<lastBuildDate>2023-10-25 12:32:18.965349</lastBuildDate>
+<item>
+<title>Alvis Shadow \xe2\x80\x98Offensive Action Vehicle\xe2\x80\x99</title>
+<link>https://tanks-encyclopedia.com/modern/uk/alvis-shadow-offensive-action-vehicle/</link>
+<guid>https://tanks-encyclopedia.com/modern/uk/alvis-shadow-offensive-action-vehicle/</guid>
+<description></description>
+<pubDate>2023-10-25 12:32:18.965349</pubDate>
+</item>
+</channel>
+</rss>
 Finished updating RSS feeds...
