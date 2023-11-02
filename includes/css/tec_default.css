@@ -43,6 +43,10 @@ div.tec-rand-text > p.wp-caption-text {
 }
 
 /*Index Styling*/
+/* h2#tec_indexBox {
+    transition: all ease 0.25s;
+} */
+
 div#tec_indexWrapper {
     width: 100%;
     border: 0px;
@@ -57,7 +61,12 @@ div#tec_innerIndexWrapper {
     margin-left: 0px;
     min-width: calc(25% + 300px);
     font-size: 15pt;
+    transition: all ease 0.25s;
 }
+
+/* #tec_indexBox.open div#tec_innerIndexWrapper {
+
+} */
 
 a#tec_indexToggler {
     cursor: pointer;
@@ -74,16 +83,52 @@ h2#tec_indexContent {
 span#tec_indexDropdown {
     float: right;
     transform: rotate(-90deg);
+    transition: all ease 0.25s;
+}
+
+#tec_indexBox.open span#tec_indexDropdown {
+    transform: rotate(0deg);
 }
 
 ol#tec_indexList {
-    margin-right: 0px;
-    margin-left: 5%;
+    margin: 0;
     font-weight: 100;
+    opacity: 0;
+    position: relative;
+    left: -10000px;
+    transition: opactiy ease 0.25s;
+}
+
+ol#tec_indexList.after-measuring {
+    width: 0;
+    height: 0;
+    transition: opactiy ease 0.25s;
+}
+
+/*Add this class 0.25s after openning the index so the words don't fade in until the box is open*/
+ol#tec_indexList.visible {
+    opacity: 1;
+    transition: all ease 0.25s;
+}
+
+#tec_indexBox.open ol#tec_indexList {
+    margin: 0 0 2rem 5%;
+    width: auto;
+    height: auto;
+    left: 0px;
 }
 
 li.tec_contents_item_h3, li.tec_contents_item_h2 {
     margin-top: 0px;
+    transition: inherit;
+}
+
+/* li.tec_contents_item_h3 a, li.tec_contents_item_h2 a {
+    
+} */
+
+#tec_indexBox.open li.tec_contents_item_h3 a, #tec_indexBox.open li.tec_contents_item_h2 a {
+    transition: inherit;
 }
 
 li.tec_contents_item_h3 {
