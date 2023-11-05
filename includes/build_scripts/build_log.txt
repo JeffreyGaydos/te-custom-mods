@@ -35,3 +35,29 @@
 2023-11-05 18:26:53.093495 [build_update_plugin_version.py]: [INFO] Updating README.md...
 2023-11-05 18:26:53.094051 [build_update_plugin_version.py]: [INFO] Updating te-custom-mods.php...
 2023-11-05 18:26:53.094392 [build_update_plugin_version.py]: Completed successfully
+2023-11-05 18:26:53.822148 [build_zip_plugin.py]: te-custom-mods.php
+2023-11-05 18:26:53.824642 [build_zip_plugin.py]: tec-functions.php
+2023-11-05 18:26:53.824895 [build_zip_plugin.py]: tec_dm_placer.js
+2023-11-05 18:26:53.825019 [build_zip_plugin.py]: tec_coauthor_display.js
+2023-11-05 18:26:53.825135 [build_zip_plugin.py]: tec_dm_init.js
+2023-11-05 18:26:53.825258 [build_zip_plugin.py]: tec_donation.js
+2023-11-05 18:26:53.825369 [build_zip_plugin.py]: tec_video_embed_existing.js
+2023-11-05 18:26:53.825482 [build_zip_plugin.py]: tec_gallery.js
+2023-11-05 18:26:53.825624 [build_zip_plugin.py]: tec_discord.js
+2023-11-05 18:26:53.825742 [build_zip_plugin.py]: tec_index.js
+2023-11-05 18:26:53.825875 [build_zip_plugin.py]: tec_video_embed_shared.js
+2023-11-05 18:26:53.825989 [build_zip_plugin.py]: tec_init.js
+2023-11-05 18:26:53.826101 [build_zip_plugin.py]: tec_author_archive.js
+2023-11-05 18:26:53.826213 [build_zip_plugin.py]: tec_header_follow.js
+2023-11-05 18:26:53.826330 [build_zip_plugin.py]: tec_video_embed.js
+2023-11-05 18:26:53.826436 [build_zip_plugin.py]: tec_to_top.js
+2023-11-05 18:26:53.826545 [build_zip_plugin.py]: tec_random_article.js
+2023-11-05 18:26:53.826685 [build_zip_plugin.py]: tec_darkMode_search.css
+2023-11-05 18:26:53.826793 [build_zip_plugin.py]: tec_default.css
+2023-11-05 18:26:53.826922 [build_zip_plugin.py]: tec_darkMode.css
+2023-11-05 18:26:53.827126 [build_zip_plugin.py]: author.php
+2023-11-05 18:26:53.827264 [build_zip_plugin.py]: ToTopBlack.png
+2023-11-05 18:26:53.827408 [build_zip_plugin.py]: DropdownYellow.png
+2023-11-05 18:26:53.827513 [build_zip_plugin.py]: ToTopYellow.png
+2023-11-05 18:26:53.827779 [build_zip_plugin.py]: DropdownBlack.png
+2023-11-05 18:26:53.827904 [build_zip_plugin.py]: FullscreenIcon.png
