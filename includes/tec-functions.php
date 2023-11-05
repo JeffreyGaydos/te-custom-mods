@@ -10,7 +10,7 @@ add_action("wp_head", "tec_init", 1);
 
 if( !function_exists("tec_init") ) {
     function tec_init() {
-        wp_enqueue_script( 'tec-init', plugins_url('/js/tec_init.js', __FILE__), '', '1.117');
+        wp_enqueue_script( 'tec-init', plugins_url('/js/tec_init.js', __FILE__), '', '1.127');
     }
 }
 
@@ -96,7 +96,7 @@ if(get_option('tec_index') == 'on') {
 if(!function_exists("tec_index_generate")) {
     function tec_index_generate() {
         if(is_single()) {
-            wp_enqueue_script('tec-index-gen', plugins_url('/js/tec_index.js', __FILE__), '', '2.93');
+            wp_enqueue_script('tec-index-gen', plugins_url('/js/tec_index.js', __FILE__), '', '2.114');
         }
     }
 }
@@ -112,19 +112,6 @@ if( !function_exists("tec_gallery") ) {
     function tec_gallery() {
         wp_enqueue_script( 'jquery531', 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js');
         wp_enqueue_script( 'tec-gallery', plugins_url('/js/tec_gallery.js', __FILE__), '', '2.10');
-    }
-}
-
-/********************************************************************
- * Routing Mobile Compatability Mods
- ********************************************************************/
-if(get_option('tec_mobile') == 'on') {
-    add_action("wp_head", "tec_mobile_init", 13);
-}
-
-if( !function_exists("tec_mobile_init") ) {
-    function tec_mobile_init() {
-        wp_enqueue_script( 'tec-mobile-init', plugins_url('/js/tec_mobile_comp_init.js', __FILE__), '', '2.5');
     }
 }
 
