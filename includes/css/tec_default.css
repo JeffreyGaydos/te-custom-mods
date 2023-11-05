@@ -42,11 +42,7 @@ div.tec-rand-text > p.wp-caption-text {
     margin: 0px;
 }
 
-/*Index Styling*/
-/* h2#tec_indexBox {
-    transition: all ease 0.25s;
-} */
-
+/*Contents Generator / Index Styling*/
 div#tec_indexWrapper {
     width: 100%;
     border: 0px;
@@ -63,10 +59,6 @@ div#tec_innerIndexWrapper {
     font-size: 15pt;
     transition: all ease 0.25s;
 }
-
-/* #tec_indexBox.open div#tec_innerIndexWrapper {
-
-} */
 
 a#tec_indexToggler {
     cursor: pointer;
@@ -102,7 +94,6 @@ ol#tec_indexList {
 ol#tec_indexList.after-measuring {
     width: 0;
     height: 0;
-    transition: opactiy ease 0.25s;
 }
 
 /*Add this class 0.25s after openning the index so the words don't fade in until the box is open*/
@@ -122,10 +113,6 @@ li.tec_contents_item_h3, li.tec_contents_item_h2 {
     margin-top: 0px;
     transition: inherit;
 }
-
-/* li.tec_contents_item_h3 a, li.tec_contents_item_h2 a {
-    
-} */
 
 #tec_indexBox.open li.tec_contents_item_h3 a, #tec_indexBox.open li.tec_contents_item_h2 a {
     transition: inherit;
@@ -338,6 +325,74 @@ button:not(.toggle).tec_dm_button {
 /*Gallery Styling*/
 .tec_g_pos_ind.current, .tec_g_pos_ind.hovered {
 	background-color: #f6dd95 !important;
+}
+
+/*Mobile Conpatible Styling - converted from the tec_mobile_comp_init.js file. Not all styles are plugin specific...*/
+
+@media(max-width: 985px) {
+    .header-titles-wrapper {
+        width: 100%;
+    }
+
+    .tec_g_featured {
+        height: 200px;
+    }
+}
+
+@media(max-width: 500px) {
+    h1 {
+        font-size: 30px !important;
+    }
+
+    h2 {
+        font-size: 17px !important;
+    }
+
+    p:not(.tec-rand-text .wp-caption-text), ul, ol {
+        font-size: 15px !important;
+    }
+
+    tbody {
+        font-size: 14px !important;
+    }
+
+    em {
+        font-size: 17px !important;
+    }
+
+    img[src~="fake-1.png"], img[src~="fail.png"] {
+        width: 50px;
+        height: 50px;
+        margin: 3px;
+    }
+
+    /*NOTE: image is 60px wide plus 20px + 10px of pagging = 70px*/
+    img[src~="logo-big-border.png"] {
+        max-height: 60px;
+        min-width: 90px;
+        padding: 0px 20px 0px 10px;
+        margin-left: 25%;
+    }
+
+    .toggle-text {
+        left: 0;
+        right: 0;
+    }
+
+    #JeffsDarkModeTextMobile {
+        font-size: 11px;
+        margin-bottom: 0;
+    }
+
+    #JeffsDarkModeButtonMobile {
+        padding: 1px;
+        margin-left: 10px;
+    }
+
+    #tec_innerIndexWrapper {
+        width: 100%;
+        min-width: 50%;
+    }
 }
 
 /*Additional Misc. Styling*/

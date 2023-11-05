@@ -132,12 +132,12 @@
 		
 		//aids in making the index more visible on mobile
 		try {
-			document.getElementById("innerIndexBox").style.width = "100%";
-			document.getElementById("innerIndexBox").style.minWidth = "50%";
+			document.getElementById("tec_innerIndexWrapper").style.width = "100%";
+			document.getElementById("tec_innerIndexWrapper").style.minWidth = "50%";
 		} catch(e) {
 			//couldn't find index box or subsequent div tags
 		}
 	}
 }
 
-mobileCompatible();
+// mobileCompatible();

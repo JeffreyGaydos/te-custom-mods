@@ -10,7 +10,7 @@ add_action("wp_head", "tec_init", 1);
 
 if( !function_exists("tec_init") ) {
     function tec_init() {
-        wp_enqueue_script( 'tec-init', plugins_url('/js/tec_init.js', __FILE__), '', '1.95');
+        wp_enqueue_script( 'tec-init', plugins_url('/js/tec_init.js', __FILE__), '', '1.117');
     }
 }
 
@@ -30,7 +30,7 @@ if( !function_exists("tec_dark_mode_create") ) {
 
 if( !function_exists("tec_dark_mode_init") ) {
     function tec_dark_mode_init() {
-        wp_enqueue_script('tec-dark-mode-init', plugins_url('/js/tec_dm_init.js', __FILE__), '', '3.11');
+        wp_enqueue_script('tec-dark-mode-init', plugins_url('/js/tec_dm_init.js', __FILE__), '', '3.13');
     }
 }
 
@@ -95,7 +95,9 @@ if(get_option('tec_index') == 'on') {
 
 if(!function_exists("tec_index_generate")) {
     function tec_index_generate() {
-        wp_enqueue_script('tec-index-gen', plugins_url('/js/tec_index.js', __FILE__), '', '2.71');
+        if(is_single()) {
+            wp_enqueue_script('tec-index-gen', plugins_url('/js/tec_index.js', __FILE__), '', '2.93');
+        }
     }
 }
 /********************************************************************
@@ -122,7 +124,7 @@ if(get_option('tec_mobile') == 'on') {
 
 if( !function_exists("tec_mobile_init") ) {
     function tec_mobile_init() {
-        wp_enqueue_script( 'tec-mobile-init', plugins_url('/js/tec_mobile_comp_init.js', __FILE__), '', '2.2');
+        wp_enqueue_script( 'tec-mobile-init', plugins_url('/js/tec_mobile_comp_init.js', __FILE__), '', '2.5');
     }
 }
 
@@ -150,7 +152,7 @@ if( !function_exists("tec_video_embed") ) {
     function tec_video_embed() {
         if(is_single()) {
             wp_enqueue_script( 'tec-video-embed-shared', plugins_url('/js/tec_video_embed_shared.js', __FILE__), '', '1.1');
-            if(is_single() && !in_category("has-own-video")) {
+            if(!in_category("has-own-video")) {
                 wp_enqueue_script( 'tec-video-embed', plugins_url('/js/tec_video_embed.js', __FILE__), '', '2.2');
             } else {
                 wp_enqueue_script( 'tec-video-embed-existing', plugins_url('/js/tec_video_embed_existing.js', __FILE__), '', '1.1');

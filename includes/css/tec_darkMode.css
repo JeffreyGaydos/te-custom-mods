@@ -142,11 +142,11 @@ span.meta-text > a {
 }
 
 /*Contents Generator (indexer)*/
-#innerIndexBox {
+#tec_innerIndexWrapper {
     border-color: var(--te-yellow) !important;
 }
 
-#indexContent {
+#tec_indexContent {
     color: white !important;
 }
 

@@ -27,7 +27,7 @@ function tec_darkMode() {
     if(tec_darkMode_state == 'false') {
         var style = document.createElement("link");
         style.rel = "stylesheet";
-        style.href = "/wp-content/plugins/te-custom-mods/includes/css/tec_darkMode.css?v6.0";
+        style.href = "/wp-content/plugins/te-custom-mods/includes/css/tec_darkMode.css?v6.1";
         style.id = "tec_darkMode";
         document.head.appendChild(style);
         tec_darkMode_elements[0] = style;
@@ -73,9 +73,9 @@ function tec_darkMode() {
 
 function tec_index_dm() {
     if(tec_darkMode_state == 'false') {
-        document.getElementById("indexIcon").src = "/wp-content/plugins/te-custom-mods/images/DropdownBlack.png";
+        document.getElementById("tec_indexIcon").src = "/wp-content/plugins/te-custom-mods/images/DropdownBlack.png";
     } else {
-        document.getElementById("indexIcon").src = "/wp-content/plugins/te-custom-mods/images/DropdownYellow.png";
+        document.getElementById("tec_indexIcon").src = "/wp-content/plugins/te-custom-mods/images/DropdownYellow.png";
     }
 }
 
