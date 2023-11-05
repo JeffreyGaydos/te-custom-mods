@@ -42,6 +42,91 @@ div.tec-rand-text > p.wp-caption-text {
     margin: 0px;
 }
 
+/*Contents Generator / Index Styling*/
+div#tec_indexWrapper {
+    width: 100%;
+    border: 0px;
+    text-align: left;
+}
+
+div#tec_innerIndexWrapper {
+    width: 50%;
+    border: 2px solid var(--ted-dbeige);
+    padding: 3px 3px 3px 3px;
+    text-align: left;
+    margin-left: 0px;
+    min-width: calc(25% + 300px);
+    font-size: 15pt;
+    transition: all ease 0.5s;
+}
+
+a#tec_indexToggler {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+h2#tec_indexContent {
+    margin-left: 5px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    width: 98%;
+}
+
+span#tec_indexDropdown {
+    float: right;
+    transform: rotate(-90deg);
+    transition: all ease 0.25s;
+}
+
+#tec_indexBox.open span#tec_indexDropdown {
+    transform: rotate(0deg);
+}
+
+ol#tec_indexList {
+    margin: 0;
+    font-weight: 100;
+    opacity: 0;
+    position: relative;
+    left: -10000px;
+    transition: opactiy ease 0.25s;
+    width: 0;
+    height: 0;
+}
+
+ol#tec_indexList.after-measuring {
+    width: auto !important;
+    height: auto !important;
+}
+
+/*Add this class 0.25s after openning the index so the words don't fade in until the box is open*/
+ol#tec_indexList.visible {
+    opacity: 1;
+    transition: all ease 0.25s;
+}
+
+#tec_indexBox.open ol#tec_indexList {
+    width: auto;
+    height: auto;
+    left: 0px;
+}
+
+li.tec_contents_item_h3, li.tec_contents_item_h2 {
+    margin-top: 0px;
+    transition: inherit;
+}
+
+#tec_indexBox.open li.tec_contents_item_h3 a, #tec_indexBox.open li.tec_contents_item_h2 a {
+    transition: inherit;
+}
+
+li.tec_contents_item_h3 {
+    margin-left: calc(5% + 25px);
+}
+
+li.tec_contents_item_h2 {
+    margin-left: calc(5% + 50px);
+}
+
 /*To Top Button Styling*/
 img#tec-to-top {
     border-radius: 100%;
@@ -169,6 +254,13 @@ button:not(.toggle).tec_dm_button {
 		top: 8px;
 }
 
+/*Gallery Styling*/
+.tec_g_pos_ind.current, .tec_g_pos_ind.hovered {
+	background-color: #f6dd95 !important;
+}
+
+/*Mobile Conpatible Styling - converted from the tec_mobile_comp_init.js file. Not all styles are plugin specific...*/
+
 @media(max-width: 1550px) {
 	.site-description {
 		width: 10vh;
@@ -185,6 +277,12 @@ button:not(.toggle).tec_dm_button {
 }
 
 @media(max-width: 1000px) {
+    .header-titles-wrapper {
+        width: 100%;
+    }
+}
+
+@media(max-width: 999px) {
 	.site-description {
 		position: relative;
 		top: -15px;
@@ -196,7 +294,7 @@ button:not(.toggle).tec_dm_button {
 	}
 }
 
-@media(max-width: 700px) {
+@media(max-width: 699px) {
 	.site-description {
 		display: none;
 	}
@@ -207,14 +305,79 @@ button:not(.toggle).tec_dm_button {
 	}
 }
 
+@media(max-width: 500px) {
+    h1 {
+        font-size: 30px !important;
+    }
+
+    h2 {
+        font-size: 17px !important;
+    }
+
+    p:not(.tec-rand-text .wp-caption-text), ul, ol {
+        font-size: 15px !important;
+    }
+
+    tbody {
+        font-size: 14px !important;
+    }
+
+    em {
+        font-size: 17px !important;
+    }
+
+    img[src~="fake-1.png"], img[src~="fail.png"] {
+        width: 50px;
+        height: 50px;
+        margin: 3px;
+    }
+
+    /*NOTE: image is 60px wide plus 20px + 10px of pagging = 70px*/
+    img[src~="logo-big-border.png"] {
+        max-height: 60px;
+        min-width: 90px;
+        padding: 0px 20px 0px 10px;
+        margin-left: 25%;
+    }
+
+    .toggle-text {
+        left: 0 !important;
+        right: 0 !important;
+    }
+
+    #JeffsDarkModeTextMobile {
+        font-size: 11px !important;
+        margin-bottom: 0 !important;
+    }
+
+    #JeffsDarkModeButtonMobile {
+        padding: 1px !important;
+        margin-left: 10px !important;
+    }
+
+    #tec_innerIndexWrapper {
+        width: 100% !important;
+        min-width: 50% !important;
+    }
+}
+
 @media(max-width: 440px) {
 	.header-titles .tec-donation img {
 		height: 30px !important;
 		width: auto !important;
 		position: relative !important;
-		top: -8px !important;
+		top: -4px !important;
 		padding: 0px 2px 2px 10px !important;
 	}
+
+    .header-inner.section-inner {
+        padding-bottom: 0 !important;
+        padding-top: 4px !important;
+    }
+
+    .toggle.search-toggle.mobile-search-toggle, .toggle.nav-toggle.mobile-nav-toggle {
+        height: 50px;
+    }
 	
 	.tec_dm_div {
 		padding-left: 15px !important;
@@ -222,25 +385,26 @@ button:not(.toggle).tec_dm_button {
 	}
 	
 	.tec_dm_button {
-		width: 6rem !important;
+		width: 50px !important;
+        height: 40px;
 		padding-left: 0px !important;
 		padding-right: 0px !important;
+        margin-bottom: 4px !important;
 	}
 	
-	.tec_dm_button p {
-		font-size: 15px !important;
+	.tec_dm_div .tec_dm_button p.tec_dm_p {
+		font-size: 12px !important;
 	}
+
+    .site-logo {
+        width: 50px !important;
+    }
 }
 
 @media(max-width: 355px) {
 	.header-titles .tec-donation {
 		display: none;
 	}
-}
-
-/*Gallery Styling*/
-.tec_g_pos_ind.current, .tec_g_pos_ind.hovered {
-	background-color: #f6dd95 !important;
 }
 
 /*Additional Misc. Styling*/

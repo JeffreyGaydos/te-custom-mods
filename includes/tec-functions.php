@@ -10,7 +10,7 @@ add_action("wp_head", "tec_init", 1);
 
 if( !function_exists("tec_init") ) {
     function tec_init() {
-        wp_enqueue_script( 'tec-init', plugins_url('/js/tec_init.js', __FILE__), '', '1.2');
+        wp_enqueue_script( 'tec-init', plugins_url('/js/tec_init.js', __FILE__), '', '1.3');
     }
 }
 
@@ -30,7 +30,7 @@ if( !function_exists("tec_dark_mode_create") ) {
 
 if( !function_exists("tec_dark_mode_init") ) {
     function tec_dark_mode_init() {
-        wp_enqueue_script('tec-dark-mode-init', plugins_url('/js/tec_dm_init.js', __FILE__), '', '3.3');
+        wp_enqueue_script('tec-dark-mode-init', plugins_url('/js/tec_dm_init.js', __FILE__), '', '3.4');
     }
 }
 
@@ -95,7 +95,9 @@ if(get_option('tec_index') == 'on') {
 
 if(!function_exists("tec_index_generate")) {
     function tec_index_generate() {
-        wp_enqueue_script('tec-index-gen', plugins_url('/js/tec_index.js', __FILE__), '', '2.2');
+        if(is_single()) {
+            wp_enqueue_script('tec-index-gen', plugins_url('/js/tec_index.js', __FILE__), '', '2.3');
+        }
     }
 }
 /********************************************************************
@@ -109,20 +111,7 @@ if(get_option('tec_gallery') == 'on') {
 if( !function_exists("tec_gallery") ) {
     function tec_gallery() {
         wp_enqueue_script( 'jquery531', 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js');
-        wp_enqueue_script( 'tec-gallery', plugins_url('/js/tec_gallery.js', __FILE__), '', '2.9');
-    }
-}
-
-/********************************************************************
- * Routing Mobile Compatability Mods
- ********************************************************************/
-if(get_option('tec_mobile') == 'on') {
-    add_action("wp_head", "tec_mobile_init", 13);
-}
-
-if( !function_exists("tec_mobile_init") ) {
-    function tec_mobile_init() {
-        wp_enqueue_script( 'tec-mobile-init', plugins_url('/js/tec_mobile_comp_init.js', __FILE__), '', '2.2');
+        wp_enqueue_script( 'tec-gallery', plugins_url('/js/tec_gallery.js', __FILE__), '', '2.10');
     }
 }
 
@@ -135,7 +124,7 @@ if(get_option('tec_to_top') == 'on') {
 
 if( !function_exists("tec_to_top") ) {
     function tec_to_top() {
-        wp_enqueue_script( 'tec-to-top', plugins_url('/js/tec_to_top.js', __FILE__), '', '2.4');
+        wp_enqueue_script( 'tec-to-top', plugins_url('/js/tec_to_top.js', __FILE__), '', '2.5');
     }
 }
 
@@ -150,7 +139,7 @@ if( !function_exists("tec_video_embed") ) {
     function tec_video_embed() {
         if(is_single()) {
             wp_enqueue_script( 'tec-video-embed-shared', plugins_url('/js/tec_video_embed_shared.js', __FILE__), '', '1.1');
-            if(is_single() && !in_category("has-own-video")) {
+            if(!in_category("has-own-video")) {
                 wp_enqueue_script( 'tec-video-embed', plugins_url('/js/tec_video_embed.js', __FILE__), '', '2.2');
             } else {
                 wp_enqueue_script( 'tec-video-embed-existing', plugins_url('/js/tec_video_embed_existing.js', __FILE__), '', '1.1');

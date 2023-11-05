@@ -83,7 +83,7 @@ function createGallery(g_num, fig = false) {
 	galleryBody += '<div class="tec_g_arrow" style="flex-grow: 1; display: flex; justify-content: center; border: 2px solid black; padding: 4px; height: 30px; cursor: pointer;" onMouseOver="this.style.backgroundColor=\'#f6dd95\'" onMouseOut="this.style.backgroundColor=\'white\'" onclick="tec_g_previous(';
 	galleryBody += g_num + ", 1";
 	galleryBody += ')" class="tec_g_arrow" name="g_previous">';
-	galleryBody += '<img class="tec_g_arrow_img" src="https://tanks-encyclopedia.com/wp-content/uploads/2020/06/DropdownBlack.png" style="transform: rotate(90deg); width: 18px; height: 18px;">';
+	galleryBody += '<img class="tec_g_arrow_img" src="/wp-content/plugins/te-custom-mods/images/DropdownBlack.png" style="transform: rotate(90deg); width: 18px; height: 18px;">';
 	galleryBody += "</div>";
 
 	//caption
@@ -98,7 +98,7 @@ function createGallery(g_num, fig = false) {
 	galleryBody += '<div class="tec_g_arrow" style="flex-grow: 1; display: flex; justify-content: center; border: 2px solid black; padding: 4px; height: 30px; cursor: pointer;" onMouseOver="this.style.backgroundColor=\'#f6dd95\'" onMouseOut="this.style.backgroundColor=\'white\'" style="height: 22px; width: 62px; padding-right: 20px; padding-left: 20px; margin-top: 141px; margin-bottom: 141px; transform: rotate(-90deg); border: 2px solid black; cursor: pointer" onclick="tec_g_next(';
 	galleryBody += g_num + ", 1";
 	galleryBody += ')" class="tec_g_arrow" name="g_next">';
-	galleryBody += '<img class="tec_g_arrow_img" src="https://tanks-encyclopedia.com/wp-content/uploads/2020/06/DropdownBlack.png" style="transform: rotate(-90deg); width: 18px; height: 18px;">';
+	galleryBody += '<img class="tec_g_arrow_img" src="/wp-content/plugins/te-custom-mods/images/DropdownBlack.png" style="transform: rotate(-90deg); width: 18px; height: 18px;">';
 	galleryBody += "</div>";
 
 	galleryBody += '</div>';
