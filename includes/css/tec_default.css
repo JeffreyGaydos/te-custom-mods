@@ -103,7 +103,6 @@ ol#tec_indexList.visible {
 }
 
 #tec_indexBox.open ol#tec_indexList {
-    margin: 0 0 2rem 5%;
     width: auto;
     height: auto;
     left: 0px;
