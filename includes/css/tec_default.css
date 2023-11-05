@@ -278,10 +278,6 @@ button:not(.toggle).tec_dm_button {
     .header-titles-wrapper {
         width: 100%;
     }
-
-    .tec_g_featured {
-        height: 200px;
-    }
 }
 
 @media(max-width: 999px) {
