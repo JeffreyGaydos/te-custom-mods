@@ -57,7 +57,7 @@ div#tec_innerIndexWrapper {
     margin-left: 0px;
     min-width: calc(25% + 300px);
     font-size: 15pt;
-    transition: all ease 0.25s;
+    transition: all ease 0.5s;
 }
 
 a#tec_indexToggler {
@@ -296,7 +296,7 @@ button:not(.toggle).tec_dm_button {
 	}
 }
 
-@media(max-width: 700px) {
+@media(max-width: 699px) {
 	.site-description {
 		display: none;
 	}
@@ -368,9 +368,18 @@ button:not(.toggle).tec_dm_button {
 		height: 30px !important;
 		width: auto !important;
 		position: relative !important;
-		top: -8px !important;
+		top: -4px !important;
 		padding: 0px 2px 2px 10px !important;
 	}
+
+    .header-inner.section-inner {
+        padding-bottom: 0 !important;
+        padding-top: 4px !important;
+    }
+
+    .toggle.search-toggle.mobile-search-toggle, .toggle.nav-toggle.mobile-nav-toggle {
+        height: 50px;
+    }
 	
 	.tec_dm_div {
 		padding-left: 15px !important;
@@ -378,14 +387,20 @@ button:not(.toggle).tec_dm_button {
 	}
 	
 	.tec_dm_button {
-		width: 6rem !important;
+		width: 50px !important;
+        height: 40px;
 		padding-left: 0px !important;
 		padding-right: 0px !important;
+        margin-bottom: 4px !important;
 	}
 	
-	.tec_dm_button p {
-		font-size: 15px !important;
+	.tec_dm_div .tec_dm_button p.tec_dm_p {
+		font-size: 12px !important;
 	}
+
+    .site-logo {
+        width: 50px !important;
+    }
 }
 
 @media(max-width: 355px) {

@@ -21,7 +21,7 @@ function tec_openIndex() {
     document.getElementById("tec_indexBox").classList.add("open");
     tec_index_animation_handler = setTimeout(() => {
         document.getElementById("tec_indexList").classList.add("visible");
-    }, 250);
+    }, 350);
     document.getElementById("tec_innerIndexWrapper").style.height = `${tec_innerIndexWrapperHeight_open}px`;
 }
 
@@ -193,7 +193,8 @@ function tec_generateIndex() {
     tec_closeIndex();
     tec_index_measure_handler = setInterval(() => {
         if(tec_innerIndexWrapperHeight_open > indexWrapper.clientHeight) {
-            tec_innerIndexWrapperHeight_closed = indexWrapper.clientHeight
+            tec_innerIndexWrapperHeight_closed = indexWrapper.clientHeight;
+            tec_closeIndex();
         }
         if(tec_innerIndexWrapperHeight_closed) {
             clearInterval(tec_index_measure_handler);
