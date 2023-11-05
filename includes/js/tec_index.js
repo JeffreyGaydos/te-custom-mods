@@ -17,11 +17,19 @@ function tec_closeIndex() {
     document.getElementById("tec_innerIndexWrapper").style.height = `${tec_innerIndexWrapperHeight_closed}px`;
 }
 
+//The idea here is to use the uer's action to determine when we need to calculate heights
+//There is not really a good event we can hook into that tells us when certain "auto" CSS is applied
 function tec_openIndex() {
+    if(!tec_innerIndexWrapperHeight_closed) {
+        tec_innerIndexWrapperHeight_closed ??= document.getElementById("tec_indexWrapper").clientHeight;
+        document.getElementById("tec_innerIndexWrapper").style.height = `${tec_innerIndexWrapperHeight_closed}px`;
+        document.getElementById("tec_indexList").classList.add("after-measuring");
+    }
     document.getElementById("tec_indexBox").classList.add("open");
     tec_index_animation_handler = setTimeout(() => {
         document.getElementById("tec_indexList").classList.add("visible");
     }, 350);
+    tec_innerIndexWrapperHeight_open ??= document.getElementById("tec_indexList").clientHeight + tec_innerIndexWrapperHeight_closed;
     document.getElementById("tec_innerIndexWrapper").style.height = `${tec_innerIndexWrapperHeight_open}px`;
 }
 
@@ -131,7 +139,6 @@ function tec_generateIndex() {
     //render the box for the index
     var tec_indexBox = document.createElement("H2");
     tec_indexBox.id = "tec_indexBox";
-    tec_indexBox.classList.add("open");
     var indexWrapper = document.createElement("DIV");
     indexWrapper.classList.add("entry-content");
     indexWrapper.id = "tec_indexWrapper";
@@ -188,21 +195,6 @@ function tec_generateIndex() {
     indexWrapper.appendChild(innerIndexWrapper);
     tec_indexBox.appendChild(indexWrapper);
     document.getElementsByClassName("entry-content")[0].prepend(tec_indexBox);
-    tec_innerIndexWrapperHeight_open = indexWrapper.clientHeight;
-    indexList.classList.add("after-measuring");
-    tec_closeIndex();
-    tec_index_measure_handler = setInterval(() => {
-        if(tec_innerIndexWrapperHeight_open > indexWrapper.clientHeight) {
-            tec_innerIndexWrapperHeight_closed = indexWrapper.clientHeight;
-            tec_closeIndex();
-        }
-        if(tec_innerIndexWrapperHeight_closed) {
-            clearInterval(tec_index_measure_handler);
-        }
-    }, 200);
-    setTimeout(() => {
-        clearInterval(tec_index_measure_handler);
-    }, 5000); //don't loop more than 25 times...
 }
 
 /*

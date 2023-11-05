@@ -89,11 +89,13 @@ ol#tec_indexList {
     position: relative;
     left: -10000px;
     transition: opactiy ease 0.25s;
+    width: 0;
+    height: 0;
 }
 
 ol#tec_indexList.after-measuring {
-    width: 0;
-    height: 0;
+    width: auto !important;
+    height: auto !important;
 }
 
 /*Add this class 0.25s after openning the index so the words don't fade in until the box is open*/
