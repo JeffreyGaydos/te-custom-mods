@@ -238,7 +238,7 @@ function tec_indexH2(h2, id) {
     var headerLink = document.createElement("A");
     headerLink.classList.add("tec_index_text");
     headerLink.href = `#${id}`;
-    headerLink.innerHTML = h2;
+    headerLink.innerHTML = h2; //must use HTML here since occaisionally we pick up special formatting
     var contentItem = document.createElement("LI");
     contentItem.classList.add("tec_contents_item_h3");
     contentItem.appendChild(headerLink);
