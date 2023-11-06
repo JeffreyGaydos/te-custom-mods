@@ -1,5 +1,23 @@
 Updating RSS feeds...
-Article Title: Giacomini tank
-Article Link: https://tanks-encyclopedia.com/coldwar/france/giacomini-tank/
-No new article found. Skipping...
+Article Title: VK45.01(P) mit Rammhaube &#8220;RammTiger&#8221;
+Article Link: https://tanks-encyclopedia.com/ww2/germany/vk45-01p-mit-rammhaube-rammtiger/
+RSS Update Date: 2023-11-06
+https://tanks-encyclopedia.com/ww2/germany/vk45-01p-mit-rammhaube-rammtiger/
+VK45.01(P) mit Rammhaube &#8220;RammTiger&#8221;
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+<title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
+<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
+<description>The latest TE article</description>
+<lastBuildDate>2023-11-06 11:45:21.261650</lastBuildDate>
+<item>
+<title>VK45.01(P) mit Rammhaube &#8220;RammTiger&#8221;</title>
+<link>https://tanks-encyclopedia.com/ww2/germany/vk45-01p-mit-rammhaube-rammtiger/</link>
+<guid>https://tanks-encyclopedia.com/ww2/germany/vk45-01p-mit-rammhaube-rammtiger/</guid>
+<description></description>
+<pubDate>2023-11-06 11:45:21.261650</pubDate>
+</item>
+</channel>
+</rss>
 Finished updating RSS feeds...
