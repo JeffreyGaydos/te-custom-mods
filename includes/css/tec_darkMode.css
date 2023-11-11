@@ -337,3 +337,13 @@ p.tec_g_caption {
 .tec_g_pos_ind_mobile > h4 {
     color: white;
 }
+
+/*2023 Carousel*/
+
+.wp-spaios-content-wrp {
+    background-color: var(--te-dgreen) !important;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: white !important;
+}
