@@ -2,22 +2,11 @@ var tec_darkMode_state = 'false';
 var tec_darkMode_elements = [];
 
 function initDarkMode() {
-    if(document.cookie.indexOf(' cookielawinfo-checkbox-necessary=yes') != -1) { //then user has allowed functional cookies
-        if(tec_darkMode_state == undefined) {
-            tec_darkMode_state = 'false';
-        }
-        //document.cookie = 'DarkMode = true; Path=/;';
-        var cookieArray = document.cookie.split(';');
-        for(var i = 0; i < cookieArray.length; i++) {
-            var name = cookieArray[i].split('=')[0];
-            var value = cookieArray[i].split('=')[1];
-            //console.log("--==Called darkModeUnstable Loop==--\nname: " + name + " value: " + value + " dark is: " + this.dark);
-            if(name == ' DarkMode') {
-                if(value != tec_darkMode_state) {
-                    document.cookie = name + ' = ' + value + '; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-                    tec_darkMode();
-                }
-            }
+    if(localStorage.getItem("tec_darkMode") == undefined) {
+        localStorage.setItem("tec_darkMode", "false");
+    } else {
+        if(localStorage.getItem("tec_darkMode") == "true") {
+            tec_darkMode();
         }
     }
 }
@@ -41,8 +30,7 @@ function tec_darkMode() {
             tec_darkMode_elements[1] = style2;
         }
         tec_darkMode_state = 'true';
-        if(document.cookie.indexOf(' cookielawinfo-checkbox-necessary=yes') != -1)
-            document.cookie = 'DarkMode = true; Path=/;';
+        localStorage.setItem("tec_darkMode", "true");
 
         document.getElementsByClassName("tec_dm_p")[0].innerHTML = "Light Mode";
         document.getElementsByClassName("tec_dm_p")[1].innerHTML = "Light Mode";
@@ -53,8 +41,7 @@ function tec_darkMode() {
             }
         }
         tec_darkMode_state = 'false';
-        if(document.cookie.indexOf(' cookielawinfo-checkbox-necessary=yes') != -1)
-            document.cookie = 'DarkMode = false; Path=/;';
+        localStorage.setItem("tec_darkMode", "false");
 
         document.getElementsByClassName("tec_dm_p")[0].innerHTML = "Dark Mode";
         document.getElementsByClassName("tec_dm_p")[1].innerHTML = "Dark Mode";
