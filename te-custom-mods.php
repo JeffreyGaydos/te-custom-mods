@@ -109,5 +109,6 @@ if( !function_exists("update_tec_info") ) {
         register_setting( 'tec-settings', 'tec_video_embed' );
         register_setting( 'tec-settings', 'tec_coauthor_display' );
         register_setting( 'tec-settings', 'tec_author_archive' );
+        register_setting( 'tec-settings', 'tec_category_archive' );
     }
 }
