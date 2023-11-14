@@ -179,7 +179,7 @@ if(!function_exists("tec_author_archive")) {
     function tec_author_archive() {
         if(is_author()) {
             include( plugin_dir_path( __FILE__ ) . 'php/author.php');
-            wp_enqueue_script( 'tec-author-archive', plugins_url('/js/tec_author_archive.js', __FILE__), '', '1.3');
+            wp_enqueue_script( 'tec-author-archive', plugins_url('/js/tec_author_archive.js', __FILE__), '', '1.1');
         }
     }
 }
