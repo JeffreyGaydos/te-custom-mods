@@ -72,6 +72,8 @@ if( !function_exists("tec_acp_page") ) {
             <input type="checkbox" name="tec_coauthor_display" <?php tec_get_checked('tec_coauthor_display') ?> >Co-Author Display</input>
             <br><br>
             <input type="checkbox" name="tec_author_archive" <?php tec_get_checked('tec_author_archive') ?> >Author Archive Display</input>
+            <br><br>
+            <input type="checkbox" name="tec_category_archive" <?php tec_get_checked('tec_category_archive') ?> >Category Archive Display</input>
             <?php
                 submit_button();
             ?>

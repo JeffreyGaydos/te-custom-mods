@@ -183,3 +183,19 @@ if(!function_exists("tec_author_archive")) {
         }
     }
 }
+
+/********************************************************************
+ * Routing Category Archive
+ ********************************************************************/
+if(get_option('tec_category_archive') == 'on') {
+    add_action("wp_head", "tec_category_archive", 12);
+}
+
+if(!function_exists("tec_category_archive")) {
+    function tec_category_archive() {
+        if(is_category()) {
+            include( plugin_dir_path( __FILE__ ) . 'php/category.php');
+            wp_enqueue_script( 'tec-category-archive', plugins_url('/js/tec_category_archive.js', __FILE__), '', '1.3');
+        }
+    }
+}
