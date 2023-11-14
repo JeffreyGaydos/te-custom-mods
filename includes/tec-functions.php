@@ -30,7 +30,7 @@ if( !function_exists("tec_dark_mode_create") ) {
 
 if( !function_exists("tec_dark_mode_init") ) {
     function tec_dark_mode_init() {
-        wp_enqueue_script('tec-dark-mode-init', plugins_url('/js/tec_dm_init.js', __FILE__), '', '3.14');
+        wp_enqueue_script('tec-dark-mode-init', plugins_url('/js/tec_dm_init.js', __FILE__), '', '3.17');
     }
 }
 
@@ -179,7 +179,7 @@ if(!function_exists("tec_author_archive")) {
     function tec_author_archive() {
         if(is_author()) {
             include( plugin_dir_path( __FILE__ ) . 'php/author.php');
-            wp_enqueue_script( 'tec-author-archive', plugins_url('/js/tec_author_archive.js', __FILE__), '', '1.1');
+            wp_enqueue_script( 'tec-author-archive', plugins_url('/js/tec_author_archive.js', __FILE__), '', '1.2');
         }
     }
 }
@@ -195,7 +195,7 @@ if(!function_exists("tec_category_archive")) {
     function tec_category_archive() {
         if(is_category()) {
             include( plugin_dir_path( __FILE__ ) . 'php/category.php');
-            wp_enqueue_script( 'tec-category-archive', plugins_url('/js/tec_category_archive.js', __FILE__), '', '1.6');
+            wp_enqueue_script( 'tec-category-archive', plugins_url('/js/tec_category_archive.js', __FILE__), '', '1.7');
         }
     }
 }
