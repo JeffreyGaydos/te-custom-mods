@@ -1,5 +1,23 @@
 Updating RSS feeds...
-Article Title: Improvised Armored Car based on the Morris CS8 in Germany Service
-Article Link: https://tanks-encyclopedia.com/ww2/germany/improvised-armored-car-based-on-the-morris-cs8-in-germany-service/
-No new article found. Skipping...
+Article Title: Vetchinkin\xe2\x80\x99s Tracked Amphibious Boat &#8211; G.K.A. 1500
+Article Link: https://tanks-encyclopedia.com/ww2/soviet/vetchinkins-tracked-amphibious-boat-g-k-a-1500/
+RSS Update Date: 2023-11-15
+https://tanks-encyclopedia.com/ww2/soviet/vetchinkins-tracked-amphibious-boat-g-k-a-1500/
+Vetchinkin\xe2\x80\x99s Tracked Amphibious Boat &#8211; G.K.A. 1500
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+<title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
+<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
+<description>The latest TE article</description>
+<lastBuildDate>2023-11-15 11:16:41.090071</lastBuildDate>
+<item>
+<title>Vetchinkin\xe2\x80\x99s Tracked Amphibious Boat &#8211; G.K.A. 1500</title>
+<link>https://tanks-encyclopedia.com/ww2/soviet/vetchinkins-tracked-amphibious-boat-g-k-a-1500/</link>
+<guid>https://tanks-encyclopedia.com/ww2/soviet/vetchinkins-tracked-amphibious-boat-g-k-a-1500/</guid>
+<description></description>
+<pubDate>2023-11-15 11:16:41.090071</pubDate>
+</item>
+</channel>
+</rss>
 Finished updating RSS feeds...
