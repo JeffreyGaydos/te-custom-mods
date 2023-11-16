@@ -344,6 +344,10 @@ p.tec_g_caption {
     color: white !important;
 }
 
+h2.archive-text {
+    color: var(--te-yellow) !important;
+}
+
 /*2023 Carousel*/
 
 .wp-spaios-content-wrp {

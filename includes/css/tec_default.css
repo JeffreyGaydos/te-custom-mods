@@ -408,6 +408,11 @@ button:not(.toggle).tec_dm_button {
 	}
 }
 
+/*Category/author Archive pages*/
+h2.archive-text {
+    text-align: center;
+}
+
 /*Additional Misc. Styling*/
 #cookie-law-info-bar {
 	z-index: 2147483641 !important;
