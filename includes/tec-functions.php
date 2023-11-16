@@ -96,7 +96,7 @@ if(get_option('tec_index') == 'on') {
 if(!function_exists("tec_index_generate")) {
     function tec_index_generate() {
         if(is_single()) {
-            wp_enqueue_script('tec-index-gen', plugins_url('/js/tec_index.js', __FILE__), '', '2.4');
+            wp_enqueue_script('tec-index-gen', plugins_url('/js/tec_index.js', __FILE__), '', '2.7');
         }
     }
 }

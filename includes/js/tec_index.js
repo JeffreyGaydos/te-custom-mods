@@ -17,7 +17,7 @@ function tec_closeIndex() {
     document.getElementById("tec_innerIndexWrapper").style.height = `${tec_innerIndexWrapperHeight_closed}px`;
 }
 
-//The idea here is to use the uer's action to determine when we need to calculate heights
+//The idea here is to use the user's action to determine when we need to calculate heights
 //There is not really a good event we can hook into that tells us when certain "auto" CSS is applied
 function tec_openIndex() {
     if(!tec_innerIndexWrapperHeight_closed) {
@@ -77,9 +77,9 @@ function tec_isH2ImgOnly(h2element) {
 }
 
 function tec_isH3ImgOnly(h3element) {
-    var allImgH2s = document.querySelectorAll("h2 img");
+    var allImgH3s = document.querySelectorAll("h3 img");
     var res = false;
-    allImgH2s.forEach((el) => {
+    allImgH3s.forEach((el) => {
         if(h3element == el.parentElement && h3element.innerText == "") {
             res = true;
         }
