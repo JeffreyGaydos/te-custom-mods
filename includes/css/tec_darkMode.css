@@ -344,6 +344,10 @@ p.tec_g_caption {
     color: white !important;
 }
 
+h2.archive-text {
+    color: var(--te-yellow) !important;
+}
+
 /*2023 Carousel*/
 
 .wp-spaios-content-wrp {
@@ -352,4 +356,8 @@ p.tec_g_caption {
 
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
     background: white !important;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    color: var(--te-yellow) !important;
 }
