@@ -232,7 +232,7 @@ function tec_indexH2(h2, id) {
     headerLink.href = `#${id}`;
     headerLink.innerHTML = h2; //must use HTML here since occaisionally we pick up special formatting
     var contentItem = document.createElement("LI");
-    contentItem.classList.add("tec_contents_item_h3");
+    contentItem.classList.add("tec_contents_item_h2");
     contentItem.appendChild(headerLink);
     return contentItem;
 }
