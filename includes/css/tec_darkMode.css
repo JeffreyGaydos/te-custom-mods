@@ -338,6 +338,12 @@ p.tec_g_caption {
     color: white;
 }
 
+/*Archive pages*/
+
+.archive-text {
+    color: white !important;
+}
+
 /*2023 Carousel*/
 
 .wp-spaios-content-wrp {

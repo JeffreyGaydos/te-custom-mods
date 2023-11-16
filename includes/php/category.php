@@ -1,4 +1,4 @@
-<main style="display:block" id="tec_author_archive" role="main">
+<main style="display:block" id="tec_category_archive" role="main">
 
 	<?php
 
