@@ -36,3 +36,31 @@
 2023-11-16 03:10:54.026059 [build_update_plugin_version.py]: [INFO] Updating README.md...
 2023-11-16 03:10:54.026512 [build_update_plugin_version.py]: [INFO] Updating te-custom-mods.php...
 2023-11-16 03:10:54.026810 [build_update_plugin_version.py]: Completed successfully
+2023-11-16 03:10:54.650674 [build_zip_plugin.py]: te-custom-mods.php
+2023-11-16 03:10:54.653127 [build_zip_plugin.py]: tec-functions.php
+2023-11-16 03:10:54.653343 [build_zip_plugin.py]: tec_dm_placer.js
+2023-11-16 03:10:54.653453 [build_zip_plugin.py]: tec_coauthor_display.js
+2023-11-16 03:10:54.653557 [build_zip_plugin.py]: tec_dm_init.js
+2023-11-16 03:10:54.653674 [build_zip_plugin.py]: tec_donation.js
+2023-11-16 03:10:54.653776 [build_zip_plugin.py]: tec_category_archive.js
+2023-11-16 03:10:54.653925 [build_zip_plugin.py]: tec_video_embed_existing.js
+2023-11-16 03:10:54.654043 [build_zip_plugin.py]: tec_gallery.js
+2023-11-16 03:10:54.654188 [build_zip_plugin.py]: tec_discord.js
+2023-11-16 03:10:54.654293 [build_zip_plugin.py]: tec_index.js
+2023-11-16 03:10:54.654424 [build_zip_plugin.py]: tec_video_embed_shared.js
+2023-11-16 03:10:54.654531 [build_zip_plugin.py]: tec_init.js
+2023-11-16 03:10:54.654638 [build_zip_plugin.py]: tec_author_archive.js
+2023-11-16 03:10:54.654736 [build_zip_plugin.py]: tec_header_follow.js
+2023-11-16 03:10:54.654847 [build_zip_plugin.py]: tec_video_embed.js
+2023-11-16 03:10:54.654947 [build_zip_plugin.py]: tec_to_top.js
+2023-11-16 03:10:54.655052 [build_zip_plugin.py]: tec_random_article.js
+2023-11-16 03:10:54.655185 [build_zip_plugin.py]: tec_darkMode_search.css
+2023-11-16 03:10:54.655291 [build_zip_plugin.py]: tec_default.css
+2023-11-16 03:10:54.655410 [build_zip_plugin.py]: tec_darkMode.css
+2023-11-16 03:10:54.655629 [build_zip_plugin.py]: author.php
+2023-11-16 03:10:54.655744 [build_zip_plugin.py]: category.php
+2023-11-16 03:10:54.655962 [build_zip_plugin.py]: ToTopBlack.png
+2023-11-16 03:10:54.656100 [build_zip_plugin.py]: DropdownYellow.png
+2023-11-16 03:10:54.656200 [build_zip_plugin.py]: ToTopYellow.png
+2023-11-16 03:10:54.656331 [build_zip_plugin.py]: DropdownBlack.png
+2023-11-16 03:10:54.656429 [build_zip_plugin.py]: FullscreenIcon.png
