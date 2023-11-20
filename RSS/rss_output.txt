@@ -1,23 +1,5 @@
 Updating RSS feeds...
 Article Title: Schwere Gel\xc3\xa4ndeg\xc3\xa4ngiger Lastkraftwagen 4.5t Mercedes-Benz L4500A als FlaKwagen
 Article Link: https://tanks-encyclopedia.com/ww2/germany/schwere-gelandegangiger-lastkraftwagen-4-5t-mercedes-benz-l4500a-als-flakwagen/
-RSS Update Date: 2023-11-20
-https://tanks-encyclopedia.com/ww2/germany/schwere-gelandegangiger-lastkraftwagen-4-5t-mercedes-benz-l4500a-als-flakwagen/
-Schwere Gel\xc3\xa4ndeg\xc3\xa4ngiger Lastkraftwagen 4.5t Mercedes-Benz L4500A als FlaKwagen
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0">
-<channel>
-<title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
-<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
-<description>The latest TE article</description>
-<lastBuildDate>2023-11-20 09:20:34.338854</lastBuildDate>
-<item>
-<title>Schwere Gel\xc3\xa4ndeg\xc3\xa4ngiger Lastkraftwagen 4.5t Mercedes-Benz L4500A als FlaKwagen</title>
-<link>https://tanks-encyclopedia.com/ww2/germany/schwere-gelandegangiger-lastkraftwagen-4-5t-mercedes-benz-l4500a-als-flakwagen/</link>
-<guid>https://tanks-encyclopedia.com/ww2/germany/schwere-gelandegangiger-lastkraftwagen-4-5t-mercedes-benz-l4500a-als-flakwagen/</guid>
-<description></description>
-<pubDate>2023-11-20 09:20:34.338854</pubDate>
-</item>
-</channel>
-</rss>
+No new article found. Skipping...
 Finished updating RSS feeds...
