@@ -1,23 +1,5 @@
 Updating RSS feeds...
 Article Title: Panzerkampfwagen VI (7.5 cm) VK30.01 (H)
 Article Link: https://tanks-encyclopedia.com/ww2/germany/panzerkampfwagen-vi-7-5-cm-vk30-01-h/
-RSS Update Date: 2023-11-25
-https://tanks-encyclopedia.com/ww2/germany/panzerkampfwagen-vi-7-5-cm-vk30-01-h/
-Panzerkampfwagen VI (7.5 cm) VK30.01 (H)
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0">
-<channel>
-<title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
-<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
-<description>The latest TE article</description>
-<lastBuildDate>2023-11-25 12:49:29.399255</lastBuildDate>
-<item>
-<title>Panzerkampfwagen VI (7.5 cm) VK30.01 (H)</title>
-<link>https://tanks-encyclopedia.com/ww2/germany/panzerkampfwagen-vi-7-5-cm-vk30-01-h/</link>
-<guid>https://tanks-encyclopedia.com/ww2/germany/panzerkampfwagen-vi-7-5-cm-vk30-01-h/</guid>
-<description></description>
-<pubDate>2023-11-25 12:49:29.399255</pubDate>
-</item>
-</channel>
-</rss>
+No new article found. Skipping...
 Finished updating RSS feeds...
