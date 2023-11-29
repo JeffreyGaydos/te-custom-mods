@@ -1,5 +1,23 @@
 Updating RSS feeds...
-Article Title: KV-3 (Object 223)
-Article Link: https://tanks-encyclopedia.com/ww2/russia/kv-3-object-223/
-No new article found. Skipping...
+Article Title: Italian Armored Units during the Italian Invasion of Albania
+Article Link: https://tanks-encyclopedia.com/ww2/italy/italian-armored-units-during-the-italian-invasion-of-albania/
+RSS Update Date: 2023-11-29
+https://tanks-encyclopedia.com/ww2/italy/italian-armored-units-during-the-italian-invasion-of-albania/
+Italian Armored Units during the Italian Invasion of Albania
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+<title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
+<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
+<description>The latest TE article</description>
+<lastBuildDate>2023-11-29 11:45:35.426727</lastBuildDate>
+<item>
+<title>Italian Armored Units during the Italian Invasion of Albania</title>
+<link>https://tanks-encyclopedia.com/ww2/italy/italian-armored-units-during-the-italian-invasion-of-albania/</link>
+<guid>https://tanks-encyclopedia.com/ww2/italy/italian-armored-units-during-the-italian-invasion-of-albania/</guid>
+<description></description>
+<pubDate>2023-11-29 11:45:35.426727</pubDate>
+</item>
+</channel>
+</rss>
 Finished updating RSS feeds...
