@@ -120,11 +120,11 @@ li.tec_contents_item_h3, li.tec_contents_item_h2 {
 }
 
 li.tec_contents_item_h3 {
-    margin-left: calc(5% + 25px);
+    margin-left: calc(5% + 50px);
 }
 
 li.tec_contents_item_h2 {
-    margin-left: calc(5% + 50px);
+    margin-left: calc(5% + 25px);
 }
 
 /*To Top Button Styling*/
