@@ -1,23 +1,5 @@
 Updating RSS feeds...
 Article Title: T-34 / SU-76 Hybrid
 Article Link: https://tanks-encyclopedia.com/coldwar/polish/t-34-su-76-hybrid/
-RSS Update Date: 2023-12-04
-https://tanks-encyclopedia.com/coldwar/polish/t-34-su-76-hybrid/
-T-34 / SU-76 Hybrid
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0">
-<channel>
-<title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
-<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
-<description>The latest TE article</description>
-<lastBuildDate>2023-12-04 09:20:25.618378</lastBuildDate>
-<item>
-<title>T-34 / SU-76 Hybrid</title>
-<link>https://tanks-encyclopedia.com/coldwar/polish/t-34-su-76-hybrid/</link>
-<guid>https://tanks-encyclopedia.com/coldwar/polish/t-34-su-76-hybrid/</guid>
-<description></description>
-<pubDate>2023-12-04 09:20:25.618378</pubDate>
-</item>
-</channel>
-</rss>
+No new article found. Skipping...
 Finished updating RSS feeds...
