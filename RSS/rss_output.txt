@@ -1,5 +1,23 @@
 Updating RSS feeds...
-Article Title: T-34 / SU-76 Hybrid
-Article Link: https://tanks-encyclopedia.com/coldwar/polish/t-34-su-76-hybrid/
-No new article found. Skipping...
+Article Title: Bergepanzer IV
+Article Link: https://tanks-encyclopedia.com/ww2/germany/bergepanzer-iv/
+RSS Update Date: 2023-12-06
+https://tanks-encyclopedia.com/ww2/germany/bergepanzer-iv/
+Bergepanzer IV
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+<title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
+<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
+<description>The latest TE article</description>
+<lastBuildDate>2023-12-06 12:33:39.994437</lastBuildDate>
+<item>
+<title>Bergepanzer IV</title>
+<link>https://tanks-encyclopedia.com/ww2/germany/bergepanzer-iv/</link>
+<guid>https://tanks-encyclopedia.com/ww2/germany/bergepanzer-iv/</guid>
+<description></description>
+<pubDate>2023-12-06 12:33:39.994437</pubDate>
+</item>
+</channel>
+</rss>
 Finished updating RSS feeds...
