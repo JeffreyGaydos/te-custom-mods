@@ -1,5 +1,23 @@
 Updating RSS feeds...
-Article Title: Raketenwerfer auf Fahrgestell Panzer IV
-Article Link: https://tanks-encyclopedia.com/ww2/germany/raketenwerfer-auf-fahrgestell-panzer-iv/
-No new article found. Skipping...
+Article Title: Pantserwagen M38 (Landsverk L-180 in Dutch service)
+Article Link: https://tanks-encyclopedia.com/ww2/netherlands/pantserwagen-m38-landsverk-l-180-in-dutch-service/
+RSS Update Date: 2023-12-13
+https://tanks-encyclopedia.com/ww2/netherlands/pantserwagen-m38-landsverk-l-180-in-dutch-service/
+Pantserwagen M38 (Landsverk L-180 in Dutch service)
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+<title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
+<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
+<description>The latest TE article</description>
+<lastBuildDate>2023-12-13 08:57:33.295822</lastBuildDate>
+<item>
+<title>Pantserwagen M38 (Landsverk L-180 in Dutch service)</title>
+<link>https://tanks-encyclopedia.com/ww2/netherlands/pantserwagen-m38-landsverk-l-180-in-dutch-service/</link>
+<guid>https://tanks-encyclopedia.com/ww2/netherlands/pantserwagen-m38-landsverk-l-180-in-dutch-service/</guid>
+<description></description>
+<pubDate>2023-12-13 08:57:33.295822</pubDate>
+</item>
+</channel>
+</rss>
 Finished updating RSS feeds...
