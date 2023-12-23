@@ -30,7 +30,7 @@ def stop(success):
 # zip files
 ###########################################################################################
 
-regInclude = ["(?<!\.orig)\.js$", "(?<!\.orig)\.css$", "(?<!\.orig)\.png$", "(?<!\.orig)\.php$" ]
+regInclude = ["(?<!\.orig)\.js$", "(?<!\.orig)\.css$", "(?<!\.orig)\.png$", "(?<!\.orig)\.svg$", "(?<!\.orig)\.php$" ]
 fileExclude = ["additional.css"]
 
 def zip_files(directory):
