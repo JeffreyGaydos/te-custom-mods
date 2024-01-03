@@ -1,23 +1,5 @@
 Updating RSS feeds...
 Article Title: Chrysler TV-8
 Article Link: https://tanks-encyclopedia.com/chrysler-tv-8/
-RSS Update Date: 2024-01-03
-https://tanks-encyclopedia.com/chrysler-tv-8/
-Chrysler TV-8
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0">
-<channel>
-<title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
-<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
-<description>The latest TE article</description>
-<lastBuildDate>2024-01-03 11:16:27.414470</lastBuildDate>
-<item>
-<title>Chrysler TV-8</title>
-<link>https://tanks-encyclopedia.com/chrysler-tv-8/</link>
-<guid>https://tanks-encyclopedia.com/chrysler-tv-8/</guid>
-<description></description>
-<pubDate>2024-01-03 11:16:27.414470</pubDate>
-</item>
-</channel>
-</rss>
+No new article found. Skipping...
 Finished updating RSS feeds...
