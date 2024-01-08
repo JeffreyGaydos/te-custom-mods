@@ -1,5 +1,23 @@
 Updating RSS feeds...
-Article Title: Cannone da 25/72 (Canon de 25 mm Semi-Automatique L\xc3\xa8ger Mod\xc3\xa8le 1934 and Mod\xc3\xa8le 1937 in Italian Service)
-Article Link: https://tanks-encyclopedia.com/ww2/italy/cannone-da-25-72/
-No new article found. Skipping...
+Article Title: Panzer I Ausf.A in NDH service
+Article Link: https://tanks-encyclopedia.com/ww2/croatia/panzer-i-ausf-a-in-ndh-service/
+RSS Update Date: 2024-01-08
+https://tanks-encyclopedia.com/ww2/croatia/panzer-i-ausf-a-in-ndh-service/
+Panzer I Ausf.A in NDH service
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+<title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
+<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
+<description>The latest TE article</description>
+<lastBuildDate>2024-01-08 08:27:01.199900</lastBuildDate>
+<item>
+<title>Panzer I Ausf.A in NDH service</title>
+<link>https://tanks-encyclopedia.com/ww2/croatia/panzer-i-ausf-a-in-ndh-service/</link>
+<guid>https://tanks-encyclopedia.com/ww2/croatia/panzer-i-ausf-a-in-ndh-service/</guid>
+<description></description>
+<pubDate>2024-01-08 08:27:01.199900</pubDate>
+</item>
+</channel>
+</rss>
 Finished updating RSS feeds...
