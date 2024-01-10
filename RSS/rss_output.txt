@@ -1,5 +1,23 @@
 Updating RSS feeds...
-Article Title: Panzer I Ausf.A in NDH service
-Article Link: https://tanks-encyclopedia.com/ww2/croatia/panzer-i-ausf-a-in-ndh-service/
-No new article found. Skipping...
+Article Title: IVECO ACTL
+Article Link: https://tanks-encyclopedia.com/modern/italy/iveco-actl/
+RSS Update Date: 2024-01-10
+https://tanks-encyclopedia.com/modern/italy/iveco-actl/
+IVECO ACTL
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+<title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
+<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
+<description>The latest TE article</description>
+<lastBuildDate>2024-01-10 09:25:50.047769</lastBuildDate>
+<item>
+<title>IVECO ACTL</title>
+<link>https://tanks-encyclopedia.com/modern/italy/iveco-actl/</link>
+<guid>https://tanks-encyclopedia.com/modern/italy/iveco-actl/</guid>
+<description></description>
+<pubDate>2024-01-10 09:25:50.047769</pubDate>
+</item>
+</channel>
+</rss>
 Finished updating RSS feeds...
