@@ -1,5 +1,23 @@
 Updating RSS feeds...
-Article Title: EE-9 M4 APFSDS Testbed
-Article Link: https://tanks-encyclopedia.com/coldwar/brazil/ee-9-m4-apfsds-testbed/
-No new article found. Skipping...
+Article Title: Landsverk 181
+Article Link: https://tanks-encyclopedia.com/ww2/sweden/landsverk-181/
+RSS Update Date: 2024-01-15
+https://tanks-encyclopedia.com/ww2/sweden/landsverk-181/
+Landsverk 181
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+<title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
+<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
+<description>The latest TE article</description>
+<lastBuildDate>2024-01-15 09:20:41.926159</lastBuildDate>
+<item>
+<title>Landsverk 181</title>
+<link>https://tanks-encyclopedia.com/ww2/sweden/landsverk-181/</link>
+<guid>https://tanks-encyclopedia.com/ww2/sweden/landsverk-181/</guid>
+<description></description>
+<pubDate>2024-01-15 09:20:41.926159</pubDate>
+</item>
+</channel>
+</rss>
 Finished updating RSS feeds...
