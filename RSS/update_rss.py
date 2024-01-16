@@ -17,6 +17,8 @@ recentPostsHTML = re.search(recentPostsRGX, (str)(rawContent)).group(0)
 mostRecentPost = recentPostsHTML.split("</a>")[0]
 mostRecentPostTitle = mostRecentPost.split('">')[1]
 mostRecentPostLink = mostRecentPost.split('">')[0].split('<a href="')[1]
+mostRecentPostTitle = mostRecentPostTitle.encode("latin1").decode("utf-8")
+
 print("Article Title: "  + mostRecentPostTitle)
 print("Article Link: " + mostRecentPostLink)
 
@@ -43,7 +45,8 @@ else:
 
     print(base)
 
-    rss = open("./RSS/recent-articles.rss", "w")
+    rss = open("./RSS/recent-articles.rss", "w", -1, "utf-8")
     rss.write(base)
+    rss.close()
 
 print("Finished updating RSS feeds...")
