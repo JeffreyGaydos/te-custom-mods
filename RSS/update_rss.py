@@ -17,7 +17,7 @@ recentPostsHTML = re.search(recentPostsRGX, (str)(rawContent)).group(0)
 mostRecentPost = recentPostsHTML.split("</a>")[0]
 mostRecentPostTitle = mostRecentPost.split('">')[1]
 mostRecentPostLink = mostRecentPost.split('">')[0].split('<a href="')[1]
-mostRecentPostTitle = mostRecentPostTitle.encode("latin1").decode("utf-8")
+mostRecentPostTitle = mostRecentPostTitle.encode('latin1').decode('unicode-escape').encode('latin1').decode('utf-8')
 
 print("Article Title: "  + mostRecentPostTitle)
 print("Article Link: " + mostRecentPostLink)
