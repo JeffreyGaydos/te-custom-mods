@@ -1,5 +1,23 @@
 Updating RSS feeds...
-Article Title: Paré’s Engine of War
-Article Link: https://tanks-encyclopedia.com/ww1/usa/pares-engine-of-war/
-No new article found. Skipping...
+Article Title: M-84AB1
+Article Link: https://tanks-encyclopedia.com/modern/serbia/m84ab1/
+RSS Update Date: 2024-01-20
+https://tanks-encyclopedia.com/modern/serbia/m84ab1/
+M-84AB1
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+<title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
+<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
+<description>The latest TE article</description>
+<lastBuildDate>2024-01-20 11:15:50.322017</lastBuildDate>
+<item>
+<title>M-84AB1</title>
+<link>https://tanks-encyclopedia.com/modern/serbia/m84ab1/</link>
+<guid>https://tanks-encyclopedia.com/modern/serbia/m84ab1/</guid>
+<description></description>
+<pubDate>2024-01-20 11:15:50.322017</pubDate>
+</item>
+</channel>
+</rss>
 Finished updating RSS feeds...
