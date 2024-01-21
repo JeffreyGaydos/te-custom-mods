@@ -165,7 +165,7 @@ if( !function_exists("tec_coauthor_display")) {
             ?><a style="display: none" class="tec_coauthor" id="tec_coauthor-<?php echo $user["user_nicename"] ?>" href=<?php echo $author_link; ?>><?php echo $user["display_name"]; ?></a><?php
         }
         if(count($users) > 0) {
-            wp_enqueue_script( 'tec-coauthor-display', plugins_url('/js/tec_coauthor_display.js', __FILE__), '', '1.20');
+            wp_enqueue_script( 'tec-coauthor-display', plugins_url('/js/tec_coauthor_display.js', __FILE__), '', '1.1');
         }
     }
 }
