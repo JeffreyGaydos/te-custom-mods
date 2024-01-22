@@ -1,23 +1,5 @@
 Updating RSS feeds...
 Article Title: SP. 1C
 Article Link: https://tanks-encyclopedia.com/coldwar/westgermany/sp-1c/
-RSS Update Date: 2024-01-22
-https://tanks-encyclopedia.com/coldwar/westgermany/sp-1c/
-SP. 1C
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0">
-<channel>
-<title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
-<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
-<description>The latest TE article</description>
-<lastBuildDate>2024-01-22 11:45:26.477504</lastBuildDate>
-<item>
-<title>SP. 1C</title>
-<link>https://tanks-encyclopedia.com/coldwar/westgermany/sp-1c/</link>
-<guid>https://tanks-encyclopedia.com/coldwar/westgermany/sp-1c/</guid>
-<description></description>
-<pubDate>2024-01-22 11:45:26.477504</pubDate>
-</item>
-</channel>
-</rss>
+No new article found. Skipping...
 Finished updating RSS feeds...
