@@ -136,7 +136,7 @@ li.tec_contents_item_h2 {
 }
 
 /*To Top Button Styling*/
-img#tec-to-top {
+img.tec_to_top {
     border-radius: 100%;
     width: 60px;
     height: 60px;
@@ -146,6 +146,23 @@ img#tec-to-top {
     transition: all 0.2s ease;
     cursor: pointer;
     z-index: 10;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#tec_to_top_wrapper.tec_active img.tec_to_top {
+    bottom: 35px;
+}
+
+img.tec_to_top:hover {
+    background-color: var(--ted-yellow);
+}
+
+img.tec_to_top.tec_to_top_light {
+    display: inline !important;
+}
+
+img.tec_to_top.tec_to_top_dark {
+    display: none !important;
 }
 
 /*Dark Mode Defaults*/

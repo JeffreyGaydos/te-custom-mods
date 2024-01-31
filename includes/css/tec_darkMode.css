@@ -168,6 +168,20 @@ span.meta-text > a {
     display: none !important;
 }
 
+/*To Top button (ours)*/
+
+img.tec_to_top:hover {
+    background-color: var(--te-beige2) !important;
+}
+
+img.tec_to_top.tec_to_top_light {
+    display: none !important;
+}
+
+img.tec_to_top.tec_to_top_dark {
+    display: inline !important;
+}
+
 /*General Article*/
 .entry-header.has-text-align-center.header-footer-group {
     background-color: var(--te-dgreen2) !important;

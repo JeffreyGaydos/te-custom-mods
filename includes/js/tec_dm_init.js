@@ -16,7 +16,7 @@ function tec_darkMode() {
     if(tec_darkMode_state == 'false') {
         var style = document.createElement("link");
         style.rel = "stylesheet";
-        style.href = "/wp-content/plugins/te-custom-mods/includes/css/tec_darkMode.css?v6.15";
+        style.href = "/wp-content/plugins/te-custom-mods/includes/css/tec_darkMode.css?v6.20";
         style.id = "tec_darkMode";
         style.blocking = "render";
         document.head.appendChild(style);
@@ -44,17 +44,6 @@ function tec_darkMode() {
         tec_gallery_dm();
     } catch(e) {
         //ignore errors, no galleries were found on this page
-    }
-    tec_to_top_dm();
-}
-
-function tec_to_top_dm() {
-    if(tec_darkMode_state == 'false') {
-        document.getElementById("tec-to-top").src = "/wp-content/plugins/te-custom-mods/images/ToTopBlack.png";
-        document.getElementById("tec-to-top").setAttribute("onmouseover", "this.style.backgroundColor='#f6dd95';");
-    } else {
-        document.getElementById("tec-to-top").src = "/wp-content/plugins/te-custom-mods/images/ToTopYellow.png";
-        document.getElementById("tec-to-top").setAttribute("onmouseover", "this.style.backgroundColor='rgb(110, 118, 83)'");
     }
 }
 
