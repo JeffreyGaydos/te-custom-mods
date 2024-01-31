@@ -14,6 +14,15 @@
     background-color: var(--te-beige2) !important;
 }
 
+#tec_dark.tec_dm_p {
+    display: none;
+}
+
+#tec_light.tec_dm_p {
+    display: block;
+}
+
+
 header.entry-header {
     background-color: var(--te-dgreen2) !important;
 }

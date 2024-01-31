@@ -153,6 +153,14 @@ img#tec-to-top {
     padding-top: 0.5rem;
 }
 
+#tec_dark {
+    display: block;
+}
+
+#tec_light {
+    display: none;
+}
+
 /*Needs to be more specific to override WP*/
 button:not(.toggle).tec_dm_button {
     background-color: #000;
@@ -164,13 +172,14 @@ button:not(.toggle).tec_dm_button {
     line-height: 1.2;
     word-break: normal;
     text-align: inherit;
-    font-size: 19px;
+    font-size: 16px;
     font-weight: 500;
     letter-spacing: -0.0277em;
     font-family: 'Allerta Stencil', sans-serif !important;
     padding-top: 0px;
     padding-right: 0rem;
     text-transform: none;
+    margin-bottom: 0.3rem;
 }
 
 /*Donation Styling*/
@@ -318,6 +327,10 @@ button:not(.toggle).tec_dm_button {
 		position: relative;
 		top: -5px;
 	}
+
+    .tec_dm_p {
+        font-size: 15px !important
+    }
 }
 
 @media(max-width: 500px) {
