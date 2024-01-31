@@ -16,7 +16,7 @@ function tec_darkMode() {
     if(tec_darkMode_state == 'false') {
         var style = document.createElement("link");
         style.rel = "stylesheet";
-        style.href = "/wp-content/plugins/te-custom-mods/includes/css/tec_darkMode.css?v6.3";
+        style.href = "/wp-content/plugins/te-custom-mods/includes/css/tec_darkMode.css?v6.20";
         style.id = "tec_darkMode";
         style.blocking = "render";
         document.head.appendChild(style);
@@ -31,9 +31,6 @@ function tec_darkMode() {
         }
         tec_darkMode_state = 'true';
         localStorage.setItem("tec_darkMode", "true");
-
-        document.getElementsByClassName("tec_dm_p")[0].innerHTML = "Light Mode";
-        document.getElementsByClassName("tec_dm_p")[1].innerHTML = "Light Mode";
     } else {
         for(var i = 0; i < tec_darkMode_elements.length; i++) {
             if(tec_darkMode_elements[i] != undefined) {
@@ -41,39 +38,12 @@ function tec_darkMode() {
             }
         }
         tec_darkMode_state = 'false';
-        localStorage.setItem("tec_darkMode", "false");
-
-        document.getElementsByClassName("tec_dm_p")[0].innerHTML = "Dark Mode";
-        document.getElementsByClassName("tec_dm_p")[1].innerHTML = "Dark Mode";
-    }
-    try {
-        tec_index_dm();
-    } catch(e) {
-        //ignore errors, no contents index was generated
+        localStorage.setItem("tec_darkMode", "false");        
     }
     try {
         tec_gallery_dm();
     } catch(e) {
         //ignore errors, no galleries were found on this page
-    }
-    tec_to_top_dm();
-}
-
-function tec_index_dm() {
-    if(tec_darkMode_state == 'false') {
-        document.getElementById("tec_indexIcon").src = "/wp-content/plugins/te-custom-mods/images/DropdownBlack.png";
-    } else {
-        document.getElementById("tec_indexIcon").src = "/wp-content/plugins/te-custom-mods/images/DropdownYellow.png";
-    }
-}
-
-function tec_to_top_dm() {
-    if(tec_darkMode_state == 'false') {
-        document.getElementById("tec-to-top").src = "/wp-content/plugins/te-custom-mods/images/ToTopBlack.png";
-        document.getElementById("tec-to-top").setAttribute("onmouseover", "this.style.backgroundColor='#f6dd95';");
-    } else {
-        document.getElementById("tec-to-top").src = "/wp-content/plugins/te-custom-mods/images/ToTopYellow.png";
-        document.getElementById("tec-to-top").setAttribute("onmouseover", "this.style.backgroundColor='rgb(110, 118, 83)'");
     }
 }
 

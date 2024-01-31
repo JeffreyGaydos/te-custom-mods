@@ -14,6 +14,15 @@
     background-color: var(--te-beige2) !important;
 }
 
+#tec_dark.tec_dm_p {
+    display: none;
+}
+
+#tec_light.tec_dm_p {
+    display: block;
+}
+
+
 header.entry-header {
     background-color: var(--te-dgreen2) !important;
 }
@@ -148,6 +157,29 @@ span.meta-text > a {
 
 #tec_indexContent {
     color: white !important;
+}
+
+/*parent level id included to override an important from WP*/
+#tec_indexDropdown #tec_indexIcon_dark.tec_indexIcon {
+    display: inline !important;
+}
+
+#tec_indexDropdown #tec_indexIcon_light.tec_indexIcon {
+    display: none !important;
+}
+
+/*To Top button (ours)*/
+
+img.tec_to_top:hover {
+    background-color: var(--te-beige2) !important;
+}
+
+img.tec_to_top.tec_to_top_light {
+    display: none !important;
+}
+
+img.tec_to_top.tec_to_top_dark {
+    display: inline !important;
 }
 
 /*General Article*/

@@ -127,8 +127,16 @@ li.tec_contents_item_h2 {
     margin-left: calc(5% + 25px);
 }
 
+#tec_indexIcon_dark.tec_indexIcon {
+    display: none !important;
+}
+
+#tec_indexIcon_light.tec_indexIcon {
+    display: inline !important;
+}
+
 /*To Top Button Styling*/
-img#tec-to-top {
+img.tec_to_top {
     border-radius: 100%;
     width: 60px;
     height: 60px;
@@ -138,6 +146,23 @@ img#tec-to-top {
     transition: all 0.2s ease;
     cursor: pointer;
     z-index: 10;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#tec_to_top_wrapper.tec_active img.tec_to_top {
+    bottom: 35px;
+}
+
+img.tec_to_top:hover {
+    background-color: var(--ted-yellow);
+}
+
+img.tec_to_top.tec_to_top_light {
+    display: inline !important;
+}
+
+img.tec_to_top.tec_to_top_dark {
+    display: none !important;
 }
 
 /*Dark Mode Defaults*/
@@ -153,6 +178,14 @@ img#tec-to-top {
     padding-top: 0.5rem;
 }
 
+#tec_dark {
+    display: block;
+}
+
+#tec_light {
+    display: none;
+}
+
 /*Needs to be more specific to override WP*/
 button:not(.toggle).tec_dm_button {
     background-color: #000;
@@ -164,13 +197,14 @@ button:not(.toggle).tec_dm_button {
     line-height: 1.2;
     word-break: normal;
     text-align: inherit;
-    font-size: 19px;
+    font-size: 16px;
     font-weight: 500;
     letter-spacing: -0.0277em;
     font-family: 'Allerta Stencil', sans-serif !important;
     padding-top: 0px;
     padding-right: 0rem;
     text-transform: none;
+    margin-bottom: 0.3rem;
 }
 
 /*Donation Styling*/
@@ -318,6 +352,10 @@ button:not(.toggle).tec_dm_button {
 		position: relative;
 		top: -5px;
 	}
+
+    .tec_dm_p {
+        font-size: 15px !important
+    }
 }
 
 @media(max-width: 500px) {
