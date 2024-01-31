@@ -159,6 +159,15 @@ span.meta-text > a {
     color: white !important;
 }
 
+/*parent level id included to override an important from WP*/
+#tec_indexDropdown #tec_indexIcon_dark.tec_indexIcon {
+    display: inline !important;
+}
+
+#tec_indexDropdown #tec_indexIcon_light.tec_indexIcon {
+    display: none !important;
+}
+
 /*General Article*/
 .entry-header.has-text-align-center.header-footer-group {
     background-color: var(--te-dgreen2) !important;

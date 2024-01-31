@@ -10,7 +10,7 @@ add_action("wp_head", "tec_init", 1);
 
 if( !function_exists("tec_init") ) {
     function tec_init() {
-        wp_enqueue_script( 'tec-init', plugins_url('/js/tec_init.js', __FILE__), '', '1.14');
+        wp_enqueue_script( 'tec-init', plugins_url('/js/tec_init.js', __FILE__), '', '1.31');
     }
 }
 
@@ -30,7 +30,7 @@ if( !function_exists("tec_dark_mode_create") ) {
 
 if( !function_exists("tec_dark_mode_init") ) {
     function tec_dark_mode_init() {
-        wp_enqueue_script('tec-dark-mode-init', plugins_url('/js/tec_dm_init.js', __FILE__), '', '3.9');
+        wp_enqueue_script('tec-dark-mode-init', plugins_url('/js/tec_dm_init.js', __FILE__), '', '3.22');
     }
 }
 
@@ -96,7 +96,7 @@ if(get_option('tec_index') == 'on') {
 if(!function_exists("tec_index_generate")) {
     function tec_index_generate() {
         if(is_single()) {
-            wp_enqueue_script('tec-index-gen', plugins_url('/js/tec_index.js', __FILE__), '', '2.4');
+            wp_enqueue_script('tec-index-gen', plugins_url('/js/tec_index.js', __FILE__), '', '2.9');
         }
     }
 }
