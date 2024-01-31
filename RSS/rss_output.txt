@@ -1,5 +1,23 @@
 Updating RSS feeds...
-Article Title: Alfred Kubin’s ‘Der Staat’
-Article Link: https://tanks-encyclopedia.com/ww1/austria-hungary/alfred-kubins-der-staat/
-No new article found. Skipping...
+Article Title: Defence of Lyon and Chasselay Massacre
+Article Link: https://tanks-encyclopedia.com/ww2/france/defence-of-lyon-and-chasselay-massacre/
+RSS Update Date: 2024-01-31
+https://tanks-encyclopedia.com/ww2/france/defence-of-lyon-and-chasselay-massacre/
+Defence of Lyon and Chasselay Massacre
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+<title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
+<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
+<description>The latest TE article</description>
+<lastBuildDate>2024-01-31 11:45:15.771439</lastBuildDate>
+<item>
+<title>Defence of Lyon and Chasselay Massacre</title>
+<link>https://tanks-encyclopedia.com/ww2/france/defence-of-lyon-and-chasselay-massacre/</link>
+<guid>https://tanks-encyclopedia.com/ww2/france/defence-of-lyon-and-chasselay-massacre/</guid>
+<description></description>
+<pubDate>2024-01-31 11:45:15.771439</pubDate>
+</item>
+</channel>
+</rss>
 Finished updating RSS feeds...
