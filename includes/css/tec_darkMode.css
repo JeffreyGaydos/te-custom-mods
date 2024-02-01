@@ -11,7 +11,7 @@
 }
 
 /*Affiliate link styling*/
-a[href*="https://amzn.to"]::after, a[href*="https://amazon"]::after, div.post-inner h2:last-of-type:not(#tec_indexContent) b::before {
+a[href*="https://amzn.to"]::after, a[href*="https://amazon"]::after, div.post-inner h2:last-of-type:not(#tec_indexContent) b::after {
     color: white !important;
 }
 
