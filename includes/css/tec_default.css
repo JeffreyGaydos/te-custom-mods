@@ -11,6 +11,36 @@
     --ted-black: #0e0f0a;
 }
 
+/*Affiliate link styling*/
+a[href*="https://amzn.to"]::after, a[href*="https://amazon"]::after, div.post-inner h2:last-of-type:not(#tec_indexContent) b::before {
+    color: var(--ted-beige2);
+    text-decoration: none;
+    font-size: 17px;
+    position: relative;
+}
+
+a[href*="https://amzn.to"]::after, a[href*="https://amazon"]::after {
+    content: "[affiliate link]";
+    padding: 5px;
+    top: 5px;
+    font-weight: 900;
+}
+
+div.post-inner h2:last-of-type::after:not(#tec_indexContent) {
+    content: "As as Amazon Associate, Tank Encyclopedia gets a commission for purchases from Amazon using the links found on this site only. Links marked with [affiliate link] are links where a subsequent purchase may qualify for a commission to Tank Encyclopedia.";
+}
+
+div.post-inner h2:last-of-type:not(#tec_indexContent) b::before {
+    content: "As as Amazon Associate, Tank Encyclopedia gets a commission for purchases from Amazon using the links found on this site only. Links marked with [affiliate link] are links where a subsequent purchase may qualify for a commission to Tank Encyclopedia.";
+    top: 110px;
+    font-weight: 500;
+    display: block;
+}
+
+div.post-inner h2:last-of-type:not(#tec_indexContent) {
+    padding-bottom: 50px;
+}
+
 /*Random Article Button Styling*/
 a.tec-rand-link {
     cursor: pointer;
