@@ -24,14 +24,14 @@ a[href*="https://amzn.to"]::after, a[href*="https://amazon"]::after, div.post-in
 }
 
 a[href*="https://amzn.to"]::after, a[href*="https://amazon"]::after {
-    content: "[affiliate link]";
+    content: "[commission link]";
     padding: 5px;
     top: 5px;
     font-weight: 900;
 }
 
 div.post-inner h2:last-of-type:not(#tec_indexContent) b::after {
-    content: "As as Amazon Associate, Tank Encyclopedia gets a commission for purchases from Amazon using the links found on this site only. Links marked with [affiliate link] are links where a subsequent purchase may qualify for a commission to Tank Encyclopedia.";
+    content: "As as Amazon Associate, Tank Encyclopedia gets a commission for purchases from Amazon using the links found on this site only. Links marked with [commission link] are links where a subsequent purchase may qualify for a commission to Tank Encyclopedia.";
     font-weight: 500;
     display: block;
 }
