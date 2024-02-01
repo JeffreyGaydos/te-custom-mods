@@ -437,6 +437,10 @@ button:not(.toggle).tec_dm_button {
         width: 100% !important;
         min-width: 50% !important;
     }
+
+    a[href*="https://amzn.to"]::after, a[href*="https://amazon"]::after, div.post-inner h2:last-of-type:not(#tec_indexContent) b::after {
+        font-size: 13px;
+    }
 }
 
 @media(max-width: 465px) {
