@@ -10,8 +10,8 @@
     --te-black: #0e0f0a;
 }
 
-/*Affiliate link styling*/
-a[href*="https://amzn.to"]::after, a[href*="https://amazon"]::after, div.post-inner h2:last-of-type:not(#tec_indexContent) b::after {
+/*Commission link styling*/
+a[href*="https://amzn.to"]::after, a[href*="&tag=tankencyclope-20"]::after, .tec-commission-blurb::after/*, div.post-inner h2:last-of-type:not(#tec_indexContent) b::after*/ {
     color: white !important;
 }
 

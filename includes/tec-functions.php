@@ -10,7 +10,7 @@ add_action("wp_head", "tec_init", 1);
 
 if( !function_exists("tec_init") ) {
     function tec_init() {
-        wp_enqueue_script( 'tec-init', plugins_url('/js/tec_init.js', __FILE__), '', '1.96');
+        wp_enqueue_script( 'tec-init', plugins_url('/js/tec_init.js', __FILE__), '', '1.122');
     }
 }
 
@@ -30,7 +30,7 @@ if( !function_exists("tec_dark_mode_create") ) {
 
 if( !function_exists("tec_dark_mode_init") ) {
     function tec_dark_mode_init() {
-        wp_enqueue_script('tec-dark-mode-init', plugins_url('/js/tec_dm_init.js', __FILE__), '', '3.33');
+        wp_enqueue_script('tec-dark-mode-init', plugins_url('/js/tec_dm_init.js', __FILE__), '', '3.37');
     }
 }
 
@@ -100,6 +100,21 @@ if(!function_exists("tec_index_generate")) {
         }
     }
 }
+/********************************************************************
+ * Routing Commission Link Blurb Placement
+ ********************************************************************/
+if(get_option('tec_index') == 'on') {
+    add_action("wp_footer", "tec_commission_blurb", 14);
+}
+
+if(!function_exists("tec_commission_blurb")) {
+    function tec_commission_blurb() {
+        if(is_single()) {
+            wp_enqueue_script('tec-commission-blurb', plugins_url('/js/tec_commission_blurb.js', __FILE__), '', '1.36');
+        }
+    }
+}
+
 /********************************************************************
  * Routing Nation Page Illustration Galleries
  ********************************************************************/
