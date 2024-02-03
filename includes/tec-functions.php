@@ -10,7 +10,7 @@ add_action("wp_head", "tec_init", 1);
 
 if( !function_exists("tec_init") ) {
     function tec_init() {
-        wp_enqueue_script( 'tec-init', plugins_url('/js/tec_init.js', __FILE__), '', '1.36');
+        wp_enqueue_script( 'tec-init', plugins_url('/js/tec_init.js', __FILE__), '', '1.8');
     }
 }
 
@@ -24,13 +24,13 @@ if(get_option('tec_dark_mode') == 'on') {
 
 if( !function_exists("tec_dark_mode_create") ) {
     function tec_dark_mode_create() {
-        wp_enqueue_script( 'tec-dark-mode-create', plugins_url('/js/tec_dm_placer.js', __FILE__), '', '2.9');
+        wp_enqueue_script( 'tec-dark-mode-create', plugins_url('/js/tec_dm_placer.js', __FILE__), '', '2.3');
     }
 }
 
 if( !function_exists("tec_dark_mode_init") ) {
     function tec_dark_mode_init() {
-        wp_enqueue_script('tec-dark-mode-init', plugins_url('/js/tec_dm_init.js', __FILE__), '', '3.29');
+        wp_enqueue_script('tec-dark-mode-init', plugins_url('/js/tec_dm_init.js', __FILE__), '', '3.7');
     }
 }
 
@@ -96,10 +96,25 @@ if(get_option('tec_index') == 'on') {
 if(!function_exists("tec_index_generate")) {
     function tec_index_generate() {
         if(is_single()) {
-            wp_enqueue_script('tec-index-gen', plugins_url('/js/tec_index.js', __FILE__), '', '2.9');
+            wp_enqueue_script('tec-index-gen', plugins_url('/js/tec_index.js', __FILE__), '', '2.5');
         }
     }
 }
+/********************************************************************
+ * Routing Commission Link Blurb Placement
+ ********************************************************************/
+if(get_option('tec_index') == 'on') {
+    add_action("wp_footer", "tec_commission_blurb", 14);
+}
+
+if(!function_exists("tec_commission_blurb")) {
+    function tec_commission_blurb() {
+        if(is_single()) {
+            wp_enqueue_script('tec-commission-blurb', plugins_url('/js/tec_commission_blurb.js', __FILE__), '', '1.0');
+        }
+    }
+}
+
 /********************************************************************
  * Routing Nation Page Illustration Galleries
  ********************************************************************/
@@ -124,7 +139,7 @@ if(get_option('tec_to_top') == 'on') {
 
 if( !function_exists("tec_to_top") ) {
     function tec_to_top() {
-        wp_enqueue_script( 'tec-to-top', plugins_url('/js/tec_to_top.js', __FILE__), '', '2.16');
+        wp_enqueue_script( 'tec-to-top', plugins_url('/js/tec_to_top.js', __FILE__), '', '2.6');
     }
 }
 

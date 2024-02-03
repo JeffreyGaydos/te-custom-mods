@@ -11,6 +11,38 @@
     --ted-black: #0e0f0a;
 }
 
+div.post-inner {
+    container-type: block-size;
+}
+
+/*Commission link styling*/
+a[href*="https://amzn.to"]::after, a[href*="&tag=tankencyclope-20"]::after, .tec-commission-blurb::after {
+    color: var(--ted-beige2);
+    text-decoration: none;
+    font-size: 17px;
+    position: relative;
+}
+
+a[href*="https://amzn.to"]::after, a[href*="&tag=tankencyclope-20"]::after {
+    content: "[commission link]";
+    padding: 5px;
+    top: 5px;
+    font-weight: 900;
+}
+
+.tec-commission-blurb::after {
+    content: "As as Amazon Associate, Tank Encyclopedia gets a commission for purchases from Amazon using the links found on this site only. Links marked with [commission link] are links where a subsequent purchase may qualify for a commission to Tank Encyclopedia.";
+    font-weight: 500;
+    font-family: 'Trebuchet MS';
+    display: block;
+    text-align: center;
+    padding: 5% 7%;
+}
+
+.tec-commission-skinny.tec-commission-blurb::after {
+    padding: 5% 20%;
+}
+
 /*Random Article Button Styling*/
 a.tec-rand-link {
     cursor: pointer;
@@ -411,6 +443,10 @@ button:not(.toggle).tec_dm_button {
     #tec_innerIndexWrapper {
         width: 100% !important;
         min-width: 50% !important;
+    }
+
+    a[href*="https://amzn.to"]::after, a[href*="&tag=tankencyclope-20"]::after, .tec-commission-blurb::after {
+        font-size: 13px;
     }
 }
 
