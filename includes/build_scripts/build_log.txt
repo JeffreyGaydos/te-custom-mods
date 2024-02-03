@@ -39,3 +39,35 @@
 2024-02-03 02:19:03.147935 [build_update_plugin_version.py]: [INFO] Updating README.md...
 2024-02-03 02:19:03.148363 [build_update_plugin_version.py]: [INFO] Updating te-custom-mods.php...
 2024-02-03 02:19:03.148656 [build_update_plugin_version.py]: Completed successfully
+2024-02-03 02:19:03.872504 [build_zip_plugin.py]: te-custom-mods.php
+2024-02-03 02:19:03.872731 [build_zip_plugin.py]: patreon.svg
+2024-02-03 02:19:03.873105 [build_zip_plugin.py]: ToTopBlack.png
+2024-02-03 02:19:03.873247 [build_zip_plugin.py]: PayHipIcon.png
+2024-02-03 02:19:03.873464 [build_zip_plugin.py]: paypal.svg
+2024-02-03 02:19:03.873826 [build_zip_plugin.py]: DropdownBlack.png
+2024-02-03 02:19:03.873936 [build_zip_plugin.py]: FullscreenIcon.png
+2024-02-03 02:19:03.874050 [build_zip_plugin.py]: ToTopYellow.png
+2024-02-03 02:19:03.874197 [build_zip_plugin.py]: DropdownYellow.png
+2024-02-03 02:19:03.874355 [build_zip_plugin.py]: tec-functions.php
+2024-02-03 02:19:03.874555 [build_zip_plugin.py]: tec_darkMode_search.css
+2024-02-03 02:19:03.874671 [build_zip_plugin.py]: tec_darkMode.css
+2024-02-03 02:19:03.874802 [build_zip_plugin.py]: tec_default.css
+2024-02-03 02:19:03.874989 [build_zip_plugin.py]: tec_header_follow.js
+2024-02-03 02:19:03.875118 [build_zip_plugin.py]: tec_donation.js
+2024-02-03 02:19:03.875231 [build_zip_plugin.py]: tec_random_article.js
+2024-02-03 02:19:03.875338 [build_zip_plugin.py]: tec_dm_init.js
+2024-02-03 02:19:03.875450 [build_zip_plugin.py]: tec_gallery.js
+2024-02-03 02:19:03.875588 [build_zip_plugin.py]: tec_to_top.js
+2024-02-03 02:19:03.875697 [build_zip_plugin.py]: tec_discord.js
+2024-02-03 02:19:03.875806 [build_zip_plugin.py]: tec_video_embed_shared.js
+2024-02-03 02:19:03.875909 [build_zip_plugin.py]: tec_coauthor_display.js
+2024-02-03 02:19:03.876012 [build_zip_plugin.py]: tec_category_archive.js
+2024-02-03 02:19:03.876119 [build_zip_plugin.py]: tec_video_embed.js
+2024-02-03 02:19:03.876224 [build_zip_plugin.py]: tec_video_embed_existing.js
+2024-02-03 02:19:03.876335 [build_zip_plugin.py]: tec_dm_placer.js
+2024-02-03 02:19:03.876528 [build_zip_plugin.py]: tec_init.js
+2024-02-03 02:19:03.876659 [build_zip_plugin.py]: tec_index.js
+2024-02-03 02:19:03.876797 [build_zip_plugin.py]: tec_author_archive.js
+2024-02-03 02:19:03.876901 [build_zip_plugin.py]: tec_commission_blurb.js
+2024-02-03 02:19:03.877134 [build_zip_plugin.py]: category.php
+2024-02-03 02:19:03.877244 [build_zip_plugin.py]: author.php
