@@ -5,7 +5,6 @@ function tec_placeCommissionBlurb() {
             document.querySelector(".entry-content").classList.add("tec-commission-blurb");
             document.querySelector(".entry-content").classList.add("tec-commission-skinny");
         } else {
-            console.log("Comission blurb triggered");
             const sourceHeader = tec_find_source_header();
             tec_tag_source_section(sourceHeader);
         }
@@ -13,7 +12,6 @@ function tec_placeCommissionBlurb() {
 }
 
 function tec_find_source_header() {
-    console.log("Finding");
     const validHeaders = ["Sources", "source"];
     const validHeaderContains = ["Links and references", "Links and reference", "Link and references", "Link and reference"];
     var result = [];

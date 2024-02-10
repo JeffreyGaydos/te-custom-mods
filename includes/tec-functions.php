@@ -110,7 +110,7 @@ if(get_option('tec_commission_blurb') == 'on') {
 if(!function_exists("tec_commission_blurb")) {
     function tec_commission_blurb() {
         if(is_single()) {
-            wp_enqueue_script('tec-commission-blurb', plugins_url('/js/tec_commission_blurb.js', __FILE__), '', '1.0');
+            wp_enqueue_script('tec-commission-blurb', plugins_url('/js/tec_commission_blurb.js', __FILE__), '', '1.1');
         }
     }
 }
@@ -123,9 +123,9 @@ if(get_option('tec_image_resourcer') == 'on') {
 }
 
 if(!function_exists("tec_image_resourcer")) {
-    function tec_commission_blurb() {
+    function tec_image_resourcer() {
         if(is_single()) {
-            wp_enqueue_script('tec-image-resourcer', plugins_url('/js/tec_image_resourcer.js', __FILE__), '', '1.1');
+            wp_enqueue_script('tec-image-resourcer', plugins_url('/js/tec_image_resourcer.js', __FILE__), '', '1.9');
         }
     }
 }
