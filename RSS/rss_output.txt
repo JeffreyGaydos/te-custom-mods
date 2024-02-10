@@ -1,5 +1,23 @@
 Updating RSS feeds...
-Article Title: Maubaret’s War Machine
-Article Link: https://tanks-encyclopedia.com/ww2/france/maubarets-war-machine/
-No new article found. Skipping...
+Article Title: T-62AG and T-62AGM
+Article Link: https://tanks-encyclopedia.com/modern/ukraine/t-62ag-and-t-62agm/
+RSS Update Date: 2024-02-10
+https://tanks-encyclopedia.com/modern/ukraine/t-62ag-and-t-62agm/
+T-62AG and T-62AGM
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+<title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
+<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
+<description>The latest TE article</description>
+<lastBuildDate>2024-02-10 10:43:56.629541</lastBuildDate>
+<item>
+<title>T-62AG and T-62AGM</title>
+<link>https://tanks-encyclopedia.com/modern/ukraine/t-62ag-and-t-62agm/</link>
+<guid>https://tanks-encyclopedia.com/modern/ukraine/t-62ag-and-t-62agm/</guid>
+<description></description>
+<pubDate>2024-02-10 10:43:56.629541</pubDate>
+</item>
+</channel>
+</rss>
 Finished updating RSS feeds...
