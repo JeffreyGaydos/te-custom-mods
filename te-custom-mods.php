@@ -63,6 +63,8 @@ if( !function_exists("tec_acp_page") ) {
             <br><br>
             <input type="checkbox" name="tec_commission_blurb" <?php tec_get_checked('tec_commission_blurb') ?> >Amazon Commission Blurb Placement</input>
             <br><br>
+            <input type="checkbox" name="tec_image_resourcer" <?php tec_get_checked('tec_image_resourcer') ?> >Image Re-Sourcer (to mass fix image sources)</input>
+            <br><br>
             <input type="checkbox" name="tec_gallery" <?php tec_get_checked('tec_gallery') ?> >Nation Page Galleries (note that divs of class "gallery" on all nation pages must also be removed to fully deactivate)</input>
             <br><br>
             <input type="checkbox" name="tec_mobile" <?php tec_get_checked('tec_mobile') ?> >Mobile Compatability Modifications</input>
@@ -106,6 +108,7 @@ if( !function_exists("update_tec_info") ) {
         register_setting( 'tec-settings', 'tec_discord' );
         register_setting( 'tec-settings', 'tec_index' );
         register_setting( 'tec-settings', 'tec_commission_blurb' );
+        register_setting( 'tec-settings', 'tec_image_resourcer' );
         register_setting( 'tec-settings', 'tec_gallery' );
         register_setting( 'tec-settings', 'tec_mobile' );
         register_setting( 'tec-settings', 'tec_to_top' );
