@@ -125,7 +125,7 @@ if(get_option('tec_image_resourcer') == 'on') {
 if(!function_exists("tec_image_resourcer")) {
     function tec_image_resourcer() {
         if(is_single()) {
-            wp_enqueue_script('tec-image-resourcer', plugins_url('/js/tec_image_resourcer.js', __FILE__), '', '1.9');
+            wp_enqueue_script('tec-image-resourcer', plugins_url('/js/tec_image_resourcer.js', __FILE__), '', '1.0');
         }
     }
 }
