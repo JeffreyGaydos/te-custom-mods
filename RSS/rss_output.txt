@@ -1,5 +1,23 @@
 Updating RSS feeds...
-Article Title: T-62AG and T-62AGM
-Article Link: https://tanks-encyclopedia.com/modern/ukraine/t-62ag-and-t-62agm/
-No new article found. Skipping...
+Article Title: Sd.Kfz.250 mit 5 cm PaK 38
+Article Link: https://tanks-encyclopedia.com/ww2-germany-sdkfz250-mit-5cm-pak-38/
+RSS Update Date: 2024-02-12
+https://tanks-encyclopedia.com/ww2-germany-sdkfz250-mit-5cm-pak-38/
+Sd.Kfz.250 mit 5 cm PaK 38
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+<title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
+<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
+<description>The latest TE article</description>
+<lastBuildDate>2024-02-12 08:44:38.857248</lastBuildDate>
+<item>
+<title>Sd.Kfz.250 mit 5 cm PaK 38</title>
+<link>https://tanks-encyclopedia.com/ww2-germany-sdkfz250-mit-5cm-pak-38/</link>
+<guid>https://tanks-encyclopedia.com/ww2-germany-sdkfz250-mit-5cm-pak-38/</guid>
+<description></description>
+<pubDate>2024-02-12 08:44:38.857248</pubDate>
+</item>
+</channel>
+</rss>
 Finished updating RSS feeds...
