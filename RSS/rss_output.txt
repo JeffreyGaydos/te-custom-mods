@@ -1,23 +1,5 @@
 Updating RSS feeds...
 Article Title: M.O.I. ‘Moveable Maginot’
 Article Link: https://tanks-encyclopedia.com/ww2/uk/m-o-i-moveable-maginot/
-RSS Update Date: 2024-02-14
-https://tanks-encyclopedia.com/ww2/uk/m-o-i-moveable-maginot/
-M.O.I. ‘Moveable Maginot’
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0">
-<channel>
-<title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
-<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
-<description>The latest TE article</description>
-<lastBuildDate>2024-02-14 14:16:46.778410</lastBuildDate>
-<item>
-<title>M.O.I. ‘Moveable Maginot’</title>
-<link>https://tanks-encyclopedia.com/ww2/uk/m-o-i-moveable-maginot/</link>
-<guid>https://tanks-encyclopedia.com/ww2/uk/m-o-i-moveable-maginot/</guid>
-<description></description>
-<pubDate>2024-02-14 14:16:46.778410</pubDate>
-</item>
-</channel>
-</rss>
+No new article found. Skipping...
 Finished updating RSS feeds...
