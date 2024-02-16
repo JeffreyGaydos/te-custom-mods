@@ -29,6 +29,7 @@ function tec_calculateImageLeftValue(numImages, currentIndex) {
 }
 
 function tec_setFeaturedImage(g_num, index) {
+	console.log("input index: " + index);
 	tec_safe_remove_class(document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1}) img.tec_g_image.tec_g_featured`), "tec_g_featured");
 	//console.log(`.tec-gallery:nth-of-type(${g_num + 1}) img.tec_g_image:nth-of-type(${index + 1})`);
 	var desiredImage = document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1}) img.tec_g_image:nth-of-type(${index + 1})`);
@@ -43,15 +44,16 @@ function tec_setFeaturedImage(g_num, index) {
 
 	var desiredIndicator = document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1}) div.tec_g_indicator:nth-of-type(${index + 1})`);
 	desiredIndicator.classList.add("tec_g_featured");
+
+	console.log(`Index: ${currentIndexes[g_num]} => ${index}`);
+	currentIndexes[g_num] = index;
 }
 
 /*
 	Creates 1 gallery by storing the image sources and captions into global arrays and
 	adding the structure of the gallery.
 */
-function createGallery(g_num, fig = false) {
-	var i = 0;
-	const galleryElement = document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1})`);
+function createGallery(g_num) {
 	document.querySelectorAll(`.tec-gallery:nth-of-type(${g_num + 1}) img`).forEach(ie => {
 		ImageArray.push(ie.src);
 	});
@@ -118,7 +120,7 @@ function createGallery(g_num, fig = false) {
 	var leftArrow = document.createElement("DIV");
 	leftArrow.classList.add("tec_g_arrow");
 	leftArrow.classList.add("left");
-	leftArrow.addEventListener("click", () => tec_setFeaturedImage(g_num, (currentIndexes[g_num] - 1) % maxIndex));
+	leftArrow.addEventListener("click", () => tec_setFeaturedImage(g_num, currentIndexes[g_num] == 0 ? maxIndex - 1 : (currentIndexes[g_num] - 1) % maxIndex));
 	var leftArrowImageLight = document.createElement("IMG");
 	leftArrowImageLight.src = "/wp-content/plugins/te-custom-mods/images/DropdownBlack.png";
 	var leftArrowImageDark = document.createElement("IMG");
@@ -151,10 +153,7 @@ function createGallery(g_num, fig = false) {
 	var rightArrow = document.createElement("DIV");
 	rightArrow.classList.add("tec_g_arrow");
 	rightArrow.classList.add("right");
-	rightArrow.addEventListener("click", () => {
-		tec_setFeaturedImage(g_num, (currentIndexes[g_num] + 1) % maxIndex)
-		currentIndexes[g_num]++;
-	});
+	rightArrow.addEventListener("click", () => tec_setFeaturedImage(g_num, (currentIndexes[g_num] + 1) % maxIndex));
 	var rightArrowImageLight = document.createElement("IMG");
 	rightArrowImageLight.src = "/wp-content/plugins/te-custom-mods/images/DropdownBlack.png";
 	var rightArrowImageDark = document.createElement("IMG");

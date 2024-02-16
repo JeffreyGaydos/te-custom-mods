@@ -370,6 +370,7 @@ button:not(.toggle).tec_dm_button {
     margin: 5px;
     max-width: 50px;
     width: 4vw;
+    min-width: 15px;
 }
 
 .tec_g_indicator.tec_g_featured {
@@ -381,7 +382,7 @@ button:not(.toggle).tec_dm_button {
     width: 100%;
     justify-content: center;
     padding-bottom: 5px;
-    flex-grow: 1;
+    flex-wrap: wrap;
 }
 
 .tec_g_indicator_mobile {
