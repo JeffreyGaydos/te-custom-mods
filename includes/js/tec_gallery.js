@@ -71,6 +71,15 @@ function createGallery(g_num, fig = false) {
 			document.getElementsByClassName("tec-gallery")[g_num].getElementsByTagName("em")[0].remove();
 		}
 	}
+
+	var extraneousGalleryChildren = [];
+	document.querySelectorAll(".tec-gallery")[g_num].childNodes.forEach(c => {
+		extraneousGalleryChildren.push(c);
+	});
+	extraneousGalleryChildren.forEach(c => {
+		document.querySelectorAll(".tec-gallery")[g_num].removeChild(c);
+	});
+
 	AllCaptionsArray.push(CaptionArray);
 	var galleryBody = "";
 	var gallery = document.createElement("DIV");
