@@ -356,7 +356,7 @@ div.tec_g_arrow:hover {
     background-color: var(--te-beige2) !important;
 }
 
-div.tec_g_border {
+div.tec_g_body {
     border: 1px solid var(--te-yellow) !important;
 }
 

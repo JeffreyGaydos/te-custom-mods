@@ -24,6 +24,27 @@ function createGalleries() {
 
 createGalleries();
 
+function tec_calculateImageLeftValue(numImages, currentIndex) {
+	return (numImages - 1) * 25 - 50 * currentIndex;
+}
+
+function tec_setFeaturedImage(g_num, index) {
+	tec_safe_remove_class(document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1}) img.tec_g_image.tec_g_featured`), "tec_g_featured");
+	//console.log(`.tec-gallery:nth-of-type(${g_num + 1}) img.tec_g_image:nth-of-type(${index + 1})`);
+	var desiredImage = document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1}) img.tec_g_image:nth-of-type(${index + 1})`);
+	desiredImage.classList.add("tec_g_featured");
+
+	tec_safe_remove_class(document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1}) p.tec_g_caption div.tec_g_featured`), "tec_g_featured");
+
+	var desiredCaption = document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1}) p.tec_g_caption div:nth-of-type(${index + 1})`);
+	desiredCaption.classList.add("tec_g_featured");
+
+	tec_safe_remove_class(document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1}) div.tec_g_indicator.tec_g_featured`), "tec_g_featured");
+
+	var desiredIndicator = document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1}) div.tec_g_indicator:nth-of-type(${index + 1})`);
+	desiredIndicator.classList.add("tec_g_featured");
+}
+
 /*
 	Creates 1 gallery by storing the image sources and captions into global arrays and
 	adding the structure of the gallery.
@@ -52,16 +73,113 @@ function createGallery(g_num, fig = false) {
 	}
 	AllCaptionsArray.push(CaptionArray);
 	var galleryBody = "";
+	var gallery = document.createElement("DIV");
+	gallery.classList.add("tec_g_body");
+	gallery.setAttribute("name", "g_border");
+	var galleryInnerWrapper = document.createElement("DIV");
+	galleryInnerWrapper.classList.add("tec_g_inner_wrapper");
+	var indicatorContainer = document.createElement("DIV");
+	indicatorContainer.classList.add("tec_g_indicator_container");
+	var galleryImages = [];
+	var galleryFauxImages = [];
+	var positionIndicators = [];
+	for(var i = 0; i < ImageArray.length; i++) {
+		const j = i; //to make i not be a reference var
+		var image = document.createElement("IMG");
+		image.src = ImageArray[i];
+		image.classList.add("tec_g_image");
+		//image.style.left = `${tec_calculateImageLeftValue(ImageArray.length, j)}%`;
+		galleryImages.push(image);
+		
+		//to maintain height when featured is the largest image
+		var fauxImage = document.createElement("IMG");
+		fauxImage.src = ImageArray[0];
+		fauxImage.classList.add("tec_g_faux_image");
+		fauxImage.setAttribute("loading", "lazy");
+		galleryFauxImages.push(fauxImage);
+
+		var indicator = document.createElement("DIV");
+		indicator.addEventListener("click", () => tec_setFeaturedImage(g_num, j));
+		indicator.classList.add("tec_g_indicator");
+		if(i == 0) {
+			indicator.classList.add("tec_g_featured");
+		}
+		positionIndicators.push(indicator);
+	}
+	galleryImages[0].classList.add("tec_g_featured");
 	
-	//border and featured image
-	galleryBody += '<div style="width: 100%; border: 1px solid black; display: inline-block;" class="tec_g_border" name="g_border"><div style="display: flex; justify-content: center;"><img src="';
-	galleryBody += ImageArray[0];
-	if(document.getElementsByClassName("tec-gallery")[g_num].getAttribute("tec-g-height") != null) {
-		galleryBody += '" style="height: ' + document.getElementsByClassName("tec-gallery")[g_num].getAttribute("tec-g-height") + 'px; padding: 50px 0px; display: inline-block;" name="tec_g_featured"></div>';
-	} else {
-		galleryBody += '" style="height: 300px; padding: 50px 0px 25px 0px; display: inline-block;" name="tec_g_featured"></div>';
+	var mobileIndicator = document.createElement("DIV");
+	mobileIndicator.classList.add("tec_g_indicator_mobile");
+	var mobileIndicatorText = document.createElement("H4");
+	mobileIndicatorText.innerText = `1/${ImageArray.length}`;
+	mobileIndicator.appendChild(mobileIndicatorText);
+	mobileIndicatorText.style.margin = "0px";
+
+	var galleryFooter = document.createElement("DIV");
+	galleryFooter.classList.add("tec_g_footer");
+	
+	var leftArrow = document.createElement("DIV");
+	leftArrow.classList.add("tec_g_arrow");
+	leftArrow.classList.add("left");
+	leftArrow.addEventListener("click", () => tec_setFeaturedImage(g_num, (currentIndexes[g_num] - 1) % maxIndex));
+	var leftArrowImageLight = document.createElement("IMG");
+	leftArrowImageLight.src = "/wp-content/plugins/te-custom-mods/images/DropdownBlack.png";
+	var leftArrowImageDark = document.createElement("IMG");
+	leftArrowImageDark.src = "/wp-content/plugins/te-custom-mods/images/DropdownYellow.png";
+	leftArrowImageDark.classList.add("dark");
+	leftArrow.appendChild(leftArrowImageLight);
+	leftArrow.appendChild(leftArrowImageDark);
+	galleryFooter.appendChild(leftArrow);
+
+	var captions = document.createElement("P");
+	captions.classList.add("tec_g_caption");
+	for(var i = 0; i < CaptionArray.length; i++) {
+		var captionDiv = document.createElement("DIV");
+		captionDiv.innerText = CaptionArray[i] ?? "No caption available.";
+		if(i == 0) {
+			captionDiv.classList.add("tec_g_featured");
+		}
+		captions.appendChild(captionDiv);
+	}
+	for(var i = 0; i < CaptionArray.length; i++) {
+		var fauxCaptionDiv = document.createElement("DIV");
+		fauxCaptionDiv.innerText = CaptionArray[i] ?? "No caption available.";
+		captions.appendChild(fauxCaptionDiv);
 	}
 
+	galleryFooter.appendChild(captions);
+
+	const maxIndex = ImageArray.length;
+
+	var rightArrow = document.createElement("DIV");
+	rightArrow.classList.add("tec_g_arrow");
+	rightArrow.classList.add("right");
+	rightArrow.addEventListener("click", () => {
+		tec_setFeaturedImage(g_num, (currentIndexes[g_num] + 1) % maxIndex)
+		currentIndexes[g_num]++;
+	});
+	var rightArrowImageLight = document.createElement("IMG");
+	rightArrowImageLight.src = "/wp-content/plugins/te-custom-mods/images/DropdownBlack.png";
+	var rightArrowImageDark = document.createElement("IMG");
+	rightArrowImageDark.src = "/wp-content/plugins/te-custom-mods/images/DropdownYellow.png";
+	rightArrowImageDark.classList.add("dark");
+	rightArrow.appendChild(rightArrowImageLight);
+	rightArrow.appendChild(rightArrowImageDark);
+	galleryFooter.appendChild(rightArrow);
+	
+	for(var i = 0; i < galleryImages.length; i++) {
+		galleryInnerWrapper.appendChild(galleryImages[i]);
+		indicatorContainer.appendChild(positionIndicators[i]);
+	}
+	indicatorContainer.appendChild(mobileIndicator);
+	for(var i = 0; i < galleryFauxImages.length; i++) {
+		galleryInnerWrapper.appendChild(galleryFauxImages[i]);
+	}
+	gallery.appendChild(galleryInnerWrapper);
+	gallery.appendChild(indicatorContainer);
+	document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1})`).appendChild(gallery);
+	document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1})`).appendChild(galleryFooter);
+	return;
 	//position indicators
 	if(ImageArray[g_num].length * 35.5 < screen.width) {
 		galleryBody += '<div class="tec_g_pos_ind_desktop" style="display: flex; width: 100%; justify-content: center; padding-bottom: 5px;">';
@@ -80,14 +198,14 @@ function createGallery(g_num, fig = false) {
 	galleryBody += '<div style="margin-top: 10px; display: flex; justify-content: center; width: 100%;">';
 
 	//arrow left
-	galleryBody += '<div class="tec_g_arrow" style="flex-grow: 1; display: flex; justify-content: center; border: 2px solid black; padding: 4px; height: 30px; cursor: pointer;" onMouseOver="this.style.backgroundColor=\'#f6dd95\'" onMouseOut="this.style.backgroundColor=\'white\'" onclick="tec_g_previous(';
+	galleryBody += '<div class="tec_g_arrow" style="" onMouseOver="this.style.backgroundColor=\'#f6dd95\'" onMouseOut="this.style.backgroundColor=\'white\'" onclick="tec_g_previous(';
 	galleryBody += g_num + ", 1";
 	galleryBody += ')" class="tec_g_arrow" name="g_previous">';
-	galleryBody += '<img class="tec_g_arrow_img" src="/wp-content/plugins/te-custom-mods/images/DropdownBlack.png" style="transform: rotate(90deg); width: 18px; height: 18px;">';
+	galleryBody += '<img class="tec_g_arrow_img" src="" style="transform: rotate(90deg); width: 18px; height: 18px;">';
 	galleryBody += "</div>";
 
 	//caption
-	galleryBody += '<p style="width: calc(90% - 4rem - 22px); text-align: center; border: 0px solid black; padding: 0px 0px; margin: 0px; margin-right: 0px; font-style: italic;" class="entry-content tec_g_caption" name="g_caption">';
+	galleryBody += '<p style="" class="entry-content tec_g_caption" name="g_caption">';
 	if(CaptionArray[0] == undefined) {
 		galleryBody += 'No caption available.';
 	} else {
@@ -105,7 +223,7 @@ function createGallery(g_num, fig = false) {
 
 	document.body.classList.remove("hovered")
 
-	document.getElementsByClassName("tec-gallery")[g_num].innerHTML = galleryBody;
+	//document.getElementsByClassName("tec-gallery")[g_num].innerHTML = galleryBody;
 	ImageArray = new Array();
 	CaptionArray = new Array();
 }
