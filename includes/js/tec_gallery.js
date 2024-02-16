@@ -51,33 +51,21 @@ function tec_setFeaturedImage(g_num, index) {
 */
 function createGallery(g_num, fig = false) {
 	var i = 0;
-	while(document.getElementsByClassName("tec-gallery")[g_num].getElementsByTagName("img").length > 0) {
-		//console.log("Found Image: " + document.getElementsByClassName("tec-gallery")[g_num].getElementsByTagName("img")[0].src);
-		var img = document.getElementsByClassName("tec-gallery")[g_num].getElementsByTagName("img")[0];
-		ImageArray.push(img.src);
-		document.getElementsByClassName("tec-gallery")[g_num].getElementsByTagName("img")[0].remove();
-	}
-	AllImagesArray.push(ImageArray);
-	if(document.getElementsByClassName("tec-gallery")[g_num].getAttribute("figure") == '') {
-		while(document.getElementsByClassName("tec-gallery")[g_num].getElementsByTagName("figcaption").length > 0) {
-			//console.log("Found Caption: " + document.getElementsByClassName("tec-gallery")[g_num].getElementsByTagName("em")[0].innerHTML);
-			CaptionArray.push(document.getElementsByClassName("tec-gallery")[g_num].getElementsByTagName("figcaption")[0].innerHTML);
-			document.getElementsByClassName("tec-gallery")[g_num].getElementsByTagName("figcaption")[0].remove();
-		}
-	} else {
-		while(document.getElementsByClassName("tec-gallery")[g_num].getElementsByTagName("em").length > 0) {
-			//console.log("Found Caption: " + document.getElementsByClassName("tec-gallery")[g_num].getElementsByTagName("em")[0].innerHTML);
-			CaptionArray.push(document.getElementsByClassName("tec-gallery")[g_num].getElementsByTagName("em")[0].innerHTML);
-			document.getElementsByClassName("tec-gallery")[g_num].getElementsByTagName("em")[0].remove();
-		}
-	}
-
-	var extraneousGalleryChildren = [];
-	document.querySelectorAll(".tec-gallery")[g_num].childNodes.forEach(c => {
-		extraneousGalleryChildren.push(c);
+	const galleryElement = document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1})`);
+	document.querySelectorAll(`.tec-gallery:nth-of-type(${g_num + 1}) img`).forEach(ie => {
+		ImageArray.push(ie.src);
 	});
-	extraneousGalleryChildren.forEach(c => {
-		document.querySelectorAll(".tec-gallery")[g_num].removeChild(c);
+	AllImagesArray.push(ImageArray);
+	document.querySelectorAll(`.tec-gallery:nth-of-type(${g_num + 1}) figcaption, .tec-gallery:nth-of-type(${g_num + 1}) em`).forEach(fc => {
+		CaptionArray.push(fc.innerHTML);
+	});
+
+	var galleryChildren = [];
+	document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1})`).childNodes.forEach(c => {
+		galleryChildren.push(c);
+	});
+	galleryChildren.forEach(c => {
+		document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1})`).removeChild(c);
 	});
 
 	AllCaptionsArray.push(CaptionArray);
