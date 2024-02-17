@@ -457,6 +457,28 @@ p.tec_g_faux_caption.tec_g_featured {
     margin: unset !important;
 }
 
+.tec_g_play_pause_wrapper {
+    transform: rotate(180deg);
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    z-index: 1;
+}
+
+.tec_g_play_pause {
+    transition: all ease 0.2s;
+    cursor: pointer;
+    opacity: 0.55;
+}
+
+.tec_g_play_pause.pressed {
+    opacity: 1;
+}
+
+.tec_g_play_pause:hover {
+    scale: 1.2;
+}
+
 /*Mobile Conpatible Styling - converted from the tec_mobile_comp_init.js file. Not all styles are plugin specific...*/
 
 @media(max-width: 1619px) {
