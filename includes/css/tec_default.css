@@ -458,7 +458,7 @@ p.tec_g_faux_caption.tec_g_featured {
 }
 
 .tec_g_play_pause_wrapper {
-    transform: rotate(180deg);
+    transform: rotate(-180deg);
     position: absolute;
     bottom: 5px;
     left: 10px;
