@@ -1,7 +1,5 @@
 //Global variables for the gallery mechanics, below
-var tec_ImageArray = new Array();
 var tec_AllImagesArray = new Array();
-var tec_CaptionArray = new Array();
 var tec_AllCaptionsArray = new Array();
 var tec_currentIndexes = new Array();
 var tec_intervalArray = new Array();
@@ -48,6 +46,8 @@ function tec_setFeaturedImage(g_num, index) {
 	adding the structure of the gallery.
 */
 function createGallery(g_num) {
+	var tec_ImageArray = new Array();
+	var tec_CaptionArray = new Array();
 	document.querySelectorAll(`.tec-gallery:nth-of-type(${g_num + 1}) img`).forEach(ie => {
 		tec_ImageArray.push(ie.src);
 	});
