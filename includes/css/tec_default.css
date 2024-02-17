@@ -332,6 +332,153 @@ button:not(.toggle).tec_dm_button {
 	background-color: #f6dd95 !important;
 }
 
+.tec_g_body {
+    width: 100%;
+    border: 1px solid black;
+    display: inline-block;
+}
+
+.tec_g_inner_wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 1vh;
+    transform: rotate(180deg); /*to get images to stick to bottom of gallery instead of top*/
+}
+
+.tec_g_image {
+    opacity: 0;
+    margin-block: auto;
+    position: absolute;
+    transform: rotate(-180deg);
+    transition: opacity ease 0.5s;
+}
+
+.tec_g_faux_image {
+    opacity: 0;
+    margin-block: auto;
+    position: relative;
+}
+
+.tec_g_image.tec_g_featured {
+    opacity: 1;
+}
+
+.tec_g_indicator {
+    cursor: pointer;
+    height: 15px;
+    border: 2px solid black;
+    margin: 5px;
+    max-width: 50px !important;
+    width: 4vw;
+    min-width: 15px;
+    transition: all 0.2s ease;
+}
+
+.tec_g_indicator.tec_g_featured, .tec_g_indicator:hover {
+    background-color: var(--ted-yellow);
+}
+
+.tec_g_indicator_container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-bottom: 5px;
+    flex-wrap: wrap;
+}
+
+.tec_g_footer {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.tec_g_arrow {
+    border: 2px solid black;
+    display: flex;
+    padding: 4px;
+    width: 15%;
+    height: 30px;
+    cursor: pointer;
+    z-index: 1;
+    min-width: 30px;
+    max-width: 100px;
+    transition: all ease 0.2s;
+}
+
+.tec_g_arrow:hover {
+    background-color: var(--ted-yellow);
+}
+
+.tec_g_arrow img {
+    width: 18px;
+    height: 18px;
+    margin-inline: auto
+}
+
+.tec_g_arrow.left img {
+    transform: rotate(90deg);
+}
+
+.tec_g_arrow.right img {
+    transform: rotate(-90deg);
+}
+
+.tec_g_arrow img.dark {
+    display: none !important;
+}
+
+.tec_g_caption_wrapper {
+    width: -webkit-fill-available;
+    padding: 0px 0px;
+    margin: 0px;
+    margin-right: 0px;
+    font-style: italic;
+    padding: 5px;
+}
+
+p.tec_g_caption, p.tec_g_faux_caption {
+    position: relative;
+    opacity: 0;
+    height: 0px !important;
+    margin: 0px !important;
+    width: 100%;
+    text-align: center;
+    transition: opacity ease 0.2s;
+}
+
+p.tec_g_caption.tec_g_featured {
+    opacity: 1;
+}
+
+p.tec_g_faux_caption.tec_g_featured {
+    opacity: 0 !important;
+    height: unset !important;
+    margin: unset !important;
+}
+
+.tec_g_play_pause_wrapper {
+    transform: rotate(180deg);
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    z-index: 1;
+}
+
+.tec_g_play_pause {
+    transition: all ease 0.2s;
+    cursor: pointer;
+    opacity: 0.55;
+}
+
+.tec_g_play_pause.pressed {
+    opacity: 1;
+}
+
+.tec_g_play_pause:hover {
+    scale: 1.2;
+}
+
 /*Mobile Conpatible Styling - converted from the tec_mobile_comp_init.js file. Not all styles are plugin specific...*/
 
 @media(max-width: 1619px) {
