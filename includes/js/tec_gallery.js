@@ -4,6 +4,7 @@ var AllImagesArray = new Array();
 var CaptionArray = new Array();
 var AllCaptionsArray = new Array();
 var currentIndexes = new Array();
+var intervalArray = new Array();
 
 /*
 	The main function for creating galleries. Call this and all images surrounded by div tags
@@ -73,6 +74,31 @@ function createGallery(g_num) {
 	gallery.setAttribute("name", "g_border");
 	var galleryInnerWrapper = document.createElement("DIV");
 	galleryInnerWrapper.classList.add("tec_g_inner_wrapper");
+	
+	var galleryPlayPauseWrapper = document.createElement("DIV");
+	galleryPlayPauseWrapper.classList.add("tec_g_play_pause_wrapper");
+	var galleryPlayPause = document.createElement("DIV");
+	galleryPlayPause.classList.add("tec_g_play_pause");
+	galleryPlayPause.innerText = "⏯︎";
+	galleryPlayPause.title = "auto-play this gallery";
+	const gNumConst = g_num;
+	galleryPlayPause.addEventListener("click", (e) => {
+		window.getSelection().removeAllRanges();
+		if(!intervalArray[g_num]) {
+			e.target.classList.add("pressed");
+			document.querySelector(`.tec-gallery:nth-of-type(${gNumConst + 1}) .tec_g_arrow.right`).click();
+			intervalArray[g_num] = setInterval(() => {
+				document.querySelector(`.tec-gallery:nth-of-type(${gNumConst + 1}) .tec_g_arrow.right`).click();
+			}, 4000);
+		} else {
+			tec_safe_remove_class(e.target, "pressed");
+			clearInterval(intervalArray[g_num]);
+			intervalArray[g_num] = undefined;
+		}
+	});
+	galleryPlayPauseWrapper.appendChild(galleryPlayPause);
+	galleryInnerWrapper.appendChild(galleryPlayPauseWrapper);
+
 	var indicatorContainer = document.createElement("DIV");
 	indicatorContainer.classList.add("tec_g_indicator_container");
 	var galleryImages = [];
