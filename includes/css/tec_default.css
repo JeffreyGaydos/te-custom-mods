@@ -368,7 +368,7 @@ button:not(.toggle).tec_dm_button {
     height: 15px;
     border: 2px solid black;
     margin: 5px;
-    max-width: 50px;
+    max-width: 50px !important;
     width: 4vw;
     min-width: 15px;
 }
@@ -435,25 +435,32 @@ button:not(.toggle).tec_dm_button {
     display: none !important;
 }
 
-.tec_g_caption, .tec_g_faux_caption {
+.tec_g_caption_wrapper {
     width: calc(90% - 4rem - 22px);
     padding: 0px 0px;
     margin: 0px;
     margin-right: 0px;
     font-style: italic;
-    position: relative;
 }
 
-.tec_g_caption div, .tec_g_faux_caption div {
-    position: absolute;
+p.tec_g_caption, p.tec_g_faux_caption {
+    position: relative;
     opacity: 0;
+    height: 0px !important;
+    margin: 0px !important;
     width: 100%;
     text-align: center;
     transition: opacity ease 0.2s;
 }
 
-.tec_g_caption div.tec_g_featured {
+p.tec_g_caption.tec_g_featured {
     opacity: 1;
+}
+
+p.tec_g_faux_caption.tec_g_featured {
+    opacity: 0 !important;
+    height: unset !important;
+    margin: unset !important;
 }
 
 /*Mobile Conpatible Styling - converted from the tec_mobile_comp_init.js file. Not all styles are plugin specific...*/
