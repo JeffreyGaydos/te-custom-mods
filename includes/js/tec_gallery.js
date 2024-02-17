@@ -103,12 +103,12 @@ function createGallery(g_num) {
 	}
 	galleryImages[0].classList.add("tec_g_featured");
 	
-	var mobileIndicator = document.createElement("DIV");
-	mobileIndicator.classList.add("tec_g_indicator_mobile");
-	var mobileIndicatorText = document.createElement("H4");
-	mobileIndicatorText.innerText = `1/${ImageArray.length}`;
-	mobileIndicator.appendChild(mobileIndicatorText);
-	mobileIndicatorText.style.margin = "0px";
+	// var mobileIndicator = document.createElement("DIV");
+	// mobileIndicator.classList.add("tec_g_indicator_mobile");
+	// var mobileIndicatorText = document.createElement("H4");
+	// mobileIndicatorText.innerText = `1/${ImageArray.length}`;
+	// mobileIndicator.appendChild(mobileIndicatorText);
+	// mobileIndicatorText.style.margin = "0px";
 
 	var galleryFooter = document.createElement("DIV");
 	galleryFooter.classList.add("tec_g_footer");
@@ -116,7 +116,10 @@ function createGallery(g_num) {
 	var leftArrow = document.createElement("DIV");
 	leftArrow.classList.add("tec_g_arrow");
 	leftArrow.classList.add("left");
-	leftArrow.addEventListener("click", () => tec_setFeaturedImage(g_num, currentIndexes[g_num] == 0 ? maxIndex - 1 : (currentIndexes[g_num] - 1) % maxIndex));
+	leftArrow.addEventListener("click", () => {
+		window.getSelection().removeAllRanges();
+		tec_setFeaturedImage(g_num, currentIndexes[g_num] == 0 ? maxIndex - 1 : (currentIndexes[g_num] - 1) % maxIndex)
+	});
 	var leftArrowImageLight = document.createElement("IMG");
 	leftArrowImageLight.src = "/wp-content/plugins/te-custom-mods/images/DropdownBlack.png";
 	var leftArrowImageDark = document.createElement("IMG");
@@ -150,7 +153,10 @@ function createGallery(g_num) {
 	var rightArrow = document.createElement("DIV");
 	rightArrow.classList.add("tec_g_arrow");
 	rightArrow.classList.add("right");
-	rightArrow.addEventListener("click", () => tec_setFeaturedImage(g_num, (currentIndexes[g_num] + 1) % maxIndex));
+	rightArrow.addEventListener("click", () => {
+		window.getSelection().removeAllRanges();
+		tec_setFeaturedImage(g_num, (currentIndexes[g_num] + 1) % maxIndex)
+	});
 	var rightArrowImageLight = document.createElement("IMG");
 	rightArrowImageLight.src = "/wp-content/plugins/te-custom-mods/images/DropdownBlack.png";
 	var rightArrowImageDark = document.createElement("IMG");
@@ -164,7 +170,7 @@ function createGallery(g_num) {
 		galleryInnerWrapper.appendChild(galleryImages[i]);
 		indicatorContainer.appendChild(positionIndicators[i]);
 	}
-	indicatorContainer.appendChild(mobileIndicator);
+	//indicatorContainer.appendChild(mobileIndicator);
 	for(var i = 0; i < galleryFauxImages.length; i++) {
 		galleryInnerWrapper.appendChild(galleryFauxImages[i]);
 	}

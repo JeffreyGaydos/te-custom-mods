@@ -352,7 +352,7 @@ div.tec_g_arrow {
     border: 2px solid var(--te-yellow) !important;
 }
 
-div.tec_g_arrow:hover {
+div.tec_g_arrow:hover, .tec_g_indicator.tec_g_featured, .tec_g_indicator:hover {
     background-color: var(--te-beige2) !important;
 }
 
@@ -364,13 +364,16 @@ p.tec_g_caption {
     color: white;
 }
 
-.tec_g_pos_ind.current .tec_g_pos_ind.hovered {
-    background-color: var(--te-beige) !important;
+.tec-gallery .tec_g_arrow img:not(.dark) {
+    display: none !important;
 }
 
-.tec_g_pos_ind {
-    border: 2px solid var(--te-yellow) !important;
-    background-color: var(--te-black) !important;
+.tec-gallery .tec_g_arrow img.dark {
+    display: inline !important;
+}
+
+.tec_g_indicator {
+    border-color: var(--te-yellow) !important;
 }
 
 .tec_g_pos_ind_mobile > h4 {

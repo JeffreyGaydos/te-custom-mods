@@ -371,9 +371,10 @@ button:not(.toggle).tec_dm_button {
     max-width: 50px !important;
     width: 4vw;
     min-width: 15px;
+    transition: all 0.2s ease;
 }
 
-.tec_g_indicator.tec_g_featured {
+.tec_g_indicator.tec_g_featured, .tec_g_indicator:hover {
     background-color: var(--ted-yellow);
 }
 
@@ -385,13 +386,13 @@ button:not(.toggle).tec_dm_button {
     flex-wrap: wrap;
 }
 
-.tec_g_indicator_mobile {
+/* .tec_g_indicator_mobile {
     display: flex;
     width: 100%;
     justify-content: center;
     padding-bottom: 15px;
     display: none;
-}
+} */
 
 .tec_g_footer {
     margin-top: 10px;
