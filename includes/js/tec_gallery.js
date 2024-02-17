@@ -21,10 +21,6 @@ function createGalleries() {
 
 createGalleries();
 
-function tec_calculateImageLeftValue(numImages, currentIndex) {
-	return (numImages - 1) * 25 - 50 * currentIndex;
-}
-
 function tec_setFeaturedImage(g_num, index) {
 	tec_safe_remove_class(document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1}) img.tec_g_image.tec_g_featured`), "tec_g_featured");
 
