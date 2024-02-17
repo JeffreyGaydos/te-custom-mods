@@ -404,11 +404,11 @@ button:not(.toggle).tec_dm_button {
     border: 2px solid black;
     display: flex;
     padding: 4px;
-    width: 30px;
+    width: 15%;
     height: 30px;
     cursor: pointer;
     z-index: 1;
-    min-width: 100px;
+    min-width: 30px;
     max-width: 100px;
     transition: all ease 0.2s;
 }
@@ -436,11 +436,12 @@ button:not(.toggle).tec_dm_button {
 }
 
 .tec_g_caption_wrapper {
-    width: calc(90% - 4rem - 22px);
+    width: -webkit-fill-available;
     padding: 0px 0px;
     margin: 0px;
     margin-right: 0px;
     font-style: italic;
+    padding: 5px;
 }
 
 p.tec_g_caption, p.tec_g_faux_caption {
