@@ -386,14 +386,6 @@ button:not(.toggle).tec_dm_button {
     flex-wrap: wrap;
 }
 
-/* .tec_g_indicator_mobile {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    padding-bottom: 15px;
-    display: none;
-} */
-
 .tec_g_footer {
     margin-top: 10px;
     display: flex;

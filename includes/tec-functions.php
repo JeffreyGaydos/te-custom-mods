@@ -141,7 +141,7 @@ if(get_option('tec_gallery') == 'on') {
 if( !function_exists("tec_gallery") ) {
     function tec_gallery() {
         wp_enqueue_script( 'jquery531', 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js');
-        wp_enqueue_script( 'tec-gallery', plugins_url('/js/tec_gallery.js', __FILE__), '', '2.198');
+        wp_enqueue_script( 'tec-gallery', plugins_url('/js/tec_gallery.js', __FILE__), '', '2.200');
     }
 }
 

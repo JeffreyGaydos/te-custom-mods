@@ -27,7 +27,7 @@ function tec_calculateImageLeftValue(numImages, currentIndex) {
 
 function tec_setFeaturedImage(g_num, index) {
 	tec_safe_remove_class(document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1}) img.tec_g_image.tec_g_featured`), "tec_g_featured");
-	//console.log(`.tec-gallery:nth-of-type(${g_num + 1}) img.tec_g_image:nth-of-type(${index + 1})`);
+
 	var desiredImage = document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1}) img.tec_g_image:nth-of-type(${index + 1})`);
 	desiredImage.classList.add("tec_g_featured");
 
@@ -109,7 +109,6 @@ function createGallery(g_num) {
 		var image = document.createElement("IMG");
 		image.src = ImageArray[i];
 		image.classList.add("tec_g_image");
-		//image.style.left = `${tec_calculateImageLeftValue(ImageArray.length, j)}%`;
 		galleryImages.push(image);
 		
 		//to maintain height when featured is the largest image
@@ -128,13 +127,6 @@ function createGallery(g_num) {
 		positionIndicators.push(indicator);
 	}
 	galleryImages[0].classList.add("tec_g_featured");
-	
-	// var mobileIndicator = document.createElement("DIV");
-	// mobileIndicator.classList.add("tec_g_indicator_mobile");
-	// var mobileIndicatorText = document.createElement("H4");
-	// mobileIndicatorText.innerText = `1/${ImageArray.length}`;
-	// mobileIndicator.appendChild(mobileIndicatorText);
-	// mobileIndicatorText.style.margin = "0px";
 
 	var galleryFooter = document.createElement("DIV");
 	galleryFooter.classList.add("tec_g_footer");
@@ -196,7 +188,7 @@ function createGallery(g_num) {
 		galleryInnerWrapper.appendChild(galleryImages[i]);
 		indicatorContainer.appendChild(positionIndicators[i]);
 	}
-	//indicatorContainer.appendChild(mobileIndicator);
+
 	for(var i = 0; i < galleryFauxImages.length; i++) {
 		galleryInnerWrapper.appendChild(galleryFauxImages[i]);
 	}
