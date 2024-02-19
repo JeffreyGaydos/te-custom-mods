@@ -1,5 +1,23 @@
 Updating RSS feeds...
-Article Title: FIAT 500 &#8216;Topolino&#8217;
-Article Link: https://tanks-encyclopedia.com/ww2/italy/fiat-500-topolino/
-No new article found. Skipping...
+Article Title: Medical Toldi eü20
+Article Link: https://tanks-encyclopedia.com/ww2/hungary/medical-toldi-eu20/
+RSS Update Date: 2024-02-19
+https://tanks-encyclopedia.com/ww2/hungary/medical-toldi-eu20/
+Medical Toldi eü20
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+<title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
+<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
+<description>The latest TE article</description>
+<lastBuildDate>2024-02-19 08:55:37.897012</lastBuildDate>
+<item>
+<title>Medical Toldi eü20</title>
+<link>https://tanks-encyclopedia.com/ww2/hungary/medical-toldi-eu20/</link>
+<guid>https://tanks-encyclopedia.com/ww2/hungary/medical-toldi-eu20/</guid>
+<description></description>
+<pubDate>2024-02-19 08:55:37.897012</pubDate>
+</item>
+</channel>
+</rss>
 Finished updating RSS feeds...
