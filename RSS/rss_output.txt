@@ -1,5 +1,23 @@
 Updating RSS feeds...
-Article Title: Panzerjäger IV (Krupp) mit 8.8 cm PaK 43 L/71
-Article Link: https://tanks-encyclopedia.com/ww2/germany/panzerjager-iv-krupp-mit-8-8-cm-pak-43-l-71/
-No new article found. Skipping...
+Article Title: Autoblinde AB41 and AB43 in Partisan Service
+Article Link: https://tanks-encyclopedia.com/ww2/italy/autoblinde-ab41-and-ab43-in-partisan-service/
+RSS Update Date: 2024-02-24
+https://tanks-encyclopedia.com/ww2/italy/autoblinde-ab41-and-ab43-in-partisan-service/
+Autoblinde AB41 and AB43 in Partisan Service
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+<title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
+<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
+<description>The latest TE article</description>
+<lastBuildDate>2024-02-24 10:20:56.640486</lastBuildDate>
+<item>
+<title>Autoblinde AB41 and AB43 in Partisan Service</title>
+<link>https://tanks-encyclopedia.com/ww2/italy/autoblinde-ab41-and-ab43-in-partisan-service/</link>
+<guid>https://tanks-encyclopedia.com/ww2/italy/autoblinde-ab41-and-ab43-in-partisan-service/</guid>
+<description></description>
+<pubDate>2024-02-24 10:20:56.640486</pubDate>
+</item>
+</channel>
+</rss>
 Finished updating RSS feeds...
