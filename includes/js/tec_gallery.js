@@ -9,15 +9,20 @@ var tec_intervalArray = new Array();
 	with the class "tec-gallery" will be turned into a simple gallery. Multiple galleriees per page
 	are supported. Uses javascript and JQuery.
 */
-function createGalleries() {
+function tec_createGalleries() {
 	const numGalleries = document.getElementsByClassName("tec-gallery").length;
 	for(var g = 0; g < numGalleries; g++) {
 		tec_currentIndexes.push(0);
-		createGallery(g);
+		try {
+			tec_createGallery(g);	
+		}
+		catch {
+			//ignore errors and continue attempting to create galleries
+		}
 	}
 }
 
-createGalleries();
+tec_createGalleries();
 
 function tec_setFeaturedImage(g_num, index) {
 	tec_safe_remove_class(document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1}) img.tec_g_image.tec_g_featured`), "tec_g_featured");
@@ -45,7 +50,7 @@ function tec_setFeaturedImage(g_num, index) {
 	Creates 1 gallery by storing the image sources and captions into global arrays and
 	adding the structure of the gallery.
 */
-function createGallery(g_num) {
+function tec_createGallery(g_num) {
 	var tec_ImageArray = new Array();
 	var tec_CaptionArray = new Array();
 	document.querySelectorAll(`.tec-gallery:nth-of-type(${g_num + 1}) img`).forEach(ie => {
