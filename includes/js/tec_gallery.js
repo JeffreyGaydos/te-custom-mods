@@ -147,7 +147,7 @@ function createGallery(g_num) {
 	captions.classList.add("tec_g_caption_wrapper");
 	for(var i = 0; i < tec_CaptionArray.length; i++) {
 		var captionP = document.createElement("P");
-		captionP.innerText = tec_CaptionArray[i] ?? "No caption available.";
+		captionP.innerHTML = tec_CaptionArray[i] ?? "No caption available.";
 		captionP.classList.add("tec_g_caption");
 		if(i == 0) {
 			captionP.classList.add("tec_g_featured");
@@ -155,7 +155,7 @@ function createGallery(g_num) {
 		captions.appendChild(captionP);
 	}
 	var fauxCaption = document.createElement("P");
-	fauxCaption.innerText = tec_CaptionArray[0];
+	fauxCaption.innerHTML = tec_CaptionArray[0];
 	fauxCaption.classList.add("tec_g_faux_caption");
 	fauxCaption.classList.add("tec_g_featured");
 	captions.appendChild(fauxCaption);
