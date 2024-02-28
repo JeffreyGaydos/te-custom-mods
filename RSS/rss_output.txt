@@ -1,5 +1,23 @@
 Updating RSS feeds...
 Article Title: Semovente da 47/32 su Scafo AB41
-Article Link: https://tanks-encyclopedia.com/ww2-italy-semovente-da-47-32-su-scafo-ab41/
-No new article found. Skipping...
+Article Link: https://tanks-encyclopedia.com/ww2/italy/semovente-da-47-32-su-scafo-ab41/
+RSS Update Date: 2024-02-28
+https://tanks-encyclopedia.com/ww2/italy/semovente-da-47-32-su-scafo-ab41/
+Semovente da 47/32 su Scafo AB41
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+<title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
+<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
+<description>The latest TE article</description>
+<lastBuildDate>2024-02-28 18:22:35.700378</lastBuildDate>
+<item>
+<title>Semovente da 47/32 su Scafo AB41</title>
+<link>https://tanks-encyclopedia.com/ww2/italy/semovente-da-47-32-su-scafo-ab41/</link>
+<guid>https://tanks-encyclopedia.com/ww2/italy/semovente-da-47-32-su-scafo-ab41/</guid>
+<description></description>
+<pubDate>2024-02-28 18:22:35.700378</pubDate>
+</item>
+</channel>
+</rss>
 Finished updating RSS feeds...
