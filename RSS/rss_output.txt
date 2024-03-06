@@ -1,5 +1,23 @@
 Updating RSS feeds...
-Article Title: Vehiculo Blindado Liviano Multipropósito (VBLM) Armadillo
-Article Link: https://tanks-encyclopedia.com/coldwar/guatemala/vehiculo-blindado-liviano-multiproposito-vblm-armadillo/
-No new article found. Skipping...
+Article Title: Bergepanzer VI Ferdinand/Elefant
+Article Link: https://tanks-encyclopedia.com/ww2/germany/bergepanzer-vi-ferdinand-elefant/
+RSS Update Date: 2024-03-06
+https://tanks-encyclopedia.com/ww2/germany/bergepanzer-vi-ferdinand-elefant/
+Bergepanzer VI Ferdinand/Elefant
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+<title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
+<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
+<description>The latest TE article</description>
+<lastBuildDate>2024-03-06 09:18:42.331849</lastBuildDate>
+<item>
+<title>Bergepanzer VI Ferdinand/Elefant</title>
+<link>https://tanks-encyclopedia.com/ww2/germany/bergepanzer-vi-ferdinand-elefant/</link>
+<guid>https://tanks-encyclopedia.com/ww2/germany/bergepanzer-vi-ferdinand-elefant/</guid>
+<description></description>
+<pubDate>2024-03-06 09:18:42.331849</pubDate>
+</item>
+</channel>
+</rss>
 Finished updating RSS feeds...
