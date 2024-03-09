@@ -1,5 +1,23 @@
 Updating RSS feeds...
-Article Title: Bergepanzer VI Ferdinand/Elefant
-Article Link: https://tanks-encyclopedia.com/ww2/germany/bergepanzer-vi-ferdinand-elefant/
-No new article found. Skipping...
+Article Title: M2010 8&#215;8
+Article Link: https://tanks-encyclopedia.com/m-2010-8x8/
+RSS Update Date: 2024-03-09
+https://tanks-encyclopedia.com/m-2010-8x8/
+M2010 8&#215;8
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+<title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
+<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
+<description>The latest TE article</description>
+<lastBuildDate>2024-03-09 09:20:00.678241</lastBuildDate>
+<item>
+<title>M2010 8&#215;8</title>
+<link>https://tanks-encyclopedia.com/m-2010-8x8/</link>
+<guid>https://tanks-encyclopedia.com/m-2010-8x8/</guid>
+<description></description>
+<pubDate>2024-03-09 09:20:00.678241</pubDate>
+</item>
+</channel>
+</rss>
 Finished updating RSS feeds...
