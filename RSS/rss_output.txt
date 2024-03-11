@@ -1,5 +1,23 @@
 Updating RSS feeds...
-Article Title: M2010 8&#215;8
-Article Link: https://tanks-encyclopedia.com/m-2010-8x8/
-No new article found. Skipping...
+Article Title: Ford 3-ton Special Tractor M.1918 Prototype
+Article Link: https://tanks-encyclopedia.com/ww1/usa/ford-3-ton-special-tractor-m-1918-prototype/
+RSS Update Date: 2024-03-11
+https://tanks-encyclopedia.com/ww1/usa/ford-3-ton-special-tractor-m-1918-prototype/
+Ford 3-ton Special Tractor M.1918 Prototype
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+<title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
+<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
+<description>The latest TE article</description>
+<lastBuildDate>2024-03-11 09:19:40.983003</lastBuildDate>
+<item>
+<title>Ford 3-ton Special Tractor M.1918 Prototype</title>
+<link>https://tanks-encyclopedia.com/ww1/usa/ford-3-ton-special-tractor-m-1918-prototype/</link>
+<guid>https://tanks-encyclopedia.com/ww1/usa/ford-3-ton-special-tractor-m-1918-prototype/</guid>
+<description></description>
+<pubDate>2024-03-11 09:19:40.983003</pubDate>
+</item>
+</channel>
+</rss>
 Finished updating RSS feeds...
