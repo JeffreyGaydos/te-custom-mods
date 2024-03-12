@@ -6,8 +6,8 @@ var tec_intervalArray = new Array();
 
 /*
 	The main function for creating galleries. Call this and all images surrounded by div tags
-	with the class "tec-gallery" will be turned into a simple gallery. Multiple galleriees per page
-	are supported. Uses javascript and JQuery.
+	with the class "tec-gallery" will be turned into a simple gallery. Multiple galleries per page
+	are supported.
 */
 function tec_createGalleries() {
 	const numGalleries = document.getElementsByClassName("tec-gallery").length;
@@ -36,7 +36,7 @@ function tec_setFeaturedImage(g_num, index) {
 	desiredCaption.classList.add("tec_g_featured");
 
 	var fauxCaption = document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1}) div.tec_g_caption_wrapper p.tec_g_faux_caption`);
-	fauxCaption.innerText = tec_AllCaptionsArray[g_num][index];
+	fauxCaption.innerHTML = tec_AllCaptionsArray[g_num][index];
 
 	tec_safe_remove_class(document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1}) div.tec_g_indicator.tec_g_featured`), "tec_g_featured");
 
@@ -53,13 +53,39 @@ function tec_setFeaturedImage(g_num, index) {
 function tec_createGallery(g_num) {
 	var tec_ImageArray = new Array();
 	var tec_CaptionArray = new Array();
-	document.querySelectorAll(`.tec-gallery:nth-of-type(${g_num + 1}) img`).forEach(ie => {
-		tec_ImageArray.push(ie.src);
+	var previousTag = "";
+	document.querySelectorAll(`.tec-gallery:nth-of-type(${g_num + 1}) img, .tec-gallery:nth-of-type(${g_num + 1}) figcaption, .tec-gallery:nth-of-type(${g_num + 1}) em`).forEach(e => {
+		if(previousTag == "IMG" && e.tagName == "IMG") {
+			//we found a missing caption; add an empty
+			tec_CaptionArray.push("");
+			lookingForCaption = false;
+			console.log("Added empty caption");
+			tec_ImageArray.push(e.src);
+			lookingForCaption = true;
+			console.log("Added image");
+			previousTag = e.tagName;
+		} else if(previousTag != "IMG" && e.tagName == "IMG") {
+			tec_ImageArray.push(e.src);
+			lookingForCaption = true;
+			console.log("Added image");
+			previousTag = e.tagName;
+		} else if(previousTag == "IMG" && e.tagName != "IMG") {
+			tec_CaptionArray.push(e.innerHTML);
+			lookingForCaption = false;
+			console.log("Added caption");
+			previousTag = e.tagName;
+		} else if(previousTag != "IMG" && e.tagName != "IMG") {
+			//we found another caption, probably for the previous image
+			tec_CaptionArray[tec_CaptionArray.length - 1] += " " + e.innerHTML;
+			lookingForCaption = false;
+			console.log("Added secondary caption");
+			previousTag = e.tagName;
+		}
 	});
+	console.log(tec_CaptionArray);
+
 	tec_AllImagesArray.push(tec_ImageArray);
-	document.querySelectorAll(`.tec-gallery:nth-of-type(${g_num + 1}) figcaption, .tec-gallery:nth-of-type(${g_num + 1}) em`).forEach(fc => {
-		tec_CaptionArray.push(fc.innerHTML);
-	});
+	tec_AllCaptionsArray.push(tec_CaptionArray);
 
 	var galleryChildren = [];
 	document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1})`).childNodes.forEach(c => {
@@ -69,7 +95,6 @@ function tec_createGallery(g_num) {
 		document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1})`).removeChild(c);
 	});
 
-	tec_AllCaptionsArray.push(tec_CaptionArray);
 	var gallery = document.createElement("DIV");
 	gallery.classList.add("tec_g_body");
 	gallery.setAttribute("name", "g_border");
@@ -105,11 +130,15 @@ function tec_createGallery(g_num) {
 	var galleryImages = [];
 	var galleryFauxImages = [];
 	var positionIndicators = [];
+	const userSuppliedMaxHeight = document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1})`).getAttribute("max-height");
 	for(var i = 0; i < tec_ImageArray.length; i++) {
 		const j = i; //to make i not be a reference var
 		var image = document.createElement("IMG");
 		image.src = tec_ImageArray[i];
 		image.classList.add("tec_g_image");
+		if(userSuppliedMaxHeight) {
+			image.style.maxHeight = `${userSuppliedMaxHeight}px`;
+		}
 		galleryImages.push(image);
 		
 		//to maintain height when featured is the largest image
@@ -117,6 +146,9 @@ function tec_createGallery(g_num) {
 		fauxImage.src = tec_ImageArray[i];
 		fauxImage.classList.add("tec_g_faux_image");
 		fauxImage.setAttribute("loading", "lazy");
+		if(userSuppliedMaxHeight) {
+			fauxImage.style.maxHeight = `${userSuppliedMaxHeight}px`;
+		}
 		galleryFauxImages.push(fauxImage);
 
 		var indicator = document.createElement("DIV");
