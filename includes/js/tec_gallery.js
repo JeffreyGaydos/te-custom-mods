@@ -16,8 +16,9 @@ function tec_createGalleries() {
 		try {
 			tec_createGallery(g);	
 		}
-		catch {
-			//ignore errors and continue attempting to create galleries
+		catch(e) {
+			//ignore errors and continue attempting to create galleries, but still log it
+			console.error(e);
 		}
 	}
 }
@@ -74,7 +75,6 @@ function tec_createGallery(g_num) {
 		}
 		previousTag = e.tagName;
 	});
-	console.log(tec_CaptionArray);
 
 	tec_AllImagesArray.push(tec_ImageArray);
 	tec_AllCaptionsArray.push(tec_CaptionArray);
