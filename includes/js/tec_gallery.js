@@ -55,32 +55,24 @@ function tec_createGallery(g_num) {
 	var tec_CaptionArray = new Array();
 	var previousTag = "";
 	document.querySelectorAll(`.tec-gallery:nth-of-type(${g_num + 1}) img, .tec-gallery:nth-of-type(${g_num + 1}) figcaption, .tec-gallery:nth-of-type(${g_num + 1}) em`).forEach(e => {
-		if(previousTag == "IMG" && e.tagName == "IMG") {
-			//we found a missing caption; add an empty
-			tec_CaptionArray.push("");
-			lookingForCaption = false;
-			console.log("Added empty caption");
+		if(e.tagName == "IMG") {
+			if(previousTag == "IMG") {
+				//we found a missing caption; add an empty
+				tec_CaptionArray.push("");
+			}
+			//Add image
 			tec_ImageArray.push(e.src);
-			lookingForCaption = true;
-			console.log("Added image");
-			previousTag = e.tagName;
-		} else if(previousTag != "IMG" && e.tagName == "IMG") {
-			tec_ImageArray.push(e.src);
-			lookingForCaption = true;
-			console.log("Added image");
-			previousTag = e.tagName;
-		} else if(previousTag == "IMG" && e.tagName != "IMG") {
-			tec_CaptionArray.push(e.innerHTML);
-			lookingForCaption = false;
-			console.log("Added caption");
-			previousTag = e.tagName;
-		} else if(previousTag != "IMG" && e.tagName != "IMG") {
-			//we found another caption, probably for the previous image
-			tec_CaptionArray[tec_CaptionArray.length - 1] += " " + e.innerHTML;
-			lookingForCaption = false;
-			console.log("Added secondary caption");
-			previousTag = e.tagName;
+		} else {
+			if(previousTag == "IMG") {
+				//add caption
+				tec_CaptionArray.push(e.innerHTML);
+			} else {
+				//we found another caption, probably for the previous image
+				//Add secondary caption
+				tec_CaptionArray[tec_CaptionArray.length - 1] += " " + e.innerHTML;
+			}
 		}
+		previousTag = e.tagName;
 	});
 	console.log(tec_CaptionArray);
 
