@@ -75,6 +75,10 @@ function tec_createGallery(g_num) {
 		}
 		previousTag = e.tagName;
 	});
+	if(previousTag == "IMG") {
+		//if the last tag we found was an image, the last image is missing a caption
+		tec_CaptionArray.push("");
+	}
 
 	tec_AllImagesArray.push(tec_ImageArray);
 	tec_AllCaptionsArray.push(tec_CaptionArray);
