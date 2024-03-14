@@ -6,18 +6,36 @@ var tec_intervalArray = new Array();
 
 /*
 	The main function for creating galleries. Call this and all images surrounded by div tags
-	with the class "tec-gallery" will be turned into a simple gallery. Multiple galleriees per page
-	are supported. Uses javascript and JQuery.
+	with the class "tec-gallery" will be turned into a simple gallery. Multiple galleries per page
+	are supported.
 */
-function createGalleries() {
+function tec_createGalleries() {
 	const numGalleries = document.getElementsByClassName("tec-gallery").length;
-	for(var g = 0; g < numGalleries; g++) {
+	var divsToLoopThrough = numGalleries; //at minimum
+	for(var g = 0; g < divsToLoopThrough; g++) {
 		tec_currentIndexes.push(0);
-		createGallery(g);
+		try {
+			if(!document.querySelector(`.tec-gallery:nth-of-type(${g + 1})`)) {
+				//This if statement is here so that we can use :nth-of-type like an index into a list of .tec-gallery elements
+				//the nth-of-type select does not work as we expect
+				//any divs in the article will be selected by this query; the class simply defines the parent we are looking (the child's class)
+				divsToLoopThrough++;
+				//create an "invisible" gallery so we don't have to worry about indexing changes
+				tec_AllCaptionsArray.push(undefined);
+				tec_AllImagesArray.push(undefined);
+				tec_intervalArray.push(undefined);
+				continue;
+			}
+			tec_createGallery(g);	
+		}
+		catch(e) {
+			//ignore errors and continue attempting to create galleries, but still log it
+			console.error(e);
+		}
 	}
 }
 
-createGalleries();
+tec_createGalleries();
 
 function tec_setFeaturedImage(g_num, index) {
 	tec_safe_remove_class(document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1}) img.tec_g_image.tec_g_featured`), "tec_g_featured");
@@ -31,7 +49,7 @@ function tec_setFeaturedImage(g_num, index) {
 	desiredCaption.classList.add("tec_g_featured");
 
 	var fauxCaption = document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1}) div.tec_g_caption_wrapper p.tec_g_faux_caption`);
-	fauxCaption.innerText = tec_AllCaptionsArray[g_num][index];
+	fauxCaption.innerHTML = tec_AllCaptionsArray[g_num][index];
 
 	tec_safe_remove_class(document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1}) div.tec_g_indicator.tec_g_featured`), "tec_g_featured");
 
@@ -45,16 +63,37 @@ function tec_setFeaturedImage(g_num, index) {
 	Creates 1 gallery by storing the image sources and captions into global arrays and
 	adding the structure of the gallery.
 */
-function createGallery(g_num) {
+function tec_createGallery(g_num) {
 	var tec_ImageArray = new Array();
 	var tec_CaptionArray = new Array();
-	document.querySelectorAll(`.tec-gallery:nth-of-type(${g_num + 1}) img`).forEach(ie => {
-		tec_ImageArray.push(ie.src);
+	var previousTag = "";
+	document.querySelectorAll(`.tec-gallery:nth-of-type(${g_num + 1}) img, .tec-gallery:nth-of-type(${g_num + 1}) figcaption, .tec-gallery:nth-of-type(${g_num + 1}) em`).forEach(e => {
+		if(e.tagName == "IMG") {
+			if(previousTag == "IMG") {
+				//we found a missing caption; add an empty
+				tec_CaptionArray.push("");
+			}
+			//Add image
+			tec_ImageArray.push(e.src);
+		} else {
+			if(previousTag == "IMG") {
+				//add caption
+				tec_CaptionArray.push(e.innerHTML);
+			} else {
+				//we found another caption, probably for the previous image
+				//Add secondary caption
+				tec_CaptionArray[tec_CaptionArray.length - 1] += " " + e.innerHTML;
+			}
+		}
+		previousTag = e.tagName;
 	});
+	if(previousTag == "IMG") {
+		//if the last tag we found was an image, the last image is missing a caption
+		tec_CaptionArray.push("");
+	}
+
 	tec_AllImagesArray.push(tec_ImageArray);
-	document.querySelectorAll(`.tec-gallery:nth-of-type(${g_num + 1}) figcaption, .tec-gallery:nth-of-type(${g_num + 1}) em`).forEach(fc => {
-		tec_CaptionArray.push(fc.innerHTML);
-	});
+	tec_AllCaptionsArray.push(tec_CaptionArray);
 
 	var galleryChildren = [];
 	document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1})`).childNodes.forEach(c => {
@@ -64,7 +103,6 @@ function createGallery(g_num) {
 		document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1})`).removeChild(c);
 	});
 
-	tec_AllCaptionsArray.push(tec_CaptionArray);
 	var gallery = document.createElement("DIV");
 	gallery.classList.add("tec_g_body");
 	gallery.setAttribute("name", "g_border");
@@ -100,11 +138,15 @@ function createGallery(g_num) {
 	var galleryImages = [];
 	var galleryFauxImages = [];
 	var positionIndicators = [];
+	const userSuppliedMaxHeight = document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1})`).getAttribute("max-height");
 	for(var i = 0; i < tec_ImageArray.length; i++) {
 		const j = i; //to make i not be a reference var
 		var image = document.createElement("IMG");
 		image.src = tec_ImageArray[i];
 		image.classList.add("tec_g_image");
+		if(userSuppliedMaxHeight) {
+			image.style.maxHeight = `${userSuppliedMaxHeight}px`;
+		}
 		galleryImages.push(image);
 		
 		//to maintain height when featured is the largest image
@@ -112,6 +154,9 @@ function createGallery(g_num) {
 		fauxImage.src = tec_ImageArray[i];
 		fauxImage.classList.add("tec_g_faux_image");
 		fauxImage.setAttribute("loading", "lazy");
+		if(userSuppliedMaxHeight) {
+			fauxImage.style.maxHeight = `${userSuppliedMaxHeight}px`;
+		}
 		galleryFauxImages.push(fauxImage);
 
 		var indicator = document.createElement("DIV");
@@ -147,7 +192,7 @@ function createGallery(g_num) {
 	captions.classList.add("tec_g_caption_wrapper");
 	for(var i = 0; i < tec_CaptionArray.length; i++) {
 		var captionP = document.createElement("P");
-		captionP.innerText = tec_CaptionArray[i] ?? "No caption available.";
+		captionP.innerHTML = tec_CaptionArray[i] ?? "No caption available.";
 		captionP.classList.add("tec_g_caption");
 		if(i == 0) {
 			captionP.classList.add("tec_g_featured");
@@ -155,7 +200,7 @@ function createGallery(g_num) {
 		captions.appendChild(captionP);
 	}
 	var fauxCaption = document.createElement("P");
-	fauxCaption.innerText = tec_CaptionArray[0];
+	fauxCaption.innerHTML = tec_CaptionArray[0];
 	fauxCaption.classList.add("tec_g_faux_caption");
 	fauxCaption.classList.add("tec_g_featured");
 	captions.appendChild(fauxCaption);
