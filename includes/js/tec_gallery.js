@@ -11,9 +11,21 @@ var tec_intervalArray = new Array();
 */
 function tec_createGalleries() {
 	const numGalleries = document.getElementsByClassName("tec-gallery").length;
-	for(var g = 0; g < numGalleries; g++) {
+	var divsToLoopThrough = numGalleries; //at minimum
+	for(var g = 0; g < divsToLoopThrough; g++) {
 		tec_currentIndexes.push(0);
 		try {
+			if(!document.querySelector(`.tec-gallery:nth-of-type(${g + 1})`)) {
+				//This if statement is here so that we can use :nth-of-type like an index into a list of .tec-gallery elements
+				//the nth-of-type select does not work as we expect
+				//any divs in the article will be selected by this query; the class simply defines the parent we are looking (the child's class)
+				divsToLoopThrough++;
+				//create an "invisible" gallery so we don't have to worry about indexing changes
+				tec_AllCaptionsArray.push(undefined);
+				tec_AllImagesArray.push(undefined);
+				tec_intervalArray.push(undefined);
+				continue;
+			}
 			tec_createGallery(g);	
 		}
 		catch(e) {
