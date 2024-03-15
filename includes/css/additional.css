@@ -328,6 +328,11 @@ img.wp-spaios-slider-image {
 		position: relative;
 		top: -20px;
 	}
+	
+	div.post-inner th h2 {
+	  font-size: 3vw !important;
+		margin: 2vw 0;
+	}
 }
 
 @media(max-width: 700px) {
@@ -391,4 +396,8 @@ img.wp-spaios-slider-image {
 }
 .entry-content figure figcaption, .wp-caption-text {
 	margin-top: .5rem;
+}
+
+div.post-inner tr, div.post-inner td, div.post-inner th {
+	font-size: min(2.25vw, 1.8rem);
 }
