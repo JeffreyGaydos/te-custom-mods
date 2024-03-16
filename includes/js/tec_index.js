@@ -58,11 +58,11 @@ function tec_removeAds(item, index) {
 }
 
 function tec_shouldIgnoreH2(h2element) {
-    return tec_isH2ImgOnly(h2element) || tec_isTitle(h2element);
+    return tec_isH2ImgOnly(h2element) || tec_isTitle(h2element) || h2element?.innerText.length == 0;
 }
 
 function tec_shouldIgnoreH3(h3element) {
-    return tec_isH3ImgOnly(h3element) || tec_isPromoH3(h3element);
+    return tec_isH3ImgOnly(h3element) || tec_isPromoH3(h3element) || h3element?.innerText.length == 0;
 }
 
 function tec_isH2ImgOnly(h2element) {
