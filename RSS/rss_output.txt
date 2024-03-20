@@ -1,23 +1,5 @@
 Updating RSS feeds...
 Article Title: Carro Pesado de Artillería M16 (Modelo 1916) (Schneider CA-1 in the service of the Kingdom of Spain (1919-1931))
 Article Link: https://tanks-encyclopedia.com/ww2/kingdom-spain/carro-pesado-de-artilleria-m16-modelo-1916-schneider-ca-1-in-the-service-of-the-kingdom-of-spain-1919-1931/
-RSS Update Date: 2024-03-20
-https://tanks-encyclopedia.com/ww2/kingdom-spain/carro-pesado-de-artilleria-m16-modelo-1916-schneider-ca-1-in-the-service-of-the-kingdom-of-spain-1919-1931/
-Carro Pesado de Artillería M16 (Modelo 1916) (Schneider CA-1 in the service of the Kingdom of Spain (1919-1931))
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0">
-<channel>
-<title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
-<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
-<description>The latest TE article</description>
-<lastBuildDate>2024-03-20 08:57:45.227373</lastBuildDate>
-<item>
-<title>Carro Pesado de Artillería M16 (Modelo 1916) (Schneider CA-1 in the service of the Kingdom of Spain (1919-1931))</title>
-<link>https://tanks-encyclopedia.com/ww2/kingdom-spain/carro-pesado-de-artilleria-m16-modelo-1916-schneider-ca-1-in-the-service-of-the-kingdom-of-spain-1919-1931/</link>
-<guid>https://tanks-encyclopedia.com/ww2/kingdom-spain/carro-pesado-de-artilleria-m16-modelo-1916-schneider-ca-1-in-the-service-of-the-kingdom-of-spain-1919-1931/</guid>
-<description></description>
-<pubDate>2024-03-20 08:57:45.227373</pubDate>
-</item>
-</channel>
-</rss>
+No new article found. Skipping...
 Finished updating RSS feeds...
