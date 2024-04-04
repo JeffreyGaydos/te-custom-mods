@@ -1,23 +1,5 @@
 Updating RSS feeds...
 Article Title: (P) Rent a Rolls-Royce in Dubai: everything you need to know
 Article Link: https://tanks-encyclopedia.com/p-rent-a-rolls-royce-in-dubai-everything-you-need-to-know/
-RSS Update Date: 2024-04-04
-https://tanks-encyclopedia.com/p-rent-a-rolls-royce-in-dubai-everything-you-need-to-know/
-(P) Rent a Rolls-Royce in Dubai: everything you need to know
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0">
-<channel>
-<title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
-<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
-<description>The latest TE article</description>
-<lastBuildDate>2024-04-04 08:35:50.666764</lastBuildDate>
-<item>
-<title>(P) Rent a Rolls-Royce in Dubai: everything you need to know</title>
-<link>https://tanks-encyclopedia.com/p-rent-a-rolls-royce-in-dubai-everything-you-need-to-know/</link>
-<guid>https://tanks-encyclopedia.com/p-rent-a-rolls-royce-in-dubai-everything-you-need-to-know/</guid>
-<description></description>
-<pubDate>2024-04-04 08:35:50.666764</pubDate>
-</item>
-</channel>
-</rss>
+No new article found. Skipping...
 Finished updating RSS feeds...
