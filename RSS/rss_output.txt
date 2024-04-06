@@ -1,5 +1,23 @@
 Updating RSS feeds...
-Article Title: (P) Rent a Rolls-Royce in Dubai: everything you need to know
-Article Link: https://tanks-encyclopedia.com/p-rent-a-rolls-royce-in-dubai-everything-you-need-to-know/
-No new article found. Skipping...
+Article Title: Tank, Heavy Gun, 120 mm Gun, FV4004 Conway
+Article Link: https://tanks-encyclopedia.com/coldwar-uk-fv4004-conway/
+RSS Update Date: 2024-04-06
+https://tanks-encyclopedia.com/coldwar-uk-fv4004-conway/
+Tank, Heavy Gun, 120 mm Gun, FV4004 Conway
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+<title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
+<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
+<description>The latest TE article</description>
+<lastBuildDate>2024-04-06 08:23:32.383474</lastBuildDate>
+<item>
+<title>Tank, Heavy Gun, 120 mm Gun, FV4004 Conway</title>
+<link>https://tanks-encyclopedia.com/coldwar-uk-fv4004-conway/</link>
+<guid>https://tanks-encyclopedia.com/coldwar-uk-fv4004-conway/</guid>
+<description></description>
+<pubDate>2024-04-06 08:23:32.383474</pubDate>
+</item>
+</channel>
+</rss>
 Finished updating RSS feeds...
