@@ -1,23 +1,5 @@
 Updating RSS feeds...
 Article Title: 7.5 cm StuK 42 L/70  auf StuG III
 Article Link: https://tanks-encyclopedia.com/ww2/germany/7-5-cm-stuk-42-l-70-auf-stug-iii/
-RSS Update Date: 2024-04-10
-https://tanks-encyclopedia.com/ww2/germany/7-5-cm-stuk-42-l-70-auf-stug-iii/
-7.5 cm StuK 42 L/70  auf StuG III
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0">
-<channel>
-<title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
-<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
-<description>The latest TE article</description>
-<lastBuildDate>2024-04-10 10:22:21.108072</lastBuildDate>
-<item>
-<title>7.5 cm StuK 42 L/70  auf StuG III</title>
-<link>https://tanks-encyclopedia.com/ww2/germany/7-5-cm-stuk-42-l-70-auf-stug-iii/</link>
-<guid>https://tanks-encyclopedia.com/ww2/germany/7-5-cm-stuk-42-l-70-auf-stug-iii/</guid>
-<description></description>
-<pubDate>2024-04-10 10:22:21.108072</pubDate>
-</item>
-</channel>
-</rss>
+No new article found. Skipping...
 Finished updating RSS feeds...
