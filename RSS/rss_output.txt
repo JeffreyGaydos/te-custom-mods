@@ -1,5 +1,23 @@
 Updating RSS feeds...
-Article Title: 7.5 cm StuK 42 L/70 auf StuG III
-Article Link: https://tanks-encyclopedia.com/ww2/germany/7-5-cm-stuk-42-l-70-auf-stug-iii/
-No new article found. Skipping...
+Article Title: FIAT Panda Iª and IIª Serie
+Article Link: https://tanks-encyclopedia.com/coldwar/italy/fiat-panda-ia-and-iia-serie/
+RSS Update Date: 2024-04-13
+https://tanks-encyclopedia.com/coldwar/italy/fiat-panda-ia-and-iia-serie/
+FIAT Panda Iª and IIª Serie
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+<title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
+<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
+<description>The latest TE article</description>
+<lastBuildDate>2024-04-13 08:55:29.771986</lastBuildDate>
+<item>
+<title>FIAT Panda Iª and IIª Serie</title>
+<link>https://tanks-encyclopedia.com/coldwar/italy/fiat-panda-ia-and-iia-serie/</link>
+<guid>https://tanks-encyclopedia.com/coldwar/italy/fiat-panda-ia-and-iia-serie/</guid>
+<description></description>
+<pubDate>2024-04-13 08:55:29.771986</pubDate>
+</item>
+</channel>
+</rss>
 Finished updating RSS feeds...
