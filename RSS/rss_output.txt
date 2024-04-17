@@ -1,5 +1,23 @@
 Updating RSS feeds...
-Article Title: 7.5 cm PaK 42 L/70 mit Kugelblende auf VK9.03
-Article Link: https://tanks-encyclopedia.com/ww2/germany/7-5-cm-pak-42-l-70-mit-kugelblende-auf-vk9-03/
-No new article found. Skipping...
+Article Title: Humber Hexonaut GS 6&#215;6
+Article Link: https://tanks-encyclopedia.com/ww2-uk-humber-hexonaut/
+RSS Update Date: 2024-04-17
+https://tanks-encyclopedia.com/ww2-uk-humber-hexonaut/
+Humber Hexonaut GS 6&#215;6
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+<title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
+<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
+<description>The latest TE article</description>
+<lastBuildDate>2024-04-17 09:19:42.632819</lastBuildDate>
+<item>
+<title>Humber Hexonaut GS 6&#215;6</title>
+<link>https://tanks-encyclopedia.com/ww2-uk-humber-hexonaut/</link>
+<guid>https://tanks-encyclopedia.com/ww2-uk-humber-hexonaut/</guid>
+<description></description>
+<pubDate>2024-04-17 09:19:42.632819</pubDate>
+</item>
+</channel>
+</rss>
 Finished updating RSS feeds...
