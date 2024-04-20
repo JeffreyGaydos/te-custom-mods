@@ -1,5 +1,23 @@
 Updating RSS feeds...
-Article Title: Humber Hexonaut GS 6&#215;6
-Article Link: https://tanks-encyclopedia.com/ww2-uk-humber-hexonaut/
-No new article found. Skipping...
+Article Title: Autoblinda Lancia Lince
+Article Link: https://tanks-encyclopedia.com/ww2/italy/autoblinda-lancia-lince/
+RSS Update Date: 2024-04-20
+https://tanks-encyclopedia.com/ww2/italy/autoblinda-lancia-lince/
+Autoblinda Lancia Lince
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+<title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
+<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
+<description>The latest TE article</description>
+<lastBuildDate>2024-04-20 09:40:45.991350</lastBuildDate>
+<item>
+<title>Autoblinda Lancia Lince</title>
+<link>https://tanks-encyclopedia.com/ww2/italy/autoblinda-lancia-lince/</link>
+<guid>https://tanks-encyclopedia.com/ww2/italy/autoblinda-lancia-lince/</guid>
+<description></description>
+<pubDate>2024-04-20 09:40:45.991350</pubDate>
+</item>
+</channel>
+</rss>
 Finished updating RSS feeds...
