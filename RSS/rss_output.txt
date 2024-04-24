@@ -1,5 +1,23 @@
 Updating RSS feeds...
-Article Title: Útočna Houfnice 15 cm StuH 43 na podvozku ST-I
-Article Link: https://tanks-encyclopedia.com/utocna-houfnice-15-cm-stuh-43-na-podvozku-st-i/
-No new article found. Skipping...
+Article Title: Autocarro FIAT 626
+Article Link: https://tanks-encyclopedia.com/ww2/italy/autocarro-fiat-626/
+RSS Update Date: 2024-04-24
+https://tanks-encyclopedia.com/ww2/italy/autocarro-fiat-626/
+Autocarro FIAT 626
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+<title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
+<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
+<description>The latest TE article</description>
+<lastBuildDate>2024-04-24 08:36:19.532293</lastBuildDate>
+<item>
+<title>Autocarro FIAT 626</title>
+<link>https://tanks-encyclopedia.com/ww2/italy/autocarro-fiat-626/</link>
+<guid>https://tanks-encyclopedia.com/ww2/italy/autocarro-fiat-626/</guid>
+<description></description>
+<pubDate>2024-04-24 08:36:19.532293</pubDate>
+</item>
+</channel>
+</rss>
 Finished updating RSS feeds...
