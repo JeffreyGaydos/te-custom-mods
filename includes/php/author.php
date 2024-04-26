@@ -37,6 +37,7 @@
 		$permalink = get_permalink(get_the_ID());
 		$title = get_the_title(get_the_ID());
 		return <<<HTML
+			...
 			<div class="read-more-button-wrap">
 				<a href={$permalink} class="more-link">
 					<span class="faux-button">Continue reading</span>
@@ -48,7 +49,7 @@
 	add_filter('excerpt_more', 'twentytwentychild_excerpt_more_add_continue_reading' );
 	//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	$posts = new WP_Query(array(
-		'posts_per_page' => 10,
+		'posts_per_page' => get_option('posts_per_page'),
 		'author_name' => get_queried_object()->slug,
 		'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
 		'post_type' => 'post'
