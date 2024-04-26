@@ -67,7 +67,7 @@
 				<?php the_title(); ?>
 			</h2>
 			<div class="archive-text" style="margin-left: 20%; margin-right: 20%">
-				<div style="float: left; margin-right: 40px; max-height: 145px">
+				<div style="float: left; margin-right: 40px;">
 					<?php
 					the_post_thumbnail('thumbnail');
 					?>
