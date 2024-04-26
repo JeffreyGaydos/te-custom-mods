@@ -7,4 +7,4 @@ function tec_activate_category_archive_php() {
     newPage.style.display = "none";
 }
 
-tec_activate_category_archive_php();
+tec_activate_category_archive_php();//
