@@ -53,7 +53,7 @@
 		'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
 		'post_type' => 'post'
 	));
-	if ( $posts->have_posts() ) {
+	if ( $posts->have_posts() ) :
 		$i = 0;
 		while ( $posts->have_posts() ) : $posts->the_post();
 			$i++;
@@ -69,7 +69,10 @@
 			</div>
 			<?php
 		endwhile;
-		?> <p style="text-align: center">
+		if ( get_next_posts_link() || get_previous_posts_link() ) :
+			?> <hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true" /> <?php;
+		endif;
+		?> <p style="text-align: center; font-size: 20px">
 			<?php
 				echo paginate_links(array(
 					'total' => $posts->max_num_pages,
@@ -79,9 +82,9 @@
 			?>
 		</p> <?php
 		wp_reset_postdata();
-	} else {
+	else:
 		_e( 'Sorry, no posts matched your criteria.', 'textdomain' ); 
-	}
+	endif;
 	?>
 
 </main><!-- #site-content -->
