@@ -34,26 +34,57 @@
 	
 	//excerpt 'continue reading' link------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	function twentytwentychild_excerpt_more_add_continue_reading( $more ) {
-		return ' ... <div class="read-more-button-wrap"><a href="' . get_permalink( get_the_ID() ) . '" class="more-link"><span class="faux-button">Continue reading</span> <span class="screen-reader-text">“' . get_the_title( get_the_ID() ) . '"</span></a></div>';
+		$permalink = get_permalink(get_the_ID());
+		$title = get_the_title(get_the_ID());
+		return <<<HTML
+			<div class="read-more-button-wrap">
+				<a href={$permalink} class="more-link">
+					<span class="faux-button">Continue reading</span>
+					<span class="screen-reader-text">{$title}</span>
+				</a>
+			</div>
+			HTML;
 	}
 	add_filter('excerpt_more', 'twentytwentychild_excerpt_more_add_continue_reading' );
 	//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-	
-	if ( have_posts() ) : 
+	$posts = new WP_Query(array(
+		'posts_per_page' => 10,
+		'author_name' => get_queried_object()->slug,
+		'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
+		'post_type' => 'post'
+	));
+	if ( $posts->have_posts() ) :
 		$i = 0;
-		while ( have_posts() ) : the_post(); 
+		while ( $posts->have_posts() ) : $posts->the_post();
 			$i++;
 			if ( $i > 1 ) {
-				echo '<hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true" />';
+				?> <hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true" /> <?php;
 			}
-			the_title( '<h2 class="archive-text" style="margin-left: 20%; margin-right: 20%;">', '</h2>' );
-			?><div class="archive-text" style="margin-left: 20%; margin-right: 20%"><?php
-            the_excerpt();
-            ?></div><?php
-		endwhile; 
-	else: 
+			?>
+			<h2 class="archive-text" style="margin-left: 20%; margin-right: 20%;">
+				<?php the_title(); ?>
+			</h2>
+			<div class="archive-text" style="margin-left: 20%; margin-right: 20%">
+				<?php the_excerpt(); ?>
+			</div>
+			<?php
+		endwhile;
+		if ( get_next_posts_link() || get_previous_posts_link() ) :
+			?> <hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true" /> <?php;
+		endif;
+		?> <p style="text-align: center; font-size: 20px">
+			<?php
+				echo paginate_links(array(
+					'total' => $posts->max_num_pages,
+					'prev_text' => __('<'),
+					'next_text' => __('>')
+				));
+			?>
+		</p> <?php
+		wp_reset_postdata();
+	else:
 		_e( 'Sorry, no posts matched your criteria.', 'textdomain' ); 
-	endif; 
+	endif;
 	?>
 
 </main><!-- #site-content -->
