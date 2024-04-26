@@ -38,6 +38,7 @@
 		$title = get_the_title(get_the_ID());
 		return <<<HTML
 			...
+			</div>
 			<div class="read-more-button-wrap">
 				<a href={$permalink} class="more-link">
 					<span class="faux-button">Continue reading</span>
@@ -66,7 +67,15 @@
 				<?php the_title(); ?>
 			</h2>
 			<div class="archive-text" style="margin-left: 20%; margin-right: 20%">
-				<?php the_excerpt(); ?>
+				<div style="float: left; margin-right: 40px">
+					<?php
+					the_post_thumbnail('thumbnail');
+					?>
+				</div>
+				<div style="min-height: 145px">
+					<?php
+					the_excerpt();
+					?>
 			</div>
 			<?php
 		endwhile;
