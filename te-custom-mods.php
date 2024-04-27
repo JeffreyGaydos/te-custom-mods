@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Tank Encyclopedia Custom Mods
-Version: 2.1.21 | Author: Jeffrey Gaydos | Discord: Jeff_G#3210 | Github Repo: https://github.com/JeffreyGaydos/te-custom-mods
+Version: 2.1.22 | Author: Jeffrey Gaydos | Discord: Jeff_G#3210 | Github Repo: https://github.com/JeffreyGaydos/te-custom-mods
 
 Description: A plugin created to organize the various functions of the old child theme, thereby removing the need for the child theme. Includes toggles in case any functions fail during udpates.
 */
