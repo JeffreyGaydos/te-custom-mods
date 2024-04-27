@@ -18,7 +18,6 @@ function tec_video_embed_recent_init() {
   var tec_div = document.createElement("DIV");
   tec_div.id = "tec-video-embed";
   tec_div.classList.add("follow");
-  tec_div.style.display = tec_should_create_embed() ? "block" : "none";
   var tec_player = document.createElement("DIV");
   tec_player.id = "tec-video-embed-player";
 
@@ -28,7 +27,7 @@ function tec_video_embed_recent_init() {
 
   tec_video_embed_timeouter = setTimeout(() => {
     console.log("tec_video_embed.js: Video loading timed out...");
-    tec_video_embed_recent_close_cancel();
+    tec_video_embed_recent_close_cancel(true);
   }, tec_video_embed_timeout);
 }
 
@@ -55,20 +54,30 @@ function tec_on_player_ready(event) {
   tec_new_video_close_decision();
   clearTimeout(tec_video_embed_timeouter);
   tec_add_header_close_event();
-  tec_set_header_visibility(true);
 }
 
 function tec_new_video_close_decision() {
-  const currentVideoURL = document.querySelector("a.ytp-title-link.yt-uix-sessionlink").href;
+  console.log(tec_videoPlayer.getPlaylist()[0]);
+  const currentVideoURL = tec_videoPlayer.getPlaylist()[0];
+  if(localStorage.getItem("tec_lastEmbed") === undefined) {
+    localStorage.setItem("tec_lastEmbed", currentVideoURL);
+  }
   if(localStorage.getItem("tec_lastEmbed") != currentVideoURL) {
     localStorage.setItem("tec_lastEmbed", currentVideoURL);
-    localStorage.getItem("tec_closedEmbed") == "false";
-    document.querySelector("tec-video-embed").style.display = "block";
+    localStorage.setItem("tec_closedEmbed", "false");
+  }
+  if(tec_should_create_embed()) {
+    document.querySelector("#tec-video-embed").style.opacity = 1;
+    setTimeout(() => {
+      tec_set_header_visibility(true);
+    }, 1000);
+  } else {
+    tec_video_embed_recent_close_cancel(true);
   }
 }
 
-function tec_video_embed_recent_close_cancel() {
-  localStorage.setItem("tec_closedEmbed", "true");
+function tec_video_embed_recent_close_cancel(automated = false) {
+  if(!automated) localStorage.setItem("tec_closedEmbed", "true");
   const yt_script = document.querySelector("script#tec_includeYTAPI")
   if(yt_script) yt_script.remove();
   const main_embed = document.querySelector("#tec-video-embed");
