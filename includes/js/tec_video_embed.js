@@ -1,6 +1,13 @@
 const tec_video_embed_timeout = 30000; //30 seconds
 var tec_video_embed_timeouter;
 
+function tec_should_create_embed() {
+  if(localStorage.getItem("tec_closedEmbed") == undefined) {
+      localStorage.setItem("tec_closedEmbed", "false");
+  }
+  return localStorage.getItem("tec_closedEmbed") == "false";
+}
+
 function tec_video_embed_recent_init() {
   var includeYTAPI = document.createElement('script');
   includeYTAPI.id = "tec_includeYTAPI";
@@ -11,6 +18,7 @@ function tec_video_embed_recent_init() {
   var tec_div = document.createElement("DIV");
   tec_div.id = "tec-video-embed";
   tec_div.classList.add("follow");
+  tec_div.style.display = tec_should_create_embed() ? "block" : "none";
   var tec_player = document.createElement("DIV");
   tec_player.id = "tec-video-embed-player";
 
@@ -44,12 +52,23 @@ function onYouTubeIframeAPIReady() {
 }
 
 function tec_on_player_ready(event) {
+  tec_new_video_close_decision();
   clearTimeout(tec_video_embed_timeouter);
   tec_add_header_close_event();
   tec_set_header_visibility(true);
 }
 
+function tec_new_video_close_decision() {
+  const currentVideoURL = document.querySelector("a.ytp-impression-link").href;
+  if(localStorage.getItem("tec_lastEmbed") != currentVideoURL) {
+    localStorage.setItem("tec_lastEmbed", currentVideoURL);
+    localStorage.getItem("tec_closedEmbed") == "false";
+    document.querySelector("tec-video-embed").style.display = "block";
+  }
+}
+
 function tec_video_embed_recent_close_cancel() {
+  localStorage.setItem("tec_closedEmbed", "true");
   const yt_script = document.querySelector("script#tec_includeYTAPI")
   if(yt_script) yt_script.remove();
   const main_embed = document.querySelector("#tec-video-embed");
