@@ -33,7 +33,7 @@ function tec_find_source_header() {
 }
 
 function tec_tag_source_section(sourceNode) {
-    const addedBlurb = false;
+    let addedBlurb = false;
     if(sourceNode) {
         const nextElement = sourceNode.nextElementSibling;
         switch(nextElement.tagName) {
