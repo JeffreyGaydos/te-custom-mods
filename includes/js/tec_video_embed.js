@@ -1,6 +1,13 @@
 const tec_video_embed_timeout = 30000; //30 seconds
 var tec_video_embed_timeouter;
 
+function tec_should_create_embed() {
+  if(localStorage.getItem("tec_closedEmbed") == undefined) {
+      localStorage.setItem("tec_closedEmbed", "false");
+  }
+  return localStorage.getItem("tec_closedEmbed") == "false";
+}
+
 function tec_video_embed_recent_init() {
   var includeYTAPI = document.createElement('script');
   includeYTAPI.id = "tec_includeYTAPI";
@@ -10,6 +17,7 @@ function tec_video_embed_recent_init() {
 
   var tec_div = document.createElement("DIV");
   tec_div.id = "tec-video-embed";
+  tec_div.style.opacity = 0; //required to force the invis before it loads (css stylesheets are sloooow)
   tec_div.classList.add("follow");
   var tec_player = document.createElement("DIV");
   tec_player.id = "tec-video-embed-player";
@@ -20,7 +28,7 @@ function tec_video_embed_recent_init() {
 
   tec_video_embed_timeouter = setTimeout(() => {
     console.log("tec_video_embed.js: Video loading timed out...");
-    tec_video_embed_recent_close_cancel();
+    tec_video_embed_recent_close_cancel(true);
   }, tec_video_embed_timeout);
 }
 
@@ -44,12 +52,33 @@ function onYouTubeIframeAPIReady() {
 }
 
 function tec_on_player_ready(event) {
+  tec_new_video_close_decision();
   clearTimeout(tec_video_embed_timeouter);
-  tec_add_header_close_event();
-  tec_set_header_visibility(true);
 }
 
-function tec_video_embed_recent_close_cancel() {
+function tec_new_video_close_decision() {
+  console.log(tec_videoPlayer.getPlaylist()[0]);
+  const currentVideoURL = tec_videoPlayer.getPlaylist()[0];
+  if(localStorage.getItem("tec_lastEmbed") === undefined) {
+    localStorage.setItem("tec_lastEmbed", currentVideoURL);
+  }
+  if(localStorage.getItem("tec_lastEmbed") != currentVideoURL) {
+    localStorage.setItem("tec_lastEmbed", currentVideoURL);
+    localStorage.setItem("tec_closedEmbed", "false");
+  }
+  if(tec_should_create_embed()) {
+    document.querySelector("#tec-video-embed").style.opacity = 1;
+    tec_add_header_close_event();
+    setTimeout(() => {
+      tec_set_header_visibility(true);
+    }, 1000);
+  } else {
+    tec_video_embed_recent_close_cancel(true);
+  }
+}
+
+function tec_video_embed_recent_close_cancel(automated = false) {
+  if(!automated) localStorage.setItem("tec_closedEmbed", "true");
   const yt_script = document.querySelector("script#tec_includeYTAPI")
   if(yt_script) yt_script.remove();
   const main_embed = document.querySelector("#tec-video-embed");
