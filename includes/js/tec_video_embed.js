@@ -59,7 +59,7 @@ function tec_on_player_ready(event) {
 }
 
 function tec_new_video_close_decision() {
-  const currentVideoURL = document.querySelector("a.ytp-impression-link").href;
+  const currentVideoURL = document.querySelector("a.ytp-title-link.yt-uix-sessionlink").href;
   if(localStorage.getItem("tec_lastEmbed") != currentVideoURL) {
     localStorage.setItem("tec_lastEmbed", currentVideoURL);
     localStorage.getItem("tec_closedEmbed") == "false";
