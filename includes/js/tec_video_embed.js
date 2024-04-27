@@ -17,6 +17,7 @@ function tec_video_embed_recent_init() {
 
   var tec_div = document.createElement("DIV");
   tec_div.id = "tec-video-embed";
+  tec_div.style.opacity = 0; //required to force the invis before it loads (css stylesheets are sloooow)
   tec_div.classList.add("follow");
   var tec_player = document.createElement("DIV");
   tec_player.id = "tec-video-embed-player";
@@ -53,7 +54,6 @@ function onYouTubeIframeAPIReady() {
 function tec_on_player_ready(event) {
   tec_new_video_close_decision();
   clearTimeout(tec_video_embed_timeouter);
-  tec_add_header_close_event();
 }
 
 function tec_new_video_close_decision() {
@@ -68,6 +68,7 @@ function tec_new_video_close_decision() {
   }
   if(tec_should_create_embed()) {
     document.querySelector("#tec-video-embed").style.opacity = 1;
+    tec_add_header_close_event();
     setTimeout(() => {
       tec_set_header_visibility(true);
     }, 1000);
