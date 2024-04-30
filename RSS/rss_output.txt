@@ -1,23 +1,5 @@
 Updating RSS feeds...
 Article Title: IS-4 (Object 701)
 Article Link: https://tanks-encyclopedia.com/coldwar/soviet/is-4-object-701/
-RSS Update Date: 2024-04-30
-https://tanks-encyclopedia.com/coldwar/soviet/is-4-object-701/
-IS-4 (Object 701)
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0">
-<channel>
-<title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
-<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
-<description>The latest TE article</description>
-<lastBuildDate>2024-04-30 16:44:02.084867</lastBuildDate>
-<item>
-<title>IS-4 (Object 701)</title>
-<link>https://tanks-encyclopedia.com/coldwar/soviet/is-4-object-701/</link>
-<guid>https://tanks-encyclopedia.com/coldwar/soviet/is-4-object-701/</guid>
-<description></description>
-<pubDate>2024-04-30 16:44:02.084867</pubDate>
-</item>
-</channel>
-</rss>
+No new article found. Skipping...
 Finished updating RSS feeds...
