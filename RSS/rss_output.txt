@@ -1,5 +1,23 @@
 Updating RSS feeds...
-Article Title: IS-4 (Object 701)
-Article Link: https://tanks-encyclopedia.com/coldwar/soviet/is-4-object-701/
-No new article found. Skipping...
+Article Title: Tanque Liviano Vickers
+Article Link: https://tanks-encyclopedia.com/ww2/argentina/tanque-liviano-vickers/
+RSS Update Date: 2024-05-01
+https://tanks-encyclopedia.com/ww2/argentina/tanque-liviano-vickers/
+Tanque Liviano Vickers
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+<title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
+<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
+<description>The latest TE article</description>
+<lastBuildDate>2024-05-01 08:29:38.396689</lastBuildDate>
+<item>
+<title>Tanque Liviano Vickers</title>
+<link>https://tanks-encyclopedia.com/ww2/argentina/tanque-liviano-vickers/</link>
+<guid>https://tanks-encyclopedia.com/ww2/argentina/tanque-liviano-vickers/</guid>
+<description></description>
+<pubDate>2024-05-01 08:29:38.396689</pubDate>
+</item>
+</channel>
+</rss>
 Finished updating RSS feeds...
