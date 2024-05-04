@@ -86,8 +86,8 @@
 			<?php
 				echo paginate_links(array(
 					'total' => $posts->max_num_pages,
-					'prev_text' => '<',
-					'next_text' => '>'
+					'prev_text' => __('<'),
+					'next_text' => __('>')
 				));
 			?>
 		</p> <?php
