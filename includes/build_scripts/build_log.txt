@@ -38,3 +38,36 @@
 2024-05-04 19:26:26.827372 [build_update_plugin_version.py]: [INFO] Updating README.md...
 2024-05-04 19:26:26.827824 [build_update_plugin_version.py]: [INFO] Updating te-custom-mods.php...
 2024-05-04 19:26:26.828150 [build_update_plugin_version.py]: Completed successfully
+2024-05-04 19:26:27.428471 [build_zip_plugin.py]: te-custom-mods.php
+2024-05-04 19:26:27.428755 [build_zip_plugin.py]: tec-functions.php
+2024-05-04 19:26:27.429002 [build_zip_plugin.py]: tec_discord.js
+2024-05-04 19:26:27.429153 [build_zip_plugin.py]: tec_dm_init.js
+2024-05-04 19:26:27.429266 [build_zip_plugin.py]: tec_video_embed_shared.js
+2024-05-04 19:26:27.429382 [build_zip_plugin.py]: tec_index.js
+2024-05-04 19:26:27.429521 [build_zip_plugin.py]: tec_video_embed_existing.js
+2024-05-04 19:26:27.429636 [build_zip_plugin.py]: tec_image_resourcer.js
+2024-05-04 19:26:27.429747 [build_zip_plugin.py]: tec_to_top.js
+2024-05-04 19:26:27.429865 [build_zip_plugin.py]: tec_coauthor_display.js
+2024-05-04 19:26:27.429973 [build_zip_plugin.py]: tec_init.js
+2024-05-04 19:26:27.430092 [build_zip_plugin.py]: tec_author_archive.js
+2024-05-04 19:26:27.430202 [build_zip_plugin.py]: tec_random_article.js
+2024-05-04 19:26:27.430307 [build_zip_plugin.py]: tec_commission_blurb.js
+2024-05-04 19:26:27.430418 [build_zip_plugin.py]: tec_header_follow.js
+2024-05-04 19:26:27.430535 [build_zip_plugin.py]: tec_category_archive.js
+2024-05-04 19:26:27.430637 [build_zip_plugin.py]: tec_dm_placer.js
+2024-05-04 19:26:27.430738 [build_zip_plugin.py]: tec_video_embed.js
+2024-05-04 19:26:27.430848 [build_zip_plugin.py]: tec_donation.js
+2024-05-04 19:26:27.430964 [build_zip_plugin.py]: tec_gallery.js
+2024-05-04 19:26:27.431178 [build_zip_plugin.py]: tec_darkMode_search.css
+2024-05-04 19:26:27.431330 [build_zip_plugin.py]: tec_darkMode.css
+2024-05-04 19:26:27.431488 [build_zip_plugin.py]: tec_default.css
+2024-05-04 19:26:27.431674 [build_zip_plugin.py]: category.php
+2024-05-04 19:26:27.431790 [build_zip_plugin.py]: author.php
+2024-05-04 19:26:27.434493 [build_zip_plugin.py]: DropdownBlack.png
+2024-05-04 19:26:27.434614 [build_zip_plugin.py]: patreon.svg
+2024-05-04 19:26:27.434977 [build_zip_plugin.py]: FullscreenIcon.png
+2024-05-04 19:26:27.435084 [build_zip_plugin.py]: paypal.svg
+2024-05-04 19:26:27.435434 [build_zip_plugin.py]: ToTopYellow.png
+2024-05-04 19:26:27.435573 [build_zip_plugin.py]: ToTopBlack.png
+2024-05-04 19:26:27.435709 [build_zip_plugin.py]: DropdownYellow.png
+2024-05-04 19:26:27.435812 [build_zip_plugin.py]: PayHipIcon.png
