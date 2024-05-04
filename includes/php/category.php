@@ -67,7 +67,7 @@
 				<?php the_title(); ?>
 			</h2>
 			<div class="archive-text" style="margin-left: 20%; margin-right: 20%">
-				<div style="float: left; margin-right: 40px">
+				<div style="float: left; margin-right: 40px;">
 					<?php
 					the_post_thumbnail('thumbnail');
 					?>
@@ -86,8 +86,8 @@
 			<?php
 				echo paginate_links(array(
 					'total' => $posts->max_num_pages,
-					'prev_text' => __('<'),
-					'next_text' => __('>')
+					'prev_text' => '<',
+					'next_text' => '>'
 				));
 			?>
 		</p> <?php
