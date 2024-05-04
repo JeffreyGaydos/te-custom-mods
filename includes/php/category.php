@@ -60,7 +60,7 @@
 		while ( $posts->have_posts() ) : $posts->the_post();
 			$i++;
 			if ( $i > 1 ) {
-				?> <hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true" /> <?php;
+				?> <hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true" /> <?php
 			}
 			?>
 			<h2 class="archive-text" style="margin-left: 20%; margin-right: 20%;">
