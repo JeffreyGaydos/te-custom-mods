@@ -36,16 +36,16 @@
 	function twentytwentychild_excerpt_more_add_continue_reading( $more ) {
 		$permalink = get_permalink(get_the_ID());
 		$title = get_the_title(get_the_ID());
-		return '
+		return <<<HTML
 			...
 			</div>
 			<div class="read-more-button-wrap">
-				<a href=' . $permalink . ' class="more-link">
+				<a href={$permalink} class="more-link">
 					<span class="faux-button">Continue reading</span>
-					<span class="screen-reader-text">' . $title . '</span>
+					<span class="screen-reader-text">{$title}</span>
 				</a>
 			</div>
-			';
+			HTML;
 	}
 	add_filter('excerpt_more', 'twentytwentychild_excerpt_more_add_continue_reading' );
 	//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
