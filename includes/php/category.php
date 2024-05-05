@@ -59,23 +59,26 @@
 		$i = 0;
 		while ( $posts->have_posts() ) : $posts->the_post();
 			$i++;
+			$image_url = get_the_post_thumbnail_url(get_the_ID());
 			if ( $i > 1 ) {
 				?> <hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true" /> <?php
 			}
 			?>
 			<h2 class="archive-text" style="margin-left: 20%; margin-right: 20%;">
-				<?php the_title(); ?>
+				<a href="<?php echo get_permalink(get_the_ID()); ?>"><?php the_title(); ?></a>
 			</h2>
 			<div class="archive-text" style="margin-left: 20%; margin-right: 20%">
-				<div style="float: left; margin-right: 40px">
+				<?php if ($image_url) {
+					echo '<div style="float: left; margin-right: 40px;">
+						<img src="' . $image_url . '" style="max-height: 145px"/>
+					</div>';
+				}
+				?>
+				<div style="min-height: 150px">
 					<?php
-					the_post_thumbnail('thumbnail');
+						the_excerpt();	
 					?>
 				</div>
-				<div style="min-height: 145px">
-					<?php
-					the_excerpt();
-					?>
 			</div>
 			<?php
 		endwhile;
