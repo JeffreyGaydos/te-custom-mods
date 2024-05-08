@@ -1,5 +1,23 @@
 Updating RSS feeds...
-Article Title: M-20UP1 (Fake Tank)
-Article Link: https://tanks-encyclopedia.com/modern/serbia/m-20up1/
-No new article found. Skipping...
+Article Title: M41A1UR
+Article Link: https://tanks-encyclopedia.com/coldwar/uruguay/m41a1ur/
+RSS Update Date: 2024-05-08
+https://tanks-encyclopedia.com/coldwar/uruguay/m41a1ur/
+M41A1UR
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+<title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
+<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
+<description>The latest TE article</description>
+<lastBuildDate>2024-05-08 08:23:00.192775</lastBuildDate>
+<item>
+<title>M41A1UR</title>
+<link>https://tanks-encyclopedia.com/coldwar/uruguay/m41a1ur/</link>
+<guid>https://tanks-encyclopedia.com/coldwar/uruguay/m41a1ur/</guid>
+<description></description>
+<pubDate>2024-05-08 08:23:00.192775</pubDate>
+</item>
+</channel>
+</rss>
 Finished updating RSS feeds...
