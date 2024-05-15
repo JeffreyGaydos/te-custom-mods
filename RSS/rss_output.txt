@@ -1,23 +1,5 @@
 Updating RSS feeds...
 Article Title: ‘Czołg Ciężki Polski’ Markowskiego
 Article Link: https://tanks-encyclopedia.com/czolg-ciezki-polski-markowskiego/
-RSS Update Date: 2024-05-15
-https://tanks-encyclopedia.com/czolg-ciezki-polski-markowskiego/
-‘Czołg Ciężki Polski’ Markowskiego
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0">
-<channel>
-<title>Tank Encyclopedia RSS Feed - Hand Built by yours truly</title>
-<link>https://github.com/JeffreyGaydos/te-custom-mods/blob/DEV-custom-rss/RSS/recent-articles.rss</link>
-<description>The latest TE article</description>
-<lastBuildDate>2024-05-15 08:36:44.050886</lastBuildDate>
-<item>
-<title>‘Czołg Ciężki Polski’ Markowskiego</title>
-<link>https://tanks-encyclopedia.com/czolg-ciezki-polski-markowskiego/</link>
-<guid>https://tanks-encyclopedia.com/czolg-ciezki-polski-markowskiego/</guid>
-<description></description>
-<pubDate>2024-05-15 08:36:44.050886</pubDate>
-</item>
-</channel>
-</rss>
+No new article found. Skipping...
 Finished updating RSS feeds...
