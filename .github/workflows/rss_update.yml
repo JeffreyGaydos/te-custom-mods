@@ -11,7 +11,7 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-      with: { ref: DEV-custom-rss }
+      with: { ref: rss-machine-broke }
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
@@ -29,4 +29,4 @@ jobs:
         git config --global user.name "GitHub Actions"
         git add .
         git commit -m "GHA_RSS: Update RSS Feeds"
-        git push origin DEV-custom-rss
+        git push origin rss-machine-broke
