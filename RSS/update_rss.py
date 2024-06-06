@@ -2,6 +2,7 @@ import sys
 import datetime
 import requests
 import re
+import time
 
 _date = "{{date}}"
 _url = "{{url}}"
@@ -11,6 +12,7 @@ print("Updating RSS feeds...")
 
 #get data
 requestsResponse = requests.get("https://tanks-encyclopedia.com/", headers={'user-agent': 'Mozilla/5.0 (X11; U; Linux i686) Gecko/20071127 Firefox/2.0.0.11'})
+time.sleep(5)
 rawContent = requestsResponse.content
 recentPostsRGX = "(?<=<nav aria-label=\"Recent Posts\">).+(?=</nav>)"
 print(rawContent)
