@@ -20,6 +20,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         python -m pip install requests
+        pip install requests-html
     - name: Update RSS Feed
       run: |
         python ./RSS/update_rss.py > ./RSS/rss_output.txt
