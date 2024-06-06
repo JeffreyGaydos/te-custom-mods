@@ -21,6 +21,7 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install requests
         pip install requests-html
+        pip install lxml_html_clean
     - name: Update RSS Feed
       run: |
         python ./RSS/update_rss.py > ./RSS/rss_output.txt
