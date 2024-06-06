@@ -3,6 +3,7 @@ import datetime
 import requests
 import re
 import time
+from requests_html import HTMLSession
 
 _date = "{{date}}"
 _url = "{{url}}"
@@ -11,10 +12,12 @@ _title ="{{title}}"
 print("Updating RSS feeds...")
 
 #get data
-requestsResponse = requests.get("https://tanks-encyclopedia.com/", headers={'user-agent': 'Mozilla/5.0 (X11; U; Linux i686) Gecko/20071127 Firefox/2.0.0.11'})
-time.sleep(5)
-rawContent = requestsResponse.content
-recentPostsRGX = "(?<=<nav aria-label=\"Recent Posts\">).+(?=</nav>)"
+#requestsResponse = requests.get("https://tanks-encyclopedia.com/", headers={'user-agent': 'Mozilla/5.0 (X11; U; Linux i686) Gecko/20071127 Firefox/2.0.0.11'})
+#rawContent = requestsResponse.content
+#recentPostsRGX = "(?<=<nav aria-label=\"Recent Posts\">).+(?=</nav>)"
+session = HTMLSession()
+response = session.get("https://tanks-encyclopedia.com/")
+rawContent = response.html.render()
 print(rawContent)
 #recentPostsHTML = re.search(recentPostsRGX, (str)(rawContent)).group(0)
 #mostRecentPost = recentPostsHTML.split("</a>")[0]
