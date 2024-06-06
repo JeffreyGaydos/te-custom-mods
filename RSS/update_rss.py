@@ -18,7 +18,9 @@ print("Updating RSS feeds...")
 session = HTMLSession()
 response = session.get("https://tanks-encyclopedia.com/")
 rawContent = response.html.render()
+somethingElse = response.html.find("p", first=True).text
 print(rawContent)
+print(somethingElse)
 #recentPostsHTML = re.search(recentPostsRGX, (str)(rawContent)).group(0)
 #mostRecentPost = recentPostsHTML.split("</a>")[0]
 #mostRecentPostTitle = mostRecentPost.split('">')[1]
