@@ -42,6 +42,12 @@ The automated build process is activated once a PR is marked ready for review an
 
 ## RSS Feed
 
+### Current Solution
+
+Due to cloudflare blocking the GHA python scripts we were using to scrape the website, we have pivoted to using a custom page template imported directly to the theme. The source code for that template is found in the `RSS` folder and is intended to go at the root of the currently in use theme. If the theme is updated, this file will get deleted, so be sure to re-add it if you need to update the theme. This solution was chosen as a temporary fix until we can take over the theme completely, at which point it will become a permanent solution, as the theme code will be entirely owned by TE.
+
+### Old Solution:
+
 The custom RSS feed is implemented via the "raw" view of the code found in `RSS/recent-articles.rss`, specifically on the `DEV-custom-rss` branch. This file is updated via the GitHub action found in `.github/.workflows/rss_updates.yml` and currently runs every hour at the 7th minute of each hour and every 10 minutes from 7:27 AM - 9:27 AM UTC (3:27 AM - 5:27 AM EST). The python file that actually updates the RSS feed file is at `RSS/update_rss.py`, but specifically on the `DEV-custom-rss` branch. The python file on the `master` branch is not actually used by the action to update the RSS feed. Any RSS-related updates should be applied to both the `master` and `DEV-custom-rss` branches.
 
 ## Dev Automation
