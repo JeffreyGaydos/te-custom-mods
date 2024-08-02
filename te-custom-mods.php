@@ -78,6 +78,8 @@ if( !function_exists("tec_acp_page") ) {
             <input type="checkbox" name="tec_author_archive" <?php tec_get_checked('tec_author_archive') ?> >Author Archive Display</input>
             <br><br>
             <input type="checkbox" name="tec_category_archive" <?php tec_get_checked('tec_category_archive') ?> >Category Archive Display</input>
+            <br><br>
+            <input type="checkbox" name="tec_patreon_prompt" <?php tec_get_checked('tec_patreon_prompt') ?> >Patreon Prompt Box</input>
             <?php
                 submit_button();
             ?>
@@ -116,5 +118,6 @@ if( !function_exists("update_tec_info") ) {
         register_setting( 'tec-settings', 'tec_coauthor_display' );
         register_setting( 'tec-settings', 'tec_author_archive' );
         register_setting( 'tec-settings', 'tec_category_archive' );
+        register_setting( 'tec-settings', 'tec_patreon_prompt' );
     }
 }

@@ -43,7 +43,7 @@ if(get_option('tec_donation') == 'on') {
 
 if( !function_exists("tec_donation_init") ) {
     function tec_donation_init() {
-        wp_enqueue_script( 'tec-donation-init', plugins_url('/js/tec_donation.js', __FILE__), '', '2.5');
+        wp_enqueue_script( 'tec-donation-init', plugins_url('/js/tec_donation.js', __FILE__), '', '2.24');
     }
 }
 
@@ -179,6 +179,21 @@ if( !function_exists("tec_video_embed") ) {
 }
 
 /********************************************************************
+ * Routing Patreon Prompt Box
+ ********************************************************************/
+if(get_option('tec_patreon_prompt') == 'on') {
+    add_action("wp_head", "tec_patreon_prompt", 10);
+}
+
+if( !function_exists("tec_patreon_prompt") ) {
+    function tec_patreon_prompt() {
+        if(is_single()) {
+            wp_enqueue_script( 'tec_patreon_prompt', plugins_url('/js/tec_patreon_prompt.js', __FILE__), '', '1.2');
+        }
+    }
+}
+
+/********************************************************************
  * Routing Co-Author Display
  ********************************************************************/
 if(get_option('tec_coauthor_display') == 'on') {
@@ -196,7 +211,7 @@ if( !function_exists("tec_coauthor_display")) {
                 ?><a style="display: none" class="tec_coauthor" id="tec_coauthor-<?php echo $user["user_nicename"] ?>" href=<?php echo $author_link; ?>><?php echo $user["display_name"]; ?></a><?php
             }
             if(count($users) > 0) {
-                wp_enqueue_script( 'tec-coauthor-display', plugins_url('/js/tec_coauthor_display.js', __FILE__), '', '1.1');
+                wp_enqueue_script( 'tec-coauthor-display', plugins_url('/js/tec_coauthor_display.js', __FILE__), '', '1.2');
             }
         }
     }
