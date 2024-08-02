@@ -7,7 +7,7 @@ tec_partreon_link.classList.add("tec_donation_patreon");
 tec_partreon_link.classList.add("tec-donation");
 tec_partreon_link.href = 'https://www.patreon.com/tankartfund';
 var tec_patreon_img = document.createElement("IMG");
-tec_patreon_img.src = '/wp-content/plugins/te-custom-mods/images/patreon.svg';
+tec_patreon_img.src = '/wp-content/plugins/te-custom-mods/images/patreon.png';
 tec_partreon_link.alt = 'patreon donation link';
 tec_partreon_link.title = "Support us on Patreon!";
 var tec_paypal_link = document.createElement("A");
