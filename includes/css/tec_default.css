@@ -310,6 +310,7 @@ button:not(.toggle).tec_dm_button {
     color: var(--ted-true-yellow);
     font-size: 25px;
     cursor: pointer;
+    transition: all ease 0.5s;
 }
 
 .tec-patreon-long-x.active {
