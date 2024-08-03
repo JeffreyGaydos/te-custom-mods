@@ -10,7 +10,7 @@ if(!tec_is_client_mobile) {
     tec_patreon_long_box.href = "http://patreon.com/tankartfund";
     tec_patreon_long_box.className = "tec-patreon-long-box";
     var tec_patreon_long_te_logo = document.createElement("img");
-    tec_patreon_long_te_logo.src = "https://tanks-encyclopedia.com/wp-content/uploads/2020/05/logo-big-border-30.png";
+    tec_patreon_long_te_logo.src = "https://tanks-encyclopedia.com/wp-content/uploads/2020/01/logo-big-border.png";
     tec_patreon_long_te_logo.className = "tec-patreon-long-te-logo";
     var tec_patreon_long_text = document.createElement("p");
     tec_patreon_long_text.innerText = "Become a Tank Encyclopedia Patreon today!";
