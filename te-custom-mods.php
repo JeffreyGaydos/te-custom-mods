@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Tank Encyclopedia Custom Mods
-Version: 2.1.32 | Author: Jeffrey Gaydos | Discord: Jeff_G#3210 | Github Repo: https://github.com/JeffreyGaydos/te-custom-mods
+Version: 2.1.35 | Author: Jeffrey Gaydos | Discord: Jeff_G#3210 | Github Repo: https://github.com/JeffreyGaydos/te-custom-mods
 
 Description: A plugin created to organize the various functions of the old child theme, thereby removing the need for the child theme. Includes toggles in case any functions fail during udpates.
 */
@@ -78,6 +78,8 @@ if( !function_exists("tec_acp_page") ) {
             <input type="checkbox" name="tec_author_archive" <?php tec_get_checked('tec_author_archive') ?> >Author Archive Display</input>
             <br><br>
             <input type="checkbox" name="tec_category_archive" <?php tec_get_checked('tec_category_archive') ?> >Category Archive Display</input>
+            <br><br>
+            <input type="checkbox" name="tec_patreon_prompt" <?php tec_get_checked('tec_patreon_prompt') ?> >Patreon Prompt Box</input>
             <?php
                 submit_button();
             ?>
@@ -116,5 +118,6 @@ if( !function_exists("update_tec_info") ) {
         register_setting( 'tec-settings', 'tec_coauthor_display' );
         register_setting( 'tec-settings', 'tec_author_archive' );
         register_setting( 'tec-settings', 'tec_category_archive' );
+        register_setting( 'tec-settings', 'tec_patreon_prompt' );
     }
 }
