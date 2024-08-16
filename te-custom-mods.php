@@ -80,6 +80,32 @@ if( !function_exists("tec_acp_page") ) {
             <input type="checkbox" name="tec_category_archive" <?php tec_get_checked('tec_category_archive') ?> >Category Archive Display</input>
             <br><br>
             <input type="checkbox" name="tec_patreon_prompt" <?php tec_get_checked('tec_patreon_prompt') ?> >Patreon Prompt Box</input>
+            <br><br>
+            <input type="checkbox" name="tec_support_display" <?php tec_get_checked('tec_support_display') ?> >Monetary Supporter Display</input>
+            <div style="margin: 20px 0px 0px 50px">
+                <label>Input supporters separated by a newline (Enter). Click "Add Supporters" button to ensure that the list was parsed correctly. Then click save changes to save the supporters you just added.</label>
+                <br>
+                <textarea name="fake_support_display_supporters_current" placeholder="input new supporters"></textarea>
+                <textarea name="tec_support_display_supporters_current" style="display: none"></textarea>
+                <button onclick="document.querySelector('textarea[name=tec_support_display_supporters_current]').value = document.querySelector('textarea[name=fake_support_display_supporters_current]').value.replaceAll('\n', '::::').replaceAll('\r', '::::')">Add Supporters</button>
+                <textarea type="text" name="tec_support_display_supporters_saved" style="display: none"><?php echo tec_get_text('tec_support_display_supporters_saved'); ?></textarea>
+                <br>
+                <p>Unsaved Supporters: </p>
+                <ul>
+                    <?php tec_generate_list_from_text(tec_get_text('tec_support_display_supporters_current')) ?>
+                </ul>
+                <button onclick="document.querySelector('textarea[name=tec_support_display_supporters_saved]').value += '::::' + '<?php echo tec_get_text('tec_support_display_supporters_current'); ?>'">Save Supporters</button>
+                <button onclick="document.querySelector('textarea[name=tec_support_display_supporters_currnet]').value += ''">Clear Unsaved Supporters</button>
+                <p>Saved Supporters: </p>
+                <ul>
+                    <!-- <li style="list-style: inside"> TODO add the 3 tiers of supporters
+                        Light Tank Supporters
+                        <ul></ul>
+                    </li> -->
+                    <?php tec_generate_list_from_text(tec_get_text('tec_support_display_supporters_saved')) ?>
+                </ul>
+            </div>
+
             <?php
                 submit_button();
             ?>
@@ -97,6 +123,22 @@ if( !function_exists("tec_get_checked") ) {
         }
         else {
             echo '';
+        }
+    }
+}
+
+if( !function_exists("tec_get_text") ) {
+    function tec_get_text($option) {
+        return get_option($option);
+    }
+}
+
+//TODO add an x button
+if( !function_exists("tec_generate_list_from_text") ) {
+    function tec_generate_list_from_text($text) {
+        $names = preg_split("/::::/", $text, -1, PREG_SPLIT_NO_EMPTY);
+        foreach($names as &$name) {
+            echo '<li style="list-style: inside">'.$name.'</li>';
         }
     }
 }
@@ -119,5 +161,8 @@ if( !function_exists("update_tec_info") ) {
         register_setting( 'tec-settings', 'tec_author_archive' );
         register_setting( 'tec-settings', 'tec_category_archive' );
         register_setting( 'tec-settings', 'tec_patreon_prompt' );
+        register_setting( 'tec-settings', 'tec_support_display' );
+        register_setting( 'tec-settings', 'tec_support_display_supporters_current');
+        register_setting( 'tec-settings', 'tec_support_display_supporters_saved');
     }
 }
