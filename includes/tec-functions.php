@@ -248,3 +248,16 @@ if(!function_exists("tec_category_archive")) {
         }
     }
 }
+
+/********************************************************************
+ * Monetary Supporter Display
+ ********************************************************************/
+if(get_option('tec_support_display') == 'on') {
+    add_action("wp_head", "tec_support_display", 10);
+}
+
+if( !function_exists("tec_support_display") ) {
+    function tec_support_display() {
+        wp_enqueue_script( 'tec-support-display', plugins_url('/js/tec_supporter_display.js', __FILE__), '', '1.0');
+    }
+}
