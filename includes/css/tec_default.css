@@ -337,6 +337,7 @@ button:not(.toggle).tec_dm_button {
     width: 100%;
     font-size: 30px;
     padding-top: 30px;
+    text-shadow: 0px 0px 5px black;
 }
 
 #patreon-supporters-all .tec-patreon-supporters-title {
