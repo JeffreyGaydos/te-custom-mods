@@ -317,6 +317,78 @@ button:not(.toggle).tec_dm_button {
     left: 35px;
 }
 
+#patreon-supporters-all {
+    background-color: var(--ted-dbeige);
+    color: var(--ted-yellow);
+    text-align: center;
+    font-family: 'Allerta Stencil', sans-serif !important;
+    font-weight: 600;
+    padding-inline: 20vh;
+    padding-block: 50px;
+}
+
+#patreon-supporters-all .tec-patreon-supporter {
+    display: inline-block;
+    padding: 10px;
+    color: var(--ted-true-yellow);
+}
+
+#patreon-supporters-all .tec-patreon-header {
+    width: 100%;
+    font-size: 30px;
+    padding-top: 30px;
+}
+
+#patreon-supporters-all .tec-patreon-supporters-title {
+    font-size: 50px;
+}
+
+#patreon-supporters-all .tec-patreon-header-underline {
+    height: 2px;
+    width: 75%;
+    background-color: var(--ted-yellow);
+    margin: auto;
+}
+
+#patreon-supporters-all .tec-patreon-supporters-call-to-action {
+    display: block;
+    font-size: 20px;
+    padding-block: 10px;
+    margin-block: 20px;
+    margin-inline: auto;
+    background-color: var(--ted-dgreen2);
+    border-radius: 10px;
+    border: 2px solid var(--ted-yellow);
+    text-decoration: none;
+    width: 300px;
+    transition: all ease 0.2s;
+}
+
+#patreon-supporters-all .tec-patreon-supporters-call-to-action:hover {
+    border: 2px solid var(--ted-true-yellow);
+    scale: 1.1;
+}
+
+@media(max-width: 900px) {
+    #patreon-supporters-all {
+        padding-inline: 5vh;
+    }
+}
+
+@media(max-width: 625px) {
+    #patreon-supporters-all .tec-patreon-header {
+        font-size: 20px;
+    }
+
+    #patreon-supporters-all .tec-patreon-supporters-title {
+        font-size: 30px;
+    }
+
+    #patreon-supporters-all .tec-patreon-supporters-call-to-action {
+        width: 100%;
+    }
+}
+
 /*REGULAR YOUTUBE EMBED STYLING*/
 #tec-video-embed.follow, #tec-video-embed-player, #tec_video_embed_iframe.follow {
     width: 300px !important;
