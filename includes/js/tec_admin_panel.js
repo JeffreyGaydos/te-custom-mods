@@ -86,9 +86,10 @@ function ShowPatreonDetails(force = undefined) {
 
 function DisplayCSVFile(text, idWhere) {
     //clear out any previously created table first
-    if(document.querySelector(`#${idWhere}`).children) {
-        Array.from(document.querySelector(`#${idWhere}`).children).forEach(child => {
-            document.querySelector(`#${idWhere}`).remove(child);
+    if(document.querySelector("#new-patreon-supporters-list table")) {
+        document.querySelector("#new-patreon-supporters-list table").remove();
+        document.querySelectorAll("td:nth-child(2):not(#new-patreon-supporters-list)").forEach((n, i) => {
+            n.parentElement.style.backgroundColor = i % 2 != 0 ? "#f0f0f1" : "white"; //reset deletions before regen; needs swapped for some reason...
         });
     }
 

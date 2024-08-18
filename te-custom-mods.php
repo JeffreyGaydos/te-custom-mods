@@ -35,7 +35,7 @@ function tec_settings_menu() {
 }
 
 function load_admin_scripts( $hook ) {
-    wp_enqueue_script( 'tec-admin-panel', plugins_url('/includes/js/tec_admin_panel.js', __FILE__), '', '1.42');
+    wp_enqueue_script( 'tec-admin-panel', plugins_url('/includes/js/tec_admin_panel.js', __FILE__), '', '1.47');
 }
 
 //$tec_notifs = [];
