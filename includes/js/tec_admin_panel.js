@@ -1,3 +1,4 @@
+if(window.location.href.endsWith("admin.php?page=tec-settings")) { //Conditional to avoid unused JS
 console.log("admin panel");
 
 const splitStr = "::::";
@@ -196,3 +197,5 @@ function DisplayCSVFile(text, idWhere) {
         document.querySelector("#unhide-me-when-input").style.display = "table-cell";
     document.querySelector(`#${idWhere}`).appendChild(htmlTable);
 }
+
+} //Conditional to avoid unused JS
