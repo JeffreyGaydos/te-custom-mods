@@ -102,8 +102,8 @@ if( !function_exists("tec_acp_page") ) {
                             <th id="unhide-me-when-input" style="display: none;">Will Replace With:</th>
                         </tr>
                         <tr>
-                            <td id="current-patreon-supporters"></td>
-                            <td id="new-patreon-supporters-list"></td>
+                            <td id="current-patreon-supporters" style="vertical-align: top"></td>
+                            <td id="new-patreon-supporters-list" style="vertical-align: top"></td>
                         </tr>
                     </table>
                     <a id="public-data">view raw public data</a>
