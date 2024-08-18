@@ -10,7 +10,7 @@ add_action("wp_head", "tec_init", 1);
 
 if( !function_exists("tec_init") ) {
     function tec_init() {
-        wp_enqueue_script( 'tec-init', plugins_url('/js/tec_init.js', __FILE__), '', '1.30');
+        wp_enqueue_script( 'tec-init', plugins_url('/js/tec_init.js', __FILE__), '', '1.43');
     }
 }
 
@@ -259,6 +259,6 @@ if(get_option('tec_support_display') == 'on') {
 if( !function_exists("tec_support_display") ) {
     function tec_support_display() {
         ?><div style="display:none" id="te-patreons"><?php echo get_option('tec_support_display_supporters_public'); ?></div><?php
-        wp_enqueue_script( 'tec-support-display', plugins_url('/js/tec_supporter_display.js', __FILE__), '', '1.45');
+        wp_enqueue_script( 'tec-support-display', plugins_url('/js/tec_supporter_display.js', __FILE__), '', '1.53');
     }
 }

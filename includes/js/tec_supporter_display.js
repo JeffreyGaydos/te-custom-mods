@@ -1,7 +1,11 @@
 var tec_te_patreons = JSON.parse(document.querySelector("#te-patreons").innerText);
 
+tec_generatePatreonTable();
+tec_generatePatreonArticleTable();
+
 function tec_generatePatreonTable() {
     var patreonDiv = document.querySelector("#patreon-supporters-all");
+    if(!patreonDiv) return;
     
     if(tec_te_patreons.length < 2) {
         return;
@@ -81,4 +85,43 @@ function tec_generatePatreonDisplayHeader(appendTo, headerValue, color) {
     appendTo.appendChild(headerUnderline);
 }
 
-tec_generatePatreonTable();
+function tec_generatePatreonArticleTable() {
+    var patreonDiv = document.querySelector("#patreon-supporters-article");  
+    if(!patreonDiv) return;
+
+    var heavyTanks = [];
+    var mediumTanks = [];
+
+    tec_te_patreons.forEach((patreon, i) => {
+        if(i != 0) {
+            if(patreon[1] == "Heavy Tank") {
+                heavyTanks.push(patreon[0]);
+            }
+            if(patreon[1] == "Medium Tank") {
+                mediumTanks.push(patreon[0]);
+            }
+        }
+    });
+
+    var titleThankYou = document.createElement("DIV");
+    titleThankYou.classList.add("tec-patreon-header");
+    titleThankYou.classList.add("tec-patreon-supporters-title");
+    titleThankYou.innerText = "Special thanks to our Medium & Heavy Tier Patreon Supporters!";
+    patreonDiv.append(titleThankYou);
+
+    tec_generatePatreonDisplayHeader(patreonDiv, "Heavy Tank Contributors", "var(--te-yellow)");
+    heavyTanks.forEach(ht => {
+        tec_generatePatreonDisplayBox(patreonDiv, ht);
+    });
+
+    tec_generatePatreonDisplayHeader(patreonDiv, "Medium Tank Contributors", "var(--te-beige)");
+    mediumTanks.forEach(ht => {
+        tec_generatePatreonDisplayBox(patreonDiv, ht);
+    });
+
+    var callToAction = document.createElement("A");
+    callToAction.classList.add("tec-patreon-supporters-call-to-action");
+    callToAction.innerText = "Become a patreon today!";
+    callToAction.href = "https://www.patreon.com/tankartfund";
+    patreonDiv.appendChild(callToAction);
+}

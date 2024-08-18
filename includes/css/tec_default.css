@@ -327,16 +327,16 @@ button:not(.toggle).tec_dm_button {
     padding-block: 50px;
 }
 
-#patreon-supporters-all .tec-patreon-supporter {
+#patreon-supporters-all .tec-patreon-supporter, #patreon-supporters-article .tec-patreon-supporter {
     display: inline-block;
     padding: 10px;
     color: var(--ted-true-yellow);
 }
 
-#patreon-supporters-all .tec-patreon-header {
+#patreon-supporters-all .tec-patreon-header, #patreon-supporters-article .tec-patreon-header {
     width: 100%;
-    font-size: 30px;
     padding-top: 30px;
+    font-size: 30px;
     text-shadow: 0px 0px 5px black;
 }
 
@@ -344,14 +344,26 @@ button:not(.toggle).tec_dm_button {
     font-size: 50px;
 }
 
-#patreon-supporters-all .tec-patreon-header-underline {
+#patreon-supporters-article .tec-patreon-supporters-title {
+    font-size: 30px;
+    text-align: center;
+}
+
+#patreon-supporters-all .tec-patreon-header-underline, #patreon-supporters-article .tec-patreon-header-underline {
     height: 2px;
-    width: 75%;
     background-color: var(--ted-yellow);
+}
+
+#patreon-supporters-article .tec-patreon-header-underline {
+    width: 100%;
+}
+
+#patreon-supporters-all .tec-patreon-header-underline {
+    width: 75%;
     margin: auto;
 }
 
-#patreon-supporters-all .tec-patreon-supporters-call-to-action {
+#patreon-supporters-all .tec-patreon-supporters-call-to-action, #patreon-supporters-article .tec-patreon-supporters-call-to-action {
     display: block;
     font-size: 20px;
     padding-block: 10px;
@@ -363,30 +375,56 @@ button:not(.toggle).tec_dm_button {
     text-decoration: none;
     width: 300px;
     transition: all ease 0.2s;
+    text-align: center;
 }
 
-#patreon-supporters-all .tec-patreon-supporters-call-to-action:hover {
+#patreon-supporters-all .tec-patreon-supporters-call-to-action:hover, #patreon-supporters-article .tec-patreon-supporters-call-to-action:hover {
     border: 2px solid var(--ted-true-yellow);
     scale: 1.1;
+}
+
+#patreon-supporters-article {
+    background-color: var(--ted-dbeige);
+    color: var(--ted-yellow);
+    text-align: left;
+    font-family: 'Allerta Stencil', sans-serif !important;
+    font-weight: 600;
+    padding-inline: 20px;
+    padding-block: 20px;
 }
 
 @media(max-width: 900px) {
     #patreon-supporters-all {
         padding-inline: 5vh;
     }
+
+    #patreon-supporters-article {
+        text-align: center;
+    }
 }
 
 @media(max-width: 625px) {
-    #patreon-supporters-all .tec-patreon-header {
+    #patreon-supporters-all .tec-patreon-header, #patreon-supporters-article .tec-patreon-header {
         font-size: 20px;
     }
 
-    #patreon-supporters-all .tec-patreon-supporters-title {
+    #patreon-supporters-all .tec-patreon-supporters-title, #patreon-supporters-article .tec-patreon-supporters-title {
         font-size: 30px;
     }
 
-    #patreon-supporters-all .tec-patreon-supporters-call-to-action {
+    #patreon-supporters-all .tec-patreon-supporters-call-to-action, #patreon-supporters-article .tec-patreon-supporters-call-to-action {
         width: 100%;
+    }
+}
+
+@media(max-width: 426px) {
+    #patreon-supporters-article {
+        width: 100%;
+        margin-inline: 0px !important;
+    }
+
+    #patreon-supporters-all .tec-patreon-supporters-title, #patreon-supporters-article .tec-patreon-supporters-title {
+        font-size: 20px;
     }
 }
 
