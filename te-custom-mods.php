@@ -19,6 +19,7 @@ require_once plugin_dir_path(__FILE__) . 'includes/tec-functions.php';
 //Hooking the menu creation and initialization functions to their appropriate hooks
 add_action( 'admin_menu', 'tec_settings_menu' );
 add_action( 'admin_init', 'update_tec_info' );
+add_action('admin_footer', 'load_admin_scripts'); //footer to make sure all the HTML in here has loaded so we can immediately reference them in the script
 
 //tells wordpress that we are going to a create a menu page for this plugin (with various details)
 function tec_settings_menu() {
@@ -31,6 +32,10 @@ function tec_settings_menu() {
     //$icon_url   = plugins_url('images/icon.png'); - for custom images
     $position = 60;
     add_menu_page( $page_title, $menu_title, $capability, $menu_slug, $function, $icon_url, $position);
+}
+
+function load_admin_scripts() {
+    wp_enqueue_script( 'tec-admin-panel', plugins_url('/includes/js/tec_admin_panel.js', __FILE__), '', '1.41');
 }
 
 //$tec_notifs = [];
@@ -82,28 +87,27 @@ if( !function_exists("tec_acp_page") ) {
             <input type="checkbox" name="tec_patreon_prompt" <?php tec_get_checked('tec_patreon_prompt') ?> >Patreon Prompt Box</input>
             <br><br>
             <input type="checkbox" name="tec_support_display" <?php tec_get_checked('tec_support_display') ?> >Monetary Supporter Display</input>
+            <textarea type="text" name="tec_support_display_supporters_saved" style="display: none"><?php echo tec_get_text('tec_support_display_supporters_saved'); ?></textarea>
+            <textarea type="text" name="tec_support_display_supporters_public" style="display: none"><?php echo tec_get_text('tec_support_display_supporters_public'); ?></textarea>
             <div style="margin: 20px 0px 0px 50px">
-                <label>Input supporters separated by a newline (Enter). Click "Add Supporters" button to ensure that the list was parsed correctly. Then click save changes to save the supporters you just added.</label>
+                <p>Upload a CSV file with all patreon members listed. Include the columns "Name", "Email", "Lifetime Amount", and "Tier" at a minimum. Only "Name" and "Tier" will be exposed to the public.</p>
+                <p>When input, the 2 sheets will be compared and differences will be noted. A green row is a new member added, a red row is a member deleted, a blue cell is a data value that changed from the previous state of that user (keyed on email). Updating an email is treated as a delete and insert</p>
+                <input id="csv-input" type="file" accept=".csv">
                 <br>
-                <textarea name="fake_support_display_supporters_current" placeholder="input new supporters"></textarea>
-                <textarea name="tec_support_display_supporters_current" style="display: none"></textarea>
-                <button onclick="document.querySelector('textarea[name=tec_support_display_supporters_current]').value = document.querySelector('textarea[name=fake_support_display_supporters_current]').value.replaceAll('\n', '::::').replaceAll('\r', '::::')">Add Supporters</button>
-                <textarea type="text" name="tec_support_display_supporters_saved" style="display: none"><?php echo tec_get_text('tec_support_display_supporters_saved'); ?></textarea>
-                <br>
-                <p>Unsaved Supporters: </p>
-                <ul>
-                    <?php tec_generate_list_from_text(tec_get_text('tec_support_display_supporters_current')) ?>
-                </ul>
-                <button onclick="document.querySelector('textarea[name=tec_support_display_supporters_saved]').value += '::::' + '<?php echo tec_get_text('tec_support_display_supporters_current'); ?>'">Save Supporters</button>
-                <button onclick="document.querySelector('textarea[name=tec_support_display_supporters_currnet]').value += ''">Clear Unsaved Supporters</button>
-                <p>Saved Supporters: </p>
-                <ul>
-                    <!-- <li style="list-style: inside"> TODO add the 3 tiers of supporters
-                        Light Tank Supporters
-                        <ul></ul>
-                    </li> -->
-                    <?php tec_generate_list_from_text(tec_get_text('tec_support_display_supporters_saved')) ?>
-                </ul>
+                <a id="show-patreon-details">Show current data</a>
+                <div id="patreon-details" style="display: none">
+                    <table>
+                        <tr>
+                            <th title="<?php tec_get_text('tec_support_display_supporters_public') ?>">Saved Supporters:</th>
+                            <th id="unhide-me-when-input" style="display: none;">Will Replace With:</th>
+                        </tr>
+                        <tr>
+                            <td id="current-patreon-supporters"></td>
+                            <td id="new-patreon-supporters-list"></td>
+                        </tr>
+                    </table>
+                    <a id="public-data">view raw public data</a>
+                </div>
             </div>
 
             <?php
@@ -162,7 +166,7 @@ if( !function_exists("update_tec_info") ) {
         register_setting( 'tec-settings', 'tec_category_archive' );
         register_setting( 'tec-settings', 'tec_patreon_prompt' );
         register_setting( 'tec-settings', 'tec_support_display' );
-        register_setting( 'tec-settings', 'tec_support_display_supporters_current');
         register_setting( 'tec-settings', 'tec_support_display_supporters_saved');
+        register_setting( 'tec-settings', 'tec_support_display_supporters_public');
     }
 }
