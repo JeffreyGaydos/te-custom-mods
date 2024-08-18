@@ -351,7 +351,7 @@ button:not(.toggle).tec_dm_button {
 
 #patreon-supporters-all .tec-patreon-header-underline, #patreon-supporters-article .tec-patreon-header-underline {
     height: 2px;
-    background-color: var(--ted-yellow);
+    background-color: var(--ted-yellow) !important;
 }
 
 #patreon-supporters-article .tec-patreon-header-underline {
@@ -372,6 +372,7 @@ button:not(.toggle).tec_dm_button {
     background-color: var(--ted-dgreen2);
     border-radius: 10px;
     border: 2px solid var(--ted-yellow);
+    color: var(--ted-yellow) !important;
     text-decoration: none;
     width: 300px;
     transition: all ease 0.2s;
@@ -389,8 +390,9 @@ button:not(.toggle).tec_dm_button {
     text-align: left;
     font-family: 'Allerta Stencil', sans-serif !important;
     font-weight: 600;
-    padding-inline: 20px;
+    padding-inline: 2.5%;
     padding-block: 20px;
+    border-radius: 10px;
 }
 
 @media(max-width: 900px) {

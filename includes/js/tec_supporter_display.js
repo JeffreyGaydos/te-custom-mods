@@ -14,7 +14,7 @@ function tec_generatePatreonTable() {
     var heavyTanks = [];
     var mediumTanks = [];
     var lightTanks = [];
-    var tankettes = [];
+    // var tankettes = [];
 
     tec_te_patreons.forEach((patreon, i) => {
         if(i != 0) {
@@ -27,9 +27,9 @@ function tec_generatePatreonTable() {
             if(patreon[1] == "Light Tank") {
                 lightTanks.push(patreon[0]);
             }
-            if(patreon[1] == "Tankette") {
-                tankettes.push(patreon[0]);
-            }
+            // if(patreon[1] == "Tankette") {
+            //     tankettes.push(patreon[0]);
+            // }
         }
     });
 
@@ -39,25 +39,25 @@ function tec_generatePatreonTable() {
     titleThankYou.innerText = "Thank you to all of our Patreon supporters!";
     patreonDiv.append(titleThankYou);
 
-    tec_generatePatreonDisplayHeader(patreonDiv, "Heavy Tank Contributors", "var(--te-yellow)");
+    tec_generatePatreonDisplayHeader(patreonDiv, "Heavy Tank Contributors", "var(--ted-yellow) !important");
     heavyTanks.forEach(ht => {
         tec_generatePatreonDisplayBox(patreonDiv, ht);
     });
 
-    tec_generatePatreonDisplayHeader(patreonDiv, "Medium Tank Contributors", "var(--te-beige)");
+    tec_generatePatreonDisplayHeader(patreonDiv, "Medium Tank Contributors", "var(--ted-beige) !important");
     mediumTanks.forEach(ht => {
         tec_generatePatreonDisplayBox(patreonDiv, ht);
     });
 
-    tec_generatePatreonDisplayHeader(patreonDiv, "Light Tank Contributors", "var(--te-beige2)");
+    tec_generatePatreonDisplayHeader(patreonDiv, "Light Tank Contributors", "var(--ted-beige2) !important");
     lightTanks.forEach(ht => {
         tec_generatePatreonDisplayBox(patreonDiv, ht);
     });
 
-    tec_generatePatreonDisplayHeader(patreonDiv, "Tankette Contributors", "var(--te-brown)");
-    tankettes.forEach(ht => {
-        tec_generatePatreonDisplayBox(patreonDiv, ht);
-    });
+    // tec_generatePatreonDisplayHeader(patreonDiv, "Tankette Contributors", "var(--te-brown)");
+    // tankettes.forEach(ht => {
+    //     tec_generatePatreonDisplayBox(patreonDiv, ht);
+    // });
 
     var callToAction = document.createElement("A");
     callToAction.classList.add("tec-patreon-supporters-call-to-action");
@@ -106,15 +106,15 @@ function tec_generatePatreonArticleTable() {
     var titleThankYou = document.createElement("DIV");
     titleThankYou.classList.add("tec-patreon-header");
     titleThankYou.classList.add("tec-patreon-supporters-title");
-    titleThankYou.innerText = "Special thanks to our Medium & Heavy Tier Patreon Supporters!";
+    titleThankYou.innerText = "Special Thanks to our Medium & Heavy Tier Patreon Supporters!";
     patreonDiv.append(titleThankYou);
 
-    tec_generatePatreonDisplayHeader(patreonDiv, "Heavy Tank Contributors", "var(--te-yellow)");
+    tec_generatePatreonDisplayHeader(patreonDiv, "Heavy Tank Contributors", "var(--ted-yellow) !important");
     heavyTanks.forEach(ht => {
         tec_generatePatreonDisplayBox(patreonDiv, ht);
     });
 
-    tec_generatePatreonDisplayHeader(patreonDiv, "Medium Tank Contributors", "var(--te-beige)");
+    tec_generatePatreonDisplayHeader(patreonDiv, "Medium Tank Contributors", "var(--ted-beige) !important");
     mediumTanks.forEach(ht => {
         tec_generatePatreonDisplayBox(patreonDiv, ht);
     });
