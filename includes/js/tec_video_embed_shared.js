@@ -22,7 +22,7 @@ function tec_create_header(headerText, closeCallback, insertBeforeNode) {
   var tec_x = document.createElement("DIV");
   tec_x.classList.add("out");
   tec_x.id = tec_video_embed_x_id;
-  tec_x.innerText = "🞪";
+  tec_x.innerHTML = "&Cross;";
   var tec_header = document.createElement("DIV");
   tec_header.classList.add("out");
   tec_header.id = "tec-video-embed-header";

@@ -20,7 +20,7 @@ if(!tec_is_client_mobile) {
     tec_patreon_long_patreon_logo.className = "tec-patreon-long-patreon-logo";
     var tec_patreon_long_x = document.createElement("p");
     tec_patreon_long_x.className = "tec-patreon-long-x";
-    tec_patreon_long_x.innerText = "🞪";
+    tec_patreon_long_x.innerHTML = "&Cross;";
     tec_patreon_long_x.addEventListener("click", () => tec_closePatreonLong());
     
     tec_patreon_long_box.appendChild(tec_patreon_long_te_logo);
@@ -40,5 +40,10 @@ if(!tec_is_client_mobile) {
         }, 1000);
     }
 
-    document.cookie = `te_visited_marker_ppp=${Date.now() + 1000*60*60*24*365}; expires=${new Date(Date.now() + 1000*60*60*24*365).toUTCString()}; path=/`;
+    if(!visited_cookie) {
+        document.cookie = `te_visited_marker_ppp=${Date.now() + 1000*60*60*24*365}; expires=${new Date(Date.now() + 1000*60*60*24*365).toUTCString()}; path=/`;
+    } else if(((Date.now() + 1000*60*60*24*365) - visited_cookie.split('=')[1]) > (1000*60*60*24*7)) {
+        document.cookie = `te_visited_marker_ppp=${Date.now() + 1}; expires=${new Date(Date.now() + 1000*60*60*24*365).toUTCString()}; path=/`;
+    }
+
 }
