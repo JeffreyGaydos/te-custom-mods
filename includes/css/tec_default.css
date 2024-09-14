@@ -272,7 +272,7 @@ button:not(.toggle).tec_dm_button {
     cursor: pointer;
     text-decoration: none !important;
     transition: all ease 0.5s;
-    z-index: 2;
+    z-index: 1001;
 }
 
 .tec-patreon-long-box:hover {
@@ -312,7 +312,7 @@ button:not(.toggle).tec_dm_button {
     font-size: 25px;
     cursor: pointer;
     transition: all ease 0.5s;
-    z-index: 2;
+    z-index: 1001;
 }
 
 .tec-patreon-long-x.active {
