@@ -10,7 +10,7 @@ add_action("wp_head", "tec_init", 1);
 
 if( !function_exists("tec_init") ) {
     function tec_init() {
-        wp_enqueue_script( 'tec-init', plugins_url('/js/tec_init.js', __FILE__), '', '1.12');
+        wp_enqueue_script( 'tec-init', plugins_url('/js/tec_init.js', __FILE__), '', '1.13');
     }
 }
 
@@ -168,7 +168,7 @@ if(get_option('tec_video_embed') == 'on') {
 if( !function_exists("tec_video_embed") ) {
     function tec_video_embed() {
         if(is_single()) {
-            wp_enqueue_script( 'tec-video-embed-shared', plugins_url('/js/tec_video_embed_shared.js', __FILE__), '', '1.2');
+            wp_enqueue_script( 'tec-video-embed-shared', plugins_url('/js/tec_video_embed_shared.js', __FILE__), '', '1.3');
             if(!in_category("has-own-video")) {
                 wp_enqueue_script( 'tec-video-embed', plugins_url('/js/tec_video_embed.js', __FILE__), '', '2.3');
             } else {
@@ -188,7 +188,7 @@ if(get_option('tec_patreon_prompt') == 'on') {
 if( !function_exists("tec_patreon_prompt") ) {
     function tec_patreon_prompt() {
         if(is_single()) {
-            wp_enqueue_script( 'tec_patreon_prompt', plugins_url('/js/tec_patreon_prompt.js', __FILE__), '', '1.1');
+            wp_enqueue_script( 'tec_patreon_prompt', plugins_url('/js/tec_patreon_prompt.js', __FILE__), '', '1.2');
         }
     }
 }

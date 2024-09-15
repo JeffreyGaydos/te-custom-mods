@@ -1,5 +1,5 @@
 # Tank Encyclopedia Custom Modifications
-## te-custom-mods | Current Version: 2.1.36
+## te-custom-mods | Current Version: 2.1.37
 
 A wordpress plugin that performs various customizations for the website https://tanks-encyclopedia.com/
 

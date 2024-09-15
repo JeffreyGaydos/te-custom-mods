@@ -262,7 +262,7 @@ button:not(.toggle).tec_dm_button {
 
 .tec-patreon-long-box {
     position: fixed;
-    bottom: 300px;
+    bottom: calc(50% - 150px);
     left: -250px;
     background-color: var(--ted-dgreen);
     width: 200px;
@@ -272,6 +272,7 @@ button:not(.toggle).tec_dm_button {
     cursor: pointer;
     text-decoration: none !important;
     transition: all ease 0.5s;
+    z-index: 1001;
 }
 
 .tec-patreon-long-box:hover {
@@ -298,7 +299,7 @@ button:not(.toggle).tec_dm_button {
 .tec-patreon-long-text {
     text-align: center;
     color: var(--ted-true-yellow);
-    font-size: 25px;
+    font-size: 21px;
     font-family: sans-serif;
     font-weight: 600;
 }
@@ -306,15 +307,22 @@ button:not(.toggle).tec_dm_button {
 .tec-patreon-long-x {
     position: fixed;
     left: -35px;
-    bottom: 570px;
+    bottom: calc(50% + 120px);
     color: var(--ted-true-yellow);
     font-size: 25px;
     cursor: pointer;
     transition: all ease 0.5s;
+    z-index: 1001;
 }
 
 .tec-patreon-long-x.active {
     left: 35px;
+}
+
+@media(max-height: 500px) {
+    .tec-patreon-long-box, .tec-patreon-long-x {
+        display: none;
+    }
 }
 
 #patreon-supporters-all {
@@ -472,8 +480,8 @@ button:not(.toggle).tec_dm_button {
 #tec-video-embed-x {
     position: fixed;
     color: var(--ted-yellow);
-    right: 35px;
-    bottom: 268.75px;
+    right: 37px;
+    bottom: 270px;
     font-size: 20px;
     height: 23px;
     cursor: pointer;
