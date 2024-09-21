@@ -268,7 +268,7 @@ button:not(.toggle).tec_dm_button {
     width: 200px;
     height: 300px;
     border: var(--ted-beige2) 2px solid;
-    border-radius: 20px;
+    border-radius: 0px 20px 20px 20px;
     cursor: pointer;
     text-decoration: none !important;
     transition: all ease 0.5s;
@@ -307,16 +307,20 @@ button:not(.toggle).tec_dm_button {
 .tec-patreon-long-x {
     position: fixed;
     left: -35px;
-    bottom: calc(50% + 120px);
+    bottom: calc(50% + 72px);
     color: var(--ted-true-yellow);
-    font-size: 25px;
+    font-size: 35px;
     cursor: pointer;
     transition: all ease 0.5s;
     z-index: 1001;
 }
 
 .tec-patreon-long-x.active {
-    left: 35px;
+    left: 40px;
+}
+
+.tec-patreon-long-x.active:hover {
+    color: white;
 }
 
 @media(max-height: 500px) {
