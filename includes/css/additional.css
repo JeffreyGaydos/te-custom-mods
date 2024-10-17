@@ -401,3 +401,7 @@ img.wp-spaios-slider-image {
 div.post-inner tr, div.post-inner td, div.post-inner th {
 	font-size: min(2.25vw, 1.8rem);
 }
+
+.comment-form-cookies-consent {
+	display: block !important
+}
