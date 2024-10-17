@@ -341,6 +341,14 @@ function twentytwenty_get_custom_logo( $html ) {
 
 }
 
+add_filter('comment_form_default_fields', 'tec_comment_website_remove');
+function tec_comment_website_remove($fields)
+{
+   if(isset($fields['url']))
+   unset($fields['url']);
+   return $fields;
+}
+
 add_filter( 'get_custom_logo', 'twentytwenty_get_custom_logo' );
 
 if ( ! function_exists( 'wp_body_open' ) ) {
