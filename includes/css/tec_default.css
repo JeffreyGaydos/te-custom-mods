@@ -729,7 +729,7 @@ p.tec_g_faux_caption.tec_g_featured {
         font-size: 17px !important;
     }
 
-    p:not(.tec-rand-text .wp-caption-text), ul, ol, em {
+    p:not(.tec-rand-text .wp-caption-text), ul, ol {
         font-size: 15px !important;
     }
 
