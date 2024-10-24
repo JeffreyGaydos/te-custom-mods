@@ -729,16 +729,12 @@ p.tec_g_faux_caption.tec_g_featured {
         font-size: 17px !important;
     }
 
-    p:not(.tec-rand-text .wp-caption-text), ul, ol {
+    p:not(.tec-rand-text .wp-caption-text), ul, ol, em {
         font-size: 15px !important;
     }
 
     tbody {
         font-size: 14px !important;
-    }
-
-    em {
-        font-size: 17px !important;
     }
 
     img[src~="fake-1.png"], img[src~="fail.png"] {
