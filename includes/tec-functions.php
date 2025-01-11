@@ -69,7 +69,7 @@ if(get_option('tec_random_article') == 'on') {
 
 if( !function_exists("tec_random_article_init") ) {
     function tec_random_article_init() {
-        wp_enqueue_script( 'tec-random-article-init', plugins_url('/js/tec_random_article.js', __FILE__), '', '2.6');
+        wp_enqueue_script( 'tec-random-article-init', plugins_url('/js/tec_random_article.js', __FILE__), '', '2.7');
     }
 }
 
@@ -188,7 +188,7 @@ if(get_option('tec_patreon_prompt') == 'on') {
 if( !function_exists("tec_patreon_prompt") ) {
     function tec_patreon_prompt() {
         if(is_single()) {
-            wp_enqueue_script( 'tec_patreon_prompt', plugins_url('/js/tec_patreon_prompt.js', __FILE__), '', '1.4');
+            wp_enqueue_script( 'tec_patreon_prompt', plugins_url('/js/tec_patreon_prompt.js', __FILE__), '', '1.6');
         }
     }
 }
