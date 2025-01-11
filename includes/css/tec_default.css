@@ -737,10 +737,6 @@ p.tec_g_faux_caption.tec_g_featured {
         font-size: 14px !important;
     }
 
-    em {
-        font-size: 17px !important;
-    }
-
     img[src~="fake-1.png"], img[src~="fail.png"] {
         width: 50px;
         height: 50px;
