@@ -9,7 +9,7 @@ function randomArticleButton() {
     button.classList.add("tec-rand-link");
     button.title = "View a Random Article from Tank Encyclopedia";
     let buttonImage = document.createElement("IMG");
-    buttonImage.src = "https://tanks-encyclopedia.com/wp-content/uploads/2020/05/logo-big-border-30.png";
+    buttonImage.src = "REPLACE ME WITH NEW LOGO";
     buttonImage.style.padding = "0px 0px 0px 0px";
     let textDiv = document.createElement("DIV");
     textDiv.classList.add("tec-rand-text");
