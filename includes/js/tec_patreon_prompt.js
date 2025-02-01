@@ -8,17 +8,17 @@ function tec_closePatreonLong() {
 
 if(!tec_is_client_mobile) {
     var tec_patreon_long_box = document.createElement("a");
-    tec_patreon_long_box.href = "http://patreon.com/tankartfund";
+    tec_patreon_long_box.href = "https://payhip.com/b/1lj3U";
     tec_patreon_long_box.className = "tec-patreon-long-box";
     var tec_patreon_long_te_logo = document.createElement("img");
-    tec_patreon_long_te_logo.src = "/wp-content/plugins/te-custom-mods/images/TE_logo_2025.svg";
+    tec_patreon_long_te_logo.src = "/wp-content/plugins/te-custom-mods/images/TE_Mag_010.png";
     tec_patreon_long_te_logo.className = "tec-patreon-long-te-logo";
     var tec_patreon_long_text = document.createElement("p");
-    tec_patreon_long_text.innerText = "Become a Tank Encyclopedia Patreon today!";
+    tec_patreon_long_text.innerText = "Tank Encyclopedia Magazine Issue #10 is Out Now! Click to buy";
     tec_patreon_long_text.className = "tec-patreon-long-text";
-    var tec_patreon_long_patreon_logo = document.createElement("img");
-    tec_patreon_long_patreon_logo.src = "/wp-content/plugins/te-custom-mods/images/PatreonLogo.png";
-    tec_patreon_long_patreon_logo.className = "tec-patreon-long-patreon-logo";
+    // var tec_patreon_long_patreon_logo = document.createElement("img");
+    // tec_patreon_long_patreon_logo.src = "/wp-content/plugins/te-custom-mods/images/PatreonLogo.png";
+    // tec_patreon_long_patreon_logo.className = "tec-patreon-long-patreon-logo";
     var tec_patreon_long_x = document.createElement("p");
     tec_patreon_long_x.className = "tec-patreon-long-x";
     tec_patreon_long_x.innerHTML = "&Cross;";
@@ -26,7 +26,7 @@ if(!tec_is_client_mobile) {
     
     tec_patreon_long_box.appendChild(tec_patreon_long_te_logo);
     tec_patreon_long_box.appendChild(tec_patreon_long_text);
-    tec_patreon_long_box.appendChild(tec_patreon_long_patreon_logo);
+    // tec_patreon_long_box.appendChild(tec_patreon_long_patreon_logo);
     
     var visited_cookie = document.cookie.split("; ").filter(c => c.startsWith("te_visited_marker_ppp"))[0];
     if(!document.cookie.split("; ").filter(c => c.startsWith("te_patreonClosed"))[0]
@@ -42,7 +42,7 @@ if(!tec_is_client_mobile) {
     }
 
     if(!visited_cookie) {
-        document.cookie = `te_visited_marker_ppp=${Date.now() + 1000*60*60*24*365}; expires=${new Date(Date.now() + 1000*60*60*24*365).toUTCString()}; path=/`;
+        document.cookie = `te_visited_marker_ppp=${Date.now() + 1000*60*60*24*365 - (1000*60*60*24*te_ppp_days)}; expires=${new Date(Date.now() + 1000*60*60*24*365).toUTCString()}; path=/`;
     } else if(((Date.now() + 1000*60*60*24*365) - visited_cookie.split('=')[1]) > (1000*60*60*24*te_ppp_days)) {
         document.cookie = `te_visited_marker_ppp=${Date.now() + 1}; expires=${new Date(Date.now() + 1000*60*60*24*365).toUTCString()}; path=/`;
     }
