@@ -49,11 +49,19 @@
 	}
 	add_filter('excerpt_more', 'twentytwentychild_excerpt_more_add_continue_reading' );
 	//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	global $wpdb;
+	$allAuthorPostIDs = array(-2); //IN () results in true; IN (-1) results in the hello world page, IN (-2) results in no post results (default to safe state)
+
+	if(gettype(get_queried_object()->ID) == "integer") { //just to double check and prevent SQL injection
+		foreach($wpdb->get_results("SELECT ID FROM `wp_posts` WHERE post_author = '" . get_queried_object()->ID . "' UNION SELECT post_id FROM `wp_postmeta` META JOIN `wp_posts` POSTS ON POSTS.ID = META.post_id AND POSTS.post_type = 'post' WHERE META.meta_key = 'co_author' AND META.meta_value LIKE '%\"" . get_queried_object()->ID . "\"%';", ARRAY_N) as $postID) {
+			array_push($allAuthorPostIDs, $postID[0]);
+		}
+	}
+
 	$posts = new WP_Query(array(
 		'posts_per_page' => get_option('posts_per_page'),
-		'author_name' => get_queried_object()->user_nicename,
 		'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
-		'post_type' => 'post'
+		'post__in' => $allAuthorPostIDs
 	));
 	if ( $posts->have_posts() ) :
 		$i = 0;
