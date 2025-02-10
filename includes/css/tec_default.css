@@ -291,17 +291,18 @@ button:not(.toggle).tec_dm_button {
 }
 
 .tec-patreon-long-te-logo {
-    width: 100px;
-    margin-inline: calc(50% - 50px);
+    width: 140px;
+    margin-inline: calc(50% - 70px);
     margin-top: 15px;
 }
 
 .tec-patreon-long-text {
     text-align: center;
     color: var(--ted-true-yellow);
-    font-size: 21px;
+    font-size: 15px;
     font-family: sans-serif;
     font-weight: 600;
+    padding: 5px;
 }
 
 .tec-patreon-long-x {
