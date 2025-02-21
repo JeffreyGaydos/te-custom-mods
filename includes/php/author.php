@@ -50,6 +50,11 @@
 	add_filter('excerpt_more', 'twentytwentychild_excerpt_more_add_continue_reading' );
 
 	function skipToIntroductoryParagraph( $content ) {
+		$excludePhrases = array('Click here to partake!');
+		foreach($excludePhrases as $ex) {
+			$content = str_replace($ex, '', $content);
+		}
+		
 		$validH = array('1', '2', '3', '4', '5', '6', '7', '8');
 		$minHPos = strlen($content); //The position in the string
 		$minHNum = '0'; //The tag number
