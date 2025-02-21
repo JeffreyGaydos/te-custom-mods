@@ -265,8 +265,8 @@ button:not(.toggle).tec_dm_button {
     bottom: calc(50% - 150px);
     left: -250px;
     background-color: var(--ted-dgreen);
-    width: 200px;
-    height: 300px;
+    width: 300px;
+    height: 265px;
     border: var(--ted-beige2) 2px solid;
     border-radius: 0px 20px 20px 20px;
     cursor: pointer;
@@ -291,9 +291,9 @@ button:not(.toggle).tec_dm_button {
 }
 
 .tec-patreon-long-te-logo {
-    width: 140px;
-    margin-inline: calc(50% - 70px);
-    margin-top: 15px;
+    width: 270px;
+    margin-inline: calc(50% - 135px);
+    margin-top: 10px;
 }
 
 .tec-patreon-long-text {
@@ -303,17 +303,19 @@ button:not(.toggle).tec_dm_button {
     font-family: sans-serif;
     font-weight: 600;
     padding: 5px;
+    margin-bottom: 0 !important;
 }
 
 .tec-patreon-long-x {
     position: fixed;
     left: -35px;
-    bottom: calc(50% + 72px);
+    bottom: calc(50% + 35px);
     color: var(--ted-true-yellow);
     font-size: 35px;
     cursor: pointer;
     transition: all ease 0.5s;
     z-index: 1001;
+    text-shadow: -1px -1px 1px var(--ted-dgreen), 1px -1px 1px var(--ted-dgreen), -1px 1px 1px var(--ted-dgreen), 1px 1px 1px var(--ted-dgreen) -2px -2px 1px var(--ted-dgreen), 2px -2px 1px var(--ted-dgreen), -2px 2px 1px var(--ted-dgreen), 2px 2px 1px var(--ted-dgreen);
 }
 
 .tec-patreon-long-x.active {
