@@ -263,7 +263,7 @@ button:not(.toggle).tec_dm_button {
 .tec-patreon-long-box {
     position: fixed;
     bottom: calc(50% - 150px);
-    left: -250px;
+    left: -350px;
     background-color: var(--ted-dgreen);
     width: 300px;
     height: 265px;
@@ -315,7 +315,6 @@ button:not(.toggle).tec_dm_button {
     cursor: pointer;
     transition: all ease 0.5s;
     z-index: 1001;
-    text-shadow: -1px -1px 1px var(--ted-dgreen), 1px -1px 1px var(--ted-dgreen), -1px 1px 1px var(--ted-dgreen), 1px 1px 1px var(--ted-dgreen) -2px -2px 1px var(--ted-dgreen), 2px -2px 1px var(--ted-dgreen), -2px 2px 1px var(--ted-dgreen), 2px 2px 1px var(--ted-dgreen);
 }
 
 .tec-patreon-long-x.active {
