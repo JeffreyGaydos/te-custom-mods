@@ -48,6 +48,55 @@
 			HTML;
 	}
 	add_filter('excerpt_more', 'twentytwentychild_excerpt_more_add_continue_reading' );
+
+	function skipToIntroductoryParagraph( $content ) {
+		$excludePhrases = array('Click here to partake!');
+		foreach($excludePhrases as $ex) {
+			$content = str_replace($ex, '', $content);
+		}
+
+		$validH = array('1', '2', '3', '4', '5', '6', '7', '8');
+		$minHPos = strlen($content); //The position in the string
+		$minHNum = '0'; //The tag number
+		foreach($validH as $H) {
+			$closeTag = '</h' . $H . '>';
+			if(strpos($content, $closeTag) && strpos($content, $closeTag) < $minHPos) {
+				$minHNum = $H;
+				$minHPos = strpos($content, $closeTag);
+			}
+		}
+
+		$minPosCloseTag = '</h' . $minHNum . '>';
+		if(strpos($content, $minPosCloseTag)) {
+			$sanitizedContent = substr($content, strpos($content, $minPosCloseTag) + 5);
+
+			$minHPos = strlen($content); //The position in the string
+			$minHNum = '0'; //The tag number
+			foreach($validH as $H) {
+				$closeTag = '</h' . $H . '>';
+				if(strpos($sanitizedContent, $closeTag) && strpos($sanitizedContent, $closeTag) < $minHPos) {
+					$minHNum = $H;
+					$minHPos = strpos($sanitizedContent, $closeTag);
+				}
+			}
+
+			$anyHNearby = false;
+			foreach($validH as $H) {
+				$openTag = '<h' . $H . '>';
+				if(strpos($sanitizedContent, $openTag) && strpos($sanitizedContent, $openTag) < 10) {
+					$anyHNearby = true;
+				}
+			}
+
+			$minPosCloseTag2 = '</h' . $minHNum . '>';
+			if(strpos($sanitizedContent, $minPosCloseTag2) && $anyHNearby) {
+				return wp_trim_words(substr($sanitizedContent, strpos($sanitizedContent, $minPosCloseTag2) + 5));
+			} else {
+				return wp_trim_words($sanitizedContent);
+			}
+		}
+		return wp_trim_words($content);
+	}
 	//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	$posts = new WP_Query(array(
 		'posts_per_page' => get_option('posts_per_page'),
@@ -76,7 +125,7 @@
 				?>
 				<div style="min-height: 150px">
 					<?php
-						the_excerpt();	
+						echo skipToIntroductoryParagraph(get_the_content());
 					?>
 				</div>
 			</div>
