@@ -188,7 +188,7 @@ if(get_option('tec_patreon_prompt') == 'on') {
 if( !function_exists("tec_patreon_prompt") ) {
     function tec_patreon_prompt() {
         if(is_single()) {
-            wp_enqueue_script( 'tec_patreon_prompt', plugins_url('/js/tec_patreon_prompt.js', __FILE__), '', '1.6');
+            wp_enqueue_script( 'tec_patreon_prompt', plugins_url('/js/tec_patreon_prompt.js', __FILE__), '', '1.7');
         }
     }
 }

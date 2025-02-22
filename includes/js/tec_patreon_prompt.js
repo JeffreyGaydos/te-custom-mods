@@ -13,7 +13,7 @@ if(!tec_is_client_mobile) {
     tec_patreon_long_box.href = "https://payhip.com/b/5n2cV";
     tec_patreon_long_box.className = "tec-patreon-long-box";
     var tec_patreon_long_te_logo = document.createElement("img");
-    tec_patreon_long_te_logo.src = "/wp-content/plugins/te-custom-mods/images/All-Pack-New_800x600.jpg";
+    tec_patreon_long_te_logo.src = "/wp-content/plugins/te-custom-mods/images/AllPackNew800x600.jpg";
     tec_patreon_long_te_logo.className = "tec-patreon-long-te-logo";
     var tec_patreon_long_text = document.createElement("p");
     tec_patreon_long_text.innerText = "Click to buy!";
