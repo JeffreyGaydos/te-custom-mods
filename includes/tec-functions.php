@@ -10,7 +10,7 @@ add_action("wp_head", "tec_init", 1);
 
 if( !function_exists("tec_init") ) {
     function tec_init() {
-        wp_enqueue_script( 'tec-init', plugins_url('/js/tec_init.js', __FILE__), '', '1.18');
+        wp_enqueue_script( 'tec-init', plugins_url('/js/tec_init.js', __FILE__), '', '1.19');
     }
 }
 
@@ -260,5 +260,18 @@ if( !function_exists("tec_support_display") ) {
     function tec_support_display() {
         ?><div style="display:none" id="te-patreons"><?php echo get_option('tec_support_display_supporters_public'); ?></div><?php
         wp_enqueue_script( 'tec-support-display', plugins_url('/js/tec_supporter_display.js', __FILE__), '', '1.0');
+    }
+}
+
+/********************************************************************
+ * Routing Nation Page Illustration Galleries
+ ********************************************************************/
+if(get_option('tec_graphic_blur') == 'on') {
+    add_action("wp_head", "tec_graphic_blur", 15);
+}
+
+if( !function_exists("tec_graphic_blur") ) {
+    function tec_graphic_blur() {
+        wp_enqueue_script( 'tec-graphic-blur', plugins_url('/js/tec_graphic_blur.js', __FILE__), '', '1.0');
     }
 }

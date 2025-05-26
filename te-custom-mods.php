@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Tank Encyclopedia Custom Mods
-Version: 2.1.45 | Author: Jeffrey Gaydos | Discord: Jeff_G#3210 | Github Repo: https://github.com/JeffreyGaydos/te-custom-mods
+Version: 2.1.46 | Author: Jeffrey Gaydos | Discord: Jeff_G#3210 | Github Repo: https://github.com/JeffreyGaydos/te-custom-mods
 
 Description: A plugin created to organize the various functions of the old child theme, thereby removing the need for the child theme. Includes toggles in case any functions fail during udpates.
 */
@@ -109,7 +109,8 @@ if( !function_exists("tec_acp_page") ) {
                     <a id="public-data">view raw public data</a>
                 </div>
             </div>
-
+            <br><br>
+            <input type="checkbox" name="tec_graphic_blur" <?php tec_get_checked('tec_graphic_blur') ?> >Graphic Blur</input>
             <?php
                 submit_button();
             ?>
@@ -168,5 +169,6 @@ if( !function_exists("update_tec_info") ) {
         register_setting( 'tec-settings', 'tec_support_display' );
         register_setting( 'tec-settings', 'tec_support_display_supporters_saved');
         register_setting( 'tec-settings', 'tec_support_display_supporters_public');
+        register_setting( 'tec-settings', 'tec_graphic_blur' );
     }
 }
