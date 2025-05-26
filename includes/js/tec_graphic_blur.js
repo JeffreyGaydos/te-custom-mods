@@ -4,6 +4,7 @@ function te_CreateWarningLabel() {
     var warningLabel = document.createElement("P");
     warningLabel.style.overflow = "visible";
     warningLabel.style.height = 0;
+    warningLabel.style.marginInline = "auto";
     warningLabel.style.position = "relative";
     warningLabel.style.textAlign = "center";
     warningLabel.style.left = "0px";
@@ -13,6 +14,7 @@ function te_CreateWarningLabel() {
     warningLabel.innerText = "Warning: Graphic Content. Click to Toggle";
     warningLabel.style.fontWeight = 600;
     warningLabel.style.fontFamily = "sans-serif";
+    warningLabel.style.textShadow = "0 0 6px black";
     warningLabel.classList.add("graphic-content-label");
     return warningLabel;
 }

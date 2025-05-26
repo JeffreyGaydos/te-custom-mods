@@ -264,7 +264,7 @@ if( !function_exists("tec_support_display") ) {
 }
 
 /********************************************************************
- * Routing Nation Page Illustration Galleries
+ * Routing Graphic Blur Feature
  ********************************************************************/
 if(get_option('tec_graphic_blur') == 'on') {
     add_action("wp_head", "tec_graphic_blur", 15);
@@ -272,6 +272,6 @@ if(get_option('tec_graphic_blur') == 'on') {
 
 if( !function_exists("tec_graphic_blur") ) {
     function tec_graphic_blur() {
-        wp_enqueue_script( 'tec-graphic-blur', plugins_url('/js/tec_graphic_blur.js', __FILE__), '', '1.0');
+        wp_enqueue_script( 'tec-graphic-blur', plugins_url('/js/tec_graphic_blur.js', __FILE__), '', '1.1');
     }
 }
