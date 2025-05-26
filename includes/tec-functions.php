@@ -272,6 +272,6 @@ if(get_option('tec_graphic_blur') == 'on') {
 
 if( !function_exists("tec_graphic_blur") ) {
     function tec_graphic_blur() {
-        wp_enqueue_script( 'tec-graphic-blur', plugins_url('/js/tec_graphic_blur.js', __FILE__), '', '1.1');
+        wp_enqueue_script( 'tec-graphic-blur', plugins_url('/js/tec_graphic_blur.js', __FILE__), '', '1.2');
     }
 }

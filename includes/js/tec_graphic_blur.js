@@ -11,6 +11,7 @@ function te_CreateWarningLabel() {
     warningLabel.style.top = "20px";
     warningLabel.style.zIndex = 10;
     warningLabel.style.color = "white";
+    warningLabel.style.pointerEvents = "none";
     warningLabel.innerText = "Warning: Graphic Content. Click to Toggle";
     warningLabel.style.fontWeight = 600;
     warningLabel.style.fontFamily = "sans-serif";
@@ -26,23 +27,16 @@ function te_GraphicBlur() {
     blurContent.forEach(b => {
         var warningLabelInstance = te_CreateWarningLabel();
         warningLabelInstance.style.width = `${b.clientWidth}px`;
-        warningLabelInstance.addEventListener("click", (e) => {
-            if(b.classList.contains(blurClass)) {
-                b.classList.remove(blurClass);
-                e.target.style.color = "rgba(0,0,0,0)";
-            } else {
-                b.classList.add(blurClass);
-                e.target.style.color = "white";
-            }
-        })
         b.parentElement.prepend(warningLabelInstance);
         b.addEventListener("click", (e) => {
             if(e.target.classList.contains(blurClass)) {
                 e.target.classList.remove(blurClass);
                 warningLabelInstance.style.color = "rgba(0,0,0,0)";
+                warningLabelInstance.style.textShadow = "none";
             } else {
                 e.target.classList.add(blurClass);
                 warningLabelInstance.style.color = "white";
+                warningLabelInstance.style.textShadow = "0 0 6px black";
             }
         });
     });
