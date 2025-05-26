@@ -664,6 +664,11 @@ p.tec_g_faux_caption.tec_g_featured {
     scale: 1.2;
 }
 
+.graphic-content {
+    filter: blur(20px) !important;
+    -webkit-filter: blur(20px) !important;
+}
+
 /*Mobile Conpatible Styling - converted from the tec_mobile_comp_init.js file. Not all styles are plugin specific...*/
 
 @media(max-width: 1619px) {

@@ -109,7 +109,8 @@ if( !function_exists("tec_acp_page") ) {
                     <a id="public-data">view raw public data</a>
                 </div>
             </div>
-
+            <br><br>
+            <input type="checkbox" name="tec_graphic_blur" <?php tec_get_checked('tec_graphic_blur') ?> >Graphic Blur</input>
             <?php
                 submit_button();
             ?>
@@ -168,5 +169,6 @@ if( !function_exists("update_tec_info") ) {
         register_setting( 'tec-settings', 'tec_support_display' );
         register_setting( 'tec-settings', 'tec_support_display_supporters_saved');
         register_setting( 'tec-settings', 'tec_support_display_supporters_public');
+        register_setting( 'tec-settings', 'tec_graphic_blur' );
     }
 }
