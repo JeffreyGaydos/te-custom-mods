@@ -10,14 +10,14 @@ function tec_closePatreonLong() {
 
 if(!tec_is_client_mobile) {
     var tec_patreon_long_box = document.createElement("a");
-    tec_patreon_long_box.href = "https://payhip.com/b/5n2cV";
+    tec_patreon_long_box.href = "https://payhip.com/b/GWRPn";
     tec_patreon_long_box.className = "tec-patreon-long-box";
     var tec_patreon_long_te_logo = document.createElement("img");
-    tec_patreon_long_te_logo.src = "/wp-content/plugins/te-custom-mods/images/All-Pack-New_800x600.jpg";
-    tec_patreon_long_te_logo.className = "tec-patreon-long-te-logo";
+    tec_patreon_long_te_logo.src = "/wp-content/plugins/te-custom-mods/images/TE_Mag_011.png";
+    tec_patreon_long_te_logo.className = "tec-patreon-long-te-logo portrait";
     var tec_patreon_long_text = document.createElement("p");
-    tec_patreon_long_text.innerText = "Click to buy!";
-    tec_patreon_long_text.className = "tec-patreon-long-text";
+    tec_patreon_long_text.innerText = "TE Magazine Issue #11 is Out Now! Click to Buy!";
+    tec_patreon_long_text.className = "tec-patreon-long-text portrait";
     // var tec_patreon_long_patreon_logo = document.createElement("img");
     // tec_patreon_long_patreon_logo.src = "/wp-content/plugins/te-custom-mods/images/PatreonLogo.png";
     // tec_patreon_long_patreon_logo.className = "tec-patreon-long-patreon-logo";
@@ -26,8 +26,8 @@ if(!tec_is_client_mobile) {
     tec_patreon_long_x.innerHTML = "&Cross;";
     tec_patreon_long_x.addEventListener("click", () => tec_closePatreonLong());
     
-    tec_patreon_long_box.appendChild(tec_patreon_long_text);
     tec_patreon_long_box.appendChild(tec_patreon_long_te_logo);
+    tec_patreon_long_box.appendChild(tec_patreon_long_text);
     // tec_patreon_long_box.appendChild(tec_patreon_long_patreon_logo);
     
     var visited_cookie = document.cookie.split("; ").filter(c => c.startsWith(te_visited_cookie_name))[0];
