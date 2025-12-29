@@ -275,6 +275,10 @@ button:not(.toggle).tec_dm_button {
     z-index: 1001;
 }
 
+.tec-patreon-long-box:has(> .portrait) {
+    width: 230px;
+}
+
 .tec-patreon-long-box:hover {
     scale: 1.05;
     border-color: var(--ted-true-yellow);
@@ -291,17 +295,40 @@ button:not(.toggle).tec_dm_button {
 }
 
 .tec-patreon-long-te-logo {
+    width: 100px;
+    margin-inline: calc(50% - 50px);
+    margin-top: 15px;
+}
+
+.tec-patreon-long-te-logo.landscape {
     width: 270px;
     margin-inline: calc(50% - 135px);
     margin-top: 10px;
 }
 
+.tec-patreon-long-te-logo.portrait {
+    width: 140px;
+    margin-inline: calc(50% - 70px);
+    margin-top: 15px;
+}
+
 .tec-patreon-long-text {
     text-align: center;
     color: var(--ted-true-yellow);
-    font-size: 15px;
+    font-size: 21px;
     font-family: sans-serif;
     font-weight: 600;
+    margin-bottom: 0 !important;
+}
+
+.tec-patreon-long-text.landscape {
+    font-size: 15px;
+    padding: 5px;
+    margin-bottom: 0 !important;
+}
+
+.tec-patreon-long-text.portrait {
+    font-size: 15px;
     padding: 5px;
     margin-bottom: 0 !important;
 }
