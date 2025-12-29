@@ -1,6 +1,7 @@
 var te_ppp_days = 7;
-var te_visited_cookie_name = "te_visited_marker_ppp002";
-var te_closed_cookie_name = "te_patreon_closed002";
+var te_previous_visited_cookie_name = "te_visited_marker_ppp002";
+var te_visited_cookie_name = "te_visited_marker_ppp003";
+var te_closed_cookie_name = "te_patreon_closed003";
 
 function tec_closePatreonLong() {
     document.querySelector(".tec-patreon-long-box").style.display = "none";
@@ -31,9 +32,14 @@ if(!tec_is_client_mobile) {
     // tec_patreon_long_box.appendChild(tec_patreon_long_patreon_logo);
     
     var visited_cookie = document.cookie.split("; ").filter(c => c.startsWith(te_visited_cookie_name))[0];
+    var previous_visited_cookie = document.cookie.split("; ").filter(c => c.startsWith(te_previous_visited_cookie_name))[0];
     if(!document.cookie.split("; ").filter(c => c.startsWith(te_closed_cookie_name))[0]
-        && visited_cookie
-        && ((Date.now() + 1000*60*60*24*365) - visited_cookie.split('=')[1]) > (1000*60*60*24*te_ppp_days)) {
+        && (visited_cookie || previous_visited_cookie)
+        && (
+            ((Date.now() + 1000*60*60*24*365) - visited_cookie.split('=')[1]) > (1000*60*60*24*te_ppp_days)
+            ||
+            ((Date.now() + 1000*60*60*24*365) - previous_visited_cookie.split('=')[1]) > (1000*60*60*24*te_ppp_days)
+        )) {
         document.querySelector("body").appendChild(tec_patreon_long_box);
         document.querySelector("body").appendChild(tec_patreon_long_x);
     
