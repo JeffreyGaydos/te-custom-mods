@@ -342,6 +342,11 @@ button:not(.toggle).tec_dm_button {
     cursor: pointer;
     transition: all ease 0.5s;
     z-index: 1001;
+
+    /*Redundant styles that the theme needs to fully integrate with this feature of the plugin*/
+    margin-bottom: 35px;
+    height: 52.5px;
+    line-height: 1.5;
 }
 
 .tec-patreon-long-x.active {
