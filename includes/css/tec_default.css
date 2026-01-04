@@ -342,6 +342,11 @@ button:not(.toggle).tec_dm_button {
     cursor: pointer;
     transition: all ease 0.5s;
     z-index: 1001;
+
+    /*Redundant styles that the theme needs to fully integrate with this feature of the plugin*/
+    margin-bottom: 35px;
+    height: 52.5px;
+    line-height: 1.5;
 }
 
 .tec-patreon-long-x.active {
@@ -865,4 +870,46 @@ h2.archive-text {
 /*Additional Misc. Styling*/
 #cookie-law-info-bar {
 	z-index: 2147483641 !important;
+}
+
+/*Theme Dark Mode integration (when theme is active*/
+body.te-dark {
+    /*Gallery Dark Mode styles*/
+    div.tec_g_arrow {
+        background-color: var(--te-black) !important;
+        border: 2px solid var(--te-yellow) !important;
+    }
+
+    div.tec_g_arrow:hover, .tec_g_indicator.tec_g_featured, .tec_g_indicator:hover {
+        background-color: var(--te-beige2) !important;
+    }
+
+    div.tec_g_body {
+        border: 1px solid var(--te-yellow) !important;
+    }
+
+    p.tec_g_caption {
+        color: white;
+    }
+
+    .tec-gallery .tec_g_arrow img:not(.dark) {
+        display: none !important;
+    }
+
+    .tec-gallery .tec_g_arrow img.dark {
+        display: inline !important;
+    }
+
+    .tec_g_indicator {
+        border-color: var(--te-yellow) !important;
+    }
+
+    .tec_g_pos_ind_mobile > h4 {
+        color: white;
+    }
+
+    /*Commission link styling*/
+    a[href*="https://amzn.to"]::after, a[href*="&tag=tankencyclope-20"]::after, .tec-commission-blurb::after/*, div.post-inner h2:last-of-type:not(#tec_indexContent) b::after*/ {
+        color: white !important;
+    }
 }
