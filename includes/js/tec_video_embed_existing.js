@@ -2,8 +2,8 @@ var tec_video_embed_close_lock = false;
 var tec_video_embed_rappended = false;
 
 function tec_video_embed_init() {
-  var newIFrame = document.querySelector(".entry-content iframe").cloneNode(true);
-  var iframeParent = document.querySelector(".entry-content iframe").parentElement;
+  var newIFrame = document.querySelector(".entry-content iframe, .main-raised iframe").cloneNode(true);
+  var iframeParent = document.querySelector(".entry-content iframe, .main-raised iframe").parentElement;
   iframeParent.id = "tec_video_embed_iframe_parent";
   
   newIFrame.onload = () => {
@@ -13,25 +13,29 @@ function tec_video_embed_init() {
       tec_follow_me_visibility_update(document.querySelector("#tec_video_embed_iframe"), document.querySelector("#tec-frame-placeholder"));
     });
 
-    tec_create_header("Article Video:", tec_close_existing_video_embed, document.querySelector(".entry-content iframe"));
+    tec_create_header("Article Video:", tec_close_existing_video_embed, document.querySelector(".entry-content iframe, .main-raised iframe"));
     tec_add_header_close_event();
   };
   newIFrame.id = "tec_video_embed_iframe";
-  document.querySelector(".entry-content iframe").remove(); //remove the original iframe so we have the load event on the reappended one
+  document.querySelector(".entry-content iframe, .main-raised iframe").remove(); //remove the original iframe so we have the load event on the reappended one
 
-  const entryContentObserver = new MutationObserver(() => {
-    if(!tec_video_embed_rappended) {
-      document.querySelector("#tec_video_embed_iframe_parent").appendChild(newIFrame);
-      tec_video_embed_rappended = true;
-      entryContentObserver.disconnect();
-    }
-  });
-
-  entryContentObserver.observe(document.querySelector(".entry-content"), { childList: true, subtree: true });
+  if(document.querySelector(".entry-content")) {
+    const entryContentObserver = new MutationObserver(() => {
+      if(!tec_video_embed_rappended) {
+        document.querySelector("#tec_video_embed_iframe_parent").appendChild(newIFrame);
+        tec_video_embed_rappended = true;
+        entryContentObserver.disconnect();
+      }
+    });
+    
+    entryContentObserver.observe(document.querySelector(".entry-content, .main-raised"), { childList: true, subtree: true });
+  } else {
+    document.querySelector("#tec_video_embed_iframe_parent").appendChild(newIFrame);
+  }
 }
 
 function tec_create_video_embed_placeholder() {
-  var iframe = document.querySelector(".entry-content iframe");
+  var iframe = document.querySelector(".entry-content iframe, .main-raised iframe");
   var tec_frame = document.createElement("DIV");
   tec_frame.id = "tec-frame-placeholder";
   tec_frame.style.height = iframe.style.height;
@@ -41,7 +45,7 @@ function tec_create_video_embed_placeholder() {
 
 function tec_close_existing_video_embed() {
   tec_video_embed_close_lock = true;
-  tec_safe_remove_class(document.querySelector(".entry-content iframe"), "follow");
+  tec_safe_remove_class(document.querySelector(".entry-content iframe, .main-raised iframe"), "follow");
   tec_set_header_visibility(false);
 }
 

@@ -23,7 +23,7 @@ function tec_video_embed_recent_init() {
   tec_player.id = "tec-video-embed-player";
 
   tec_div.appendChild(tec_player);
-  document.querySelector(".entry-content").appendChild(tec_div);
+  document.querySelector(".entry-content, .main-raised").appendChild(tec_div);
   tec_create_header("Check out T.E.'s Recent Videos!", tec_video_embed_recent_close_cancel, tec_player);
 
   tec_video_embed_timeouter = setTimeout(() => {
