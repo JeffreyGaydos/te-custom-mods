@@ -30,6 +30,7 @@ function tec_video_embed_init() {
     
     entryContentObserver.observe(document.querySelector(".entry-content, .main-raised"), { childList: true, subtree: true });
   } else {
+    newIFrame.loading = "eager"; //this may make the whole observer system completely useless. More testing on the original theme would need done to confirm this, but we are deprecating this soon so who cares
     document.querySelector("#tec_video_embed_iframe_parent").appendChild(newIFrame);
   }
 }
