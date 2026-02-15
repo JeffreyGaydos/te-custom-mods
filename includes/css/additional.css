@@ -406,32 +406,52 @@ div.post-inner tr, div.post-inner td, div.post-inner th {
 	display: block !important
 }
 
-/*Patreon Styles*/
+/*Patreon Badge Styles*/
+#competition_div {
+    text-align: right;
+}
+
+#competition_img {
+	width:170px;
+	margin-left: -185px;
+	filter:
+    drop-shadow(1px 1px 0px rgba(255, 255, 255, 0.5))
+    drop-shadow(-1px 1px 0px rgba(255, 255, 255, 0.5))
+    drop-shadow(1px -1px 0px var(--te-yellow))
+    drop-shadow(-1px -1px 0px var(--te-yellow));
+}
+
+#competition_p {
+	margin-top: -55px;
+	display: inline;
+	margin-left: -200px;
+	width: 200px;
+}
+
 @media only screen and (min-width: 920px) {
   #competition_div {
     height: 0px;
-		text-align: right;
   }
-}
-@media only screen and (min-width: 920px) {
-  #competition_img {
+	
+	#competition_img {
     position:absolute;
     margin-top:-230px;
-		width:170px;
-		margin-left: -185px;
-		filter:
-        drop-shadow(1px 1px 0px rgba(255, 255, 255, 0.5))
-        drop-shadow(-1px 1px 0px rgba(255, 255, 255, 0.5))
-        drop-shadow(1px -1px 0px var(--te-yellow))
-        drop-shadow(-1px -1px 0px var(--te-yellow));
+  }
+	
+	#competition_p {
+    position:absolute;
   }
 }
-@media only screen and (min-width: 920px) {
-  #competition_p {
-    position:absolute;
-		margin-top: -55px;
-		display: inline;
-		margin-left: -200px;
-		width: 200px;
+@media only screen and (max-width: 921px) {
+  #competition_div {
+    text-align: center
+  }
+	
+	#competition_div p:not(#competition_p) {
+		margin-top: -30px;
+	}
+	
+	#competition_img, #competition_p {
+    margin-left: unset;
   }
 }
