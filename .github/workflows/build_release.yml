@@ -2,11 +2,10 @@ name: Release Preparation
 
 on:
   pull_request:
-    types: [labeled]
 
 jobs:
   prepare-for-release-build:
-    if: github.event.label.name == 'Deploy Pending' && contains('["JeffreyGaydos"]', github.actor)
+    if: contains('["TwinedRope"]', github.actor)
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
