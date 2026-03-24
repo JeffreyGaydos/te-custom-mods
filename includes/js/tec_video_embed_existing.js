@@ -39,7 +39,7 @@ function tec_create_video_embed_placeholder() {
   var iframe = document.querySelector(".entry-content iframe, .main-raised iframe");
   var tec_frame = document.createElement("DIV");
   tec_frame.id = "tec-frame-placeholder";
-  tec_frame.style.height = iframe.style.height;
+  tec_frame.style.height = iframe.style.height === '' ? `${iframe.height}px` : iframe.style.height;
   iframe.style.marginTop = `-${iframe.style.height}`;
   iframe.parentNode.insertBefore(tec_frame, iframe);
 }
