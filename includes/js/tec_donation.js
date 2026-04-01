@@ -1,4 +1,9 @@
-/*
+if(document.querySelector('meta[guid="812DBD81-BF4C-4307-9ED5-D3B37EE35CF2"]')) {
+    console.log("Theme activation detected. Ignoring this part of the plugin");
+}
+else {
+
+    /*
  * Puts linked donation buttons (images) at the header.
  * Disappears on mobile automatically. Grabs images from homepage.
  */
@@ -33,3 +38,5 @@ tec_payhip_link.appendChild(tec_payhip_img);
 document.getElementsByClassName('header-titles')[0].appendChild(tec_partreon_link);
 document.getElementsByClassName('header-titles')[0].appendChild(tec_paypal_link);
 document.getElementsByClassName('header-titles')[0].appendChild(tec_payhip_link);
+
+}

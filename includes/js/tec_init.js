@@ -1,9 +1,14 @@
+if(document.querySelector('meta[guid="812DBD81-BF4C-4307-9ED5-D3B37EE35CF2"]')) {
+    console.log("Theme activation detected. Ignoring this part of the plugin");
+}
+else {
 var tec_default_style = document.createElement("link");
 tec_default_style.rel = "stylesheet";
 tec_default_style.href = "/wp-content/plugins/te-custom-mods/includes/css/tec_default.css?v1.22";
 tec_default_style.id = "tec_default_stylesheet";
 tec_default_style.blocking = "render";
 document.head.appendChild(tec_default_style);
+}
 
 //Utility functions
 function tec_safe_remove_class(node, _class) {

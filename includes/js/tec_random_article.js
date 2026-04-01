@@ -52,7 +52,11 @@ function tec_rand_deactivate() {
   document.getElementsByClassName("tec-rand-link")[0].style.bottom = "-100px";
   document.getElementsByClassName("tec-rand-text")[0].style.bottom = "-100px";
 }
-
+if(document.querySelector('meta[guid="812DBD81-BF4C-4307-9ED5-D3B37EE35CF2"]')) {
+    console.log("Theme activation detected. Ignoring this part of the plugin");
+}
+else {
 randomArticleButton();
 
 window.addEventListener('scroll', tec_rand_scroll_test);
+}

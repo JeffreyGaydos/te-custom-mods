@@ -1,6 +1,10 @@
 var currentScroll = 0;
-
+if(document.querySelector('meta[guid="812DBD81-BF4C-4307-9ED5-D3B37EE35CF2"]')) {
+    console.log("Theme activation detected. Ignoring this part of the plugin");
+}
+else {
 headerFollow();
+}
 
 //Performs various CSS stylings to get the header to follow the user only when they scroll up
 function headerFollow() {

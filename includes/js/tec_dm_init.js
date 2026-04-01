@@ -10,7 +10,12 @@ function initDarkMode() {
         }
     }
 }
-initDarkMode();
+if(document.querySelector('meta[guid="812DBD81-BF4C-4307-9ED5-D3B37EE35CF2"]')) {
+    console.log("Theme activation detected. Ignoring this part of the plugin");
+}
+else {
+    initDarkMode();   
+}
 
 function tec_darkMode() {
     if(tec_darkMode_state == 'false') {
