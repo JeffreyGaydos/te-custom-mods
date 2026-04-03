@@ -23,5 +23,9 @@ function tec_insert_coauthor() {
         document.querySelector(".post-author .meta-text").appendChild(display);
     });
 }
-
+if(document.querySelector('meta[guid="812DBD81-BF4C-4307-9ED5-D3B37EE35CF2"]')) {
+    console.log("Theme activation detected. Ignoring this part of the plugin");
+}
+else {
 tec_insert_coauthor();
+}

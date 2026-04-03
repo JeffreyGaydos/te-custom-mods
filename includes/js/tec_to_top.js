@@ -1,7 +1,11 @@
+if(document.querySelector('meta[guid="812DBD81-BF4C-4307-9ED5-D3B37EE35CF2"]')) {
+    console.log("Theme activation detected. Ignoring this part of the plugin");
+}
+else {
 tec_to_top_init();
 
 window.addEventListener('scroll', tec_to_top_scroll_test);
-
+}
 function tec_to_top_scroll_test() {
     if(window.scrollY > 500 && !tec_is_in_viewport(document.getElementsByClassName("footer-nav-widgets-wrapper header-footer-group")[0])) {
         tec_to_top_activate();
