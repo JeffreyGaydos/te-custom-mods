@@ -1,7 +1,7 @@
 var te_ppp_days = 7;
 var te_previous_visited_cookie_name = "te_visited_marker_ppp004";
-var te_visited_cookie_name = "te_visited_marker_ppp005";
-var te_closed_cookie_name = "te_patreon_closed005";
+var te_visited_cookie_name = "te_visited_marker_ppp006";
+var te_closed_cookie_name = "te_patreon_closed006";
 
 function tec_closePatreonLong() {
     document.querySelector(".tec-patreon-long-box").style.display = "none";
