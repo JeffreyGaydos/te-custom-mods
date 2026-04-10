@@ -307,8 +307,10 @@ button:not(.toggle).tec_dm_button {
 }
 
 .tec-patreon-long-te-logo.portrait {
-    width: 140px;
-    margin-inline: calc(50% - 70px);
+    /* width: 140px; */
+    width: calc(100% - 50px);
+    /* margin-inline: calc(50% - 70px); */
+    margin-inline: 25px;
     margin-top: 10px;
 }
 
