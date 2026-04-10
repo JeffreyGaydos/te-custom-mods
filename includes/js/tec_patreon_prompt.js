@@ -11,14 +11,14 @@ function tec_closePatreonLong() {
 
 if(!tec_is_client_mobile) {
     var tec_patreon_long_box = document.createElement("a");
-    tec_patreon_long_box.href = "https://tanks-encyclopedia.com/extension-tank-encyclopedia-magazine-all-pack-11-issues-special-offer/";
+    tec_patreon_long_box.href = "https://tanks-encyclopedia.com/help-tank-encyclopedia/";
     tec_patreon_long_box.className = "tec-patreon-long-box";
     var tec_patreon_long_te_logo = document.createElement("img");
-    tec_patreon_long_te_logo.src = "/wp-content/plugins/te-custom-mods/images/TE_FebruarySale_2026.png";
+    tec_patreon_long_te_logo.src = "/wp-content/plugins/te-custom-mods/images/HelpAd.png";
     tec_patreon_long_te_logo.className = "tec-patreon-long-te-logo portrait";
-    tec_patreon_long_te_logo.alt = "11 stacked Magazines; Tank Encyclopedia All Pack 25% February Sale";
+    tec_patreon_long_te_logo.alt = "Uncle Sam pointing with text TANK ENCYCLOPEDIA WANTS YOU";
     var tec_patreon_long_text = document.createElement("p");
-    tec_patreon_long_text.innerText = "Sale extended: now ends March 31st! Click to buy!";
+    tec_patreon_long_text.innerText = "TANK ENCYCLOPEDIA WANTS YOU!";
     tec_patreon_long_text.className = "tec-patreon-long-text portrait";
     // var tec_patreon_long_patreon_logo = document.createElement("img");
     // tec_patreon_long_patreon_logo.src = "/wp-content/plugins/te-custom-mods/images/PatreonLogo.png";
