@@ -12,7 +12,6 @@ var tec_intervalArray = new Array();
 function tec_createGalleries() {
 	const numGalleries = document.getElementsByClassName("tec-gallery").length;
 	var divsToLoopThrough = numGalleries; //at minimum
-	console.log({ numGalleries });
 	for(var g = 0; g < divsToLoopThrough; g++) {
 		tec_currentIndexes.push(0);
 		try {
