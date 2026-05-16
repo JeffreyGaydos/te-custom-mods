@@ -15,7 +15,7 @@ function tec_createGalleries() {
 	for(var g = 0; g < divsToLoopThrough; g++) {
 		tec_currentIndexes.push(0);
 		try {
-			if(!document.querySelector(`.tec-gallery:nth-of-type(${g + 1})`)) {
+			if(!(document.querySelectorAll(`.tec-gallery`)[g])) {
 				//This if statement is here so that we can use :nth-of-type like an index into a list of .tec-gallery elements
 				//the nth-of-type select does not work as we expect
 				//any divs in the article will be selected by this query; the class simply defines the parent we are looking (the child's class)
@@ -26,7 +26,7 @@ function tec_createGalleries() {
 				tec_intervalArray.push(undefined);
 				continue;
 			}
-			tec_createGallery(g);	
+			tec_createGallery(g);
 		}
 		catch(e) {
 			//ignore errors and continue attempting to create galleries, but still log it
