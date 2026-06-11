@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Tank Encyclopedia Custom Mods
-Version: 2.1.59 | Author: Jeffrey Gaydos | Discord: Jeff_G#3210 | Github Repo: https://github.com/JeffreyGaydos/te-custom-mods
+Version: 2.1.60 | Author: Jeffrey Gaydos | Discord: Jeff_G#3210 | Github Repo: https://github.com/JeffreyGaydos/te-custom-mods
 
 Description: A plugin created to organize the various functions of the old child theme, thereby removing the need for the child theme. Includes toggles in case any functions fail during udpates.
 */
@@ -85,6 +85,8 @@ if( !function_exists("tec_acp_page") ) {
             <input type="checkbox" name="tec_category_archive" <?php tec_get_checked('tec_category_archive') ?> >Category Archive Display</input>
             <br><br>
             <input type="checkbox" name="tec_patreon_prompt" <?php tec_get_checked('tec_patreon_prompt') ?> >Patreon Prompt Box</input>
+            <br><br>
+            <input type="checkbox" name="tec_chrome_fixer" <?php tec_get_checked('tec_chrome_fixer') ?> >Gemini Link Remover</input>
             <br><br>
             <input type="checkbox" name="tec_support_display" <?php tec_get_checked('tec_support_display') ?> >Monetary Supporter Display</input>
             <textarea type="text" name="tec_support_display_supporters_saved" style="display: none"><?php echo tec_get_text('tec_support_display_supporters_saved'); ?></textarea>
@@ -170,5 +172,6 @@ if( !function_exists("update_tec_info") ) {
         register_setting( 'tec-settings', 'tec_support_display_supporters_saved');
         register_setting( 'tec-settings', 'tec_support_display_supporters_public');
         register_setting( 'tec-settings', 'tec_graphic_blur' );
+        register_setting( 'tec-settings', 'tec_chrome_fixer' );
     }
 }
