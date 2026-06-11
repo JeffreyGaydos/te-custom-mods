@@ -275,3 +275,16 @@ if( !function_exists("tec_graphic_blur") ) {
         wp_enqueue_script( 'tec-graphic-blur', plugins_url('/js/tec_graphic_blur.js', __FILE__), '', '1.2');
     }
 }
+
+/********************************************************************
+ * Routing Chrome Fixer / Gemini Link Removal
+ ********************************************************************/
+if(get_option('tec_chrome_fixer') == 'on') {
+    add_action("wp_head", "tec_chrome_fixer", 15);
+}
+
+if( !function_exists("tec_chrome_fixer") ) {
+    function tec_chrome_fixer() {
+        wp_enqueue_script( 'tec_chrome_fixer', plugins_url('/js/tec_chrome_fixer.js', __FILE__), '', '1.0');
+    }
+}
