@@ -15,7 +15,6 @@ var tec_chrome_fixer = setInterval(() => {
     });
     tec_killCounter += tec_googleElements.length;
     tec_killCounter += tec_googleLinks.length;
-    tec_googleElements.forEach(e => e.style = "");
     tec_googleLinks.forEach(e => {
         var text = e.innerText;
         var parent = e.parentElement;
@@ -24,9 +23,10 @@ var tec_chrome_fixer = setInterval(() => {
         parent.insertBefore(normal, e);
         e.remove();
     });
+	tec_googleElements.forEach(e => e.remove());
 }, 1000);
 
 setTimeout(() => {
     clearInterval(tec_chrome_fixer);
     console.log(`tec_chrome_fixer: ${tec_killCounter}`);
-}, 20000);
+}, 30000);
