@@ -29,4 +29,4 @@ var tec_chrome_fixer = setInterval(() => {
 setTimeout(() => {
     clearInterval(tec_chrome_fixer);
     console.log(`tec_chrome_fixer: ${tec_killCounter}`);
-}, 30000);
+}, 60000);
