@@ -1,92 +1,28 @@
-2026-06-12 02:22:52.876871 [build_js_version_minimize.py]: [INFO] Openning files...
-2026-06-12 02:22:52.876990 [build_js_version_minimize.py]: [INFO] Calculating version incrementes...
-2026-06-12 02:22:52.877867 [build_js_version_minimize.py]: No updates necessary for tec_init (1.24)
-2026-06-12 02:22:52.877878 [build_js_version_minimize.py]: No updates necessary for tec_dm_placer (2.4)
-2026-06-12 02:22:52.877887 [build_js_version_minimize.py]: No updates necessary for tec_dm_init (3.11)
-2026-06-12 02:22:52.877894 [build_js_version_minimize.py]: No updates necessary for tec_donation (2.7)
-2026-06-12 02:22:52.877901 [build_js_version_minimize.py]: No updates necessary for tec_header_follow (2.2)
-2026-06-12 02:22:52.877908 [build_js_version_minimize.py]: No updates necessary for tec_random_article (2.7)
-2026-06-12 02:22:52.877915 [build_js_version_minimize.py]: No updates necessary for tec_discord (2.1)
-2026-06-12 02:22:52.877922 [build_js_version_minimize.py]: No updates necessary for tec_index (2.7)
-2026-06-12 02:22:52.877929 [build_js_version_minimize.py]: No updates necessary for tec_commission_blurb (1.3)
-2026-06-12 02:22:52.877935 [build_js_version_minimize.py]: No updates necessary for tec_image_resourcer (1.1)
-2026-06-12 02:22:52.877958 [build_js_version_minimize.py]: No updates necessary for tec_gallery (2.14)
-2026-06-12 02:22:52.877965 [build_js_version_minimize.py]: No updates necessary for tec_to_top (2.7)
-2026-06-12 02:22:52.877972 [build_js_version_minimize.py]: No updates necessary for tec_video_embed_shared (1.3)
-2026-06-12 02:22:52.877979 [build_js_version_minimize.py]: No updates necessary for tec_video_embed (2.4)
-2026-06-12 02:22:52.877985 [build_js_version_minimize.py]: No updates necessary for tec_video_embed_existing (1.4)
-2026-06-12 02:22:52.877992 [build_js_version_minimize.py]: No updates necessary for tec_patreon_prompt (1.11)
-2026-06-12 02:22:52.877999 [build_js_version_minimize.py]: No updates necessary for tec_coauthor_display (1.3)
-2026-06-12 02:22:52.878006 [build_js_version_minimize.py]: No updates necessary for tec_author_archive (1.3)
-2026-06-12 02:22:52.878013 [build_js_version_minimize.py]: No updates necessary for tec_category_archive (1.2)
-2026-06-12 02:22:52.878020 [build_js_version_minimize.py]: No updates necessary for tec_supporter_display (1.0)
-2026-06-12 02:22:52.878027 [build_js_version_minimize.py]: No updates necessary for tec_graphic_blur (1.2)
-2026-06-12 02:22:52.878035 [build_js_version_minimize.py]: Update tec_chrome_fixer to version 1.1 (minor)
-2026-06-12 02:22:52.878049 [build_js_version_minimize.py]: Final Versions: [(tec_init: 1.24), (tec_dm_placer: 2.4), (tec_dm_init: 3.11), (tec_donation: 2.7), (tec_header_follow: 2.2), (tec_random_article: 2.7), (tec_discord: 2.1), (tec_index: 2.7), (tec_commission_blurb: 1.3), (tec_image_resourcer: 1.1), (tec_gallery: 2.14), (tec_to_top: 2.7), (tec_video_embed_shared: 1.3), (tec_video_embed: 2.4), (tec_video_embed_existing: 1.4), (tec_patreon_prompt: 1.11), (tec_coauthor_display: 1.3), (tec_author_archive: 1.3), (tec_category_archive: 1.2), (tec_supporter_display: 1.0), (tec_graphic_blur: 1.2), (tec_chrome_fixer: 1.1)]
-2026-06-12 02:22:52.878051 [build_js_version_minimize.py]: [INFO] Updating prod-versions.ini...
-2026-06-12 02:22:52.880429 [build_js_version_minimize.py]: [INFO]  Updating tec-functions.php...
-2026-06-12 02:22:52.886024 [build_js_version_minimize.py]: Completed successfully
-2026-06-12 02:22:53.849493 [build_css_version_minimize.py]: [INFO] Openning files...
-2026-06-12 02:22:53.850265 [build_css_version_minimize.py]: [INFO] Calculating version incrementes...
-2026-06-12 02:22:53.857898 [build_css_version_minimize.py]: No updates necessary for tec_default (1.23)
-2026-06-12 02:22:53.857908 [build_css_version_minimize.py]: No updates necessary for tec_darkMode (6.7)
-2026-06-12 02:22:53.857916 [build_css_version_minimize.py]: Final Versions: [(tec_init > tec_default: 1.23), (tec_dm_init > tec_darkMode: 6.7)]
-2026-06-12 02:22:53.857918 [build_css_version_minimize.py]: [INFO] Updating prod-versions.ini...
-2026-06-12 02:22:53.858332 [build_css_version_minimize.py]: [INFO] Updating tec_init.js for tec_default.css to version 1.23...
-2026-06-12 02:22:53.858638 [build_css_version_minimize.py]: [INFO] Updating tec_dm_init.js for tec_darkMode.css to version 6.7...
-2026-06-12 02:22:53.858918 [build_css_version_minimize.py]: Completed successfully
-2026-06-12 02:22:54.764341 [build_update_plugin_version.py]: [INFO] Openning files...
-2026-06-12 02:22:54.764460 [build_update_plugin_version.py]: [INFO] Calculating version increment...
-2026-06-12 02:22:54.764667 [build_update_plugin_version.py]: [INFO] Updating prod-versions.ini...
-2026-06-12 02:22:54.764820 [build_update_plugin_version.py]: [PLUGIN VERSION]: 2.1.61
-2026-06-12 02:22:54.764827 [build_update_plugin_version.py]: [INFO] Updating README.md...
-2026-06-12 02:22:54.765318 [build_update_plugin_version.py]: [INFO] Updating te-custom-mods.php...
-2026-06-12 02:22:54.765680 [build_update_plugin_version.py]: Completed successfully
-2026-06-12 02:22:55.708708 [build_zip_plugin.py]: te-custom-mods.php
-2026-06-12 02:22:55.708962 [build_zip_plugin.py]: ToTopYellow.png
-2026-06-12 02:22:55.709097 [build_zip_plugin.py]: ToTopBlack.png
-2026-06-12 02:22:55.709206 [build_zip_plugin.py]: HelpAd.png
-2026-06-12 02:22:55.721963 [build_zip_plugin.py]: TE_logo_2025.svg
-2026-06-12 02:22:55.722165 [build_zip_plugin.py]: DropdownYellow.png
-2026-06-12 02:22:55.722256 [build_zip_plugin.py]: patreon.svg
-2026-06-12 02:22:55.722485 [build_zip_plugin.py]: patreon.png
-2026-06-12 02:22:55.722592 [build_zip_plugin.py]: FullscreenIcon.png
-2026-06-12 02:22:55.722683 [build_zip_plugin.py]: paypal.svg
-2026-06-12 02:22:55.722915 [build_zip_plugin.py]: TE_FebruarySale_2026.png
-2026-06-12 02:22:55.725653 [build_zip_plugin.py]: TE_Mag_011.png
-2026-06-12 02:22:55.727067 [build_zip_plugin.py]: PatreonLogo.png
-2026-06-12 02:22:55.727229 [build_zip_plugin.py]: DropdownBlack.png
-2026-06-12 02:22:55.727310 [build_zip_plugin.py]: TE_Mag_010.png
-2026-06-12 02:22:55.731430 [build_zip_plugin.py]: PayHipIcon.png
-2026-06-12 02:22:55.731578 [build_zip_plugin.py]: All-Pack-New_800x600.jpg
-2026-06-12 02:22:55.731849 [build_zip_plugin.py]: rss-feed.php
-2026-06-12 02:22:55.731954 [build_zip_plugin.py]: functions.php
-2026-06-12 02:22:55.734763 [build_zip_plugin.py]: tec-functions.php
-2026-06-12 02:22:55.735019 [build_zip_plugin.py]: tec_darkMode.css
-2026-06-12 02:22:55.735140 [build_zip_plugin.py]: tec_default.css
-2026-06-12 02:22:55.735267 [build_zip_plugin.py]: tec_darkMode_search.css
-2026-06-12 02:22:55.735575 [build_zip_plugin.py]: category.php
-2026-06-12 02:22:55.735687 [build_zip_plugin.py]: author.php
-2026-06-12 02:22:55.735814 [build_zip_plugin.py]: tec_graphic_blur.js
-2026-06-12 02:22:55.735903 [build_zip_plugin.py]: tec_chrome_fixer.js
-2026-06-12 02:22:55.736015 [build_zip_plugin.py]: tec_init.js
-2026-06-12 02:22:55.736100 [build_zip_plugin.py]: tec_gallery.js
-2026-06-12 02:22:55.736193 [build_zip_plugin.py]: tec_admin_panel.js
-2026-06-12 02:22:55.736284 [build_zip_plugin.py]: tec_video_embed.js
-2026-06-12 02:22:55.736364 [build_zip_plugin.py]: tec_image_resourcer.js
-2026-06-12 02:22:55.736440 [build_zip_plugin.py]: tec_commission_blurb.js
-2026-06-12 02:22:55.736519 [build_zip_plugin.py]: tec_index.js
-2026-06-12 02:22:55.736621 [build_zip_plugin.py]: tec_coauthor_display.js
-2026-06-12 02:22:55.736703 [build_zip_plugin.py]: tec_video_embed_existing.js
-2026-06-12 02:22:55.736786 [build_zip_plugin.py]: tec_supporter_display.js
-2026-06-12 02:22:55.736872 [build_zip_plugin.py]: tec_to_top.js
-2026-06-12 02:22:55.736967 [build_zip_plugin.py]: tec_video_embed_shared.js
-2026-06-12 02:22:55.737052 [build_zip_plugin.py]: tec_category_archive.js
-2026-06-12 02:22:55.737125 [build_zip_plugin.py]: tec_header_follow.js
-2026-06-12 02:22:55.737206 [build_zip_plugin.py]: tec_dm_init.js
-2026-06-12 02:22:55.737285 [build_zip_plugin.py]: tec_dm_placer.js
-2026-06-12 02:22:55.737360 [build_zip_plugin.py]: tec_patreon_prompt.js
-2026-06-12 02:22:55.737439 [build_zip_plugin.py]: tec_random_article.js
-2026-06-12 02:22:55.737514 [build_zip_plugin.py]: tec_discord.js
-2026-06-12 02:22:55.737590 [build_zip_plugin.py]: tec_donation.js
-2026-06-12 02:22:55.737666 [build_zip_plugin.py]: tec_author_archive.js
+2026-06-12 02:34:44.712425 [build_js_version_minimize.py]: [INFO] Openning files...
+2026-06-12 02:34:44.712529 [build_js_version_minimize.py]: [INFO] Calculating version incrementes...
+2026-06-12 02:34:44.713437 [build_js_version_minimize.py]: No updates necessary for tec_init (1.24)
+2026-06-12 02:34:44.713449 [build_js_version_minimize.py]: No updates necessary for tec_dm_placer (2.4)
+2026-06-12 02:34:44.713457 [build_js_version_minimize.py]: No updates necessary for tec_dm_init (3.11)
+2026-06-12 02:34:44.713464 [build_js_version_minimize.py]: No updates necessary for tec_donation (2.7)
+2026-06-12 02:34:44.713471 [build_js_version_minimize.py]: No updates necessary for tec_header_follow (2.2)
+2026-06-12 02:34:44.713478 [build_js_version_minimize.py]: No updates necessary for tec_random_article (2.7)
+2026-06-12 02:34:44.713484 [build_js_version_minimize.py]: No updates necessary for tec_discord (2.1)
+2026-06-12 02:34:44.713491 [build_js_version_minimize.py]: No updates necessary for tec_index (2.7)
+2026-06-12 02:34:44.713497 [build_js_version_minimize.py]: No updates necessary for tec_commission_blurb (1.3)
+2026-06-12 02:34:44.713504 [build_js_version_minimize.py]: No updates necessary for tec_image_resourcer (1.1)
+2026-06-12 02:34:44.713511 [build_js_version_minimize.py]: No updates necessary for tec_gallery (2.14)
+2026-06-12 02:34:44.713517 [build_js_version_minimize.py]: No updates necessary for tec_to_top (2.7)
+2026-06-12 02:34:44.713524 [build_js_version_minimize.py]: No updates necessary for tec_video_embed_shared (1.3)
+2026-06-12 02:34:44.713530 [build_js_version_minimize.py]: No updates necessary for tec_video_embed (2.4)
+2026-06-12 02:34:44.713536 [build_js_version_minimize.py]: No updates necessary for tec_video_embed_existing (1.4)
+2026-06-12 02:34:44.713543 [build_js_version_minimize.py]: No updates necessary for tec_patreon_prompt (1.11)
+2026-06-12 02:34:44.713550 [build_js_version_minimize.py]: No updates necessary for tec_coauthor_display (1.3)
+2026-06-12 02:34:44.713556 [build_js_version_minimize.py]: No updates necessary for tec_author_archive (1.3)
+2026-06-12 02:34:44.713563 [build_js_version_minimize.py]: No updates necessary for tec_category_archive (1.2)
+2026-06-12 02:34:44.713570 [build_js_version_minimize.py]: No updates necessary for tec_supporter_display (1.0)
+2026-06-12 02:34:44.713576 [build_js_version_minimize.py]: No updates necessary for tec_graphic_blur (1.2)
+2026-06-12 02:34:44.713583 [build_js_version_minimize.py]: No updates necessary for tec_chrome_fixer (1.2)
+2026-06-12 02:34:44.713596 [build_js_version_minimize.py]: Final Versions: [(tec_init: 1.24), (tec_dm_placer: 2.4), (tec_dm_init: 3.11), (tec_donation: 2.7), (tec_header_follow: 2.2), (tec_random_article: 2.7), (tec_discord: 2.1), (tec_index: 2.7), (tec_commission_blurb: 1.3), (tec_image_resourcer: 1.1), (tec_gallery: 2.14), (tec_to_top: 2.7), (tec_video_embed_shared: 1.3), (tec_video_embed: 2.4), (tec_video_embed_existing: 1.4), (tec_patreon_prompt: 1.11), (tec_coauthor_display: 1.3), (tec_author_archive: 1.3), (tec_category_archive: 1.2), (tec_supporter_display: 1.0), (tec_graphic_blur: 1.2), (tec_chrome_fixer: 1.2)]
+2026-06-12 02:34:44.713599 [build_js_version_minimize.py]: [INFO] Updating prod-versions.ini...
+2026-06-12 02:34:44.715980 [build_js_version_minimize.py]: [INFO]  Updating tec-functions.php...
+2026-06-12 02:34:44.721599 [build_js_version_minimize.py]: Completed successfully
