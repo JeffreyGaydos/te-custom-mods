@@ -482,6 +482,7 @@ button:not(.toggle).tec_dm_button {
 #tec-video-embed.follow, #tec-video-embed-player, #tec_video_embed_iframe.follow {
     width: 300px !important;
     height: 168.75px !important;
+    min-height: 0;
     position: fixed;
     right: 35px;
     bottom: 100px;
