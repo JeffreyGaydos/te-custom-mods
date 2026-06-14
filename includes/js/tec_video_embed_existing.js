@@ -40,6 +40,7 @@ function tec_create_video_embed_placeholder() {
   var tec_frame = document.createElement("DIV");
   tec_frame.id = "tec-frame-placeholder";
   tec_frame.style.height = iframe.style.height === '' ? `${iframe.height}px` : iframe.style.height;
+  tec_frame.style.minHeight = "50dvh";
   iframe.style.marginTop = `-${iframe.style.height}`;
   iframe.parentNode.insertBefore(tec_frame, iframe);
 }
