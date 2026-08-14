@@ -38,22 +38,22 @@ function tec_createGalleries() {
 tec_createGalleries();
 
 function tec_setFeaturedImage(g_num, index) {
-	tec_safe_remove_class(document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1}) img.tec_g_image.tec_g_featured`), "tec_g_featured");
+	tec_safe_remove_class(document.querySelectorAll(`.tec-gallery`)[g_num].querySelector(`img.tec_g_image.tec_g_featured`), "tec_g_featured");
 
-	var desiredImage = document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1}) img.tec_g_image:nth-of-type(${index + 1})`);
+	var desiredImage = document.querySelectorAll(`.tec-gallery`)[g_num].querySelector(`img.tec_g_image:nth-of-type(${index + 1})`);
 	desiredImage.classList.add("tec_g_featured");
 
-	tec_safe_remove_class(document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1}) div.tec_g_caption_wrapper p.tec_g_caption.tec_g_featured`), "tec_g_featured");
+	tec_safe_remove_class(document.querySelectorAll(`.tec-gallery`)[g_num].querySelector(`div.tec_g_caption_wrapper p.tec_g_caption.tec_g_featured`), "tec_g_featured");
 
-	var desiredCaption = document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1}) div.tec_g_caption_wrapper p.tec_g_caption:nth-of-type(${index + 1})`);
+	var desiredCaption = document.querySelectorAll(`.tec-gallery`)[g_num].querySelector(`div.tec_g_caption_wrapper p.tec_g_caption:nth-of-type(${index + 1})`);
 	desiredCaption.classList.add("tec_g_featured");
 
-	var fauxCaption = document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1}) div.tec_g_caption_wrapper p.tec_g_faux_caption`);
+	var fauxCaption = document.querySelectorAll(`.tec-gallery`)[g_num].querySelector(`div.tec_g_caption_wrapper p.tec_g_faux_caption`);
 	fauxCaption.innerHTML = tec_AllCaptionsArray[g_num][index];
 
-	tec_safe_remove_class(document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1}) div.tec_g_indicator.tec_g_featured`), "tec_g_featured");
+	tec_safe_remove_class(document.querySelectorAll(`.tec-gallery`)[g_num].querySelector(`div.tec_g_indicator.tec_g_featured`), "tec_g_featured");
 
-	var desiredIndicator = document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1}) div.tec_g_indicator:nth-of-type(${index + 1})`);
+	var desiredIndicator = document.querySelectorAll(`.tec-gallery`)[g_num].querySelector(`div.tec_g_indicator:nth-of-type(${index + 1})`);
 	desiredIndicator.classList.add("tec_g_featured");
 
 	tec_currentIndexes[g_num] = index;
@@ -67,7 +67,7 @@ function tec_createGallery(g_num) {
 	var tec_ImageArray = new Array();
 	var tec_CaptionArray = new Array();
 	var previousTag = "";
-	document.querySelectorAll(`.tec-gallery:nth-of-type(${g_num + 1}) img, .tec-gallery:nth-of-type(${g_num + 1}) figcaption, .tec-gallery:nth-of-type(${g_num + 1}) em`).forEach(e => {
+	document.querySelectorAll(`.tec-gallery`)[g_num].querySelectorAll(`img, figcaption, em`).forEach(e => {
 		if(e.tagName == "IMG") {
 			if(previousTag == "IMG") {
 				//we found a missing caption; add an empty
@@ -96,11 +96,11 @@ function tec_createGallery(g_num) {
 	tec_AllCaptionsArray.push(tec_CaptionArray);
 
 	var galleryChildren = [];
-	document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1})`).childNodes.forEach(c => {
+	document.querySelectorAll(`.tec-gallery`)[g_num].childNodes.forEach(c => {
 		galleryChildren.push(c);
 	});
 	galleryChildren.forEach(c => {
-		document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1})`).removeChild(c);
+		document.querySelectorAll(`.tec-gallery`)[g_num].removeChild(c);
 	});
 
 	var gallery = document.createElement("DIV");
@@ -120,9 +120,9 @@ function tec_createGallery(g_num) {
 		window.getSelection().removeAllRanges();
 		if(!tec_intervalArray[g_num]) {
 			e.target.classList.add("pressed");
-			document.querySelector(`.tec-gallery:nth-of-type(${gNumConst + 1}) .tec_g_arrow.right`).click();
+			document.querySelectorAll(`.tec-gallery`)[g_num].querySelector(`.tec_g_arrow.right`).click();
 			tec_intervalArray[g_num] = setInterval(() => {
-				document.querySelector(`.tec-gallery:nth-of-type(${gNumConst + 1}) .tec_g_arrow.right`).click();
+				document.querySelectorAll(`.tec-gallery`)[g_num].querySelector(`.tec_g_arrow.right`).click();
 			}, 4000);
 		} else {
 			tec_safe_remove_class(e.target, "pressed");
@@ -138,7 +138,7 @@ function tec_createGallery(g_num) {
 	var galleryImages = [];
 	var galleryFauxImages = [];
 	var positionIndicators = [];
-	const userSuppliedMaxHeight = document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1})`).getAttribute("max-height");
+	const userSuppliedMaxHeight = document.querySelectorAll(`.tec-gallery`)[g_num].getAttribute("max-height");
 	for(var i = 0; i < tec_ImageArray.length; i++) {
 		const j = i; //to make i not be a reference var
 		var image = document.createElement("IMG");
@@ -235,7 +235,7 @@ function tec_createGallery(g_num) {
 	}
 	gallery.appendChild(galleryInnerWrapper);
 	gallery.appendChild(indicatorContainer);
-	document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1})`).appendChild(gallery);
-	document.querySelector(`.tec-gallery:nth-of-type(${g_num + 1})`).appendChild(galleryFooter);
+	document.querySelectorAll(`.tec-gallery`)[g_num].appendChild(gallery);
+	document.querySelectorAll(`.tec-gallery`)[g_num].appendChild(galleryFooter);
 	return;
 }
