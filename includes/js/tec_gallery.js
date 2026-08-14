@@ -120,9 +120,9 @@ function tec_createGallery(g_num) {
 		window.getSelection().removeAllRanges();
 		if(!tec_intervalArray[g_num]) {
 			e.target.classList.add("pressed");
-			document.querySelectorAll(`.tec-gallery`)[g_num].querySelector(`.tec_g_arrow.right`).click();
+			document.querySelectorAll(`.tec-gallery`)[gNumConst].querySelector(`.tec_g_arrow.right`).click();
 			tec_intervalArray[g_num] = setInterval(() => {
-				document.querySelectorAll(`.tec-gallery`)[g_num].querySelector(`.tec_g_arrow.right`).click();
+				document.querySelectorAll(`.tec-gallery`)[gNumConst].querySelector(`.tec_g_arrow.right`).click();
 			}, 4000);
 		} else {
 			tec_safe_remove_class(e.target, "pressed");
