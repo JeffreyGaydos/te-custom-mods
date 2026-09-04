@@ -18,7 +18,7 @@ if(!tec_is_client_mobile) {
     tec_patreon_long_te_logo.className = "tec-patreon-long-te-logo portrait";
     tec_patreon_long_te_logo.alt = "Various Tank Encyclopedia magazine covers with diagonal banner reading \"12 Issues in One Pack\". Text at bottom that reads \"TANK ENCYCLOPEDIA MAGAZINE ALL-PACK\"";
     var tec_patreon_long_text = document.createElement("p");
-    tec_patreon_long_text.innerText = "Tank Encyclopedia magazine all pack special offer!";
+    tec_patreon_long_text.innerText = "Special Offer! Click to buy!";
     tec_patreon_long_text.className = "tec-patreon-long-text portrait";
     // var tec_patreon_long_patreon_logo = document.createElement("img");
     // tec_patreon_long_patreon_logo.src = "/wp-content/plugins/te-custom-mods/images/PatreonLogo.png";
