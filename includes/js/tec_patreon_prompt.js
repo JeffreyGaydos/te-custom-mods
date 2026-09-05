@@ -11,7 +11,7 @@ function tec_closePatreonLong() {
 
 if(!tec_is_client_mobile) {
     var tec_patreon_long_box = document.createElement("a");
-    tec_patreon_long_box.href = "#TODO";
+    tec_patreon_long_box.href = "https://payhip.com/b/wTacN";
     tec_patreon_long_box.className = "tec-patreon-long-box";
     var tec_patreon_long_te_logo = document.createElement("img");
     tec_patreon_long_te_logo.src = "/wp-content/plugins/te-custom-mods/images/TE_Mag_All-Pack_12.jpg";
