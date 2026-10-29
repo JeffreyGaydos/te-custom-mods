@@ -1,7 +1,7 @@
 var te_ppp_days = 7;
-var te_previous_visited_cookie_name = "te_visited_marker_ppp007";
-var te_visited_cookie_name = "te_visited_marker_ppp008";
-var te_closed_cookie_name = "te_patreon_closed008";
+var te_previous_visited_cookie_name = "te_visited_marker_ppp008";
+var te_visited_cookie_name = "te_visited_marker_ppp009";
+var te_closed_cookie_name = "te_patreon_closed009";
 
 function tec_closePatreonLong() {
     document.querySelector(".tec-patreon-long-box").style.display = "none";
@@ -11,10 +11,10 @@ function tec_closePatreonLong() {
 
 if(!tec_is_client_mobile) {
     var tec_patreon_long_box = document.createElement("a");
-    tec_patreon_long_box.href = "https://payhip.com/b/wTacN";
+    tec_patreon_long_box.href = "https://tanks-encyclopedia.com/halloween-sale-tank-encyclopedia-magazine-all-pack-12-bundle/";
     tec_patreon_long_box.className = "tec-patreon-long-box";
     var tec_patreon_long_te_logo = document.createElement("img");
-    tec_patreon_long_te_logo.src = "/wp-content/plugins/te-custom-mods/images/TE_Mag_All-Pack_12.jpg";
+    tec_patreon_long_te_logo.src = "/wp-content/plugins/te-custom-mods/images/TE_OctoberSale2026png.png";
     tec_patreon_long_te_logo.className = "tec-patreon-long-te-logo portrait";
     tec_patreon_long_te_logo.alt = "Various Tank Encyclopedia magazine covers with diagonal banner reading \"12 Issues in One Pack\". Text at bottom that reads \"TANK ENCYCLOPEDIA MAGAZINE ALL-PACK\"";
     var tec_patreon_long_text = document.createElement("p");
